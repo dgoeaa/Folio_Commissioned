@@ -1,0 +1,17 @@
+{
+  "readUtc": "2026-10-19T00:20:00Z",
+  "item": "MANUAL-2 (third pass)",
+  "approval": "owner, 2026-10-19: delete Portal Support Cases items 1 to 64 (created 2026-08-31 to 2026-09-30) as test records",
+  "by": "a temporary flow on the registry's SharePoint connection (Graph is refused on Global_Digital_Documents_Centre), created, run once and deleted; deletions and read-back in the same run",
+  "removed": {
+    "Portal Support Cases (Global_Digital_Documents_Centre, b984645b)": [
+      "1-64"
+    ]
+  },
+  "readBack": "same run, after the deletions: all 64 DeleteItem steps Succeeded; the list holds 1 row, item 92; item 92 deleted by the owner on 2026-10-19, so the list holds no test case",
+  "deliveryRecords": "Portal Outbox Receipts are the delivery audit trail and are kept",
+  "case92": {
+    "approval": "owner, 2026-10-19 (19:00Z): item 92 CASE-BAK97W is a test",
+    "state": "deleted by the owner in the Portal Support Cases list on 2026-10-19 (owner report, after 20:52Z)"
+  }
+}

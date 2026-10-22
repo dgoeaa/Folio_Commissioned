@@ -1,0 +1,13 @@
+{
+  "schema": "folio-build-id/v1",
+  "package": "NITDA-Folio-Handover-Pack",
+  "label": "NITDA-Folio-Handover-Pack-v2026.10.20-1-c6e49d73",
+  "version": "2026.10.20-1",
+  "commit": "c6e49d7393386ad2e6973c1508c85d3f03845222",
+  "builtUtc": "2026-10-20T16:38:28.181Z",
+  "registerVersion": "1.12.87",
+  "ships": {
+    "workspace": "FOLIO-WORKSPACE-v2026.10.20-1-upload-to-site-root.zip",
+    "portal": "FOLIO-PORTAL-v2026.10.20-1-upload-to-portal-site-root.zip"
+  }
+}

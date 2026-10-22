@@ -1,0 +1,10 @@
+{
+  "recordedUtc": "2026-10-19T04:05:00Z",
+  "decision": "owner, 2026-10-19: stop the automated notices to staff that commissioning started; the owner switches them on, or asks, once their own testing is done",
+  "applied": {
+    "FlowConfiguration.NOTIFY_SWEEP_RECIPIENTS": "item 78 set to registry and read back (was staff from 2026-10-18): AUTO_SCHEDULED_SWEEP sends its task digests, task reminders and support-case closure notices to dgsregistry@nitda.gov.ng, marked with the person each is for",
+    "config/notification-delivery.config.js": "StaffNoticeDelivery.recipients set to registry: the Workspace's staff notices (RN-012, RN-015, RN-017, RN-018, RN-019, RN-020, RN-034, RN-036) go to the registry mailbox with a banner naming the officer; delivered as the Workspace build of 2026-10-19 for folio-platform.page.gd"
+  },
+  "unchanged": "Assignment e-mails sent when an officer assigns a task (SINGLE_ASSIGNMENT, BULK_ASSIGNMENT, EMAIL_RELATED_TASK) and Portal citizen notices are actions a person takes, not automated notices, and were live before commissioning",
+  "toSwitchOn": "set Flow Configuration NOTIFY_SWEEP_RECIPIENTS to staff, and StaffNoticeDelivery.recipients to staff with a Workspace rebuild"
+}

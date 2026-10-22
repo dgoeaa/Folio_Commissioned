@@ -1,0 +1,26 @@
+key,institution,addressee,salutation,email,cc,website,verification,category,active,notes,sortOrder
+NPF-NCCC,Nigeria Police Force – National Cybercrime Centre (NPF-NCCC),"The Director, NPF-NCCC",Sir/Madam,247poc.npfnccc@npf.gov.ng,,https://npf.gov.ng,Verified / official-source record,Security,true,,1
+NPHCDA,National Primary Health Care Development Agency (NPHCDA),"The Executive Director/CEO, NPHCDA",Sir/Madam,info@nphcda.gov.ng,,https://nphcda.gov.ng/contact-us/,Verified / official website,Health,true,,2
+ONSA,Office of the National Security Adviser (ONSA),The National Security Adviser,Sir/Madam,stratcom@nsa.gov.ng,,https://nsa.gov.ng/,"Verified, but purpose-specific",Security,true,"Strategic communications inbox — verified, but purpose-specific.",3
+NDPC,Nigeria Data Protection Commission (NDPC),"The National Commissioner/CEO, NDPC",Sir/Madam,info@ndpc.gov.ng,,https://www.ndpc.gov.ng/,Verified / official website,Regulatory,true,,4
+OAGF,Office of the Accountant-General of the Federation (OAGF),The Accountant-General of the Federation,Sir/Madam,info@oagf.gov.ng,,https://oagf.gov.ng/,Verified / official website,Finance,true,,5
+NUC,National Universities Commission (NUC),"The Executive Secretary, NUC",Sir/Madam,info@nuc.edu.ng,,https://www.nuc.edu.ng/contact-us/,Verified / official website,Education,true,,6
+NPF-ICT,"Nigeria Police Force, Department of ICT, FHQ","The Deputy Inspector-General of Police, Department of ICT",Sir/Madam,pressforabuja@npf.gov.ng,,https://npf.gov.ng/home/department/4,Verified / official NPF page; not a named DIG inbox,Security,true,NPF press desk address on the official NPF page — not a named DIG inbox.,7
+ICPC,Independent Corrupt Practices and Other Related Offences Commission (ICPC),The Chairman,Sir/Madam,info@icpc.gov.ng,,https://icpc.gov.ng/,Verified / official website,Anti-corruption,true,,8
+JAMB,Joint Admissions and Matriculation Board (JAMB),The Registrar,Sir/Madam,info@jamb.gov.ng,,https://www.jamb.gov.ng/ContactUs,Verified / official website,Education,true,,9
+TETFUND,Tertiary Education Trust Fund (TETFund),"The Executive Secretary, TETFund",Sir/Madam,info@tetfund.gov.ng,,https://www.tetfund.gov.ng/,Verified / official website,Education,true,,10
+SON,Standards Organisation of Nigeria (SON),"The Director-General/CEO, SON",Sir/Madam,info@son.gov.ng,,https://son.gov.ng/contact-us/,Verified / official website,Regulatory,true,,11
+FME,Federal Ministry of Education,The Honourable Minister,Sir/Madam,info@education.gov.ng,,https://education.gov.ng/contact-us/,Verified / official website,Ministry,true,,12
+NPC,National Population Commission (NPC),"The Chairman, National Population Commission",Sir/Madam,,,https://nationalpopulation.gov.ng/,Not yet sufficiently verified,Identity & Statistics,false,NOT YET VERIFIED — the guide deliberately gives no address. Enter one only once it is verified.,13
+NIMC,National Identity Management Commission (NIMC),The Director-General,Sir/Madam,nimccustomercare@nimc.gov.ng,,https://nimc.gov.ng/contact-us,Verified / official website,Identity & Statistics,true,,14
+NCS,Nigeria Customs Service (NCS),"The Comptroller-General, Nigeria Customs Service",Sir/Madam,info@customs.gov.ng,,https://customs.gov.ng/,Verified / official website,Revenue & Border,true,,15
+NIS,Nigeria Immigration Service (NIS),"The Comptroller-General, Nigeria Immigration Service",Sir/Madam,nis.servicom@nigeriaimmigration.gov.ng,,https://immigration.gov.ng/info-center/,Verified / official website,Revenue & Border,true,,16
+NRS,Nigeria Revenue Service (NRS),The Executive Chairman,Sir/Madam,contactus@nrs.gov.ng,,https://www.nrs.gov.ng/,Verified / official website,Revenue & Border,true,,17
+NIGCOMSAT,NIGCOMSAT / Nigerian Communications Satellite Ltd.,"The Managing Director/CEO, NIGCOMSAT",Sir/Madam,info@nigcomsat.gov.ng,,https://nigcomsat.gov.ng/contacts,Verified / official website,Technology,true,,18
+NBS,National Bureau of Statistics (NBS),The Statistician-General of the Federation/CEO,Sir/Madam,feedback@nigerianstat.gov.ng,,https://nigerianstat.gov.ng/contact,Verified / official website,Identity & Statistics,true,,19
+NAFDAC,National Agency for Food and Drug Administration and Control (NAFDAC),"The Director-General/CEO, NAFDAC",Sir/Madam,nafdac@nafdac.gov.ng,,https://www.nafdac.gov.ng/,Verified / official NAFDAC material,Health,true,,20
+FMIST,"Federal Ministry of Innovation, Science and Technology (FMIST)",The Honourable Minister,Sir/Madam,info@scienceandtech.gov.ng,,https://fmist.gov.ng/,Verified / official ministry web presence,Ministry,true,,21
+NIPOST,Nigerian Postal Service (NIPOST),"The Postmaster-General/CEO, NIPOST",Sir/Madam,info@nipost.gov.ng,,https://nipost.gov.ng/contact/,Verified / official website,Technology,true,,22
+CBN,Central Bank of Nigeria (CBN),The Governor,Sir/Madam,contactcbn@cbn.gov.ng,,https://www.cbn.gov.ng/,Verified / official CBN service material,Finance,true,,23
+BPP,Bureau of Public Procurement (BPP),The Director-General,Sir/Madam,info@bpp.gov.ng,,https://bpp.gov.ng/,Verified / official website,Finance,true,,24
+BPSR,Bureau of Public Service Reforms (BPSR),The Director-General,Sir/Madam,info@bpsr.gov.ng,,https://bpsr.gov.ng/,Verified / official website,Public Service,true,,25

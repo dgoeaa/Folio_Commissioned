@@ -1,0 +1,65 @@
+ba80d8e5478458d209fc2b13b44d6b247d848744ced7cb1672aeda519b5430c3  00 Read Me First.pdf
+157a98c60b3e169aa4810759689257bf72e7e7335ce3eb8d65fad051a188d807  01 Commissioning/1.1 Folio Commissioning Report.pdf
+147837516a3fc18bddcbb800cf2f579145807deb6ee5ab69ba1939dd72a739b1  01 Commissioning/1.2 Folio Registers.xlsx
+bda75b0ce4b5195db258e7a5efe7c9510ead0101a273d972adc8e0daf00d5d9c  01 Commissioning/1.3 Supporting Evidence/00 Evidence Index.pdf
+42719d97681bbfd0ba5d261004ca6047ab05751ae7b59cc4eef3c2a6c9a89641  01 Commissioning/1.3 Supporting Evidence/2026-10-18-test-record-cleanup-2.json
+abf58c40291dc79f80c7e0caaf1d8c7380dd873fcf487eeeb40a7e5c489df192  01 Commissioning/1.3 Supporting Evidence/2026-10-18-test-record-cleanup.json
+05aa77090322466071a1c25b131f9840b3b3a97aba5b8b9dcf9ccbf905c6bea9  01 Commissioning/1.3 Supporting Evidence/2026-10-19-flow-throttling-incident.json
+5fa9058713400ecbe53e1ae8f8b25b852ca5f8223d0a567bc83db5d50d3b06f5  01 Commissioning/1.3 Supporting Evidence/2026-10-19-flows-apply-2.json
+218ae0b93d901a66a866d1568dcf834aecac49ad74cbfd433da621d95d52de00  01 Commissioning/1.3 Supporting Evidence/2026-10-19-flows-apply-3.json
+129a5eb111850621a5b2e040c9d54bde4037ea9170cc58204dfc945a221a4d72  01 Commissioning/1.3 Supporting Evidence/2026-10-19-flows-apply-4.json
+75b073fc639a5ddba951de1487f0039e1ba926ab188a2372e992b1366b6a1449  01 Commissioning/1.3 Supporting Evidence/2026-10-19-flows-apply.json
+a1c134c2c876e0e4af386204af5c23786fd9a3a7b3f4b002f218c40f11971300  01 Commissioning/1.3 Supporting Evidence/2026-10-19-live-browser-suite-pagegd.json
+7bbd013aa5b284640d122f3c679192b6d6bf3ab43852f6cf928392900565c8a8  01 Commissioning/1.3 Supporting Evidence/2026-10-19-mailer-origin-move.json
+f96b817584bbcc82871c1272bcdcf949313c81d5082bf88216a654a4fe4023b2  01 Commissioning/1.3 Supporting Evidence/2026-10-19-release-38-proofs.json
+03f9d5c37a072e8d51b96d2e33d0f739539ff309678ac73cda97bc20a2a92265  01 Commissioning/1.3 Supporting Evidence/2026-10-19-rn020-rn022-live.json
+0a1f4087e637dfcb7331d259a5f3f8db793c30f2ddaef9ffb296be89423eb9c1  01 Commissioning/1.3 Supporting Evidence/2026-10-19-rn027-rn028-runs.json
+18da24a25392220d770fb0c51256403e96af70836684bf0458125876a0e6d6bc  01 Commissioning/1.3 Supporting Evidence/2026-10-19-staff-notice-hold.json
+11cda89a18f4f9ed438185f3185249c66e51e3230250f2aefefa99151d54534d  01 Commissioning/1.3 Supporting Evidence/2026-10-19-test-record-cleanup-3.json
+1b9d91b961f44dca7a6ce3e13938911bf18904f73c0d862dd4f5c310cb267cd5  01 Commissioning/1.3 Supporting Evidence/2026-10-19-tools-commissioning.json
+869b33dfa21359ca3d39db3a1d89f3b1f4162cdb9c3fe94d2bdcf800da6a3122  01 Commissioning/1.3 Supporting Evidence/2026-10-20-centre-flow-watch-live.json
+db9d2d2b0ce4ef51b204e3c7b79cbdc596065e40fb1cc75beb1870eb6c6df787  01 Commissioning/1.3 Supporting Evidence/2026-10-20-final-live-set.json
+c46e100d6fe7479053ef284a981bedac87c613dc034c3ec851045192e379dca3  02 Documentation/2.1 Folio Handbook.pdf
+01203ac0ffcb971933aba64d9b55170fe1ac70a8ea67e9cfa6871e4b0769082b  02 Documentation/2.2 Folio User Guide.pdf
+373bd7f64a561131f65da2323a0b57838b5a3de00196edf0e08d61acc7cde822  02 Documentation/2.3 Folio Administrator Guide.pdf
+ec0583dcd75864d98d1a6ae7a9e10ebf6503a1ee68a699730bbee562f762b364  02 Documentation/2.4 Folio Developer Guide.pdf
+0944ac989faf0d962beb280b1bc2207907124c3cb0d0c61a19aa3c182133b615  03 Power Automate Flows/3.1 Folio Flow Catalogue.pdf
+05b0260733e033f5132b9f2e3e3e730cfa8acd2de893f13f10fe501a8d8f6bc2  03 Power Automate Flows/3.2 Folio Flow Package Guide.pdf
+0b1ad51493ecff387dc49a3f00b999e0356a1be5e6bb64ef8811d4fceb16ddca  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/ACTIVITY_LIFECYCLE__IP_Activity_Lifecycle_Endpoint__b4db02d8.paste.json
+3288fab3302faf6933195ada26e71304b835aa929ef37543ade6f4111a5c1aa5  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6.paste.json
+87361f6eeda1a60088d3caf6826e875209539cdfac9c9411a9d81a256fb0464a  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json
+354b83fa0ba73517b9bef922e23f23457b14238853a9457678ba024fcacc86d2  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json
+937a6482917fb2f19b64db6ec4fda8450cc3a3a64dade549244b06963ece71fb  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json
+da81c2d3bc060434899dad0ac2b78f943f5d44369afed91a4e3cc4afbe906c04  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/EMAIL__IP_SEND_EMAIL__df59a69f.paste.json
+166b8e2b7985ba3bcb0df2ddb0c7ac57c4ccd581b6581b3139f85d17e2e2d6a8  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json
+fde7db6a938f321982438a9244f22bccd06cc41b9a733c865fe6675c1f8f5122  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3.paste.json
+a7d0084595a501946831703ee7cc805baf3b16b38eef59cdc1ce0982d42d910d  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a.paste.json
+4d3f68e68e4dcd8ddd55ee244616f0b9c129eba5e86129da4b3282a2d848cf37  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/OTP_GENERATE__IP_OTP_GENERATE__e5632336.paste.json
+51cfa2670129bfb032e2760987da9fb08c0fa3a70defd646a0f7fb8a82374095  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde.paste.json
+e09ab6c7c9d63b29305e08fc0546341955406c910382aac3fdb3a3f5e67c5f1c  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e.paste.json
+e675b2e33964cc5134097ae3c810df9d8c0625884a22772683c83895956440f0  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json
+d46eb4509fb917471e6d97eecc8d0345b0ed85fb9c0be0aa2f8ab4f1259f069f  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json
+706af541c7100cd62ffcdd2ec6e5df565d0ad85e2719da53783936448ea3ad7d  03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825.paste.json
+cff8f5fba05fec99ac5672b3c92c0bbfc3564d07c46475212f2911da5b22efda  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/STATUS__CG_Portal_Status_Check_Endpoint__60042a2e.paste.json
+bdddb06a0d80365eb1a045a1728d498dc06716a8aff2ba516be03aa445ea57a4  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/SUBMISSION__CG_Submission_Endpoint__de9ef13b.paste.json
+f2f8cf804ba60f60071e5f862374e49fd1f20825a1a30b5e1e1a96c8abcf07c0  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/SUPPORT__CG_Portal_Support_Endpoint__4873c936.paste.json
+6b4c61c0b40d0f46b1029c4b8722adb337de379dcdd8f6ee233ae11914a48c0f  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/UPLOAD__CG_Upload_Endpoint__df82e331.paste.json
+b66d964a28aeb72c7492e63117ad7289a65ac41244bbadf65b3d4ec04c4d586c  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448.paste.json
+f435f6bd354969d33fd8bc3813f55343141206cd60a7c936dafb625b36486160  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/VERIFY__CG_Portal_Verification_Endpoint__ba47f79b.paste.json
+d44f28e1f4f3876534e146cf2a2584670cb67fa6ff6e2afc6e5a7d5c532dfdd7  03 Power Automate Flows/3.3 Flow Packages/2 Document Portal/WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json
+3740849634d6ee9ad054281a2be6326bbffed90eb18b3524d9e155bd01176bbe  03 Power Automate Flows/3.3 Flow Packages/3 Scheduled and Event-Driven/NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c.paste.json
+4dbedb7a8863a3862ac2c0481d9e8d999023c22ad5abea0c2cb06e25a345d769  03 Power Automate Flows/3.3 Flow Packages/3 Scheduled and Event-Driven/NOKEY__CG_Portal_Daily_Sweep__f12aec6d.paste.json
+d327d653e5145c281d56fd26e99330f776e021cb3b5933ee0a661df6c3bbb139  03 Power Automate Flows/3.3 Flow Packages/3 Scheduled and Event-Driven/NOKEY__CG_Registry_Status_Notifier__8ebf6001.paste.json
+577c6295273c3f3b229023671f1e449952c3bf8e12d16d2560ce0aaf116ed325  03 Power Automate Flows/3.3 Flow Packages/3 Scheduled and Event-Driven/NOKEY__Folio_Failure_Watch__c38bfeaa.paste.json
+c179e243cf5c76cc8e0bc934e81b95f2c322308337d831f8223b5552d38b23b0  03 Power Automate Flows/3.3 Flow Packages/3 Scheduled and Event-Driven/NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json
+68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_AUTH.zip
+55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_DATA.zip
+9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_DIRECTORY.zip
+d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_LOG.zip
+992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_PROVISION.zip
+e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_SEND.zip
+fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c  03 Power Automate Flows/3.3 Flow Packages/4 Correspondence Mailer/DGO_MAIL_TEMPLATES.zip
+bfec244dcce239b7a36709c426ac4e76d79454a7b62f4a53bd47f22307a008cd  04 Applications and Tools/4.1 Running the Administrator Tools.pdf
+85d5d890ebeeecc5574bf7bb32daa7b1cb35d038a06877ad29a4b9dff3b5fcdf  04 Applications and Tools/4.2 Folio Source Code (commit c6e49d73).zip
+5a1e788a9075edec1dfcac01436932c06bcee7d53d7c9911f27581040be761c9  04 Applications and Tools/4.3 Correspondence Mailer Package 2.1.5.zip
+56e5cdbb9e07bc4c187ff8669b14e326b3804a2b25eb3bd6f29098b6c11ac7f8  BUILD-ID.json

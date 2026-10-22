@@ -1,0 +1,170 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "71f5e62538ebf7da8a8dacea1a6f85b5d404df70",
+  "finishedUtc": "2026-10-19T01:31:48.092Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "flow": "CG_Portal_Writeback_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27",
+          "file": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json",
+          "scope": "Scope_Writeback_Flow",
+          "status": "APPLIED",
+          "packageHash": "09d47735d330cd76fe8ff0e6c773dca462f2544a31a81d5fc5cd3ad901237bcb",
+          "liveHash": "09d47735d330cd76fe8ff0e6c773dca462f2544a31a81d5fc5cd3ad901237bcb",
+          "fingerprint": "0a2622e304023d01",
+          "liveFingerprint": "0a2622e304023d01",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 09d47735d330…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "flow": "CG_Upload_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "UPLOAD__CG_Upload_Endpoint__df82e331",
+          "file": "UPLOAD__CG_Upload_Endpoint__df82e331.paste.json",
+          "scope": "Scope_Upload_Flow",
+          "status": "APPLIED",
+          "packageHash": "7c12929ff5375ab30e744beb4d10a2b9d066611b1ebf88e0c134ad240714e55b",
+          "liveHash": "7c12929ff5375ab30e744beb4d10a2b9d066611b1ebf88e0c134ad240714e55b",
+          "fingerprint": "00ee430cc886691a",
+          "liveFingerprint": "00ee430cc886691a",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 7c12929ff537…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "c77bc96543d1c9b7620bd4b19312c8219560c132565772f7124e597b1cb86b14",
+          "liveHash": "c77bc96543d1c9b7620bd4b19312c8219560c132565772f7124e597b1cb86b14",
+          "fingerprint": "01c2a838617f7903",
+          "liveFingerprint": "01c2a838617f7903",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash c77bc96543d1…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "6ad5d1ade0ae3383f0d3dbbdbdf7adc29d5911afb657a2a7aac8c767f12496b0",
+          "liveHash": "6ad5d1ade0ae3383f0d3dbbdbdf7adc29d5911afb657a2a7aac8c767f12496b0",
+          "fingerprint": "0a010a0adfd83c11",
+          "liveFingerprint": "0a010a0adfd83c11",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 6ad5d1ade0ae…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "flow": "IP_User_Admin_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825",
+          "file": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "401fbeb198c96f95e51340e9a39725896706b3dd3db689d4c59599d1bb81a9dd",
+          "liveHash": "401fbeb198c96f95e51340e9a39725896706b3dd3db689d4c59599d1bb81a9dd",
+          "fingerprint": "0ac5580f65c18b00",
+          "liveFingerprint": "0ac5580f65c18b00",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 401fbeb198c9…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b4db02d8-02a0-4bc9-b9d3-06e2aae2448c",
+      "flow": "IP_Activity_Lifecycle_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "ACTIVITY_LIFECYCLE__IP_Activity_Lifecycle_Endpoint__b4db02d8",
+          "file": "ACTIVITY_LIFECYCLE__IP_Activity_Lifecycle_Endpoint__b4db02d8.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "8f1d3efae246e50125f77e751ca8535313294c93e5119cc029b850855c8b96ed",
+          "liveHash": "8f1d3efae246e50125f77e751ca8535313294c93e5119cc029b850855c8b96ed",
+          "fingerprint": "1bd7534cba5ff507",
+          "liveFingerprint": "1bd7534cba5ff507",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 8f1d3efae246…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c",
+          "file": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c.paste.json",
+          "scope": "Scope_ScheduledSweep_Flow",
+          "status": "APPLIED",
+          "packageHash": "fbb91f2300ab49ebb0e32f20525a6ec913688cd79f9ec0ebcc693a52567f0b1b",
+          "liveHash": "fbb91f2300ab49ebb0e32f20525a6ec913688cd79f9ec0ebcc693a52567f0b1b",
+          "fingerprint": "141f69b51b2ff319",
+          "liveFingerprint": "141f69b51b2ff319",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash fbb91f2300ab…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+      "flow": "Folio_Failure_Watch",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Failure_Watch__c38bfeaa",
+          "file": "NOKEY__Folio_Failure_Watch__c38bfeaa.paste.json",
+          "scope": "Scope_Failure_Watch",
+          "status": "APPLIED",
+          "packageHash": "6d54f5fe43349881e47f98792191aad324b76bf4ff1c53ee67dc2430af038268",
+          "liveHash": "6d54f5fe43349881e47f98792191aad324b76bf4ff1c53ee67dc2430af038268",
+          "fingerprint": "17d6ef241ac49f01",
+          "liveFingerprint": "17d6ef241ac49f01",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 6d54f5fe4334…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

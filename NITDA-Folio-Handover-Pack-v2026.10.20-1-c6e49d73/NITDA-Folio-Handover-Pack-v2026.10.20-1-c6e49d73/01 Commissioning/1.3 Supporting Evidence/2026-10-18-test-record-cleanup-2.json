@@ -1,0 +1,20 @@
+{
+  "readUtc": "2026-10-18T23:05:00Z",
+  "item": "MANUAL-2 (second pass)",
+  "approval": "owner, 2026-10-18: delete Portal Registry NITDA-2026-00001 to 00018 and Portal Support Cases items 65 to 87 as test records; delete the support cases rather than close them, so no closure e-mail is sent",
+  "by": "a temporary flow on the registry's SharePoint connection (Graph is refused on NEDMS and Global_Digital_Documents_Centre), created, run once and deleted; the deletions and the read-back ran in the same run",
+  "readBefore": {
+    "Portal Registry (NEDMS, 4c49f66a)": "18 rows: items 1 to 17 (NITDA-2026-00001 to 00017) and item 25 (NITDA-2026-00018), created 2026-08-31 to 2026-10-08",
+    "Portal Status Timeline (NEDMS, 5b486a5e)": "19 rows: items 1 to 19, the timelines of NITDA-2026-00001 to 00018",
+    "Portal Support Cases (Global_Digital_Documents_Centre, b984645b)": "87 rows: items 1 to 87, all open"
+  },
+  "removed": {
+    "Portal Registry (NEDMS, 4c49f66a)": ["1-17 NITDA-2026-00001 to 00017", "25 NITDA-2026-00018"],
+    "Portal Status Timeline (NEDMS, 5b486a5e)": ["1-19, the timelines of NITDA-2026-00001 to 00018"],
+    "Portal Support Cases (b984645b)": ["65-87, CASE-20261001-B07A8D to CASE-T6EJPU"]
+  },
+  "readBack": "same run, after the deletions: Portal Registry 0 rows; Portal Status Timeline 0 rows; Portal Support Cases with ID ge 65: 0 rows; all 60 DeleteItem steps Succeeded",
+  "counters": "unchanged; numbering continues at NITDA-2026-00021 (offset, no reset, owner decision)",
+  "deliveryRecords": "Portal Outbox Receipts are the delivery audit trail and are kept",
+  "kept": "Portal Support Cases items 1 to 64 (created 2026-08-31 to 2026-09-30, all open) were outside this approval and are kept"
+}

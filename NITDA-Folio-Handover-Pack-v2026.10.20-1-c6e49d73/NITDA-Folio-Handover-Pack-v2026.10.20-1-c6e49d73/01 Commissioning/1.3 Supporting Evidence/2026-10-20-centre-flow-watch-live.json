@@ -1,0 +1,502 @@
+{
+ "recordedUtc": "2026-10-20T02:27:20Z",
+ "what": "The Central Administration Centre, extended to watch every Folio flow in the flow catalogue, run against the tenant: two syncs as the flow owner, read-only (the flow list, each Folio flow read by its id where the list leaves it out, trigger identities and run history; no flow was started, changed or stopped).",
+ "by": "Folio commissioning session, signed in as the flow owner (dgsregistry@nitda.gov.ng) through the session kept from commissioning; the Centre ran from the repository in a throwaway state folder, deleted afterwards",
+ "sync": {
+  "flowsListed": 652,
+  "flowsReadDirectly": 1,
+  "governedVisible": 32,
+  "governedMissing": [],
+  "folioFlowsVisible": 43,
+  "folioFlowsMissing": [],
+  "identitiesVerified": 33,
+  "identityDrift": [],
+  "runsRead": 704,
+  "unreadable": {}
+ },
+ "firstSyncNote": "The first of the two syncs read the same, except one trigger identity (IP_Retrieve_Email_Attachment_Endpoint) that failed with a connection reset on the network path; the second read it and verified all 33.",
+ "listGap": "BULK OPS DATA RETRIEVAL HTTP (5aab9e61), the bulk assignment flow, is not in the flow owner's list of 652 flows, though the account reads it, its state (Started) and its runs by its id. Before this change the Centre watched only listed flows, so it did not watch this one; it now reads every Folio flow the list leaves out by its id.",
+ "flows": [
+  {
+   "name": "AI_Document_Processing",
+   "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:AI_CHAT",
+    "internal:AI_DOC_ANALYSIS",
+    "internal:AI_EMAIL_ANALYSIS"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Cancelled 2026-10-08T17:31"
+  },
+  {
+   "name": "BULK OPS DATA RETRIEVAL HTTP",
+   "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:BULK_ASSIGNMENT"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-16T21:36"
+  },
+  {
+   "name": "IP_Activity_Lifecycle_Endpoint",
+   "flowId": "b4db02d8-02a0-4bc9-b9d3-06e2aae2448c",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:ACTIVITY_LIFECYCLE"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-12T19:43"
+  },
+  {
+   "name": "IP_Create__Task__for_received_Email_Endpoint",
+   "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:EMAIL_RELATED_TASK"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-12T19:49"
+  },
+  {
+   "name": "IP_Dynamic_Global_Actions_Endpoint",
+   "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:DYNAMIC_ACTIONS",
+    "internal:SUBSIDIARY_ACTIONS"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T19:49"
+  },
+  {
+   "name": "IP_FETCH_ALL_BOOTSTRAP",
+   "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:FETCH_ALL"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T19:41"
+  },
+  {
+   "name": "IP_Get_Docs_Endpoint",
+   "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:FETCH_ACTIVITIES",
+    "internal:GET_DOCS"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T18:09"
+  },
+  {
+   "name": "IP_OTP_GENERATE",
+   "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:OTP_GENERATE"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T19:40"
+  },
+  {
+   "name": "IP_OTP_VERIFY",
+   "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:OTP_VERIFY"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T19:41"
+  },
+  {
+   "name": "IP_Reference_Data_Endpoint",
+   "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:REFERENCE_DATA"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T04:33"
+  },
+  {
+   "name": "IP_Retrieve_Email_Attachment_Endpoint",
+   "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:FETCH_EMAIL_ATTACHMENTS"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-09T23:07"
+  },
+  {
+   "name": "IP_SCAN_INTAKE",
+   "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:SCAN_INTAKE"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-18T19:12"
+  },
+  {
+   "name": "IP_SEND_EMAIL",
+   "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:EMAIL"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T19:15"
+  },
+  {
+   "name": "IP_User_Admin_Endpoint",
+   "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:USER_ADMIN"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-08T20:28"
+  },
+  {
+   "name": "Single_Task_Assignment",
+   "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+   "group": "Folio Workspace",
+   "endpoints": [
+    "internal:SINGLE_ASSIGNMENT"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Failed 2026-10-10T01:30"
+  },
+  {
+   "name": "CG_Portal_Status_Check_Endpoint",
+   "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:STATUS"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T03:25"
+  },
+  {
+   "name": "CG_Portal_Support_Endpoint",
+   "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:SUPPORT"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-18T22:50"
+  },
+  {
+   "name": "CG_Portal_Verification_Confirmation_Endpoint",
+   "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:VERIFY_CONFIRM"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-17T03:18"
+  },
+  {
+   "name": "CG_Portal_Verification_Endpoint",
+   "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:VERIFY"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-17T03:17"
+  },
+  {
+   "name": "CG_Portal_Writeback_Endpoint",
+   "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:WRITEBACK"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T01:38"
+  },
+  {
+   "name": "CG_Submission_Endpoint",
+   "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:SUBMISSION"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-18T22:48"
+  },
+  {
+   "name": "CG_Upload_Endpoint",
+   "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+   "group": "Document Portal",
+   "endpoints": [
+    "portal:UPLOAD"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T01:37"
+  },
+  {
+   "name": "DGO_MAIL_AUTH",
+   "flowId": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_AUTH"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T23:42"
+  },
+  {
+   "name": "DGO_MAIL_DATA",
+   "flowId": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_DATA"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "DGO_MAIL_DIRECTORY",
+   "flowId": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_DIRECTORY"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "DGO_MAIL_LOG",
+   "flowId": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_LOG"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "DGO_MAIL_PROVISION",
+   "flowId": "c5a0f936-40a5-4044-a383-2530468f8413",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_PROVISION"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "DGO_MAIL_SEND",
+   "flowId": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_SEND"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "DGO_MAIL_TEMPLATES",
+   "flowId": "176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+   "group": "Correspondence Mailer",
+   "endpoints": [
+    "mailer:MAIL_TEMPLATES"
+   ],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T22:51"
+  },
+  {
+   "name": "01 - GOV - Provision HTTP Flow Registry",
+   "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T20:49"
+  },
+  {
+   "name": "02 - GOV - Register HTTP Flow Truth",
+   "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-02T05:02"
+  },
+  {
+   "name": "03 - GOV - Record HTTP Flow Execution",
+   "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "no run in history"
+  },
+  {
+   "name": "04 - GOV - Audit HTTP Flow Registry",
+   "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-20T01:19"
+  },
+  {
+   "name": "05 - GOV - Retire HTTP Flow",
+   "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "no run in history"
+  },
+  {
+   "name": "06 - GOV - Registry Exception Notification",
+   "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-20T01:57"
+  },
+  {
+   "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+   "flowId": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "no run in history"
+  },
+  {
+   "name": "08 - GOV - Discover and Register HTTP Consumers",
+   "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+   "group": "Governance flow registry",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T03:19"
+  },
+  {
+   "name": "DGSO INCOMING AI PROCESSING",
+   "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Stopped",
+   "expectedState": "Stopped",
+   "newestRun": "Succeeded 2026-10-09T14:43"
+  },
+  {
+   "name": "AUTO_SCHEDULED_SWEEP",
+   "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T20:06"
+  },
+  {
+   "name": "CG_Portal_Daily_Sweep",
+   "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T07:59"
+  },
+  {
+   "name": "CG_Registry_Status_Notifier",
+   "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T16:32"
+  },
+  {
+   "name": "Folio_Failure_Watch",
+   "flowId": "c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T17:05"
+  },
+  {
+   "name": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+   "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+   "group": "Scheduled and event-driven",
+   "endpoints": [],
+   "state": "Started",
+   "expectedState": "Started",
+   "newestRun": "Succeeded 2026-10-19T16:31"
+  }
+ ],
+ "alertsRaised": [
+  {
+   "source": "flow-runs",
+   "severity": "High",
+   "state": "Open",
+   "asset": "flow:3caf9458-8d95-4740-a01b-6803dad97d34",
+   "message": "Single_Task_Assignment: run 08584100110433772866731334335CU24 failed at 2026-10-10T01:30:42.1184465Z — ActionFailed: An action failed. No dependent actions succeeded."
+  }
+ ],
+ "singleTaskAssignmentRun": {
+  "flow": "Single_Task_Assignment (3caf9458-8d95-4740-a01b-6803dad97d34)",
+  "run": "08584100110433772866731334335CU24",
+  "startUtc": "2026-10-10T01:30:42Z",
+  "status": "Failed",
+  "actions": {
+   "total": 214,
+   "succeeded": 121,
+   "skipped": 91,
+   "failed": 2
+  },
+  "failed": [
+   "Response: ActionResponseTimedOut (the caller stopped waiting for the reply)",
+   "Scope_Global: ActionFailed (it contains the Response)"
+  ],
+  "succeeded": [
+   "Create_Task",
+   "Update_item_Doc",
+   "Scope_Task_Email_Notification",
+   "Create_Send_an_email_(V2)_Main_5_Receipt"
+  ],
+  "reading": "This is the run that created TASK-2026-00002 and sent its assignment notice, whose acknowledgement link was opened on 2026-10-12 (2026-10-12-live-proofs.json). The task, the document update and the notice succeeded; the run is marked Failed because its reply to the caller timed out. That definition was replaced at 16:22 UTC the same day; the current one has not run since."
+ }
+}
