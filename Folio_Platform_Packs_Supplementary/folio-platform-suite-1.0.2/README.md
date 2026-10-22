@@ -8,10 +8,16 @@ and the four version markers match the original manifest. The POSIX `folio` wrap
 has been reconstructed around `scripts/folio.mjs`.
 
 Integrity records have been regenerated for these explicit changes; provenance is
-recorded in `RELEASE_MANIFEST.json`. The original `runtime/LICENSE` is still missing,
-so `node scripts/verify-release.mjs` must report that failure. This snapshot is not
-a verified distributable release. The original release description below does not
-constitute a fresh application-start or tenant-validation result.
+recorded in `RELEASE_MANIFEST.json`. The unavailable original `runtime/LICENSE` is
+replaced by an explicit licensing notice that grants no rights and does not claim
+to reproduce the upstream license. The administration catalogue, adoption register
+and hosted provisioning resources are restored from the repository, and the Centre
+can serve its allowlisted analysis modules from the packaged `runtime/` directory.
+All 60 existing Centre tests now pass using local stand-ins only.
+
+`node scripts/verify-release.mjs` checks the reconciled snapshot. Integrity success
+does not establish licensing clearance or deployment readiness. The original release
+description below is not a fresh application-start or tenant-validation result.
 
 Every Folio platform, application and tool in one release. It depends on nothing in the source
 repository, and there is nothing to install apart from Node.js and Python.

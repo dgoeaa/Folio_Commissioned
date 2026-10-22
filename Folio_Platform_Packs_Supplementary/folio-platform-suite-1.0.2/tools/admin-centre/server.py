@@ -2857,9 +2857,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def module(self, path):
         rel = path[len('/modules/'):]
-        if rel not in MODULES or self.app.cfg.repo is None or not (self.app.cfg.repo / rel).is_file():
+        if rel not in MODULES or self.app.cfg.repo is None:
             raise ApiError(404, 'not found')
-        self.send(200, (self.app.cfg.repo / rel).read_bytes(), 'application/javascript; charset=utf-8')
+        root = self.app.cfg.repo
+        full = root / rel
+        if not full.is_file():
+            full = root / 'runtime' / rel
+        if not full.is_file():
+            raise ApiError(404, 'not found')
+        self.send(200, full.read_bytes(), 'application/javascript; charset=utf-8')
 
     def section(self, path):
         name, _, rest = path[len('/sections/'):].partition('/')

@@ -50,6 +50,27 @@ Checks run on the reconciled source:
 The seven inherited administration failures are not waived or represented as passes.
 These checks do not establish full browser acceptance or a working deployed tenant.
 
+### Subsequent repository-local repairs
+
+The preceding reconciliation results are retained as the record of that check.
+A subsequent full-tree recheck found the missing Centre resources already in this
+repository: the flow catalogue, adoption register and complete provisioning console.
+They are now included in the suite at the paths its server expects. The server's
+existing module allowlist also supports the suite's `runtime/` layout without opening
+access to other modules or configuration files. All 60 existing administration tests
+now pass against loopback stand-ins; none were removed or weakened.
+
+No copy of the original upstream license was found. At the owner's request to move
+forward with replacements where necessary, `runtime/LICENSE` is now a clearly marked
+replacement notice granting no rights, not an inferred upstream license. Both manifests
+record the replacement provenance and new file integrity. A passing consistency check
+does not resolve licensing clearance or constitute release/tenant acceptance.
+
+Latest existing checks: 4 control-pack tests, 37 transport tests, 12 Capsule tests
+and all 60 Centre tests passed (113 total). The strict suite verifier reports all
+610 indexed files intact, and runtime file hashes, byte counts and aggregate digest
+match. No tests were removed or weakened, and no tenant calls were made.
+
 ## Historical provenance and source candidates
 
 Archive paths below are relative to `/home/runner/work/Folio_Commissioned/Folio_Commissioned/`. Hashes and entry counts were rechecked against the unchanged [PR #1 inventory](../runtime-remediation-inventory.json).

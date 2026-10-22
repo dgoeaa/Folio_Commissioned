@@ -329,10 +329,10 @@
   "endpointCount": 19,
   "actionCount": 40,
   "fileCount": 218,
-  "totalBytes": 2940125,
+  "totalBytes": 2939946,
   "integrity": {
     "algorithm": "sha256",
-    "filesDigest": "c112e12e90ccfee779fdcfefd0a5fe04a9e37abb442b5df88549f08f644212c0"
+    "filesDigest": "0a04bfb8caf2964201e5509f1db42e53c4dd9e4ac43d1446e2791218845d5174"
   },
   "files": [
     {
@@ -367,8 +367,8 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 991,
-      "sha256": "72b33a5f692541db52df5dd880b53183eec65af943abea251165054cc4c6b5e8"
+      "bytes": 812,
+      "sha256": "9b537c5106d216f6b5739f83599a89b5c242d05741d322f82e1faafb83f82908"
     },
     {
       "path": "acknowledge.html",
@@ -1429,9 +1429,8 @@
   "repositoryReconciliation": {
     "originalManifestSha256": "d959f3c8f04483cdacfee8bc4cff28c0735125c1268b0003a2d2d0a930c8f257",
     "overlay": "PR #1 runtime/core/data-client.js",
-    "missingInputs": [
-      "LICENSE"
-    ],
-    "note": "Original endpoint buildId retained; file integrity updated for the transport overlay. Not a rebuilt or licensed distributable."
+    "missingInputs": [],
+    "note": "Original endpoint buildId retained; source integrity records include the transport overlay and replacement licensing notice.",
+    "licensing": "LICENSE is a replacement no-grant notice, not the original upstream license. Integrity does not establish licensing clearance."
   }
 }

@@ -84,8 +84,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 7720,
-      "sha256": "69bf71195c546ab4011804db35933c3bbb5f43a3a32b87e70d4345c91e0eb075"
+      "bytes": 8132,
+      "sha256": "c1a979f1a94debb0bb79c3260dd465033c62fa572ad9e5054ed131fa5b5b9700"
     },
     {
       "path": "VERSION",
@@ -103,9 +103,489 @@
       "sha256": "d9e146808482413ea77d984b7da8d62a1f1f681003a7b0fea8ed2b3880d66947"
     },
     {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/ENDPOINT_REGISTER.md",
+      "bytes": 28336,
+      "sha256": "83db31a7b211b485c6629f40eaebe9527eec302939e45dfb3c26e525d0bcf1c1"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/README.md",
+      "bytes": 23251,
+      "sha256": "7780d6872cd4412710b0fa7df4d42e4f9ce5c1ee04f7519c5469eedf5d9e5241"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/brand.css",
+      "bytes": 64860,
+      "sha256": "cee4621e57970280a70e026ccb37541d4ca05cc7a3b6def0dc5592bd82f88a1c"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/brand.js",
+      "bytes": 17057,
+      "sha256": "da0ba68de65cee91d6fe203dcc0a68d781d13b7a47707d52edc345666f5b371f"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/brand/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/console.css",
+      "bytes": 30336,
+      "sha256": "3f298f0b1de34ab8d56c1984befc8c84b7eb1fd39209585cc2604bdc67594f08"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/console.js",
+      "bytes": 47625,
+      "sha256": "654c9bfab06e4e14280febcbf13eaf384ab607a7c71bee15d1354e90700cfe54"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/01-gov-provision-http-flow-registry.md",
+      "bytes": 137297,
+      "sha256": "608188459de1231d9ddd89b958fe266875edf73c8f7e731b52c84148d467ac81"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/02-gov-register-http-flow-truth.md",
+      "bytes": 56920,
+      "sha256": "75540053b948896fce2a184dfc897d746e25a4b01786ae7c137d419b1d4efe2f"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/03-gov-record-http-flow-execution.md",
+      "bytes": 43456,
+      "sha256": "2e4e36537e6dfec903599be97e77f0ec99c3bc20f42764bab8e8fbbcaeb76f46"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/04-gov-audit-http-flow-registry.md",
+      "bytes": 116990,
+      "sha256": "9f7c8721b8405d8634df860fba7e48dfe0d75e7ae2fb6c46a0987aee833dda4b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/05-gov-retire-http-flow.md",
+      "bytes": 71062,
+      "sha256": "ff91785826f8da86ab312a0826c616f70b6e50fc4f82199254b29679cb26dacf"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/06-gov-registry-exception-notification.md",
+      "bytes": 29231,
+      "sha256": "2989117aedb232d62b96ca6cd7d8395b36e74ef4b08512797f05e957f00d3985"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/07-gov-consumer-http-self-registration-template.md",
+      "bytes": 40054,
+      "sha256": "dee781a5564edecabc3db3224fd242e83fca113dd1bfe852688b8f8359259e94"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/08-gov-discover-and-register-http-consumers.md",
+      "bytes": 70421,
+      "sha256": "581deb4dcc51ddaa8f59c6f7ab99f64bc4d838f9383fc6946796b43ed2b6bdf2"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ai-document-processing.md",
+      "bytes": 22938,
+      "sha256": "396caf61b7e867ab04bd4aca90f5d53b4cfd7539aeb9c8fbbf29b755fb84bc5b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/auto-scheduled-sweep.md",
+      "bytes": 208031,
+      "sha256": "34bcffef55eb7ed873a08b9a55da2ced52b2365a50b50eeeb952bc4ea73fb1d1"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/bulk-ops-data-retrieval-http.md",
+      "bytes": 58452,
+      "sha256": "73786ab93c446c17366e37fa71cdbd8af2b65507d0f4275838744de2bc6329bd"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-daily-sweep.md",
+      "bytes": 119299,
+      "sha256": "764606f67784c111d19736c6b7155f31a381d4cf17532484f7df82093a46ef32"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-status-check-endpoint.md",
+      "bytes": 65720,
+      "sha256": "ad870bbace7e98f6159f435b892b21524cccabb9459f047d97dc6ca9a07d2b8a"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-support-endpoint.md",
+      "bytes": 144777,
+      "sha256": "b946919272d2cb088c8492d12194a9f190c7c373a0722033cb65e25a7d0050fe"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-verification-confirmation-endpoint.md",
+      "bytes": 108810,
+      "sha256": "56cce333e21e76cf21246099dc3e64196b5189b366ac9c436f579c5124f15053"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-verification-endpoint.md",
+      "bytes": 130040,
+      "sha256": "7741d3543d2b5dd4c30b25bfd769e2ed54b350e908af3cd56b78aa2e60a288ae"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-portal-writeback-endpoint.md",
+      "bytes": 175267,
+      "sha256": "93fa7adb3518f588f42d41a4d57b921b5e036be439c51f1ce1b77d3b67a0b10d"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-registry-status-notifier.md",
+      "bytes": 201185,
+      "sha256": "fae7336dfcdde59a6c58bb877a863dfc2d4376394c5feb7d46b6e609147c96dd"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-submission-endpoint.md",
+      "bytes": 91393,
+      "sha256": "d3795195b29a1334e21b8fa0d11ae309720e692f23a69fa2b2de87194a950af3"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/cg-upload-endpoint.md",
+      "bytes": 56359,
+      "sha256": "4524a7b003ef8cada08f790b363a7e562fc63944bcda0182227b7e247cd33583"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/dgso-incoming-ai-processing.md",
+      "bytes": 259595,
+      "sha256": "ed85853a7b6b616a86861e2166384ecbe0c2172ee895e31a60b2cc081dc81780"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/folio-failure-watch.md",
+      "bytes": 46287,
+      "sha256": "62e9f59a121e4aecbb19310d7ed192ac72941c7ccbb04b048aaa25ccda05f45c"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/folio-incoming-correspondence-scan-processing-flow.md",
+      "bytes": 399830,
+      "sha256": "c17612ce02ead95fb3118524704d0cc3dbb1b8b7c4db1bc26c77febe56deea65"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-activity-lifecycle-endpoint.md",
+      "bytes": 818800,
+      "sha256": "6373125fa866166dfd076cc68164f7c341aa2967a2a3c5c3bb7744b1726a2485"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-create-task-for-received-email-endpoint.md",
+      "bytes": 306156,
+      "sha256": "49b3e1dddcb19ff5a87aa0ee2eb549b37575c76647d9b6669f15d82ea5e8b8c8"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-dynamic-global-actions-endpoint.md",
+      "bytes": 801527,
+      "sha256": "fbe8c205289217edf72bd0f4631f812bbabc09e3a634110ba47ac609816382f7"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-fetch-all-bootstrap.md",
+      "bytes": 72759,
+      "sha256": "7fe6089b287032c06eb1050007c1bef9a8da0a8e931b6453e25fee05c1a577b6"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-get-docs-endpoint.md",
+      "bytes": 65192,
+      "sha256": "58d181870006616d1768886d79671819e7bbbee756cd8567ef41a5cc74352b05"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-otp-generate.md",
+      "bytes": 40765,
+      "sha256": "ef91773a4cd94ae7ca6f9d02b40f3a81bb08e0998e4848491590cf6079af9178"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-otp-verify.md",
+      "bytes": 67738,
+      "sha256": "647ebe27049b1e0c478e129a3260c6438f79ce20fc9b74e9a2c331e027153c4e"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-reference-data-endpoint.md",
+      "bytes": 67968,
+      "sha256": "a097d28f314aa0f1297a958eacd9857153135268e591241bfde9d89d3c6dbc47"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-retrieve-email-attachment-endpoint.md",
+      "bytes": 32929,
+      "sha256": "8e4f05a419c6b82957f3660be39f12b1827866461a1c9da19351668925ac921b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-scan-intake.md",
+      "bytes": 86361,
+      "sha256": "3811f6048b9874a5efd3d9892f8125bfe13704b8dbfe436550753c72005d3783"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-send-email.md",
+      "bytes": 74230,
+      "sha256": "59ed20246b89bdde75418957ecd919cc9ed3fd5d61d925d4185d54a94aa020c1"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/ip-user-admin-endpoint.md",
+      "bytes": 178271,
+      "sha256": "a0fb8cb161154bc6c4243302582ab10b4d279f2470276c30aab77ecdcc8065db"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/flows/single-task-assignment.md",
+      "bytes": 164092,
+      "sha256": "422295a32ad2a9ae5c4848fc0526d85091110de0734c60169c6b8cd2b96c3aff"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/index.html",
+      "bytes": 6811,
+      "sha256": "fa7f0f4d102edf56546276be2480778d86e487be2249b9ac02d41133028b2ef5"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/00-identity-header.md",
+      "bytes": 9851,
+      "sha256": "00def7d5569f2613c534a901b26e994c68646e7975e4d8c70115373f3e676146"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/01-claim-registry-reference.md",
+      "bytes": 116288,
+      "sha256": "e11dfa4c8fca0a925b854c5538027e58d094037e9273731605dccbdeb54f7db8"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/02-claim-task-references.md",
+      "bytes": 111049,
+      "sha256": "cf8208c5c18ba5680dcc6bc9a8cc957b68de136b4e96d9058aec7503d63b11d0"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/03-claim-file-reference.md",
+      "bytes": 111132,
+      "sha256": "f018717a0257277bc9beb760d158e6e4f3312e864fa697ac939c8426279bf736"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/04-case-reference.md",
+      "bytes": 22288,
+      "sha256": "d5e36354a8d34aa88be502fd9e4a5229a167b97a5184b7f7fe85564bd0595ed4"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/05-guarded-update.md",
+      "bytes": 17428,
+      "sha256": "bddc56930bb0dbb564e95cc86a43c9b9a621c6d89902baedd51d05988789f129"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/06-void-registry-row.md",
+      "bytes": 5907,
+      "sha256": "f83ffc0caba6a8453639cfee3735af06295fd85938277befe56b67f49654882d"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/07-client-request-hash.md",
+      "bytes": 6439,
+      "sha256": "4d16d3c8195fdcf87050be27536c35e0f3616eaeb4c46b7b452e2b5e013be77f"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/08-resolve-target.md",
+      "bytes": 6754,
+      "sha256": "80632d4206c0804ccff9b8bc52e7d0594e481d5b905ae25315f90de572285990"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/activity-lifecycle-ip-activity-lifecycle-endpoint-b4db02d8-paste.md",
+      "bytes": 152281,
+      "sha256": "c79e1c8a5287625b1d2a42e40ba6787aaa7c66c6d19a787d084e28ddcda22fee"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/ai-doc-analysis-ai-document-processing-fefa43c6-paste.md",
+      "bytes": 16085,
+      "sha256": "22198cf710d22f1bbb16d58677b4fcc438ef02f504ceb3e51f4d39b99c94df8c"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/bulk-assignment-bulk-ops-data-retrieval-http-5aab9e61-paste.md",
+      "bytes": 222100,
+      "sha256": "f1061ded8a9f2ed8af86c1deec59b51e7f20324f9d7c59611d417e7bfeb37147"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/dynamic-actions-ip-dynamic-global-actions-endpoint-31c0aaf0-paste.md",
+      "bytes": 847168,
+      "sha256": "abc3f54198afe66a47b22a14260dec0b243adb00c6cc43c2d374b39846b2eec4"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/email-ip-send-email-df59a69f-paste.md",
+      "bytes": 105994,
+      "sha256": "e892dee2c3b44e22ca1d258fa7cdc6ac7e5201b09a80b91181f6cee056ad4ece"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/email-related-task-ip-create-task-for-received-email-endpoint-ab1a3555-paste.md",
+      "bytes": 245477,
+      "sha256": "d4e385919f49a8e95c424daf0505b4e2dbfabc525b2445cd67bebf2b8354bace"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/fetch-all-ip-fetch-all-bootstrap-b79e6707-paste.md",
+      "bytes": 129782,
+      "sha256": "f01ae6103711c2e5e9e69895ca65bf63928164ff6430393bb534c8a47383cf35"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/fetch-email-attachments-ip-retrieve-email-attachment-endpoint-5bc87cf3-paste.md",
+      "bytes": 39421,
+      "sha256": "038f443e25e108efe515890913515e4b45f7f19e9a2da97839f74e0f7ff208e2"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/get-docs-ip-get-docs-endpoint-28f6e62a-paste.md",
+      "bytes": 66083,
+      "sha256": "c188862bb450a9ae1fb93d39ac6489405d40fda04f74cf473438859197b1afdb"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-auto-scheduled-sweep-8c19b45c-paste.md",
+      "bytes": 207294,
+      "sha256": "3f42db616e30f6eb18f3784a7457c3143ef619fd4ed82f86ca729b8ade65fb7d"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-cg-portal-daily-sweep-f12aec6d-paste.md",
+      "bytes": 176429,
+      "sha256": "3263f288ace4355b2f350f971a3c87499b2d7df9e79e44dd5b468f5a505eaf15"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-cg-registry-status-notifier-8ebf6001-paste.md",
+      "bytes": 262622,
+      "sha256": "4d34fa79672530153467c78ecf5fb54291020a8b4bc586f955f75245509c4e1d"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-folio-failure-watch-c38bfeaa-paste.md",
+      "bytes": 47944,
+      "sha256": "aba81b012a65af1bca23285bba4a9016fd84620ecbe79c85da598131581e84b2"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-folio-incoming-correspondence-scan-processing-flow-197527c8-paste.md",
+      "bytes": 375823,
+      "sha256": "e921a390eb964b2bdf94f6328105db8659ea00bd50b9f0e53a59bcc70537897f"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-id-phase5-keys-not-captured-paste.md",
+      "bytes": 150327,
+      "sha256": "2f47d063519a318e6ab57d8ace119462a69441263af57ff334f51ada6e44c2db"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/nokey-id-phase5-survey-not-captured-paste.md",
+      "bytes": 168673,
+      "sha256": "7462fca660ad7ed1babfb25f09f33c043c938f43a1f442c57d7012a92287ea34"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/otp-generate-ip-otp-generate-e5632336-paste.md",
+      "bytes": 43252,
+      "sha256": "adca92f30c56ba8231df1a36c8ea3572d96a3f7af970e8490c7228a49dee3c2b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/otp-verify-ip-otp-verify-4dbe6dde-paste.md",
+      "bytes": 68193,
+      "sha256": "8b3d47b96b2d24fc456bc161e806d3283e5834508eb0821c512a0833f37ecd28"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/reference-data-ip-reference-data-endpoint-9a4dea8e-paste.md",
+      "bytes": 72186,
+      "sha256": "254cfccb203685e05868abbf9d3d5a7cd87ccbc289c22dc28e34c648c73f3322"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scan-intake-ip-scan-intake-5504d7f9-paste.md",
+      "bytes": 363135,
+      "sha256": "cd85db9169754928f7323a2632f13afb45b9803184a691d55980f6bb835c62ba"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-endpoint-values-delivery.md",
+      "bytes": 36223,
+      "sha256": "53c271121fc0451cb3d4af57513e0d8a5fd3e4247e3be549575014011f31700c"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase1-columns-flow-paste.md",
+      "bytes": 66009,
+      "sha256": "021a27be921cde21d3886e90e0a8307f4a3f5eb071ed010c1be712c29a8d045e"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase1-complete-flow-paste.md",
+      "bytes": 115975,
+      "sha256": "14ccd911cd805ec31254caf4b90189ca9d47420151a6a98b544fabdd0bbb4c00"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase1-finish-flow-paste.md",
+      "bytes": 26381,
+      "sha256": "4e60af5a6cb151c702ed6c3ec51429affc22147166d6bfcd30a59a02b1e4c5d8"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase1-gtq-indexes-flow-paste.md",
+      "bytes": 23851,
+      "sha256": "c42e9da104bcb7c1c7f6f4c3ef7be39f9b28692cd6438b6d1cb73c34513b0430"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase1-listcheck-flow-paste.md",
+      "bytes": 39319,
+      "sha256": "f13f58fa5c5278c8d514734adaaa97823c7cad1a1a462871da6647cf80397acb"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/scope-phase2-claimtest-flow-paste.md",
+      "bytes": 123092,
+      "sha256": "e5ff3e16db9b823c5de7c083f36bf5c35a35729312ecc877a482a3185970c48b"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/single-assignment-single-task-assignment-3caf9458-paste.md",
+      "bytes": 231960,
+      "sha256": "4f76fc0efacd06b87dc5c74edd63389185655d74924a50afc8b421ca88319094"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/status-cg-portal-status-check-endpoint-60042a2e-paste.md",
+      "bytes": 103632,
+      "sha256": "2f49ebef911014f1d80176693e7eb49c911bafb691f09a95a2d062625e9ca447"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/submission-cg-submission-endpoint-de9ef13b-paste.md",
+      "bytes": 394778,
+      "sha256": "f3d65df0386e8233291f95a6ad84df043b9504452da666899b6c419893474c87"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/support-cg-portal-support-endpoint-4873c936-paste.md",
+      "bytes": 186790,
+      "sha256": "9d0a2bfcaec2b225f0b7d19e1698ecbc02aa2611e651c7ea27bf88af6e62b275"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/upload-cg-upload-endpoint-df82e331-paste.md",
+      "bytes": 115855,
+      "sha256": "6ca7760e1bb497974cbf628ad9f3f1508aeaedc55e0ce94cc907f059ef2cc624"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/user-admin-ip-user-admin-endpoint-e3e5c825-paste.md",
+      "bytes": 168655,
+      "sha256": "2234698f21ef72c7bd9a74f7fb32e5e3439a466abb555efb8f772c9e1fdd94ca"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/verify-cg-portal-verification-endpoint-ba47f79b-paste.md",
+      "bytes": 142723,
+      "sha256": "a2fce0301520eec3ee0873e115de0212b49af4b0883fbbd6319d35e5a706383f"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/verify-confirm-cg-portal-verification-confirmation-endpoint-f96e3448-paste.md",
+      "bytes": 117588,
+      "sha256": "786d18e2c28d34bfbe2e750a424297a80d3b83506c437711298c7308fbb4f112"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/packages/writeback-cg-portal-writeback-endpoint-bde13d27-paste.md",
+      "bytes": 256197,
+      "sha256": "b3c46eb70c4409814b07a9c221cf2a5a0a278861ee279625d1cd16665238da7d"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/provisioning-detail.js",
+      "bytes": 9082986,
+      "sha256": "61c1f3aca3d1c58260496e34a8c437d19f88d4ed37c7312560e117a93a01798e"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/provisioning/provisioning-index.js",
+      "bytes": 321414,
+      "sha256": "1e7066f061b9c85e0596fb921933739c6ee571933d83297025d6e0d9b14edc1c"
+    },
+    {
       "path": "docs/folio-Master-Flows-and-Endpoints/registers/endpoint-workflow-ids.json",
       "bytes": 16526,
       "sha256": "d5b634732eb3525d6f7fa6f4187bf0f0131e6aff5326053c58e5104c5b1096cf"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/registers/flow-adoption.json",
+      "bytes": 67833,
+      "sha256": "82a6eb04a1b85d2f040a9cc18fc55a758a444b26524512f83580ac1284512f05"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/registers/flow-catalogue.json",
+      "bytes": 12596,
+      "sha256": "eb57acb7776b1e45c6f8a6c5c8f831cdf1c9eb47e2b7681860a5987ef6df13f8"
     },
     {
       "path": "docs/folio-Master-Flows-and-Endpoints/registers/flow-identity-crosswalk.json",
@@ -1239,13 +1719,13 @@
     },
     {
       "path": "runtime/LICENSE",
-      "bytes": 991,
-      "sha256": "72b33a5f692541db52df5dd880b53183eec65af943abea251165054cc4c6b5e8"
+      "bytes": 812,
+      "sha256": "9b537c5106d216f6b5739f83599a89b5c242d05741d322f82e1faafb83f82908"
     },
     {
       "path": "runtime/PACKAGE_MANIFEST.json",
-      "bytes": 44235,
-      "sha256": "61827415718f8ab9545c43ef256b3c4ae062d82dae1ce5b17082b49ee9459b81"
+      "bytes": 44359,
+      "sha256": "4780ee748e4c4a3438d8f4919ede35f67bc8fdb83168949802ac55a5a54c9c32"
     },
     {
       "path": "runtime/acknowledge.html",
@@ -2409,8 +2889,8 @@
     },
     {
       "path": "tools/admin-centre/server.py",
-      "bytes": 179796,
-      "sha256": "96ab9da2070db8059be8f023a48bb796cb15c2d8182c2944c0d33e1db912b58a"
+      "bytes": 179940,
+      "sha256": "4c76c2edac5fc1ee303d583cf92aa76deb560f4f4e4b8535aac610b47e9d30d6"
     },
     {
       "path": "tools/admin-centre/static/app.css",
@@ -2656,7 +3136,7 @@
   "repositoryReconciliation": {
     "sourceCommit": "462a6c8e5e6477f1eeab07471b0dd6b0f1c99cfc",
     "originalManifestSha256": "544fe126de69499b3290bfb82d9b61be5a49f6679cc6f0cd507099a8b643796e",
-    "status": "incomplete-license",
+    "status": "reconciled-source-snapshot",
     "changedFiles": [
       "README.md",
       "folio",
@@ -2665,9 +3145,10 @@
     ],
     "expandedMailerMembers": 70,
     "restoredMailerPackages": "14 original ZIPs recovered from the previously committed supplementary archive; original hashes retained",
-    "missingInputs": [
-      "runtime/LICENSE"
-    ],
-    "note": "Repository source reconciliation, not output of the original packaging pipeline. The original builtBy identifies the upstream package builder. The strict verifier must fail until the original license input is resolved."
+    "missingInputs": [],
+    "note": "Repository source reconciliation, not output of the original packaging pipeline. Original builtBy identifies the upstream builder. File consistency is not tenant, legal or deployment acceptance.",
+    "licensing": "Original runtime/LICENSE unavailable; replaced with explicit no-grant notice, not licensing clearance.",
+    "restoredAdminResources": "Flow catalogue, adoption register and complete provisioning console copied unchanged from repository root.",
+    "adminModuleLayout": "Existing allowlist accepts the packaged runtime/ module location."
   }
 }

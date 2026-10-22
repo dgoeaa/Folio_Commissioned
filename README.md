@@ -24,9 +24,10 @@ it contains Workspace, Portal, Mailer and administration/tooling source.
 Private workflow approval, containment and rotation of the stale disclosed signatures
 are **owner-confirmed**, not independently tenant-verified. Historical exposure and
 readiness statements below do not override those confirmations or establish current
-deployment state. The suite has its own launchers and integrity checker, but release
-verification still fails for the missing original `runtime/LICENSE`; no license text
-or release approval has been invented.
+deployment state. The suite has its own launchers and integrity checker. The missing
+original `runtime/LICENSE` has been replaced with an explicit no-grant licensing
+notice, not an invented upstream license. Integrity verification does not establish
+licensing clearance or deployment approval.
 
 ## Imported documentation index
 
