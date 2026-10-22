@@ -1,0 +1,13 @@
+{
+  "schema": "folio-build-id/v1",
+  "package": "NITDA-Folio-Administrator-Toolkit",
+  "label": "NITDA-Folio-Administrator-Toolkit-v2026.10.21-2-31e80475",
+  "version": "2026.10.21-2",
+  "commit": "31e804758d7244d3178571b3ee6d014ba2dba98f",
+  "builtUtc": "2026-10-21T03:39:01.144Z",
+  "registerVersion": "1.12.90",
+  "ships": {
+    "workspace": "FOLIO-WORKSPACE-v2026.10.21-2-upload-to-site-root.zip",
+    "portal": "FOLIO-PORTAL-v2026.10.21-2-upload-to-portal-site-root.zip"
+  }
+}

@@ -1,0 +1,2306 @@
+{
+  "name": "NITDA Folio — platform suite",
+  "package": "folio-platform-suite",
+  "version": "1.0.2",
+  "builtBy": "scripts/package-platform-release.mjs",
+  "posture": "demo",
+  "note": "No endpoint is wired and no signed trigger URL is included. Every platform starts; the Workspace, Portal and Mailer transmit nothing until they are configured. See README.md.",
+  "start": "node scripts/run-platform.mjs --all",
+  "platforms": [
+    {
+      "id": "runtime",
+      "name": "Folio Workspace",
+      "group": "staff",
+      "port": 8080,
+      "needs": "Node 22+",
+      "entry": "runtime/index.html",
+      "start": "node scripts/run-platform.mjs runtime"
+    },
+    {
+      "id": "portal",
+      "name": "NITDA Document Portal",
+      "group": "public",
+      "port": 8081,
+      "needs": "Node 22+",
+      "entry": "document-portal/index.html",
+      "start": "node scripts/run-platform.mjs portal"
+    },
+    {
+      "id": "console",
+      "name": "Folio Estate Console",
+      "group": "staff",
+      "port": 8082,
+      "needs": "Node 22+",
+      "entry": "tools/admin-console.html",
+      "start": "node scripts/run-platform.mjs console"
+    },
+    {
+      "id": "mailer",
+      "name": "DGO Correspondence Mailer",
+      "group": "staff",
+      "port": 8083,
+      "needs": "Node 22+",
+      "entry": "mailer/web/index.html",
+      "start": "node scripts/run-platform.mjs mailer",
+      "version": "2.1.5"
+    },
+    {
+      "id": "workbench",
+      "name": "Folio Flow Workbench",
+      "group": "control",
+      "port": 8765,
+      "needs": "Python 3.7+",
+      "entry": "tools/flow-workbench/index.html",
+      "start": "node scripts/run-platform.mjs workbench"
+    },
+    {
+      "id": "capsule",
+      "name": "Folio Vault",
+      "group": "control",
+      "port": 8787,
+      "needs": "Python 3.11+",
+      "entry": "tools/flow-capsule/app/flowcapsule.py",
+      "start": "node scripts/run-platform.mjs capsule"
+    },
+    {
+      "id": "centre",
+      "name": "Folio Central Administration Centre",
+      "group": "control",
+      "port": 8844,
+      "needs": "Python 3.9+",
+      "entry": "tools/admin-centre/server.py",
+      "start": "node scripts/run-platform.mjs centre"
+    },
+    {
+      "id": "hub",
+      "name": "Platform Hub",
+      "group": "staff",
+      "port": 8079,
+      "needs": "Node 22+",
+      "entry": "tools/hub/index.html",
+      "start": "node scripts/run-platform.mjs hub"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6986,
+      "sha256": "0cfe14633cbae6cd5c76b9806a10ce74f509888cfd470d9f143fff224967bb81"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "9fd28642d3aca191e5c7fc2383cfd6fabb2aac8743f029dabb8989ac584e31bc"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json",
+      "bytes": 635537,
+      "sha256": "317a0e222484413fb07355ac3b3c57e18dec8bca2ae6209970b434ed6bbf9606"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/packages/harvester/Scope_Endpoint_Values_Delivery.designer-paste.json",
+      "bytes": 28559,
+      "sha256": "d9e146808482413ea77d984b7da8d62a1f1f681003a7b0fea8ed2b3880d66947"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/registers/endpoint-workflow-ids.json",
+      "bytes": 16526,
+      "sha256": "d5b634732eb3525d6f7fa6f4187bf0f0131e6aff5326053c58e5104c5b1096cf"
+    },
+    {
+      "path": "docs/folio-Master-Flows-and-Endpoints/registers/flow-identity-crosswalk.json",
+      "bytes": 45275,
+      "sha256": "c94bc157f7796a25d1a01e2590821e35f4d73b6fda5d28c6b3217c9fa0ea5d9d"
+    },
+    {
+      "path": "document-portal/.htaccess",
+      "bytes": 2468,
+      "sha256": "45e68e72f045c717e5789637e9cc5b63bcaac13368388a20641fd0484ba3254e"
+    },
+    {
+      "path": "document-portal/404.html",
+      "bytes": 5599,
+      "sha256": "dd86279bb760433e41338434913eef467bc633b42483471bd2c09ee61d9b3002"
+    },
+    {
+      "path": "document-portal/DEPLOY.md",
+      "bytes": 3650,
+      "sha256": "88cce7c60484fcde4a2c1f951010e3d4e62d7373e2391ac8f4a7c8bf178519aa"
+    },
+    {
+      "path": "document-portal/ENDPOINT-CHECK-STANDALONE.html",
+      "bytes": 58137,
+      "sha256": "bafefa7e2a2c0ed593d92455f8c73db56ccda2d3f28caef128f08afc8aa5a279"
+    },
+    {
+      "path": "document-portal/ENDPOINT-CHECK.html",
+      "bytes": 53135,
+      "sha256": "6df9411c11f2d962a4c93a116d76fbc8af0246ea5b566f45f03bdef78c676960"
+    },
+    {
+      "path": "document-portal/ENDPOINT_PROVISIONING.md",
+      "bytes": 3649,
+      "sha256": "bceed2bf43e0d5be257e226240518867154ca75fd89d9b2e58aabd634617a0d9"
+    },
+    {
+      "path": "document-portal/FLOW_CATALOGUE.json",
+      "bytes": 3396,
+      "sha256": "cb8472324d8e1d0a96c20a66dffd42fff032a2c806ea707556209adb2b45e2b2"
+    },
+    {
+      "path": "document-portal/PACKAGE_MANIFEST.json",
+      "bytes": 11577,
+      "sha256": "32aea8fd604853b9c5aee60207b5205ed71900cd489c05b862fa595b4910db84"
+    },
+    {
+      "path": "document-portal/README.md",
+      "bytes": 16413,
+      "sha256": "eb4e3a135b4aa6fdd28d8923552001846a16ba3817920f8090aed7dc0ad59fb5"
+    },
+    {
+      "path": "document-portal/config.local.js",
+      "bytes": 1209,
+      "sha256": "9f1cca89eec11ee4ff1feec9e40cb981dc4a8ae0ec97a83c69097afab85eb354"
+    },
+    {
+      "path": "document-portal/ds/colors_and_type.css",
+      "bytes": 11121,
+      "sha256": "3f186ac5c96212ce00ffafa6c0a9ba7ba653bd0a08f1394632b9d50c8975fa56"
+    },
+    {
+      "path": "document-portal/ds/ds.css",
+      "bytes": 849,
+      "sha256": "0ba79ee1dd5091aa128271b6a5e9b908af50476f6fb41c186a2772d22c613f7d"
+    },
+    {
+      "path": "document-portal/ds/fonts/CascadiaMono-Regular.woff2",
+      "bytes": 143932,
+      "sha256": "abbf67cceb200508c9590ac9b75b37dd2211f58ea56279f1fa6ec87265f9d713"
+    },
+    {
+      "path": "document-portal/ds/icons/sprite.svg",
+      "bytes": 8017,
+      "sha256": "becd80d4fb0a9a94cf11997c7eb538ae082d37e0be143c8d5a1b47a67b838a22"
+    },
+    {
+      "path": "document-portal/ds/logo/nitda-lockup-white.png",
+      "bytes": 12383,
+      "sha256": "f12cd26b0dd666dc5f03131dbbd44e3fb51d76854a32faabef46152ae1a60603"
+    },
+    {
+      "path": "document-portal/ds/logo/nitda-lockup.png",
+      "bytes": 112180,
+      "sha256": "4eceb1252b46dc9f2b25a5c3b6e2d8dfb85146a524f37726a7749be1f59ee9fa"
+    },
+    {
+      "path": "document-portal/ds/logo/nitda-symbol.png",
+      "bytes": 56669,
+      "sha256": "46652723650422eb3d0d6fd548ff3bdc3bb68f5241a532a82bd3dc4274488c87"
+    },
+    {
+      "path": "document-portal/ds/styles/base.css",
+      "bytes": 5971,
+      "sha256": "1052b860fe27b30e1223c4fbe58121515dd683a6a9e50731efe0432018c3020e"
+    },
+    {
+      "path": "document-portal/ds/styles/components.css",
+      "bytes": 39669,
+      "sha256": "cceca1de8d78bb26ad8b744d1e98036eba421cb8c021b3269e5278d67aa29cee"
+    },
+    {
+      "path": "document-portal/ds/styles/components/command-palette.css",
+      "bytes": 11685,
+      "sha256": "ff6cddd59c2ed09f16ea6a5fb56d064ebf037bded89085d5513f16ffebe57179"
+    },
+    {
+      "path": "document-portal/ds/styles/layout.css",
+      "bytes": 3252,
+      "sha256": "109ac37d73c1e88ee5ce7de51f02ae1e1b81fb2c063b96f677d11dd069694c38"
+    },
+    {
+      "path": "document-portal/ds/styles/reset.css",
+      "bytes": 1152,
+      "sha256": "4378b202f44bc05f69abbff5cc20cf6f3f1b18551f6c0df5fdcd49f35dafae49"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.breakpoint.css",
+      "bytes": 1899,
+      "sha256": "00c4e6e5edd4ba36e77103dc1b655ccdb9b1fcd01707cb0b5f732e24c0aed10d"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.component.css",
+      "bytes": 5786,
+      "sha256": "d94ae4a79888097afb71a4ffe5433a115b04b8d720ef0ecbeea76823fa327d35"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.density.css",
+      "bytes": 1285,
+      "sha256": "9fc3ded4c2802878c7292f08233a98e54def2c43ef016c3873b841bb1dfd7d8a"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.platforms.css",
+      "bytes": 2300,
+      "sha256": "ebfb742676766b97f8e706b69e0be693e80ff511a43fe9bd4b4d382831761216"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.portal.css",
+      "bytes": 821,
+      "sha256": "c340b223cb9fa2c3554b16aa6645419b397d933047128b16593880f36714e146"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.primitive.css",
+      "bytes": 8820,
+      "sha256": "cfa022357a70c13ba0d06e0b63102448adf400d336539284893da8e0f8954d06"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.semantic.css",
+      "bytes": 7473,
+      "sha256": "8bd9ede6aaa63bfbfb7a47c72610ab2db745fbeff80f908e33334bc63e96e4c0"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.theme-dark.css",
+      "bytes": 4237,
+      "sha256": "b151d84a2f618d94482da2637fc72d1dafa27bbb4261fd9e8d58d8de5038c668"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.theme-hc.css",
+      "bytes": 3159,
+      "sha256": "b026526bc91836efee2a4ba85c75633d25f5aca18822930616e0fb64cc6d6f45"
+    },
+    {
+      "path": "document-portal/ds/tokens/tokens.theme-light.css",
+      "bytes": 729,
+      "sha256": "1f74dda73d341c82ce837fae7e2048b80310fb97aa310ce675c1cbef6a9998c3"
+    },
+    {
+      "path": "document-portal/email-assets/dgo-logo-whiteout.png",
+      "bytes": 24963,
+      "sha256": "46af6abd736869c30c95329bbf1e5e9c6123fa2f823ca222bf59fbb7a3db4448"
+    },
+    {
+      "path": "document-portal/email-assets/nitda-lockup-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "document-portal/favicon.svg",
+      "bytes": 262,
+      "sha256": "7e6837b875ffc584e027cfdb0fe6aff320bb8fa9708f87764ee6c52e465db107"
+    },
+    {
+      "path": "document-portal/index.html",
+      "bytes": 14061,
+      "sha256": "a92af4b213b13d577e3403bb6a8c89e6b1276099cdcb8f5abaaf5dc0fcd22585"
+    },
+    {
+      "path": "document-portal/js/core.js",
+      "bytes": 54825,
+      "sha256": "d8f084890f683c2226ebf84b9bf968d1cd8dd4d60319995d005c63503949a023"
+    },
+    {
+      "path": "document-portal/js/data.js",
+      "bytes": 25325,
+      "sha256": "3e177be94c5e730c97c2eccf74f6e29cd324f2f038929eb9924761442fd8af40"
+    },
+    {
+      "path": "document-portal/js/home.js",
+      "bytes": 10409,
+      "sha256": "4afccee10c6e52348eaf920e6715dfd789477e01f0c84835573d8f21fc3e9c78"
+    },
+    {
+      "path": "document-portal/js/icons.js",
+      "bytes": 14113,
+      "sha256": "51f308c33c451a2c33c53de35dd4aa1a71b65ab8843e634131c7cfca976def52"
+    },
+    {
+      "path": "document-portal/js/submit.js",
+      "bytes": 39503,
+      "sha256": "f86f0113eb21c0c9420f1087847741f3e6462acea39acc9b2cdc4c583df4807d"
+    },
+    {
+      "path": "document-portal/js/support.js",
+      "bytes": 17986,
+      "sha256": "d95b1b771cebdaae5fb4bceb34ea7a8a90cf9bbfaec3c8d5e84a2e5aea6518ab"
+    },
+    {
+      "path": "document-portal/js/track.js",
+      "bytes": 38835,
+      "sha256": "8112a5b3130ccdb012901bcd9a3c4820332125affdab8097d2a3869f9e59468a"
+    },
+    {
+      "path": "document-portal/manifest.webmanifest",
+      "bytes": 733,
+      "sha256": "03f7968ad51cf890bfd870f3d3d676fb20517ca395825ccbf26e7bc7e65f4f79"
+    },
+    {
+      "path": "document-portal/portal.css",
+      "bytes": 30695,
+      "sha256": "a0baf9114bfb093f2076c014ef167127e8ada6d15951fc60136ea0d06791264a"
+    },
+    {
+      "path": "document-portal/privacy.html",
+      "bytes": 11645,
+      "sha256": "1f0240499b01a45ed505266d3ef3b5bb23e5bea9445079e8e1b5bad57bc14f98"
+    },
+    {
+      "path": "document-portal/robots.txt",
+      "bytes": 73,
+      "sha256": "f9482637c0d71309781e7679be5cfa37656aa7fdd0c0e37716a17e4bfd899141"
+    },
+    {
+      "path": "document-portal/sitemap.xml",
+      "bytes": 702,
+      "sha256": "50f426947f57c7ee6e2af22303c7f7e344028eb606bcacb563540df8e2dfe588"
+    },
+    {
+      "path": "document-portal/submit.html",
+      "bytes": 15352,
+      "sha256": "4a8f15acc5d5569dc6ea3a90e01cf05404ea5261337e62264aefa549253239de"
+    },
+    {
+      "path": "document-portal/support.html",
+      "bytes": 13862,
+      "sha256": "8bc66d0d29842634b08e0c4d5e3f45ed23af356a5ca340b733f6b459a32ae916"
+    },
+    {
+      "path": "document-portal/sw.js",
+      "bytes": 4484,
+      "sha256": "b415f787e768a2619d04fb043c7e154fa78ca342906261b547fb7a4cf7cf84da"
+    },
+    {
+      "path": "document-portal/track.html",
+      "bytes": 8646,
+      "sha256": "9c21924646deccca777c0b8a46138907efb298b17dcc2896acc6ea8c2411c628"
+    },
+    {
+      "path": "folio",
+      "bytes": 256,
+      "sha256": "ce8743c7e151d5a2ff4090e2b34bc8ab97f35374a4693142c554c7d8fe79ed31"
+    },
+    {
+      "path": "folio.cmd",
+      "bytes": 226,
+      "sha256": "c9e461326013a99e6f9f67c338660012028e338ea0f6a3a36ca234e1e1f0555a"
+    },
+    {
+      "path": "mailer/GO-LIVE.html",
+      "bytes": 258936,
+      "sha256": "9351589a1392f8e9db38da74e1f7b70c687cad8d123bc4915e0e657c2eb5003d"
+    },
+    {
+      "path": "mailer/PACKAGE_MANIFEST.json",
+      "bytes": 17872,
+      "sha256": "810e542a11137b45a2095123bf1338925b75e3524562ee87ad5bf9bb5fda5602"
+    },
+    {
+      "path": "mailer/README.md",
+      "bytes": 5906,
+      "sha256": "370ae855e57cefd5e3861dff0950c2d6d3c8b5a104b93f6ca59ee857266b4dfb"
+    },
+    {
+      "path": "mailer/VERSION",
+      "bytes": 6,
+      "sha256": "e533f272c7ca6274814c1d5858bef6186bd7b6ac3e8e0f676ba1a087e5d08a0f"
+    },
+    {
+      "path": "mailer/data/directory.csv",
+      "bytes": 5208,
+      "sha256": "6daafac6c71ff95f36ebca8ae78085af5c39e23dccb8b129b21ccf69c627a0fc"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_AUTH.definition.json",
+      "bytes": 94974,
+      "sha256": "97c41e1c44ee4a5bee73742fdcb374462c0731185d364cdc36fa09f160fe20ef"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_DATA.definition.json",
+      "bytes": 107291,
+      "sha256": "ffbd0eb4d19b7e98ea835946a3f6891995c8ec689a5732e0406e459ffa31bc3c"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_DIRECTORY.definition.json",
+      "bytes": 56917,
+      "sha256": "0272f7d7b254a5fad21d07a6efbb1ea05f8bcc895306294eea2d5f5e9d2cf980"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_LOG.definition.json",
+      "bytes": 40327,
+      "sha256": "433f690afd6cb85c806a8ad9cbdefa08920e2e1bbe33207b5656a7988abb2536"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_PROVISION.definition.json",
+      "bytes": 68139,
+      "sha256": "bb5266d2b1f07d0692a212d6a20514f69f22f8e768faec009a532780eb2974cc"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_SEND.definition.json",
+      "bytes": 67589,
+      "sha256": "98da9f3c1f22089c3f4eed9bdea4a44947293829526b2d27e6da47d487c18b7c"
+    },
+    {
+      "path": "mailer/flows/definitions/DGO_MAIL_TEMPLATES.definition.json",
+      "bytes": 55414,
+      "sha256": "bc658f388c8edec3dc3fa3dc2849be1adfe2656fd66a4ac8d3235b2e946013eb"
+    },
+    {
+      "path": "mailer/flows/flows.catalogue.json",
+      "bytes": 5251,
+      "sha256": "51e552ac4707eeeb8643d14a1103554886b38c80754837b0f43cc3e68ef7c098"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH.zip",
+      "bytes": 8428,
+      "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA.zip",
+      "bytes": 7731,
+      "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY.zip",
+      "bytes": 6302,
+      "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG.zip",
+      "bytes": 5891,
+      "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION.zip",
+      "bytes": 7983,
+      "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND.zip",
+      "bytes": 7808,
+      "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES.zip",
+      "bytes": 6097,
+      "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "mailer/setup.cmd",
+      "bytes": 630,
+      "sha256": "28d6f911c4abaf93497bae9f46da5a8df4eaa8e9880f855386314f50ccd837f7"
+    },
+    {
+      "path": "mailer/setup.sh",
+      "bytes": 570,
+      "sha256": "f9a5cb1f405746c217d6343365cf027a2a2ad2cf77e91887b98b08f850737b4b"
+    },
+    {
+      "path": "mailer/start-demo.cmd",
+      "bytes": 169,
+      "sha256": "1a5f5398e6bfaa77dda3517d56f3e832f8765112430c60d92fe23f90cf122c75"
+    },
+    {
+      "path": "mailer/start-demo.sh",
+      "bytes": 280,
+      "sha256": "1461d0febc4e7f673dcc56e536fcc5e1c23d508a2ce803932f95ca97ad4f2007"
+    },
+    {
+      "path": "mailer/start.cmd",
+      "bytes": 162,
+      "sha256": "5bc5d37eca6d70df6f94942e7e3dce300bb67c408ee07dd11a4841dfaae07391"
+    },
+    {
+      "path": "mailer/start.sh",
+      "bytes": 235,
+      "sha256": "2ba265944f3bc498a4095849c18e3fe3fdf670c4036907f1d6c691c2e11eb73f"
+    },
+    {
+      "path": "mailer/tools/bundle.mjs",
+      "bytes": 6420,
+      "sha256": "5443cd0a870abb75606bc73acab44e844325c9129daec780450dbc8b3e293aa9"
+    },
+    {
+      "path": "mailer/tools/flow-package.mjs",
+      "bytes": 3811,
+      "sha256": "81fe09c8d427c4316a08169052b13dc3967c570f09cef9364909cd34786ef119"
+    },
+    {
+      "path": "mailer/tools/mock-flows.mjs",
+      "bytes": 25476,
+      "sha256": "8bdf0157926e7b165d5e13ce509afab45ebf5dc6f064d04e4194d273585550b0"
+    },
+    {
+      "path": "mailer/tools/serve.mjs",
+      "bytes": 8780,
+      "sha256": "0832d031aa38411002a28a8bc1f9f165a052d8fd2b8435fd1817cb071f2e1130"
+    },
+    {
+      "path": "mailer/tools/setup.mjs",
+      "bytes": 59654,
+      "sha256": "14d7a8d42ab094e8481dd6fe83b49a774a3e11c2797d126dd9e9f4484632094a"
+    },
+    {
+      "path": "mailer/tools/verify-package.mjs",
+      "bytes": 1290,
+      "sha256": "5d9f6344258ff340a48d64983bef62345ed226baad8c535130712c706d9b1d39"
+    },
+    {
+      "path": "mailer/tools/zip-writer.mjs",
+      "bytes": 3819,
+      "sha256": "37ab4efc98ab682ba5aaf4dbe4ee6f8d9238ec7c187e966d8a238d4e2835da26"
+    },
+    {
+      "path": "mailer/web/README.md",
+      "bytes": 15324,
+      "sha256": "0f316119bb41940cac65829d79c4702578a9b8f0c9c86e299974abec23f1765a"
+    },
+    {
+      "path": "mailer/web/VERSION",
+      "bytes": 6,
+      "sha256": "e533f272c7ca6274814c1d5858bef6186bd7b6ac3e8e0f676ba1a087e5d08a0f"
+    },
+    {
+      "path": "mailer/web/brand/brand.css",
+      "bytes": 64860,
+      "sha256": "cee4621e57970280a70e026ccb37541d4ca05cc7a3b6def0dc5592bd82f88a1c"
+    },
+    {
+      "path": "mailer/web/brand/brand.js",
+      "bytes": 17057,
+      "sha256": "da0ba68de65cee91d6fe203dcc0a68d781d13b7a47707d52edc345666f5b371f"
+    },
+    {
+      "path": "mailer/web/brand/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "mailer/web/brand/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "mailer/web/brand/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "mailer/web/brand/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "mailer/web/config.js",
+      "bytes": 1571,
+      "sha256": "e8a3518181f9e3c0c25219c0bc660ccd33908e5663b536b621d5b00ac5e7467a"
+    },
+    {
+      "path": "mailer/web/config.local.example.js",
+      "bytes": 1068,
+      "sha256": "076ad3ab9cd51f18888ddbaf136496b2d5c28d9f18e204e2b750873cbf1b50fe"
+    },
+    {
+      "path": "mailer/web/css/mailer.css",
+      "bytes": 40549,
+      "sha256": "fa812df8d0ba6f6410dbe5193508daecaf2bc79005804ae2e7cbca65ee48020f"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_AUTH.definition.json",
+      "bytes": 94974,
+      "sha256": "97c41e1c44ee4a5bee73742fdcb374462c0731185d364cdc36fa09f160fe20ef"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_DATA.definition.json",
+      "bytes": 107291,
+      "sha256": "ffbd0eb4d19b7e98ea835946a3f6891995c8ec689a5732e0406e459ffa31bc3c"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_DIRECTORY.definition.json",
+      "bytes": 56917,
+      "sha256": "0272f7d7b254a5fad21d07a6efbb1ea05f8bcc895306294eea2d5f5e9d2cf980"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_LOG.definition.json",
+      "bytes": 40327,
+      "sha256": "433f690afd6cb85c806a8ad9cbdefa08920e2e1bbe33207b5656a7988abb2536"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_PROVISION.definition.json",
+      "bytes": 68139,
+      "sha256": "bb5266d2b1f07d0692a212d6a20514f69f22f8e768faec009a532780eb2974cc"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_SEND.definition.json",
+      "bytes": 67589,
+      "sha256": "98da9f3c1f22089c3f4eed9bdea4a44947293829526b2d27e6da47d487c18b7c"
+    },
+    {
+      "path": "mailer/web/flows/definitions/DGO_MAIL_TEMPLATES.definition.json",
+      "bytes": 55414,
+      "sha256": "bc658f388c8edec3dc3fa3dc2849be1adfe2656fd66a4ac8d3235b2e946013eb"
+    },
+    {
+      "path": "mailer/web/flows/flows.catalogue.json",
+      "bytes": 5251,
+      "sha256": "51e552ac4707eeeb8643d14a1103554886b38c80754837b0f43cc3e68ef7c098"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH.zip",
+      "bytes": 8428,
+      "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA.zip",
+      "bytes": 7731,
+      "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY.zip",
+      "bytes": 6302,
+      "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG.zip",
+      "bytes": 5891,
+      "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION.zip",
+      "bytes": 7983,
+      "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND.zip",
+      "bytes": 7808,
+      "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES.zip",
+      "bytes": 6097,
+      "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "mailer/web/index.html",
+      "bytes": 2480,
+      "sha256": "c5e58eb3bf473c5051b1082fa8eccd9bc86676f042baa4347cf5bc5f5ed85108"
+    },
+    {
+      "path": "mailer/web/js/api.js",
+      "bytes": 5892,
+      "sha256": "31e188cd12e95949698346fb96172633b2b2741ef228bef0c2a71c7210b2f47a"
+    },
+    {
+      "path": "mailer/web/js/app.js",
+      "bytes": 19106,
+      "sha256": "bd846569e15a45923de98d82abe7207c0d3f29caa06f588c81190f46a5663074"
+    },
+    {
+      "path": "mailer/web/js/campaign.js",
+      "bytes": 14158,
+      "sha256": "a63b6f8c0a0a332bece1497cfa973734124bd3ecfbb09a9a53edd14dfe455987"
+    },
+    {
+      "path": "mailer/web/js/editor.js",
+      "bytes": 5000,
+      "sha256": "5414cc5f8009ab0d84d29f2b26b7cdff90aa748d65311cbb57021ea072290e80"
+    },
+    {
+      "path": "mailer/web/js/export.js",
+      "bytes": 20430,
+      "sha256": "248d8a498eee3562a6288a3461a0ad45d5f4a88289a8536a44ec94abe47413d2"
+    },
+    {
+      "path": "mailer/web/js/letterhead.generated.js",
+      "bytes": 6271,
+      "sha256": "a26581057557db4793dbd2874239f79ad7b63dff83ebf1981a9745965d668b58"
+    },
+    {
+      "path": "mailer/web/js/letterhead.js",
+      "bytes": 5378,
+      "sha256": "457c6f4d7f1f6c1ca6e207d0fb165a91a7c7152563f6e21a211991124dfe54a2"
+    },
+    {
+      "path": "mailer/web/js/letters.js",
+      "bytes": 5959,
+      "sha256": "24182b9952b193147e9a37753e6e356a593ae71a2516386c903862fcb434f8da"
+    },
+    {
+      "path": "mailer/web/js/logcheck.js",
+      "bytes": 1431,
+      "sha256": "d0993621fb1a1762edca2a89fb10e6da7a78a09ef56c5a592909da7cb1370952"
+    },
+    {
+      "path": "mailer/web/js/merge.js",
+      "bytes": 2734,
+      "sha256": "de5683a5e0c7936b04454cad321e2a31b0da7cd22f3d01f2d65803da9ef253ca"
+    },
+    {
+      "path": "mailer/web/js/reports.js",
+      "bytes": 8206,
+      "sha256": "54ffda722695492597ee3fbcc1df8063884e220362f82961bff9bc372eef34e3"
+    },
+    {
+      "path": "mailer/web/js/sanitize.js",
+      "bytes": 4602,
+      "sha256": "660844dfb0aabb9e8d54f4f113bf917fb2acd802831f9d2e509a11119fd01572"
+    },
+    {
+      "path": "mailer/web/js/seed-directory.js",
+      "bytes": 7047,
+      "sha256": "ec5004ca942e85b663f3b98e2a022d4f769e27d511b3f6350643984322a3c61e"
+    },
+    {
+      "path": "mailer/web/js/seed-templates.js",
+      "bytes": 4024,
+      "sha256": "cb6563138205a045844c7efe529bffac105c02c179f339673fdce43751a6cb46"
+    },
+    {
+      "path": "mailer/web/js/sender.js",
+      "bytes": 21379,
+      "sha256": "5417d37b74c52512267bcd6b3d366417c8139b81107614fa192299b42004b3f7"
+    },
+    {
+      "path": "mailer/web/js/session.js",
+      "bytes": 3027,
+      "sha256": "dde4add9baa3b332e7907d36d6131ec09d807bbff02edcb3501a8313a1fd089c"
+    },
+    {
+      "path": "mailer/web/js/settings.js",
+      "bytes": 6079,
+      "sha256": "b03d6cb9a9eac8044819ea2ae6eca4bb2c867e1fed4eec6da28131c933fea0e8"
+    },
+    {
+      "path": "mailer/web/js/store.js",
+      "bytes": 5234,
+      "sha256": "ba96f782b1a4544d86371aed8426615de11e0241e14e723aa78802f30fd429a0"
+    },
+    {
+      "path": "mailer/web/js/sync.js",
+      "bytes": 23694,
+      "sha256": "33cc65a66130a3a9caabfd9a4c50a14586927dad9a7d3e6bcaac0087e0f11092"
+    },
+    {
+      "path": "mailer/web/js/ui.js",
+      "bytes": 5810,
+      "sha256": "9563e82d0b59e4931b372ea3555d63a898bf0964ee97899618676ecf5351b21e"
+    },
+    {
+      "path": "mailer/web/js/util.js",
+      "bytes": 6767,
+      "sha256": "1977707232926181c8d05695600479ac1794c42641baa56217941159ece102f9"
+    },
+    {
+      "path": "mailer/web/js/views/activity.js",
+      "bytes": 4282,
+      "sha256": "51b8af513a16922d0b02b485cac3e9999a92687279cae04b439c0987fc10fe01"
+    },
+    {
+      "path": "mailer/web/js/views/compose.js",
+      "bytes": 41202,
+      "sha256": "c75731659a77f5f9ba19e4bd9e44f0bb232fa0fa4af39b1b5ef004a00da7eae6"
+    },
+    {
+      "path": "mailer/web/js/views/dashboard.js",
+      "bytes": 5180,
+      "sha256": "715a62f7e0be5ee0ee2963202a3b04a2ff5a0b2f33f555e9ceefcbb63478a3f0"
+    },
+    {
+      "path": "mailer/web/js/views/directory.js",
+      "bytes": 16944,
+      "sha256": "655ef75827947ed39bf2dafe434a333adb07f38aaf1e04fdfebc020fa088c61c"
+    },
+    {
+      "path": "mailer/web/js/views/flows.js",
+      "bytes": 12786,
+      "sha256": "d4fc17050dab0b61dd8385d513214525d6b30576e18f7db2849789d70330efd9"
+    },
+    {
+      "path": "mailer/web/js/views/home.js",
+      "bytes": 7945,
+      "sha256": "b57d7132a2fac4a41417e4de049a8ae6957d5bd76657791bba86b4658dbfd099"
+    },
+    {
+      "path": "mailer/web/js/views/hub.js",
+      "bytes": 1395,
+      "sha256": "d71c548aef577745fea7ee6768fba131084f1efa16f6af0d54006305a12f4ae6"
+    },
+    {
+      "path": "mailer/web/js/views/letter.js",
+      "bytes": 61991,
+      "sha256": "0eb374eed1248526d3b9abe19a609c9343d2591f675e94e7ac2a7eff16a020dc"
+    },
+    {
+      "path": "mailer/web/js/views/outbox.js",
+      "bytes": 10498,
+      "sha256": "c39670a2a608ec7b8eb68ff864aafead7ab90a38e0d5bbe3fcf2834d303ca58e"
+    },
+    {
+      "path": "mailer/web/js/views/sent.js",
+      "bytes": 14063,
+      "sha256": "333493eb3801afc6737db655864f6e6453a73e9a68038afa30860452aec3e473"
+    },
+    {
+      "path": "mailer/web/js/views/settings.js",
+      "bytes": 18421,
+      "sha256": "4772fbbfc4434b30e440324cb36306c10906e804ff907ba4fde57bad2a5a4912"
+    },
+    {
+      "path": "mailer/web/js/views/signin.js",
+      "bytes": 3901,
+      "sha256": "122f4e86435783c72c5d96a0b4b0ff8883550dcc57aea7ad29cff9bf146af919"
+    },
+    {
+      "path": "mailer/web/js/views/templates.js",
+      "bytes": 13740,
+      "sha256": "b1e45d50b8ea11be29ea689a2624ce5cb42533330f61ceca1722f65141bb8b4e"
+    },
+    {
+      "path": "mailer/web/js/zip.js",
+      "bytes": 5878,
+      "sha256": "25898b5e653bfb6dc1722b9743d0bcb2c78dc8c6f567741c7389011d1c47585b"
+    },
+    {
+      "path": "runtime/.htaccess",
+      "bytes": 991,
+      "sha256": "d812b7dfcf3a309cfed0f4cc8cc5744e949abd1c27009c5587f8cd7fc0be2e16"
+    },
+    {
+      "path": "runtime/DEPLOY.md",
+      "bytes": 3664,
+      "sha256": "eed3814a020633ea24b34bb3c6afe17d08e21223805345f618e483ba0e33af11"
+    },
+    {
+      "path": "runtime/ENDPOINT-CHECK-STANDALONE.html",
+      "bytes": 69217,
+      "sha256": "4e7740351a1a5da2474faf58c8adbe5da01eb9c1b99ca544e14c1842f08859e0"
+    },
+    {
+      "path": "runtime/ENDPOINT-CHECK.html",
+      "bytes": 59845,
+      "sha256": "8ffb588f7e5941963bb35e6cc38d335bd1d4fa8a67294be367da6853c7808173"
+    },
+    {
+      "path": "runtime/ENDPOINT_PROVISIONING.md",
+      "bytes": 5301,
+      "sha256": "d15719bc88f9453d75072e83edbcb70e079b82504477fa2aa757ca7fe9f4585b"
+    },
+    {
+      "path": "runtime/FLOW_CATALOGUE.json",
+      "bytes": 7137,
+      "sha256": "245ad314c93950db0b0d69e7ba3a2f68d2e2bdd9736c3a51e6317343f6d825aa"
+    },
+    {
+      "path": "runtime/LICENSE",
+      "bytes": 991,
+      "sha256": "72b33a5f692541db52df5dd880b53183eec65af943abea251165054cc4c6b5e8"
+    },
+    {
+      "path": "runtime/PACKAGE_MANIFEST.json",
+      "bytes": 43861,
+      "sha256": "d959f3c8f04483cdacfee8bc4cff28c0735125c1268b0003a2d2d0a930c8f257"
+    },
+    {
+      "path": "runtime/acknowledge.html",
+      "bytes": 754,
+      "sha256": "2baa07b33dc8d7be29c5846698eceebc66942cb720623218b04d4220f7ac323d"
+    },
+    {
+      "path": "runtime/assets/fonts/CascadiaMono-Regular.woff2",
+      "bytes": 143932,
+      "sha256": "abbf67cceb200508c9590ac9b75b37dd2211f58ea56279f1fa6ec87265f9d713"
+    },
+    {
+      "path": "runtime/assets/icons/sprite.svg",
+      "bytes": 11615,
+      "sha256": "7168d579e3aae5ee1e45e4c2685eb50db4b1972c3929baba55b40feec1f48c5a"
+    },
+    {
+      "path": "runtime/assets/nitda-lockup-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "runtime/assets/nitda-lockup.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "runtime/assets/nitda-symbol.png",
+      "bytes": 52505,
+      "sha256": "cb6a4fdd09044ac158d8381b1c88dde0342562a6bb4641982655da5262b510ff"
+    },
+    {
+      "path": "runtime/config/acknowledgement-flow.config.js",
+      "bytes": 1023,
+      "sha256": "49882c6e7b4bfc71a7974a8ae8aa8c39b55db9039cc852525531abf83a40df12"
+    },
+    {
+      "path": "runtime/config/action-ownership.config.js",
+      "bytes": 14677,
+      "sha256": "3225b4cf5f4488b348e7c56d14fb2a9593a9609cef19b05cd1c976fc85d75e7e"
+    },
+    {
+      "path": "runtime/config/action-routing.config.js",
+      "bytes": 20851,
+      "sha256": "8978b2f50f36d4a251e2c8c573f748f8f963697e4933d8df9dfd462b14bd7af3"
+    },
+    {
+      "path": "runtime/config/activity-parity.config.js",
+      "bytes": 3044,
+      "sha256": "59e79c9ffee17e2641fd2a56050ecaeccee8c47559b6c408bb6de9656b351201"
+    },
+    {
+      "path": "runtime/config/app.config.js",
+      "bytes": 621,
+      "sha256": "f39d50870fbdbe604fdb1cf6e4aef4563792a6a245ff6d9baadc0771de4b2fed"
+    },
+    {
+      "path": "runtime/config/assignment-cascade.config.js",
+      "bytes": 3420,
+      "sha256": "f0bf83bc618be91431a6c93b3fabd2a781eb29042c9ad3c470ccd3ac61243570"
+    },
+    {
+      "path": "runtime/config/auth.config.js",
+      "bytes": 6298,
+      "sha256": "7eee7e46fa9dd0d6ed6f63e5cb32bad42563f78c35a42dc3b4e96d9ff8eeaafe"
+    },
+    {
+      "path": "runtime/config/brand.config.js",
+      "bytes": 1408,
+      "sha256": "c7975be56347f6cf121e0ca6b94d182f7981f9e7a9185127b7143d0d4597fd55"
+    },
+    {
+      "path": "runtime/config/browser-certification.config.js",
+      "bytes": 1309,
+      "sha256": "bfccce868126686bcf1e5a3a082a2e0313da3a2bebe41034d21d4816ddceb571"
+    },
+    {
+      "path": "runtime/config/cache-policy.config.js",
+      "bytes": 725,
+      "sha256": "ed775ba95d4ebbaed18457c30fa5a725b4768ffb0f08eb40e2df36ba1fe1ac8c"
+    },
+    {
+      "path": "runtime/config/category-matrix.config.js",
+      "bytes": 17886,
+      "sha256": "05824c7c8b76c89b24289696727a2765eb0fa5611c0d44bfee8d322515d17608"
+    },
+    {
+      "path": "runtime/config/config.local.js",
+      "bytes": 1838,
+      "sha256": "a533070fa7a7a6e948c10ffe6b9ade69be6148e5ef2db3dafb09a1b7b531d563"
+    },
+    {
+      "path": "runtime/config/correspondence-categories.config.js",
+      "bytes": 6714,
+      "sha256": "6f5b1ce98e7ff14b0e0e8bb0b5f7dfc3b82db08c71ab574c08a4e35d01b0c48b"
+    },
+    {
+      "path": "runtime/config/correspondence-email-templates.config.js",
+      "bytes": 5155,
+      "sha256": "6e7f58d14d755c2548a778232d87ddf471488627ab0c4ba317f69156421dc2a1"
+    },
+    {
+      "path": "runtime/config/deeplink.config.js",
+      "bytes": 3343,
+      "sha256": "13d4cd5abd9c397b84aa4f5988928ec2ad12b110280a7607e2bb73769d508d94"
+    },
+    {
+      "path": "runtime/config/dynamic-actions.config.js",
+      "bytes": 4848,
+      "sha256": "4dd7af0803546a6f57e6f9ca988f8aac404a05f106b94c2480f47d9cc5229214"
+    },
+    {
+      "path": "runtime/config/endpoint-atlas.data.js",
+      "bytes": 39897,
+      "sha256": "f34fd01630143d9539cac5b79eed7f00e87a9e36029e97f2bdf3df72d7870d56"
+    },
+    {
+      "path": "runtime/config/endpoints.config.js",
+      "bytes": 7260,
+      "sha256": "b82c6e20ef7cdda634231b2eda8e4bdb5e29cfc753ac970149579dd851c444b6"
+    },
+    {
+      "path": "runtime/config/entry-points.config.js",
+      "bytes": 6086,
+      "sha256": "3e3a5cba18945905f656c1bf5e4fafd37bc4a2ec3647a6c0b8a0182420189fbc"
+    },
+    {
+      "path": "runtime/config/fetch-policy.config.js",
+      "bytes": 3625,
+      "sha256": "e7d76e95ffb4d6ec90d52bb369be20954f6845c653ba1b9872eed0c48e458519"
+    },
+    {
+      "path": "runtime/config/filename-policy.config.js",
+      "bytes": 10988,
+      "sha256": "e0d350bf1e479ccb191c5c51f48e137b619da822b315474c2e8cc7132789cc3f"
+    },
+    {
+      "path": "runtime/config/flow-shapes.data.js",
+      "bytes": 314896,
+      "sha256": "0ee40a1cbb88d5d6741cb35fc79b33b7402965b532153f12b3b4b07c3b35f23b"
+    },
+    {
+      "path": "runtime/config/module-boundaries.config.js",
+      "bytes": 8928,
+      "sha256": "e278471df7c671fbb6a9dd73b41beb4072ce055fa729d57d8375fbf523b77279"
+    },
+    {
+      "path": "runtime/config/nav.config.js",
+      "bytes": 605,
+      "sha256": "52c25e31af42a3fd63a3898fee33af247e6fb3229be9887001d859f1cd509372"
+    },
+    {
+      "path": "runtime/config/navigation-relationships.config.js",
+      "bytes": 1118,
+      "sha256": "cdef8ab1d88ba240f19cca58c6cd9c6a34beac296209a4e199bdb0a7a2e786d5"
+    },
+    {
+      "path": "runtime/config/notice-links.config.js",
+      "bytes": 3367,
+      "sha256": "79be8106e6c2f95cadd4333ce1de773c861af0c52eccdd051ddd1b761984df12"
+    },
+    {
+      "path": "runtime/config/notification-delivery.config.js",
+      "bytes": 2692,
+      "sha256": "66927262d286ef39ba09efdc663c6e422ac475fbc367df078cdf095294185805"
+    },
+    {
+      "path": "runtime/config/notification-failure-groups.config.js",
+      "bytes": 6208,
+      "sha256": "7be551cb013cee2a1d8c9f213fdac833f8245d1aa3785c16b41a6b6149eb13a2"
+    },
+    {
+      "path": "runtime/config/notification-matrix.config.js",
+      "bytes": 104079,
+      "sha256": "e30a6aea11b14ee72d9631eac1467d3e0c77e01dcbe67c718033770e5583dde5"
+    },
+    {
+      "path": "runtime/config/ops-runbook.config.js",
+      "bytes": 23613,
+      "sha256": "70eb5304d5ea3bb056dc7c50b838de6b009dc64e82e59d305705341d74e63a3b"
+    },
+    {
+      "path": "runtime/config/organizational-units.config.js",
+      "bytes": 10484,
+      "sha256": "5041dfdd227f85a979b071d2f8bf2ceaf71bb7f8fc945c1125931a23ba045c63"
+    },
+    {
+      "path": "runtime/config/performance-budget.config.js",
+      "bytes": 284,
+      "sha256": "2d21cc60cf588677206635c990a062daec95a2f51ead996fd7bdd70bfd3338c9"
+    },
+    {
+      "path": "runtime/config/platform-provisioning.config.js",
+      "bytes": 24072,
+      "sha256": "ab4b3cc47bdaa35a4752f0e075db1a700feaa83d6ba3dcb90c8026625e106522"
+    },
+    {
+      "path": "runtime/config/platforms.data.js",
+      "bytes": 4490,
+      "sha256": "2a34aeb8430df7aa38d3cb7830fa81bbb6b289258b4ade3f18fa8c47972c5789"
+    },
+    {
+      "path": "runtime/config/priority.config.js",
+      "bytes": 1524,
+      "sha256": "e291f6b335e14ddaeeba36263bad41e9bc699fa78349e020754b6b51f9258691"
+    },
+    {
+      "path": "runtime/config/product-definition.config.json",
+      "bytes": 2276,
+      "sha256": "cc9a1553b2a31206d17d72c70074f98a6736bbe20e5208f61ca778ec2616606a"
+    },
+    {
+      "path": "runtime/config/rbac.config.js",
+      "bytes": 12091,
+      "sha256": "f604d881d40ea769c07130c3b906af9290f41c40e642a814c8dd49d7275b8279"
+    },
+    {
+      "path": "runtime/config/receipt-ledger.config.js",
+      "bytes": 445,
+      "sha256": "74a8ae479c2d4d8cef77614aa4e1d12c813b6b313d303116152f570f585d4e05"
+    },
+    {
+      "path": "runtime/config/routes.config.js",
+      "bytes": 4145,
+      "sha256": "6ec05c11bc06ba63fa10a3effed377646adde85c918c4763eda0ca0cc31ef1c0"
+    },
+    {
+      "path": "runtime/config/source-routing.config.js",
+      "bytes": 4075,
+      "sha256": "02202a513c1ab5d9e4078840d266326328082e733dd928efcea8f7f3a41db29f"
+    },
+    {
+      "path": "runtime/config/source-views.config.js",
+      "bytes": 1303,
+      "sha256": "5e3ff689172fb19d816d300e3373fb0b9b73b37f9426733d96a486351263480c"
+    },
+    {
+      "path": "runtime/config/staff-notice-templates.config.js",
+      "bytes": 5766,
+      "sha256": "a99fb1b50e8f58bad73dd202b875dc373862ff9cb0936498de03229035d3c734"
+    },
+    {
+      "path": "runtime/config/state-schema.config.js",
+      "bytes": 803,
+      "sha256": "7bce45c6b679fbfe9dd22ed10925001ff04d7a4c29d81bde979f89470fdbe660"
+    },
+    {
+      "path": "runtime/config/status-vocabulary.config.js",
+      "bytes": 3889,
+      "sha256": "d674c9a600b2c4f39a8dadb37962d5c3ec6f1b75146f38c00336dbc43a1eeec2"
+    },
+    {
+      "path": "runtime/config/support-routing.config.js",
+      "bytes": 1061,
+      "sha256": "b97a416f3a3829c49c1038ea273c9cd21e15fbba09355492f07fce9a5b6c5170"
+    },
+    {
+      "path": "runtime/config/welcome-experience.config.js",
+      "bytes": 2691,
+      "sha256": "ade81339499d67fe2c1d9d701f2b50764afb3087feda120f2762b2a03cfd701a"
+    },
+    {
+      "path": "runtime/config/workflow-clarity.config.js",
+      "bytes": 15230,
+      "sha256": "e1b4594c03126b6f2f0ed4586c14a4161e8baa05a8ed4ec502f2dc4d4beb2f75"
+    },
+    {
+      "path": "runtime/core/acknowledgement-service.js",
+      "bytes": 14416,
+      "sha256": "9739e630fba0ad83bd8ac4fff4e9ff5e3857f3aa659904b43e7df2b44a60e940"
+    },
+    {
+      "path": "runtime/core/action-authority.js",
+      "bytes": 6847,
+      "sha256": "99c2a333d567c77190424a863cf4ea3eb2342c0037c555d0b2ca02c64fa36b4a"
+    },
+    {
+      "path": "runtime/core/action-runtime.js",
+      "bytes": 1965,
+      "sha256": "ed4dfc8ed176a0c9794adaf4015740b49011587975869e25887006988930de1d"
+    },
+    {
+      "path": "runtime/core/activity-parity.js",
+      "bytes": 16779,
+      "sha256": "1994d26bae6b44f9e98566f0029d524dd7d62882e36a0d7e0b57b643d266e10b"
+    },
+    {
+      "path": "runtime/core/admin-actions.js",
+      "bytes": 25504,
+      "sha256": "578360fa7d67c0634bab615adc6cc2069971d7b321657f1ea1b99f30f531209d"
+    },
+    {
+      "path": "runtime/core/api.js",
+      "bytes": 1804,
+      "sha256": "7e48a89e132e16029c18901413d9e43e6f3a934372a0b5bdbf62516907535b55"
+    },
+    {
+      "path": "runtime/core/archive.js",
+      "bytes": 4529,
+      "sha256": "1723e07b2bd36d57d95f521557a757769036f79c7babcb6a65be15db3136f607"
+    },
+    {
+      "path": "runtime/core/assignment-cascade.js",
+      "bytes": 14175,
+      "sha256": "d88b00233448a90a8e3283c2874200eeb0bbc1c0ed6c6c84f935172e2fa4a8ef"
+    },
+    {
+      "path": "runtime/core/assignment-payload.js",
+      "bytes": 9376,
+      "sha256": "4ba0e013bdd69e1bfcd6f4fa03aef6bb163276845344113679f3f5294bde2e39"
+    },
+    {
+      "path": "runtime/core/audit-log.js",
+      "bytes": 1431,
+      "sha256": "6e793c2467cc503cf733dfb71be13ecf1c736e0bfa706b1494ce619033e38464"
+    },
+    {
+      "path": "runtime/core/auth.js",
+      "bytes": 7815,
+      "sha256": "0ebcb4256fa27cfe3a78b4b1e5d1b7a5c47841e19d5af4e5d01e124aa884e695"
+    },
+    {
+      "path": "runtime/core/boot.js",
+      "bytes": 8022,
+      "sha256": "778da849f1879543cb3662f1ab8424df18a7fd796578c439b66b3109483146d9"
+    },
+    {
+      "path": "runtime/core/brand-sub.js",
+      "bytes": 922,
+      "sha256": "cd068f5bb64d71ca8c949ca34fd1c520b97294ed0a18aaf0ab39519597771d17"
+    },
+    {
+      "path": "runtime/core/cache-manager.js",
+      "bytes": 2893,
+      "sha256": "83267be2e54049aac5611a089efb32b05c8fd3e0986edbf528a4fdb845119fe6"
+    },
+    {
+      "path": "runtime/core/capsule-client.js",
+      "bytes": 12562,
+      "sha256": "19c889d2814013e861afdf38ce537a4446d678ad3741ff527ac05b5cb014031c"
+    },
+    {
+      "path": "runtime/core/contracts.js",
+      "bytes": 3489,
+      "sha256": "40c9539e576782c9298897ed0dac49982c1d6d2c35e3785d6746f2915553c06b"
+    },
+    {
+      "path": "runtime/core/correspondence-email-service.js",
+      "bytes": 11310,
+      "sha256": "54208493e255ba90cfb40aee58bd428d9e93dfdf179858758a97e5e634317a8c"
+    },
+    {
+      "path": "runtime/core/current-user.js",
+      "bytes": 11369,
+      "sha256": "065f226636714a6adf885747ea9bca966da113537899edd5815d27c6910de50d"
+    },
+    {
+      "path": "runtime/core/data-client.js",
+      "bytes": 4478,
+      "sha256": "de00366c2f95c307529f3116f7d07502584fceec1e2a141e5f1b75925e3e72ad"
+    },
+    {
+      "path": "runtime/core/data-loader.js",
+      "bytes": 14233,
+      "sha256": "cce4e13926640860800678d553698bc141dac2ab6f94faaf155c66203c5573d5"
+    },
+    {
+      "path": "runtime/core/data-reconciler.js",
+      "bytes": 955,
+      "sha256": "957bf33e091a98bc9bc00838639b9e68d751586bba2bac8222dd38fcd94c7a4a"
+    },
+    {
+      "path": "runtime/core/data-selectors.js",
+      "bytes": 2869,
+      "sha256": "8c0123c52c0713c73309b1e25e9d4bbe0c59ff77c519f5d28d5e078fbaa2e714"
+    },
+    {
+      "path": "runtime/core/deeplink-parse.js",
+      "bytes": 4266,
+      "sha256": "9f15a9131a88aedd53d47d525df97363384e02133bc3b9532409276a0da9e116"
+    },
+    {
+      "path": "runtime/core/deeplink-resolver.js",
+      "bytes": 3107,
+      "sha256": "e882cfccc0d9d530ba8598931cd0b4a3966adf928ce9a3c8682a9a418dbdd0e5"
+    },
+    {
+      "path": "runtime/core/directorate-scope.js",
+      "bytes": 1616,
+      "sha256": "87b9d45ff61ad608a382e2b43d1b0ecfe82326f48ec5bf7bc050fbe15d1276aa"
+    },
+    {
+      "path": "runtime/core/dispatch-service.js",
+      "bytes": 3901,
+      "sha256": "b4c2d022b1a3bd00cbca1a957600a5602cbf875e9c1cd7a9a007c0bbc851265f"
+    },
+    {
+      "path": "runtime/core/document-flags.js",
+      "bytes": 6546,
+      "sha256": "210dba26fc022a4aaf0093c9f7abc9e937270b53c4b00be9b858716f68e799e3"
+    },
+    {
+      "path": "runtime/core/domain.js",
+      "bytes": 10195,
+      "sha256": "22fce39acc5474555602aa910cd8bb54f2e5a2c6bed2ed160ac71cb47029e3fa"
+    },
+    {
+      "path": "runtime/core/endpoint-atlas.js",
+      "bytes": 16125,
+      "sha256": "0fcfeee0e3ecbb06744a3626e389b1d59a1002ece6dcc231ece4ba6e6d261b48"
+    },
+    {
+      "path": "runtime/core/endpoint-formation.js",
+      "bytes": 9142,
+      "sha256": "6ed1f85bb3fe6d0b663065050bd860fb09ab0df7a12ecba637b8381ba0a52ce1"
+    },
+    {
+      "path": "runtime/core/endpoint-registry.js",
+      "bytes": 6514,
+      "sha256": "104ab72a2ec99043b1db864573c16b76ed9c42b8da8122293051fd91b70ef631"
+    },
+    {
+      "path": "runtime/core/enterprise-domain.js",
+      "bytes": 11161,
+      "sha256": "615beedcc3bd216e9d63110d36c59c7799c997ce0ce2e3942f418867aa2f1e79"
+    },
+    {
+      "path": "runtime/core/entity-store.js",
+      "bytes": 9794,
+      "sha256": "0bba22e2715e5c4cef14d005fad37cff39c34adc1c071ee5b04a901659241401"
+    },
+    {
+      "path": "runtime/core/entry-point-feeds.js",
+      "bytes": 4869,
+      "sha256": "14020a2e65c78cdd53d09590f1934490ea870b498ca28070521f7fb2c1186d4b"
+    },
+    {
+      "path": "runtime/core/errors.js",
+      "bytes": 1853,
+      "sha256": "ab71605176d2305450f1a1e5264a2931d711971c310c2e74002426ddd7e4d685"
+    },
+    {
+      "path": "runtime/core/executive-register.js",
+      "bytes": 9163,
+      "sha256": "e7de117acd5ef557f9fd018b55101390a158ab7f2a5ce06ec8a26483bcb307fe"
+    },
+    {
+      "path": "runtime/core/export-bundle.js",
+      "bytes": 1436,
+      "sha256": "c831802a326d3c6c931512942f0bebd2f38bafa3d0381bed2c5f7004083f1842"
+    },
+    {
+      "path": "runtime/core/failure-health.js",
+      "bytes": 3325,
+      "sha256": "efe9de1ecc1d505fad27195c5de8c727c5f94fe199bcfa1df934e6e62cf29ae4"
+    },
+    {
+      "path": "runtime/core/fetch-manager.js",
+      "bytes": 1725,
+      "sha256": "0e5941403eb29951958a13d4667ac4379a120c450b68e1d8cdaeecddbff0c284"
+    },
+    {
+      "path": "runtime/core/flow-confirmation.js",
+      "bytes": 2275,
+      "sha256": "10c7705dd4373225842e42ba510b02f495f21263f14a735cf599512331cdd339"
+    },
+    {
+      "path": "runtime/core/flow-shapes.js",
+      "bytes": 31119,
+      "sha256": "f09ba9aed6326d883c83878340990cf51a81bb5637a1ee459b886b999a6ecfbd"
+    },
+    {
+      "path": "runtime/core/focus-trap.js",
+      "bytes": 5078,
+      "sha256": "9d4701b0b7da11cc066794a918198cc8160d0cd09678c98f76a4f6ae1d7cc3d1"
+    },
+    {
+      "path": "runtime/core/governed-actions.js",
+      "bytes": 748,
+      "sha256": "26e0d26360dfad98d88ed9841386d3dbd002d925a1a90101ffccb7f0e5b2840d"
+    },
+    {
+      "path": "runtime/core/health-contract.js",
+      "bytes": 17834,
+      "sha256": "5ca65b8282144c1c9e2ac7e1a67009477042f43b9a77b9d0d5f5c4dfe21f3369"
+    },
+    {
+      "path": "runtime/core/idempotency.js",
+      "bytes": 2603,
+      "sha256": "578e172984dd938b50d87eeda47f5c718a26e05045967883a93e64e9f220fa7f"
+    },
+    {
+      "path": "runtime/core/intake-triage.js",
+      "bytes": 9629,
+      "sha256": "0a5cfcee2715eccc9e46eac1507eb48c608f1fdd27a6e48479c73d66e82e94fa"
+    },
+    {
+      "path": "runtime/core/lifecycle.js",
+      "bytes": 2405,
+      "sha256": "8046c53b0695c954f879bcca942f62eba257d2623808f6ed23d33009badb8445"
+    },
+    {
+      "path": "runtime/core/link-guard.js",
+      "bytes": 1826,
+      "sha256": "f85ae47bb304c9a9de03dfe7a06e5835e9a2df175c98391f1eb6909aa0fe27e3"
+    },
+    {
+      "path": "runtime/core/loading-state.js",
+      "bytes": 2306,
+      "sha256": "681b1a63e66a03b8570d2c29788bac4e5d9b2c69fb159890056970fddd8455d5"
+    },
+    {
+      "path": "runtime/core/metrics-service.js",
+      "bytes": 1201,
+      "sha256": "7712a703f6539eb370a15c0552bd066f6d3058b2870a83150fc0c1fd24bcb055"
+    },
+    {
+      "path": "runtime/core/nitda-module-adapter.js",
+      "bytes": 6555,
+      "sha256": "04a0da1c5794f29bb624527530d3f9e0aa9d6bc7f28c87e59f9674b6331301a2"
+    },
+    {
+      "path": "runtime/core/notification-center.js",
+      "bytes": 3898,
+      "sha256": "e2ae75f37daea85f5d1fc30985787046ab0d44bb89258f417b6ccad356ed02d8"
+    },
+    {
+      "path": "runtime/core/offline-action-queue.js",
+      "bytes": 2143,
+      "sha256": "71ab4bb344762e0429276ac6bb7b9050d34a41b28b2a99dc4d60e1209ee48d8a"
+    },
+    {
+      "path": "runtime/core/ops-runbook.js",
+      "bytes": 28245,
+      "sha256": "6fdd08b77f482745d28918b43b0b68ebac817b1a0effaa04535cae41c60ddc72"
+    },
+    {
+      "path": "runtime/core/otp-identity.js",
+      "bytes": 12977,
+      "sha256": "47e0aeb664a130aad67dc4b7b982f278650f6c11c8bbf29c61c9209fd5f422f6"
+    },
+    {
+      "path": "runtime/core/otp-service.js",
+      "bytes": 1746,
+      "sha256": "5dee44f11f69b63712bbbf9b535c82fa77b7f808b950043f475aaaf4922c3e93"
+    },
+    {
+      "path": "runtime/core/pending-queue.js",
+      "bytes": 3522,
+      "sha256": "6b3f01765f1d51ff641f89ca87245dd7db902946af8276fef5bc3c3926258b1b"
+    },
+    {
+      "path": "runtime/core/performance-monitor.js",
+      "bytes": 1651,
+      "sha256": "ed42efdfe065493158c55b9c837400a8192e98be08f3ab9d945697cf5ad70289"
+    },
+    {
+      "path": "runtime/core/platform-provisioner.js",
+      "bytes": 2981,
+      "sha256": "efc49dfad6635e5f5b0a05c89c87a679f1cfb2df9280b4f0388f5adf784c6635"
+    },
+    {
+      "path": "runtime/core/portal-status-service.js",
+      "bytes": 3476,
+      "sha256": "75d097d1221db192f2f51fcb068697e03dfd4de1c8aafc28a68c0d6ed8eaecb1"
+    },
+    {
+      "path": "runtime/core/query-store.js",
+      "bytes": 1059,
+      "sha256": "419ff32fa3fa6f0dd0aaaac61f0f3479ebd412174f6f37e09ac81d2f2fd6187f"
+    },
+    {
+      "path": "runtime/core/receipt-ledger.js",
+      "bytes": 2699,
+      "sha256": "3e6a2985eaaac3caf48c2a8a34b41ddc6938961ff5d7b66424991d7f6f2725ea"
+    },
+    {
+      "path": "runtime/core/reference-minter.js",
+      "bytes": 5130,
+      "sha256": "b04de73b55a5dd5f190b2f5d57851513a90ea27f7b4e9dc6d44a1ef34d6246e7"
+    },
+    {
+      "path": "runtime/core/render-budget.js",
+      "bytes": 1119,
+      "sha256": "7f7a766a09e372d8d3b60bf51f41b405dd073a8219994619b5240552351c72b7"
+    },
+    {
+      "path": "runtime/core/report-export-service.js",
+      "bytes": 4388,
+      "sha256": "68da1b0e9bcd4429b893517a8738808c04fdf31714b9c488964e0102b1c59269"
+    },
+    {
+      "path": "runtime/core/retention.js",
+      "bytes": 970,
+      "sha256": "713e9a1f8f781de21dc3e987666b23ff09dcae0b5f71010d4fee6cf34ee9ea62"
+    },
+    {
+      "path": "runtime/core/router.js",
+      "bytes": 4155,
+      "sha256": "79fde84b8e733fd6a1964f34905c732e94dafc289efcbebcece31dfc7748c712"
+    },
+    {
+      "path": "runtime/core/scan-intake-service.js",
+      "bytes": 5907,
+      "sha256": "f5cff9ac8ad2bbde0f6418b40894f80f81ab990e8af06ee805ce9a93eb80642e"
+    },
+    {
+      "path": "runtime/core/security-actions.js",
+      "bytes": 1190,
+      "sha256": "66143def31f659dd131b34f5438dd29546e791f6dfa83d92c08642eead9c93d7"
+    },
+    {
+      "path": "runtime/core/server-payloads.js",
+      "bytes": 5466,
+      "sha256": "62718219d548da4a878885f43da0f5ec85ecc689eddc17af5a80b04c53b400e5"
+    },
+    {
+      "path": "runtime/core/server-writes.js",
+      "bytes": 10274,
+      "sha256": "22f8bc88aaac17c94e4baed6b97322b4dd84324a2a6c8c0051dff5b1b9921367"
+    },
+    {
+      "path": "runtime/core/source-normalizer.js",
+      "bytes": 15524,
+      "sha256": "f05dea5b075deadda82a894f3a734231a3ee761c1e0641d1bc0bc4d01af2aeb2"
+    },
+    {
+      "path": "runtime/core/source-views.js",
+      "bytes": 4328,
+      "sha256": "2672fea2f3181e0a669428d547a6fc8f236a6518297997f548a0ab4959523f9d"
+    },
+    {
+      "path": "runtime/core/staff-notice-service.js",
+      "bytes": 13724,
+      "sha256": "a4808eb8e84f395f62bdba2b9d317622d3ba220cd72af18e585ee2935064fb79"
+    },
+    {
+      "path": "runtime/core/state.js",
+      "bytes": 4213,
+      "sha256": "ac6b6e24b084a0d637623fbf110e805834ac5bc7a56bd1355b73e81ca09dc05a"
+    },
+    {
+      "path": "runtime/core/support-service.js",
+      "bytes": 1378,
+      "sha256": "7eb83686d3a4a450ec6501d379505fde3b029152b393b3f9bcfa0cd8f871bf3f"
+    },
+    {
+      "path": "runtime/core/ui-interactions.js",
+      "bytes": 1805,
+      "sha256": "da3495fc2c1cfbfa36cc37609f431bb94206469db97c33f09cc9654258ed8db7"
+    },
+    {
+      "path": "runtime/core/ui-state.js",
+      "bytes": 820,
+      "sha256": "7be0bc26d647a11807ba48c33305f6b92ea41e15b3cdc75a4589e31db53c8c35"
+    },
+    {
+      "path": "runtime/core/ui.js",
+      "bytes": 13467,
+      "sha256": "2e6c93d0d3919f4bbfb3143d418c091f2fc2e2da801204bfc7c1da450a34b73b"
+    },
+    {
+      "path": "runtime/core/welcome-experience.js",
+      "bytes": 24590,
+      "sha256": "acab254bdee8ed5bf05e1eb5a70bb7e32bcd08cc7996936dc32fed2f504b53ea"
+    },
+    {
+      "path": "runtime/core/work-measures.js",
+      "bytes": 796,
+      "sha256": "59f4c9ac5a4f5316b816768520d57e5344f6b987308519e525fd0045ba28d81a"
+    },
+    {
+      "path": "runtime/core/workspace-enhance.js",
+      "bytes": 12929,
+      "sha256": "c646aaaddb2d75f9d45ed0f0035b320fba7c4899cfa82def9ba93f8ba99fced7"
+    },
+    {
+      "path": "runtime/core/write-manager.js",
+      "bytes": 2196,
+      "sha256": "db42e113b66aecab7ef00c995336fed345ce616aeab52b44ba7bc187f76efe5c"
+    },
+    {
+      "path": "runtime/index.html",
+      "bytes": 6734,
+      "sha256": "4c2b27d9f55a7187d31a19d896129536c74780888b818667dbc6101e4055a8d2"
+    },
+    {
+      "path": "runtime/index_Bulk.html",
+      "bytes": 752,
+      "sha256": "3ecee28827b152205a217bd7b1afe05b3d00a1e21b25bdcaa727be09e0cb6482"
+    },
+    {
+      "path": "runtime/modules/acknowledgment.js",
+      "bytes": 15122,
+      "sha256": "bd7debf830075c21e72b7c3b4d6a58ed52a8a3f7525bb1b6e82b1070acc5ae29"
+    },
+    {
+      "path": "runtime/modules/activities.js",
+      "bytes": 29167,
+      "sha256": "e75d24c0aa3d95cfefadf6c301e08eefd3c66def21a917957fb87af7185d5577"
+    },
+    {
+      "path": "runtime/modules/admin-suite.js",
+      "bytes": 123826,
+      "sha256": "61ff531abdc6d25ddd18eb4421cd2459e3e782060c0a6bd12e69fe2415067701"
+    },
+    {
+      "path": "runtime/modules/approvals.js",
+      "bytes": 10891,
+      "sha256": "f000f92c3f49b213ce1055ecb4a1a591d33bcdbb20775fc073a9e7a6490e78f8"
+    },
+    {
+      "path": "runtime/modules/archive.js",
+      "bytes": 7506,
+      "sha256": "26079ca007958ed620e207d64bae1e90bed3c66739454e3bd574b8bee3cde0f8"
+    },
+    {
+      "path": "runtime/modules/assistant.js",
+      "bytes": 7163,
+      "sha256": "5dafae2afed12583a94945378812e34475591320ded4cae93078198fca0fb78b"
+    },
+    {
+      "path": "runtime/modules/briefs.js",
+      "bytes": 13321,
+      "sha256": "f2af2d9e81706533bedcf84f2765a2849c9ae2845386fad03f8edb45ddcdd6f9"
+    },
+    {
+      "path": "runtime/modules/bulk-assignment.js",
+      "bytes": 11694,
+      "sha256": "1deff29899bdc37e539ce11e8514d3fac046318b0397c3986ae7be9074e53dcf"
+    },
+    {
+      "path": "runtime/modules/comments.js",
+      "bytes": 6299,
+      "sha256": "2ccc8ae532699ad236d44285298f721d5720653ff63370e1ef7d2309188a8d5f"
+    },
+    {
+      "path": "runtime/modules/correspondence-email.js",
+      "bytes": 14893,
+      "sha256": "7ac8da02a429b5d7c58ede28464bc0cc61277890ec7c5d9823237e1ce25c030a"
+    },
+    {
+      "path": "runtime/modules/correspondence.js",
+      "bytes": 44454,
+      "sha256": "8b0beb039ea7c3d4de33a7e98f8062f2461239f554a7c9ffaca5638c14c76007"
+    },
+    {
+      "path": "runtime/modules/diagnostics.js",
+      "bytes": 10582,
+      "sha256": "59dce543b9bdf6961bbfb054fe645fbf2b9aa2fb21cc8dd06de03a5ab52ed314"
+    },
+    {
+      "path": "runtime/modules/dispatch.js",
+      "bytes": 15094,
+      "sha256": "19c8cecb6d95841ef01d898732025da77442448af8084aae99781844749947be"
+    },
+    {
+      "path": "runtime/modules/ecm-erp-charter.js",
+      "bytes": 17981,
+      "sha256": "8acc8f83472151bf380aedc70f7dc3d85196916d8e450fac25d0462f3e01d393"
+    },
+    {
+      "path": "runtime/modules/endpoint-console.js",
+      "bytes": 33002,
+      "sha256": "1fd45b4e2f8bcb1ee40ce8f49f301d73964e4bcd36a8d8af1abd9b872ac13c7b"
+    },
+    {
+      "path": "runtime/modules/executive.js",
+      "bytes": 16553,
+      "sha256": "72328cd5b716afea42133752180e63516900b37f2498e1386f4b9bffbe073b63"
+    },
+    {
+      "path": "runtime/modules/fasttrack.js",
+      "bytes": 12224,
+      "sha256": "19a211ffb91a1aaf08d6e1f5c560524942af901153ffab0167a62dc1333cce04"
+    },
+    {
+      "path": "runtime/modules/home.js",
+      "bytes": 5373,
+      "sha256": "799df479ec9df91164f5d72bea5b8ab8122a96ef3ef6fc80107c680b6fe633fa"
+    },
+    {
+      "path": "runtime/modules/lookup.js",
+      "bytes": 24732,
+      "sha256": "5f68005f9bdd3f685d10c563dd837b553f3a41a81e9b13b00b1b9e216059865f"
+    },
+    {
+      "path": "runtime/modules/meetings.js",
+      "bytes": 16941,
+      "sha256": "5c4c249dd82b71cc3f56224c0c143d628e994170dcee27085c9af1f0ef7dfdf7"
+    },
+    {
+      "path": "runtime/modules/operator-hud.js",
+      "bytes": 6626,
+      "sha256": "2765fe11700c8504d285732bf130642483024d0d6137950d9d2aeded62f2333c"
+    },
+    {
+      "path": "runtime/modules/orchestrator.js",
+      "bytes": 12617,
+      "sha256": "6e6d48ff3e941fdcd454e8f8fbb602a7a94d7e4491e87aa96320e6dbc7a81bd7"
+    },
+    {
+      "path": "runtime/modules/projects.js",
+      "bytes": 10429,
+      "sha256": "bc3791d79c9382e340ac648bf586fcee505a3be2e44ba3c4f9ab455008969960"
+    },
+    {
+      "path": "runtime/modules/registry.js",
+      "bytes": 15470,
+      "sha256": "11a6753ebd8c69bca8650316fa4b7a415359e175c8a88f8d9deef76216d6e8fb"
+    },
+    {
+      "path": "runtime/modules/reports.js",
+      "bytes": 10318,
+      "sha256": "004fc182c7502f868d7eb419302bbbf8d86c520910f31db0f3990c4ec249016a"
+    },
+    {
+      "path": "runtime/modules/response-tracking.js",
+      "bytes": 11994,
+      "sha256": "c8e657805189ce882cb82d8e27545b909bdd58c6fdc3a74b1e830a048e737c97"
+    },
+    {
+      "path": "runtime/modules/scan-intake.js",
+      "bytes": 17563,
+      "sha256": "15eaae6283360248f527c09d2eb558edb39869b4900a90da04d764174227981d"
+    },
+    {
+      "path": "runtime/modules/settings.js",
+      "bytes": 12580,
+      "sha256": "449cbd55c496f86f597cfde94b7953f74ec81c1bb8c2865f18655e105f56079d"
+    },
+    {
+      "path": "runtime/modules/single-assignment.js",
+      "bytes": 19641,
+      "sha256": "e273c3214f9d791a2325968381691eb223ddccc8e2031893788cc950561a8b8b"
+    },
+    {
+      "path": "runtime/modules/statistics.js",
+      "bytes": 9952,
+      "sha256": "9db160b2f72a56f9d2f4a5f19ff9d08b3a395ee34588b6f5e2e3a9bb44ea8902"
+    },
+    {
+      "path": "runtime/modules/user-admin.js",
+      "bytes": 14238,
+      "sha256": "40047cf9d49e95ccec5ffdfc585e399819ca7c0faf001856f613060e0e6dcc5f"
+    },
+    {
+      "path": "runtime/shared/accessibility.js",
+      "bytes": 493,
+      "sha256": "19c725a9c6ad8193509066090e45cc5b0fc14cee0127dada7c30ed25290ad71c"
+    },
+    {
+      "path": "runtime/shared/components.js",
+      "bytes": 12499,
+      "sha256": "79ee4753ec787c22576c80bc835641cc25b409a555ad8dc10922787ef0350475"
+    },
+    {
+      "path": "runtime/shared/design-system-adapter.js",
+      "bytes": 6177,
+      "sha256": "af932169e88d1f99000d38adfa6d1fe3425784378d9c531cc6f1be844be4469c"
+    },
+    {
+      "path": "runtime/shared/figma-uiux-runtime.js",
+      "bytes": 3746,
+      "sha256": "ffa3aa8164bb80a40285549fa16520c949091aec1b0eb779c50d29701250caf4"
+    },
+    {
+      "path": "runtime/shared/relationship-runtime.js",
+      "bytes": 3628,
+      "sha256": "0fe91500b991930b2b4ff07578300910154114388cbb4e1320d7d4c941a0b6e1"
+    },
+    {
+      "path": "runtime/shared/shell.js",
+      "bytes": 44532,
+      "sha256": "3a37ce5d92c191d7bc5ee625ca18d0deb3ecfb599f86c467f8c029e0eaec71f6"
+    },
+    {
+      "path": "runtime/shared/sign-in-dialog.js",
+      "bytes": 5706,
+      "sha256": "6384839a847de47f6fdd3445d9430cb66c9f9f8285a5c5b6540676c8790679c5"
+    },
+    {
+      "path": "runtime/shared/welcome-runtime.js",
+      "bytes": 9518,
+      "sha256": "c7f8a4a4edf6383ca49b236d34056d1dae30ca40d433a82447379c8dfd865af4"
+    },
+    {
+      "path": "runtime/shared/workspace-guide.js",
+      "bytes": 1034,
+      "sha256": "ff60a8bf74540f4c4b2c86c101c086eec9bb0ab1ca053fbebebecaf92d7abce9"
+    },
+    {
+      "path": "runtime/styles/app.css",
+      "bytes": 130858,
+      "sha256": "650ac83f140671dee44c607b944812067ad9c50ad9b3a1152dffd7f6f21ce29d"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/README.md",
+      "bytes": 15096,
+      "sha256": "b2a710f0739f7443c99922eb415fb9f1d256fc5f9c3d1ea601453eaa6b25802e"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/base.css",
+      "bytes": 5499,
+      "sha256": "5b4f7531daa1596882a38705c91eaea9be7c56ca621960ec90943a6358b7713a"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand-type.css",
+      "bytes": 6261,
+      "sha256": "2270e3c2d0ce0149e6016a2dc376825177cc179581a98e1f7d5f6480391ac38a"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/dgo/dgo-mark-reverse.svg",
+      "bytes": 326,
+      "sha256": "6fc1543316187e480ef7a95a9f5d4b7dfcaaaaf1977d24e364df7d207446260b"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/dgo/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-logo-horizontal-colour.jpeg",
+      "bytes": 21759,
+      "sha256": "f54a15ae06abcfc6590da6ccd3a00cff28f30a5a36c8229414f84df604d56785"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-logo-horizontal-whiteout.png",
+      "bytes": 26105,
+      "sha256": "5b2ae98b08191a0113d5f7b8d2251577699ce94511619eac520f143b59c4cfd1"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-logo-stacked-whiteout.png",
+      "bytes": 32998,
+      "sha256": "7f758b3520343af8ccf80a6736728a5f5644cfa4a9fa5971e62eed6c88c08690"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/brand/nitda/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/colors_and_type.css",
+      "bytes": 9091,
+      "sha256": "4c58c97556716594d042639d03370411786affe98148fe2008d1f710ae89e388"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/components.css",
+      "bytes": 40917,
+      "sha256": "df8971ef1d6e055da3703e9562ce907baad82299749d9f455a11bb74389ba90f"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/kit/brand-kit.css",
+      "bytes": 32866,
+      "sha256": "374e0f82226f66a97735d5258c2178d64acfa0091870846a0bab0b1bb958e24f"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/kit/brand-kit.js",
+      "bytes": 16956,
+      "sha256": "accbf93679a5f4fae78a23fc388bb1b609742f92ad4952587efc0dfcd7f76087"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/kit/brand-platform.css",
+      "bytes": 5576,
+      "sha256": "f646e47104aceabfc2d56d17d4c23139f39ddc37ba06e7cefe3f91c37e81601f"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/layout.css",
+      "bytes": 3263,
+      "sha256": "5efce35bee5d3082fe63fe9c501289a34257894cc509191bb84b0a8383a008c2"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/platform-authority.css",
+      "bytes": 10662,
+      "sha256": "200948430283e8fd7503a1fc7e2a8684e060ac97cf6f18b3731c3ab32fef1808"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/reset.css",
+      "bytes": 1129,
+      "sha256": "b3f408326d3c4de1fa4d3b6da098749c1936c66ff55f0665df33dcf595664cd6"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.breakpoint.css",
+      "bytes": 1899,
+      "sha256": "00c4e6e5edd4ba36e77103dc1b655ccdb9b1fcd01707cb0b5f732e24c0aed10d"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.component.css",
+      "bytes": 5786,
+      "sha256": "d94ae4a79888097afb71a4ffe5433a115b04b8d720ef0ecbeea76823fa327d35"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.density.css",
+      "bytes": 1285,
+      "sha256": "9fc3ded4c2802878c7292f08233a98e54def2c43ef016c3873b841bb1dfd7d8a"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.enhanced.css",
+      "bytes": 1094,
+      "sha256": "77f3e301ea8222726947db3fd5305bfebaf47ca817b2ebacde0de5e0f453c102"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.legacy-bridge.css",
+      "bytes": 3062,
+      "sha256": "815d633bc5d450fd5491f3a7f2259efa761c65f202098f2b855145b107db2ca4"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.platforms.css",
+      "bytes": 2300,
+      "sha256": "ebfb742676766b97f8e706b69e0be693e80ff511a43fe9bd4b4d382831761216"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.primitive.css",
+      "bytes": 8820,
+      "sha256": "cfa022357a70c13ba0d06e0b63102448adf400d336539284893da8e0f8954d06"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.semantic.css",
+      "bytes": 7473,
+      "sha256": "8bd9ede6aaa63bfbfb7a47c72610ab2db745fbeff80f908e33334bc63e96e4c0"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.theme-dark.css",
+      "bytes": 4237,
+      "sha256": "b151d84a2f618d94482da2637fc72d1dafa27bbb4261fd9e8d58d8de5038c668"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.theme-hc.css",
+      "bytes": 3159,
+      "sha256": "b026526bc91836efee2a4ba85c75633d25f5aca18822930616e0fb64cc6d6f45"
+    },
+    {
+      "path": "runtime/styles/dgo-design-system/tokens/tokens.theme-light.css",
+      "bytes": 729,
+      "sha256": "1f74dda73d341c82ce837fae7e2048b80310fb97aa310ce675c1cbef6a9998c3"
+    },
+    {
+      "path": "runtime/styles/index.css",
+      "bytes": 3736,
+      "sha256": "a889791bc48e30621acb5c4adbb824547a7f04374aca69e344fa8743c4885e15"
+    },
+    {
+      "path": "runtime/support.html",
+      "bytes": 746,
+      "sha256": "d8bcdfd7847bdddd813126f5c417ee9a215bf067545df0839f68896a9d76ec86"
+    },
+    {
+      "path": "scripts/dev/mime.mjs",
+      "bytes": 1556,
+      "sha256": "96fb4a52c8ad4928b43adb3b80a8fa1a2d31bc02a3eb83f3125e88aaf2f82024"
+    },
+    {
+      "path": "scripts/fetch-values-file.mjs",
+      "bytes": 9982,
+      "sha256": "e5b9199617425d6cc2b8baf48cc39ba5a3738f5a80ac605dac22223b2ef0c15a"
+    },
+    {
+      "path": "scripts/folio.mjs",
+      "bytes": 48559,
+      "sha256": "663896a6b86fedb393f950ccf5e242b0f2733af8259768397ac759a2ce02316c"
+    },
+    {
+      "path": "scripts/hub-server.mjs",
+      "bytes": 4529,
+      "sha256": "b1c97ab33a10e003771e7caaf62bf4330f999dc591850f292630380ae79582c9"
+    },
+    {
+      "path": "scripts/lib/endpoint-config-render.mjs",
+      "bytes": 4704,
+      "sha256": "a844236b7138856c4849b68d2f02e525d41813e1b67095d23a793784a3bfd9a3"
+    },
+    {
+      "path": "scripts/lib/endpoint-probes.mjs",
+      "bytes": 8629,
+      "sha256": "4095b81d2e27e2301d45ffa97be1d0fc314ccd842441eebae1e4f1331f316c5a"
+    },
+    {
+      "path": "scripts/lib/endpoint-surface.mjs",
+      "bytes": 9251,
+      "sha256": "c2ca258843fa957e2c220ebf79f8288f8ae86ae1f6ffacd89047d5606fc2c403"
+    },
+    {
+      "path": "scripts/lib/endpoint-validation.mjs",
+      "bytes": 12903,
+      "sha256": "9eb209fdb0f677d50b5c7969824fb58f80c8b7c340ff552a343dc99bddac0406"
+    },
+    {
+      "path": "scripts/lib/shared-keys.json",
+      "bytes": 74,
+      "sha256": "33aef0943c11f5f2bcf908e8347ecee1ae8377aa33589335116705c46a0e1804"
+    },
+    {
+      "path": "scripts/lib/zip-reader.mjs",
+      "bytes": 5820,
+      "sha256": "ee718abe89fc972d43945a0ea20863cdcf11bb0c9c89b351bd9bfe092a7c8172"
+    },
+    {
+      "path": "scripts/lib/zip-writer.mjs",
+      "bytes": 3819,
+      "sha256": "37ab4efc98ab682ba5aaf4dbe4ee6f8d9238ec7c187e966d8a238d4e2835da26"
+    },
+    {
+      "path": "scripts/platforms.config.mjs",
+      "bytes": 17893,
+      "sha256": "7370ecccefa285e65fea447e18bc8fd9f590a582f2dc2d454e89cb4d7f2cc656"
+    },
+    {
+      "path": "scripts/run-platform.mjs",
+      "bytes": 17231,
+      "sha256": "f6ff0f913cfc316112c82d63caa81095b87ae07129a3c046266f1f6c6740d71c"
+    },
+    {
+      "path": "scripts/verify-endpoints.mjs",
+      "bytes": 25948,
+      "sha256": "c3f386767b29137a49da03ac6b2b0f55604ac204cf0b51508b7f088d4d337122"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "bytes": 2454,
+      "sha256": "41e7d84257f32083147c3ac77c66a8e128854afaa188fffc6272a6671913b4ad"
+    },
+    {
+      "path": "start.cmd",
+      "bytes": 303,
+      "sha256": "9e584781e1de6a02fb59e52e2314ffe1b69ae045d8d9d31c63b5b67faeadd1ad"
+    },
+    {
+      "path": "start.sh",
+      "bytes": 497,
+      "sha256": "9b9c82f7769666752bab1e00319eaf0f1d20e50d544e2ccc50ddda4dba100161"
+    },
+    {
+      "path": "tools/admin-centre/README.md",
+      "bytes": 3092,
+      "sha256": "79e75e23b9474af4674202d2aaa2502e595c3b085af3009054c3957bb6fc6c65"
+    },
+    {
+      "path": "tools/admin-centre/config/settings.json",
+      "bytes": 791,
+      "sha256": "b452f1aa218f31fc535faea61546e9ae8b942fe517cadde863ed226ed271bc5f"
+    },
+    {
+      "path": "tools/admin-centre/scripts/start.sh",
+      "bytes": 402,
+      "sha256": "5d500ad02c573b4410713ced5496e5518743c039ff7550d8be54c63cbd7f5969"
+    },
+    {
+      "path": "tools/admin-centre/scripts/verify.py",
+      "bytes": 6861,
+      "sha256": "f7e4962954971c43155fb9a2987060dc680ba6be0d910a51f3945b2bd6109d93"
+    },
+    {
+      "path": "tools/admin-centre/server.py",
+      "bytes": 179796,
+      "sha256": "96ab9da2070db8059be8f023a48bb796cb15c2d8182c2944c0d33e1db912b58a"
+    },
+    {
+      "path": "tools/admin-centre/static/app.css",
+      "bytes": 17510,
+      "sha256": "fff2d2aaf24cac5b27cdf68c4e505d1560071ccd14185426181e59b75cc5fa56"
+    },
+    {
+      "path": "tools/admin-centre/static/app.js",
+      "bytes": 132885,
+      "sha256": "3ec398b876299525def919a173305f8b647de0a59e2ccf6ced550955a9d61859"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/brand.css",
+      "bytes": 64860,
+      "sha256": "cee4621e57970280a70e026ccb37541d4ca05cc7a3b6def0dc5592bd82f88a1c"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/brand.js",
+      "bytes": 17057,
+      "sha256": "da0ba68de65cee91d6fe203dcc0a68d781d13b7a47707d52edc345666f5b371f"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "tools/admin-centre/static/brand/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "tools/admin-centre/static/estate-check.js",
+      "bytes": 2776,
+      "sha256": "9b05104b6cd8fbe0b1b4f151d934f0f3d067e730b397cfadb9fdfe2f98fb7ce0"
+    },
+    {
+      "path": "tools/admin-centre/static/index.html",
+      "bytes": 10451,
+      "sha256": "56bfe25cfbd8bbb08fd162121c16d4a0b8c24369d3b876ca2f0b565fc8d9d4a1"
+    },
+    {
+      "path": "tools/admin-centre/tests/fake_microsoft.py",
+      "bytes": 9770,
+      "sha256": "77819e87ab90041f243ba5d1f61134c31ed8b129536d51de340322d59f8e6ddd"
+    },
+    {
+      "path": "tools/admin-centre/tests/test_admin_centre.py",
+      "bytes": 51371,
+      "sha256": "101a921b1f8ff0a8ad708828e9b961a86e331946881cef4d33e8447c5d04b2ae"
+    },
+    {
+      "path": "tools/admin-centre/tests/test_flow_owner.py",
+      "bytes": 16347,
+      "sha256": "179d1114b479631938289062580cde26a84aeb4b562424a0eb9d69b55d02b2cf"
+    },
+    {
+      "path": "tools/admin-console.html",
+      "bytes": 555790,
+      "sha256": "372e846be8cbd68be347231fe356db3d5c8298c7a27240dd1f28d826f1b2b528"
+    },
+    {
+      "path": "tools/flow-capsule/CHANGELOG.md",
+      "bytes": 879,
+      "sha256": "1c64608d8838ebcf1efe5f84df39c352a76c58df14d9ed056e0c5cc101e278f9"
+    },
+    {
+      "path": "tools/flow-capsule/README.md",
+      "bytes": 9082,
+      "sha256": "2d3eda48a193bc02bbcabdd410948d2258fc5b0977d854566f56eec779765d80"
+    },
+    {
+      "path": "tools/flow-capsule/VERSION",
+      "bytes": 15,
+      "sha256": "95a7f1e04b6d182621a51aa15273f1115068c1e346b220af4b607c4c2df7959a"
+    },
+    {
+      "path": "tools/flow-capsule/app/POWER_AUTOMATE.md",
+      "bytes": 1158,
+      "sha256": "e42e9253bdb2ecd462fb3b3ad2f6a50ef6ea3fff05f026b1035ab697050d7fd4"
+    },
+    {
+      "path": "tools/flow-capsule/app/flowcapctl.py",
+      "bytes": 4044,
+      "sha256": "6cd2b6dd3141b2d67025532f662da45278a90cd36ce68e9d56c10babb7f5fde4"
+    },
+    {
+      "path": "tools/flow-capsule/app/flowcapsule.py",
+      "bytes": 20875,
+      "sha256": "f73092c41fdc0f8653b088ba4da0d2da0f9b214847df0136c80fc7a5956e6f8c"
+    },
+    {
+      "path": "tools/flow-capsule/flowcapsule.service",
+      "bytes": 606,
+      "sha256": "0c6a09747236b54703a80d7bd593081a3e1e916971dac672ad7fbc76467f4228"
+    },
+    {
+      "path": "tools/flow-capsule/requirements.txt",
+      "bytes": 47,
+      "sha256": "a150ed31c6a8670c43d01de87f842320ff6210c872aca7321832c90fb36cd2f3"
+    },
+    {
+      "path": "tools/flow-capsule/termux-setup.sh",
+      "bytes": 6641,
+      "sha256": "0869edf91289828cf31d371122179be36bcf59bb66a7e1f73f5e9eb559394028"
+    },
+    {
+      "path": "tools/flow-capsule/tests/test_flowcapsule.py",
+      "bytes": 7536,
+      "sha256": "24f4f935badef59ba436db86f4beaf060823d59eb3794b7d1f75cb9eeca04494"
+    },
+    {
+      "path": "tools/flow-capsule/tests/test_installer.py",
+      "bytes": 759,
+      "sha256": "bd19d75138224431acab4e95d53cf21c7d8dfb98f4736b1340387ab6572c92f6"
+    },
+    {
+      "path": "tools/flow-workbench/ALL_FLOW_REQUEST_SHAPES.json",
+      "bytes": 540196,
+      "sha256": "bac9f0c17f5fc41f9c820629e1da2c7e2a0bcf2466e1de95af3c2f399670673e"
+    },
+    {
+      "path": "tools/flow-workbench/README.md",
+      "bytes": 9280,
+      "sha256": "0e4ddf0ab976deeffb321aba1dc909dfff2c9836820b668070b524facde4be64"
+    },
+    {
+      "path": "tools/flow-workbench/app.css",
+      "bytes": 12317,
+      "sha256": "c14d4a02dd11a28fd0f05a7a826f0b3834dc16e46db9d32dfbd20247f7eb1808"
+    },
+    {
+      "path": "tools/flow-workbench/app.js",
+      "bytes": 26965,
+      "sha256": "c89d8b5e67866b3872475f2531d238ae474fd36f56a80c1afdb2605b5a4c8155"
+    },
+    {
+      "path": "tools/flow-workbench/build.py",
+      "bytes": 5013,
+      "sha256": "9e2abe280f8b0479627c401d36ef65690304c8f28d7510ac6c4f2a5dff1aba1d"
+    },
+    {
+      "path": "tools/flow-workbench/catalog.json",
+      "bytes": 1555897,
+      "sha256": "571e9c3932c4f24513affecf3030c1ffe1ec476919f3efb710907bd5dfbd7a9d"
+    },
+    {
+      "path": "tools/flow-workbench/index.html",
+      "bytes": 1827663,
+      "sha256": "785c4d24d795e4713b75c60edfceb29adbcf84a46d57e31efd034cc25616fdbe"
+    },
+    {
+      "path": "tools/flow-workbench/local_agent.py",
+      "bytes": 7998,
+      "sha256": "992d78f256f0d11fd8854b2b7f1e05fcf1b71c8c24db6c59b3a6455e988a2285"
+    },
+    {
+      "path": "tools/flow-workbench/scripts/browser-test.mjs",
+      "bytes": 8689,
+      "sha256": "305bf2d6c2a9782bc60026473ee0c5e37a1d6cba0fbf20678226a79a417ef72c"
+    },
+    {
+      "path": "tools/flow-workbench/scripts/check.sh",
+      "bytes": 4727,
+      "sha256": "0d9c7929914430e952a798690ce72d093136da838f5b00be112fce77f8f44141"
+    },
+    {
+      "path": "tools/flow-workbench/scripts/e2e.sh",
+      "bytes": 1250,
+      "sha256": "09fc0743add2f9f170d6bfb355da89976195b0a72a04ce2c181158337a33c58a"
+    },
+    {
+      "path": "tools/flow-workbench/scripts/layout-test.mjs",
+      "bytes": 3318,
+      "sha256": "bc0b395d219ddb78758e9634233b51df779eb8aba3ce87a6e2c5f57f86953886"
+    },
+    {
+      "path": "tools/flow-workbench/scripts/package.py",
+      "bytes": 3756,
+      "sha256": "cc96f6dda0d068a2173c281ea7a3a4c5f43c12a38e6efc392cf7f66f7b5594b1"
+    },
+    {
+      "path": "tools/flow-workbench/template.html",
+      "bytes": 232506,
+      "sha256": "fa512227712c3a0f7be8f969e13ae13b4b76b1d12d0749a195b3d3f43d3af578"
+    },
+    {
+      "path": "tools/hub/brand/brand.css",
+      "bytes": 64860,
+      "sha256": "cee4621e57970280a70e026ccb37541d4ca05cc7a3b6def0dc5592bd82f88a1c"
+    },
+    {
+      "path": "tools/hub/brand/brand.js",
+      "bytes": 17057,
+      "sha256": "da0ba68de65cee91d6fe203dcc0a68d781d13b7a47707d52edc345666f5b371f"
+    },
+    {
+      "path": "tools/hub/brand/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "tools/hub/brand/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "tools/hub/brand/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "tools/hub/brand/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "tools/hub/hub.css",
+      "bytes": 2850,
+      "sha256": "e18f703269c2c4189d23dab56acb3512529539dd096aa1cd973e5f5015899c41"
+    },
+    {
+      "path": "tools/hub/hub.js",
+      "bytes": 4698,
+      "sha256": "5a990d629c1ea2e49f63744795c63dd1e6fdd55fe9a76d2a907c1f314aa6c5c5"
+    },
+    {
+      "path": "tools/hub/index.html",
+      "bytes": 2301,
+      "sha256": "56e67f88312dcdae7eeb4df794130e02464ba40c2a1f21df68f53812e8a6e930"
+    }
+  ]
+}

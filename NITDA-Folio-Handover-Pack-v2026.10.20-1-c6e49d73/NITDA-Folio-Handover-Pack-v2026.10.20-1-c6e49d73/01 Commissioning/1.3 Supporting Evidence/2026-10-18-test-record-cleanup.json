@@ -1,0 +1,19 @@
+{
+  "readUtc": "2026-10-18T19:30:00Z",
+  "item": "MANUAL-2",
+  "approval": "owner, 2026-10-08 (cleaning of test records) and 2026-10-18 (proceed to production commissioning); counter treatment: offset, no reset (owner decision)",
+  "by": "Microsoft Graph (NITDADGO-EAAACTIVITYTRACKING, DGO_ECM_GOVERNANCE) and, where Graph is refused (NEDMS, Global_Digital_Documents_Centre), a temporary flow on the registry's SharePoint connection, deleted after its run; every deletion read back",
+  "removed": {
+    "DGO DIGITAL OPS (1f1cb303)": ["22720 ZTEST ITEM-25 activity lifecycle proof", "22721 commissioning test scan (2026-10-16, evidence/2026-10-16-scan-proof.json)"],
+    "Global Tracking Queue (ee82725a)": ["16168 ZTEST ITEM-25", "16169 TASK-2026-00003 ZTEST ITEM-74", "16170 TASK-2026-00004 ZTEST ITEM-74", "16171 TASK-2026-00005 bulk-assignment test of 22721"],
+    "DGO_IdentityMap (b25086d4)": ["1 the SPO_ITEM locator of 22721"],
+    "Portal Registry (NEDMS, 4c49f66a)": ["26 NITDA-2026-00019", "27 NITDA-2026-00020"],
+    "Portal Status Timeline (NEDMS, 5b486a5e)": ["20-26, the timeline of NITDA-2026-00020"],
+    "Portal Support Cases (b984645b)": ["88 CASE-DBSJ39", "89 CASE-9DG6YH", "90 CASE-V5GQ9W", "91 CASE-3B9592"]
+  },
+  "readBack": "Graph GET of each deleted item: 404; Portal Registry for NITDA-2026-00019/00020: 0 rows; Status Timeline for NITDA-2026-00020: 0 rows; Support Cases ID ge 88: 0 rows",
+  "deliveryRecords": "Portal Outbox Receipts are the delivery audit trail and are kept; the stale and test failures among them were set resolved-superseded (evidence/2026-10-18-failure-watch-live-proof.json, 2026-10-18-support-case-proofs.json)",
+  "counters": { "list": "Portal Sequence Counters (d95409a4)", "NITDA-2026": { "currentSequence": 20, "lastReferenceId": "NITDA-2026-00020", "next": "NITDA-2026-00021" }, "TASK-2026": { "currentSequence": 5, "lastReferenceId": "TASK-2026-00005", "next": "TASK-2026-00006" }, "treatment": "offset, no reset (owner): the numbers used by test records are not reissued" },
+  "kept": "Portal Registry NITDA-2026-00001 to 00018 and support cases before 2026-10-18 are outside the owner-approved list and are kept; the ZTST-2026 counter row (test prefix, not used by production numbering) is kept",
+  "outsideReach": "the scanned test file '22721 -2026-10-16 -UNIVERSAL_FILENAME_POLICY_ONE_PAGE_MEMO.PDF' in /E-DOCUMENT STATION (dgs@nitda.gov.ng OneDrive): Graph has no OneDrive scope here; the owner may delete it in OneDrive"
+}

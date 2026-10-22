@@ -1,0 +1,29 @@
+{
+  "recordedUtc": "2026-10-19T01:45:00Z",
+  "decision": "owner, 2026-10-18: build RN-025, RN-035 and ITEM-91 rather than accept or defer them",
+  "release": "identification release 38 (registers/identification-release.json), applied by the Flow API and read back: evidence/2026-10-19-flows-apply.json (8 APPLIED)",
+  "tenant": {
+    "GlobalTrackingQueue_indexes": "Reference_ID unindexed (no flow, view or query filters on it) and GDSUROUT indexed, through SharePoint REST in a temporary flow, 2026-10-18T23:40Z; read back by Graph: 20 indexed columns, GDSUROUT indexed, Reference_ID not",
+    "DGO_TaskReminders": "list 2f42abf5-f425-4714-9046-ffa6c0bb7151 on NITDADGO-EAAACTIVITYTRACKING with EntityKey, ClientRequestHash, DueAtUtc and ReminderStatus indexed",
+    "FlowConfiguration": "DATASET_REMINDERS_SITE_URL (item 79), DATASET_REMINDERS_LIST_ID (item 80), DIRECTORATE_UNIT_MAP (item 81, the directorate codes that are also task unit codes: CCMR, DDSD, FMC, HRM, RC); each written and read back"
+  },
+  "liveProofs": {
+    "RN-025": {
+      "upload": "CG_Upload_Endpoint called without a ticket, 2026-10-19T01:4xZ: 403 ticket_required, nothing stored; run Succeeded with Create_Flow_Telemetry, Send_Telemetry_Email and Create_Send_Telemetry_Email_Receipt all Succeeded",
+      "writeback": "CG_Portal_Writeback_Endpoint called for a reference that does not exist: 400 invalid_request, nothing changed; run Succeeded with Create_Flow_Telemetry, Send_Telemetry_Email and Create_Send_Telemetry_Email_Receipt all Succeeded"
+    },
+    "RN-035": {
+      "refused": "DYNAMIC_ACTIONS upsert-record RMD with assignedTo not-an-address: 400 INVALID_REQUEST, 'A reminder needs assignedTo (an e-mail address) and dueAt (an ISO date and time), and cannot be changed once set.'",
+      "written": "DYNAMIC_ACTIONS upsert-record RMD for dgsregistry@nitda.gov.ng, due 2026-10-19T01:38:58Z: 200 created, RMD:c01b9db8-299f-46cb-bda7-c8a78b19618d; read back by Graph: DGO_TaskReminders item 1, ReminderStatus scheduled",
+      "send": "AUTO_SCHEDULED_SWEEP run 08584092109308149844877424899CU31 (2026-10-19T07:45:54Z, 27 s): Send_Task_Reminder_Email Succeeded, Patch_Reminder_Status Succeeded; DGO_TaskReminders item 1 read back ReminderStatus sent, SentAtUtc 2026-10-19T07:46:12Z"
+    },
+    "ITEM-91": {
+      "query": "Graph read of Global Tracking Queue (16,000+ rows) filtered GDSUROUT eq 'eGD': 200, 21 rows, so the routed-unit query no longer exceeds the list view threshold",
+      "logic": "tests/identification-phase4.test.mjs: a director receives the tasks routed to their directorate and their documents (334 passed); no user holds the director role in the directory today"
+    }
+  },
+  "builds": "npm run config:rebuild (2026-10-19): Workspace 16 addresses, Portal 7, Mailer 7; no address changed; the Workspace build carries RN-020, RN-022, RN-035 (set-reminder) and the single-hold fix",
+  "notBuilt": {
+    "RN-033": "SMS stays withdrawn (owner, 2026-10-03, confirmed 2026-10-19)"
+  }
+}
