@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "scope": "First Workspace HTTP-refusal remediation slice only; not program completion or a tenant deployment.",
+  "repositoryRoot": "/home/runner/work/Folio_Commissioned/Folio_Commissioned",
+  "planningArtifacts": {
+    "branch": "copilot/folio-remediation-execution",
+    "commit": "f78b7689ec6545c296c52ebddd8c1030c54c92fc",
+    "disposition": "Existing planning-only artifacts under program/ are not overwritten, imported or represented as runtime fixes."
+  },
+  "archives": [
+    {
+      "path": "/home/runner/work/Folio_Commissioned/Folio_Commissioned/Folio_Platforms_Pack.zip",
+      "sha256": "25437266c500ff09200c64a5aed32288858964a2910795c3ff9366152074f0aa",
+      "entries": 412,
+      "uncompressedBytes": 29781566,
+      "sourceRoots": [
+        "FOLIO-WORKSPACE-v2026.10.21-2-upload-to-site-root/",
+        "FOLIO-PORTAL-v2026.10.21-2-upload-to-site-root/",
+        "NITDA-Folio-Administrator-Toolkit-v2026.10.21-2-31e80475/",
+        "Rationalisation_pack/"
+      ],
+      "versionEvidence": {
+        "workspace": "FOLIO-WORKSPACE-v2026.10.21-2-upload-to-site-root/BUILD-ID.json",
+        "version": "2026.10.21-2",
+        "sourceCommit": "31e804758d7244d3178571b3ee6d014ba2dba98f"
+      }
+    },
+    {
+      "path": "/home/runner/work/Folio_Commissioned/Folio_Commissioned/Folio_Platform_Packs_Supplementary.zip",
+      "sha256": "c183a853a056048a858f646b89ee7f673e54e2a6e912116e643d2cac227ea0ff",
+      "entries": 447,
+      "uncompressedBytes": 12807435,
+      "sourceRoots": ["folio-platform-suite-1.0.2/", "Rationalisation_pack/"],
+      "versionEvidence": {
+        "suiteManifest": "folio-platform-suite-1.0.2/RELEASE_MANIFEST.json",
+        "suiteVersion": "1.0.2",
+        "runtimeManifest": "folio-platform-suite-1.0.2/runtime/PACKAGE_MANIFEST.json",
+        "runtimeBuildId": "f4e797added9eea9",
+        "posture": "demo",
+        "provisionedEndpoints": 0,
+        "requirements": "README.md: Node.js 22+ and Python 3.11+; no dependency installation required for static Workspace."
+      }
+    },
+    {
+      "path": "/home/runner/work/Folio_Commissioned/Folio_Commissioned/NITDA-Folio-Handover-Pack-v2026.10.20-1-c6e49d73.zip",
+      "sha256": "4c5a7f41b269a70709388dcd064b9ff61de1e773394a3b2c3d694aeacd854b6c",
+      "entries": 63,
+      "uncompressedBytes": 18562520,
+      "sourceRoots": ["NITDA-Folio-Handover-Pack-v2026.10.20-1-c6e49d73/"],
+      "role": "Historical commissioning evidence and flow exports, not proof of current tenant configuration."
+    }
+  ],
+  "safeInspection": {
+    "listing": "unzip -l was run on each top-level archive before extraction.",
+    "audit": "All entries in all three archives and recursively nested Mailer ZIPs were checked for absolute paths, drive prefixes, parent traversal (including backslash paths) and Unix symlinks. None found.",
+    "extraction": "Archives were extracted only under /tmp/folio-inspection. No archive, flow export, credential configuration, duplicate application, vendor dependency or generated asset was added to the repository.",
+    "instructions": "No AGENTS.md or CLAUDE.md found in the inspected repository/source trees; .github/agents was excluded. Reviewed suite README.md, runtime/DEPLOY.md and the Rationalisation_pack package.json/test style.",
+    "reproduceListing": "unzip -l /home/runner/work/Folio_Commissioned/Folio_Commissioned/Folio_Platform_Packs_Supplementary.zip",
+    "reproduceRecursiveAudit": "python3 - <<'PY'\nfrom pathlib import Path, PurePosixPath\nfrom zipfile import ZipFile\nfrom io import BytesIO\nimport stat\nroot = Path('/home/runner/work/Folio_Commissioned/Folio_Commissioned')\ndef audit(z):\n    for i in z.infolist():\n        n = i.filename.replace('\\\\', '/')\n        assert not (PurePosixPath(n).is_absolute() or '..' in PurePosixPath(n).parts or (len(n) > 1 and n[1] == ':') or stat.S_ISLNK(i.external_attr >> 16)), n\n        if n.lower().endswith('.zip'):\n            with ZipFile(BytesIO(z.read(i))) as child:\n                audit(child)\nfor p in sorted(root.glob('*.zip')):\n    with ZipFile(p) as z:\n        audit(z)\n    print(p.name, 'PASS')\nPY",
+    "reproduceSourceComparison": "cmp <(unzip -p /home/runner/work/Folio_Commissioned/Folio_Commissioned/Folio_Platforms_Pack.zip FOLIO-WORKSPACE-v2026.10.21-2-upload-to-site-root/core/data-client.js) <(unzip -p /home/runner/work/Folio_Commissioned/Folio_Commissioned/Folio_Platform_Packs_Supplementary.zip folio-platform-suite-1.0.2/runtime/core/data-client.js)"
+  },
+  "sourceDecision": {
+    "selectedArchiveEntry": "Folio_Platform_Packs_Supplementary.zip::folio-platform-suite-1.0.2/runtime/core/data-client.js",
+    "originalSha256": "de00366c2f95c307529f3116f7d07502584fceec1e2a141e5f1b75925e3e72ad",
+    "corroboratingArchiveEntry": "Folio_Platforms_Pack.zip::FOLIO-WORKSPACE-v2026.10.21-2-upload-to-site-root/core/data-client.js",
+    "basis": "The selected module is byte-identical across both source packages. Suite and Workspace version schemes are not assumed comparable, and ZIP timestamps are not release authority. The newer Rationalisation_pack is a separate UI planning/configuration overlay and is not required for this transport fix.",
+    "restoredFile": "/home/runner/work/Folio_Commissioned/Folio_Commissioned/runtime/core/data-client.js",
+    "delivery": "Single-file source overlay, not a standalone runnable application. Its imports intentionally retain packaged paths. To evaluate the complete app, safely extract the supplementary suite to a disposable directory and overlay this module at runtime/core/data-client.js. Do not serve this repository root: it contains archives and reports.",
+    "deploymentGate": "No automatic archive repacking or deployment. A maintainer must integrate this overlay into the authoritative full source/build pipeline, regenerate and verify package integrity manifests, and approve a release. Copying this file into an old package invalidates that package's recorded digest."
+  },
+  "includedContractEvidence": {
+    "archiveEntry": "NITDA-Folio-Handover-Pack-v2026.10.20-1-c6e49d73.zip::NITDA-Folio-Handover-Pack-v2026.10.20-1-c6e49d73/03 Power Automate Flows/3.3 Flow Packages/1 Folio Workspace/DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+    "jsonPointer": "/serializedValue/actions/Scope_Global_Dynamic/actions",
+    "observations": [
+      "Compose_Dynamic_Input reads fields such as operation, entityType, title and entityKey directly under triggerBody().payload, falling back to the request root; it does not read these from payload.data.",
+      "Compose_Dynamic_Gate and Switch_Dynamic_Gate contain unauthenticated, forbidden, invalid, replay and ok paths. Their result Compose nodes include status 401, 403 and 400 with data.code/data.message.",
+      "The packaged client already refuses ordinary JSON HTTP 4xx responses except 408 and 429. The demonstrated gap is malformed/non-JSON error bodies losing HTTP status before refusal classification.",
+      "The older report's 14/15 rejection result was a historical simulator result, not a new measurement. No current tenant endpoint, role, persistence or operation compatibility was verified."
+    ],
+    "changes": "None to emitted operations, payload shape, tenant configuration or flow packages."
+  },
+  "runtimeFix": {
+    "behavior": [
+      "On a non-success HTTP response, invalid JSON falls back to an empty error payload so the existing HTTP-status classification remains authoritative.",
+      "Permanent 4xx refusals are thrown once, never queued and marked nonretryable in LoadingState.",
+      "Existing JSON flow error messages/codes, successful request envelopes and transient/network retry behavior are preserved."
+    ],
+    "notClaimed": [
+      "No general UI success-gating audit or HTTP-200 business-error envelope remediation.",
+      "No remediation of existing queued items, local-only approvals, comments, completions or archives.",
+      "No role enforcement or backend durability proof; no UI redesign or decommissioning."
+    ]
+  },
+  "deferredEstate": [
+    {
+      "application": "Public Document Portal",
+      "supplementaryRoot": "folio-platform-suite-1.0.2/document-portal/",
+      "otherRoot": "FOLIO-PORTAL-v2026.10.21-2-upload-to-site-root/",
+      "disposition": "Preserved unchanged for later public-intake and role/persistence inventory."
+    },
+    {
+      "application": "DGO Correspondence Mailer / correspondence gateway surface",
+      "supplementaryRoot": "folio-platform-suite-1.0.2/mailer/",
+      "evidence": "Suite README identifies seven HTTP-triggered Mailer flows; flow packages also appear under the handover pack's 4 Correspondence Mailer directory. Separate gateway deployment authority is not established.",
+      "disposition": "Preserved unchanged; no outbound mail, flow import or provisioning."
+    },
+    {
+      "application": "Folio Central Administration Centre",
+      "supplementaryRoot": "folio-platform-suite-1.0.2/tools/admin-centre/",
+      "disposition": "Preserved unchanged; no tenant sign-in or control-plane action."
+    },
+    {
+      "application": "Admin and engineering apps",
+      "supplementaryRoots": [
+        "folio-platform-suite-1.0.2/tools/admin-console.html",
+        "folio-platform-suite-1.0.2/tools/flow-workbench/",
+        "folio-platform-suite-1.0.2/tools/flow-capsule/",
+        "folio-platform-suite-1.0.2/tools/hub/",
+        "folio-platform-suite-1.0.2/runtime/modules/admin-suite.js"
+      ],
+      "otherRoot": "NITDA-Folio-Administrator-Toolkit-v2026.10.21-2-31e80475/",
+      "disposition": "Identified only; not migrated, merged, redesigned or retired."
+    }
+  ],
+  "verification": {
+    "nodeVersion": "24.21.0",
+    "testCommand": "node --experimental-vm-modules --test /home/runner/work/Folio_Commissioned/Folio_Commissioned/tests/data-client.test.mjs",
+    "testResult": "37 passed, 0 failed after fix. Regression failures were first reproduced against the byte-identical archived baseline. Uses existing Node/assert ecosystem with standard-library VM dependency isolation; no new dependency.",
+    "manualResult": "Extracted demo Workspace served on 127.0.0.1:8080 using the documented Python static server. GET / and /core/data-client.js succeeded; served module matched the repository overlay byte-for-byte. Actual packaged dependency graph check with synthetic HTML 403: one fetch, zero PendingQueue items, LoadingState error/nonretryable.",
+    "browserLimitation": "Playwright MCP transport closed; no visual or browser-interaction verification claimed.",
+    "tenantCalls": "None. Integration check replaced fetch with a synthetic Response and used example.invalid.",
+    "securityAndReview": {
+      "secretScan": "No secrets detected in the three added files.",
+      "codeql": "JavaScript analysis completed with zero alerts.",
+      "automatedReviewLimitation": "parallel_validation reported its code-review executable unavailable; its no-comments result is not treated as a completed review.",
+      "independentReview": "Separate read-only code-review agent reviewed the committed three-file change and the original archive baseline; no significant issues found."
+    },
+    "releaseIntegrityCommand": "After safe extraction: node /tmp/folio-inspection/Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/scripts/verify-release.mjs",
+    "releaseIntegrityBaseline": {
+      "result": "FAIL before overlay: 444 manifest entries; six listed files missing. No other problems reported by the packaged checker. Not a release-ready or fully integrity-verified suite.",
+      "missing": [
+        "VERSION",
+        "folio",
+        "mailer/VERSION",
+        "mailer/web/VERSION",
+        "runtime/LICENSE",
+        "tools/flow-capsule/VERSION"
+      ]
+    },
+    "fullSuiteLimitation": "Rationalisation_pack/package.json names many tests and scripts not supplied as a complete source tree. Its full npm test suite was not claimed or run. No build/linter command is needed for this zero-build single-module overlay.",
+    "remainingGates": [
+      "Recover authoritative full source and resolve release-manifest gaps before packaging.",
+      "Verify deployed flow versions/contracts and authorised roles using approved, redacted tenant evidence.",
+      "Prove server persistence before changing local-only workflows or redesigning UI.",
+      "Obtain approval before any flow import, tenant write or deployment."
+    ]
+  }
+}
