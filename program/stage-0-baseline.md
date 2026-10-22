@@ -2,6 +2,16 @@
 
 As of 2026-10-22. **Stage 0 remains blocked, not passed.** Read-only ZIP inspection establishes packaged evidence, not authoritative full-source ownership or tenant deployment knowledge. No endpoints were called, flows imported, mail sent, data removed or UI decommissioned.
 
+### Owner-confirmed review update
+
+The owner has confirmed private workflow approval, containment, and that the disclosed
+signatures are stale and already rotated. These are **owner-confirmed**, not independently
+tenant-verified; no further tenant calls or private evidence collection are required for
+this repository review. Historical exposure records below are not current live-secret
+findings. The owner is the sole administrator, user and developer; separate role assignments
+are not required. These confirmations do not supply the missing application source or
+release inputs and do not close the remaining Stage-0 gates.
+
 ## Provenance and source candidates
 
 Archive paths below are relative to `/home/runner/work/Folio_Commissioned/Folio_Commissioned/`. Hashes and entry counts were rechecked against the unchanged [PR #1 inventory](../runtime-remediation-inventory.json).
@@ -52,7 +62,9 @@ The suite also includes `docs/folio-Master-Flows-and-Endpoints/audits/flow-usage
 
 ## Blockers and needed evidence
 
-Owners below are **roles needing assignment**, not invented signatories. All blockers remain open.
+The owner covers the roles below; no additional approvers are required. The remaining
+source, release and acceptance gaps are unchanged. Tenant behavior not established by
+the repository remains unverified; it will not be probed as part of this review.
 
 | ID | Blocker | Evidence needed / role to assign |
 | --- | --- | --- |

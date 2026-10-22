@@ -899,8 +899,8 @@ function createEstate(DATA, io) {
     for (const a of session.applied.slice().reverse()) {
       const w = await api.json(`/flows/${a.flowId}`, { method: 'PATCH', body: JSON.stringify({ properties: a.properties }) });
       say(`${w.ok ? 'restored' : `RESTORE FAILED (${w.status})`}: ${a.flow}`, w.ok ? GREEN : RED);
+      if (w.ok) session.applied = session.applied.filter((entry) => entry !== a);
     }
-    session.applied = [];
   }
 
   /* The run report carries workflow ids and flow names, never a URL. Its `wiring` is what the

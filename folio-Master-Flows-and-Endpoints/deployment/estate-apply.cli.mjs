@@ -885,8 +885,8 @@ function createEstate(DATA, io) {
     for (const a of session.applied.slice().reverse()) {
       const w = await api.json(`/flows/${a.flowId}`, { method: 'PATCH', body: JSON.stringify({ properties: a.properties }) });
       say(`${w.ok ? 'restored' : `RESTORE FAILED (${w.status})`}: ${a.flow}`, w.ok ? GREEN : RED);
+      if (w.ok) session.applied = session.applied.filter((entry) => entry !== a);
     }
-    session.applied = [];
   }
 
   /* The run report carries workflow ids and flow names, never a URL. Its `wiring` is what the
@@ -1117,7 +1117,9 @@ async function estateCliMain(DATA, deps) {
   if (cmd === 'plan') { await estate.plan({ only: list('--only').length ? list('--only') : null }); console.log('\nPlanned. To write: node estate-apply.cli.mjs apply'); }
   if (cmd === 'apply') {
     const report = await estate.apply({ only: list('--only').length ? list('--only') : null, repointed: list('--repointed') });
-    return report.rows.some((r) => r.status === 'FAILED') ? 1 : 0;
+    const only = list('--only');
+    const requested = report.rows.filter((r) => !only.length || only.includes(r.package));
+    return requested.some((r) => !['APPLIED', 'STAGED', 'UP_TO_DATE'].includes(r.status)) ? 1 : 0;
   }
   if (cmd === 'repoint') {
     const r = await estate.repoint();

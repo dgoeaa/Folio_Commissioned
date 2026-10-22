@@ -1,8 +1,31 @@
-# `docs/` — index
+# Folio Commissioned — repository overview and documentation index
 
-Everything this repository writes down, other than the four markdown files at its
-root ([`README.md`](../README.md), [`CONTRIBUTING.md`](../CONTRIBUTING.md),
-[`PLATFORM.md`](./PLATFORM.md), `LICENSE`).
+This checkout contains documentation, historical flow exports, packaged application
+candidates and the PR #1 Workspace transport overlay. It is **not a complete unpacked
+Workspace, Portal, Mailer or administration application source tree**.
+
+- [`runtime/core/data-client.js`](./runtime/core/data-client.js) is the preserved
+  PR #1 overlay; its application dependencies are not included in the unpacked tree.
+- The three root ZIPs contain candidate application packages and historical exports.
+  Their provenance, application locations and six known supplementary release-manifest
+  gaps are recorded in [`program/stage-0-baseline.md`](./program/stage-0-baseline.md).
+  Do not serve the repository root or run deployment utilities to inspect these files.
+- There is no root `package.json` or full application build/launch pipeline. Commands
+  such as `npm run dev`, `npm test` and `npm run package` in the imported documents
+  describe their source context, not commands available in this checkout.
+- The existing local checks are:
+  `node --test tests/control-pack.test.mjs` and
+  `node --experimental-vm-modules --test tests/data-client.test.mjs`.
+  These check program records and isolated transport behavior, not full applications
+  or a deployed tenant.
+
+Private workflow approval, containment and rotation of the stale disclosed signatures
+are **owner-confirmed**, not independently tenant-verified. Historical exposure and
+readiness statements below do not override those confirmations or establish current
+deployment state. Stage 0 and release readiness remain blocked by the source and
+release gaps described in the baseline.
+
+## Imported documentation index
 
 Four kinds of document live here, and they are not interchangeable.
 
