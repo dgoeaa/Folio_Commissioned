@@ -329,10 +329,10 @@
   "endpointCount": 19,
   "actionCount": 40,
   "fileCount": 218,
-  "totalBytes": 2940096,
+  "totalBytes": 2940125,
   "integrity": {
     "algorithm": "sha256",
-    "filesDigest": "b6c57ada8c5f33d2fd3a1607d58bb28e6e955feb40161a484dc1cf5af77f4480"
+    "filesDigest": "c112e12e90ccfee779fdcfefd0a5fe04a9e37abb442b5df88549f08f644212c0"
   },
   "files": [
     {
@@ -727,8 +727,8 @@
     },
     {
       "path": "core/data-client.js",
-      "bytes": 4478,
-      "sha256": "de00366c2f95c307529f3116f7d07502584fceec1e2a141e5f1b75925e3e72ad"
+      "bytes": 4507,
+      "sha256": "f0e6ccdc17d97bb454c84c630e4ba766f3454041d95d6adde3839bbb1b015046"
     },
     {
       "path": "core/data-loader.js",
@@ -1425,5 +1425,13 @@
       "bytes": 746,
       "sha256": "d8bcdfd7847bdddd813126f5c417ee9a215bf067545df0839f68896a9d76ec86"
     }
-  ]
+  ],
+  "repositoryReconciliation": {
+    "originalManifestSha256": "d959f3c8f04483cdacfee8bc4cff28c0735125c1268b0003a2d2d0a930c8f257",
+    "overlay": "PR #1 runtime/core/data-client.js",
+    "missingInputs": [
+      "LICENSE"
+    ],
+    "note": "Original endpoint buildId retained; file integrity updated for the transport overlay. Not a rebuilt or licensed distributable."
+  }
 }

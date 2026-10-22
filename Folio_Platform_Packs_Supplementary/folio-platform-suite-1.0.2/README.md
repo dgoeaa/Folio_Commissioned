@@ -1,5 +1,18 @@
 # NITDA Folio — platform suite
 
+## Repository reconciliation
+
+This unpacked source snapshot incorporates the PR #1 Workspace HTTP-refusal fix.
+The original Mailer ZIPs are restored alongside their byte-identical expanded source,
+and the four version markers match the original manifest. The POSIX `folio` wrapper
+has been reconstructed around `scripts/folio.mjs`.
+
+Integrity records have been regenerated for these explicit changes; provenance is
+recorded in `RELEASE_MANIFEST.json`. The original `runtime/LICENSE` is still missing,
+so `node scripts/verify-release.mjs` must report that failure. This snapshot is not
+a verified distributable release. The original release description below does not
+constitute a fresh application-start or tenant-validation result.
+
 Every Folio platform, application and tool in one release. It depends on nothing in the source
 repository, and there is nothing to install apart from Node.js and Python.
 

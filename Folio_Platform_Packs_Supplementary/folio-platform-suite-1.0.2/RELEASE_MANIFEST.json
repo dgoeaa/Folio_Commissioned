@@ -84,8 +84,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 6986,
-      "sha256": "0cfe14633cbae6cd5c76b9806a10ce74f509888cfd470d9f143fff224967bb81"
+      "bytes": 7720,
+      "sha256": "69bf71195c546ab4011804db35933c3bbb5f43a3a32b87e70d4345c91e0eb075"
     },
     {
       "path": "VERSION",
@@ -374,8 +374,8 @@
     },
     {
       "path": "folio",
-      "bytes": 256,
-      "sha256": "ce8743c7e151d5a2ff4090e2b34bc8ab97f35374a4693142c554c7d8fe79ed31"
+      "bytes": 210,
+      "sha256": "2628495b3a425e7c1cbad23759714eb9995edc10432a9ece2dbb6b678fcdeb09"
     },
     {
       "path": "folio.cmd",
@@ -453,9 +453,59 @@
       "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
     },
     {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/apisMap.json",
+      "bytes": 124,
+      "sha256": "5e84eebc748f30dd8454337920a1f0dd79a28e5eeaf1ad6f9a1bae6e17b2f2cd"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/connectionsMap.json",
+      "bytes": 124,
+      "sha256": "9c11a90576f54a3f1026230650a5611d09c453b46bebb668163560c620febce6"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/definition.json",
+      "bytes": 50619,
+      "sha256": "7e86a70ca85d059e509961da5646ce686a9d68ed2fd78c30c8dc6c583acb0625"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "8671dbc5254459cb06d7aec91328d8f939458cf5a7befc471160b5e05476e23d"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_AUTH/manifest.json",
+      "bytes": 2142,
+      "sha256": "7dce2f4b1e2ed24a6adb151b7361db9674a556c0fe11626085e7aa20ce8e6615"
+    },
+    {
       "path": "mailer/flows/packages/DGO_MAIL_DATA.zip",
       "bytes": 7731,
       "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/apisMap.json",
+      "bytes": 66,
+      "sha256": "4df45af1c61b3f5a4d94869805066f2f7e8e4a8b777b6965c199cd9a7c84c2b5"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "9156a715e9b8433c8f518a9887f7b42432faa673396de094fb6b6e02b3b44fce"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/definition.json",
+      "bytes": 58422,
+      "sha256": "d951745f80ca933d7ebb3033a060de0f9eca09f3e2a0bdcdb23adb4d5ad34445"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "3fc6a6fa940a37567aceb2303dbdfc41258bef18da04d56b30986cf40d6d05a6"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DATA/manifest.json",
+      "bytes": 1408,
+      "sha256": "f8a232183cbd639e059f3aaec184b35ac7e03258c26908659b4640715d436861"
     },
     {
       "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY.zip",
@@ -463,9 +513,59 @@
       "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
     },
     {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/apisMap.json",
+      "bytes": 66,
+      "sha256": "ad41c8a81cf740a7be24bd69bf0ad7744c8ef063359ccf765923c7d2bd82c00e"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "159f9d3571491cde8759694695a90f66f867a760323ec9aee7746c60f04e1dec"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/definition.json",
+      "bytes": 31951,
+      "sha256": "cefece21112b247d7a757c051beae206a1daa0c98460178f3208d8d207930f2f"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "5c16399feb27621c74a22d2201f767eb9e97d84ca8720f681c0850a9d3d31fc0"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_DIRECTORY/manifest.json",
+      "bytes": 1349,
+      "sha256": "e6d6d096924ea003e3f4538aeba5c2c2993051e71e6e030dc9cf513f5933508f"
+    },
+    {
       "path": "mailer/flows/packages/DGO_MAIL_LOG.zip",
       "bytes": 5891,
       "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/apisMap.json",
+      "bytes": 66,
+      "sha256": "044985e0f50f4fae4d91e8690d59b036aeb8e9a38ff5bb06517a93bbb7a562cb"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "1cc9d47422ebb8d6a63b9d3b29be226c9ee67a1da0c4e9e85b47de48f6f2825c"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/definition.json",
+      "bytes": 23786,
+      "sha256": "4de666322d081080bb4e898c4b23c3dbb97f0ae669c2421939a83069ae959cdc"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "e9d86356fe6455d788bd086bf31228c25a7df0e2738de4153c840ce267801525"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_LOG/manifest.json",
+      "bytes": 1306,
+      "sha256": "11330b15e368029174b0a86d5e605c50d534b2472a2a2c90a5643f3e30b40acb"
     },
     {
       "path": "mailer/flows/packages/DGO_MAIL_PROVISION.zip",
@@ -473,14 +573,89 @@
       "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
     },
     {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/apisMap.json",
+      "bytes": 66,
+      "sha256": "ca870ce1a75f4fc25e0e8fd5be32adbe23f411c0b0e0135415204c81cac89947"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "50c9048106fd196e3edd9291a5b020ec7f6595e2f3e49e50e7e8040d208df170"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/definition.json",
+      "bytes": 38529,
+      "sha256": "7b9453293ac2d89e07f030610b3be5961a2bce3f3897de31be7990162af330de"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "046f7ed6d0d460b27aa2183c116091837cf7bb7bc520876d34530015c47b4abd"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_PROVISION/manifest.json",
+      "bytes": 1522,
+      "sha256": "c884b97c3eda10c40dec2de9bc727c70d121ef1e149aa92cb60b98682b26ff43"
+    },
+    {
       "path": "mailer/flows/packages/DGO_MAIL_SEND.zip",
       "bytes": 7808,
       "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
     },
     {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/apisMap.json",
+      "bytes": 124,
+      "sha256": "07e8eeaa4c30b3f1dc796b669a2679b7e860b3c26545ffb7467066d2438de277"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/connectionsMap.json",
+      "bytes": 124,
+      "sha256": "61b7dc0dc474f906a5d60db97a616959d1d1ff6f721baf069aa56a662ec009cc"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/definition.json",
+      "bytes": 38881,
+      "sha256": "0b2f0e035f529fda46531b070b66c46ed00d9bf012882e142da8f6ac1583b85c"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "c4efeefeb6c523a3ef9001151a068bf5049176feecedbad08596365f181dc2a8"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_SEND/manifest.json",
+      "bytes": 2108,
+      "sha256": "b5ac23854bde9326073b41a6178f237f09291195a318f4d3a768d29241c5509f"
+    },
+    {
       "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES.zip",
       "bytes": 6097,
       "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/apisMap.json",
+      "bytes": 66,
+      "sha256": "7327e805cd440354fa71e91ccf1474306823522f7a057b7eb1abf7b1a06f6f47"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "88bea53d48e73ed7527a49ff3905a7f9775fe2416e2d89a3a8a9667eb3326966"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/definition.json",
+      "bytes": 30724,
+      "sha256": "e45e0731c154b6d71d958228964601a3b6e6baf4dbddee0d499dfe2927519b1f"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "5169de7e02d3f23a875a3cfb27ca5813718bedafd73f6d72feaff0ad46ef29e4"
+    },
+    {
+      "path": "mailer/flows/packages/DGO_MAIL_TEMPLATES/manifest.json",
+      "bytes": 1346,
+      "sha256": "04fd5eadb74403f3fa6a200a5bd436750d221212e7f28f3052fa77bbf377c14a"
     },
     {
       "path": "mailer/setup.cmd",
@@ -648,9 +823,59 @@
       "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
     },
     {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/apisMap.json",
+      "bytes": 124,
+      "sha256": "5e84eebc748f30dd8454337920a1f0dd79a28e5eeaf1ad6f9a1bae6e17b2f2cd"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/connectionsMap.json",
+      "bytes": 124,
+      "sha256": "9c11a90576f54a3f1026230650a5611d09c453b46bebb668163560c620febce6"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/679dbba8-b06a-4ffd-a530-de8e0b356d29/definition.json",
+      "bytes": 50619,
+      "sha256": "7e86a70ca85d059e509961da5646ce686a9d68ed2fd78c30c8dc6c583acb0625"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "8671dbc5254459cb06d7aec91328d8f939458cf5a7befc471160b5e05476e23d"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_AUTH/manifest.json",
+      "bytes": 2142,
+      "sha256": "7dce2f4b1e2ed24a6adb151b7361db9674a556c0fe11626085e7aa20ce8e6615"
+    },
+    {
       "path": "mailer/web/flows/packages/DGO_MAIL_DATA.zip",
       "bytes": 7731,
       "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/apisMap.json",
+      "bytes": 66,
+      "sha256": "4df45af1c61b3f5a4d94869805066f2f7e8e4a8b777b6965c199cd9a7c84c2b5"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "9156a715e9b8433c8f518a9887f7b42432faa673396de094fb6b6e02b3b44fce"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/3c9e60e7-c911-4b1c-ab26-e4264e359fba/definition.json",
+      "bytes": 58422,
+      "sha256": "d951745f80ca933d7ebb3033a060de0f9eca09f3e2a0bdcdb23adb4d5ad34445"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "3fc6a6fa940a37567aceb2303dbdfc41258bef18da04d56b30986cf40d6d05a6"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DATA/manifest.json",
+      "bytes": 1408,
+      "sha256": "f8a232183cbd639e059f3aaec184b35ac7e03258c26908659b4640715d436861"
     },
     {
       "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY.zip",
@@ -658,9 +883,59 @@
       "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
     },
     {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/apisMap.json",
+      "bytes": 66,
+      "sha256": "ad41c8a81cf740a7be24bd69bf0ad7744c8ef063359ccf765923c7d2bd82c00e"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "159f9d3571491cde8759694695a90f66f867a760323ec9aee7746c60f04e1dec"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/3450cd29-d0f4-46c1-abcf-cc8db7c17266/definition.json",
+      "bytes": 31951,
+      "sha256": "cefece21112b247d7a757c051beae206a1daa0c98460178f3208d8d207930f2f"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "5c16399feb27621c74a22d2201f767eb9e97d84ca8720f681c0850a9d3d31fc0"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_DIRECTORY/manifest.json",
+      "bytes": 1349,
+      "sha256": "e6d6d096924ea003e3f4538aeba5c2c2993051e71e6e030dc9cf513f5933508f"
+    },
+    {
       "path": "mailer/web/flows/packages/DGO_MAIL_LOG.zip",
       "bytes": 5891,
       "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/apisMap.json",
+      "bytes": 66,
+      "sha256": "044985e0f50f4fae4d91e8690d59b036aeb8e9a38ff5bb06517a93bbb7a562cb"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "1cc9d47422ebb8d6a63b9d3b29be226c9ee67a1da0c4e9e85b47de48f6f2825c"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/c326336e-8214-4635-9ed4-a97671a699c5/definition.json",
+      "bytes": 23786,
+      "sha256": "4de666322d081080bb4e898c4b23c3dbb97f0ae669c2421939a83069ae959cdc"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "e9d86356fe6455d788bd086bf31228c25a7df0e2738de4153c840ce267801525"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_LOG/manifest.json",
+      "bytes": 1306,
+      "sha256": "11330b15e368029174b0a86d5e605c50d534b2472a2a2c90a5643f3e30b40acb"
     },
     {
       "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION.zip",
@@ -668,14 +943,89 @@
       "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
     },
     {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/apisMap.json",
+      "bytes": 66,
+      "sha256": "ca870ce1a75f4fc25e0e8fd5be32adbe23f411c0b0e0135415204c81cac89947"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "50c9048106fd196e3edd9291a5b020ec7f6595e2f3e49e50e7e8040d208df170"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/1057f0df-cd8d-4083-929f-c0a8b07a0c7c/definition.json",
+      "bytes": 38529,
+      "sha256": "7b9453293ac2d89e07f030610b3be5961a2bce3f3897de31be7990162af330de"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "046f7ed6d0d460b27aa2183c116091837cf7bb7bc520876d34530015c47b4abd"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_PROVISION/manifest.json",
+      "bytes": 1522,
+      "sha256": "c884b97c3eda10c40dec2de9bc727c70d121ef1e149aa92cb60b98682b26ff43"
+    },
+    {
       "path": "mailer/web/flows/packages/DGO_MAIL_SEND.zip",
       "bytes": 7808,
       "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
     },
     {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/apisMap.json",
+      "bytes": 124,
+      "sha256": "07e8eeaa4c30b3f1dc796b669a2679b7e860b3c26545ffb7467066d2438de277"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/connectionsMap.json",
+      "bytes": 124,
+      "sha256": "61b7dc0dc474f906a5d60db97a616959d1d1ff6f721baf069aa56a662ec009cc"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/55a7837c-808e-4027-b3b5-5af8f53bca22/definition.json",
+      "bytes": 38881,
+      "sha256": "0b2f0e035f529fda46531b070b66c46ed00d9bf012882e142da8f6ac1583b85c"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "c4efeefeb6c523a3ef9001151a068bf5049176feecedbad08596365f181dc2a8"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_SEND/manifest.json",
+      "bytes": 2108,
+      "sha256": "b5ac23854bde9326073b41a6178f237f09291195a318f4d3a768d29241c5509f"
+    },
+    {
       "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES.zip",
       "bytes": 6097,
       "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/apisMap.json",
+      "bytes": 66,
+      "sha256": "7327e805cd440354fa71e91ccf1474306823522f7a057b7eb1abf7b1a06f6f47"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/connectionsMap.json",
+      "bytes": 66,
+      "sha256": "88bea53d48e73ed7527a49ff3905a7f9775fe2416e2d89a3a8a9667eb3326966"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/fc1b5c1f-1f6e-4c3a-9da2-cba7666bbde1/definition.json",
+      "bytes": 30724,
+      "sha256": "e45e0731c154b6d71d958228964601a3b6e6baf4dbddee0d499dfe2927519b1f"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES/Microsoft.Flow/flows/manifest.json",
+      "bytes": 99,
+      "sha256": "5169de7e02d3f23a875a3cfb27ca5813718bedafd73f6d72feaff0ad46ef29e4"
+    },
+    {
+      "path": "mailer/web/flows/packages/DGO_MAIL_TEMPLATES/manifest.json",
+      "bytes": 1346,
+      "sha256": "04fd5eadb74403f3fa6a200a5bd436750d221212e7f28f3052fa77bbf377c14a"
     },
     {
       "path": "mailer/web/index.html",
@@ -894,8 +1244,8 @@
     },
     {
       "path": "runtime/PACKAGE_MANIFEST.json",
-      "bytes": 43861,
-      "sha256": "d959f3c8f04483cdacfee8bc4cff28c0735125c1268b0003a2d2d0a930c8f257"
+      "bytes": 44235,
+      "sha256": "61827415718f8ab9545c43ef256b3c4ae062d82dae1ce5b17082b49ee9459b81"
     },
     {
       "path": "runtime/acknowledge.html",
@@ -1254,8 +1604,8 @@
     },
     {
       "path": "runtime/core/data-client.js",
-      "bytes": 4478,
-      "sha256": "de00366c2f95c307529f3116f7d07502584fceec1e2a141e5f1b75925e3e72ad"
+      "bytes": 4507,
+      "sha256": "f0e6ccdc17d97bb454c84c630e4ba766f3454041d95d6adde3839bbb1b015046"
     },
     {
       "path": "runtime/core/data-loader.js",
@@ -2302,5 +2652,22 @@
       "bytes": 2301,
       "sha256": "56e67f88312dcdae7eeb4df794130e02464ba40c2a1f21df68f53812e8a6e930"
     }
-  ]
+  ],
+  "repositoryReconciliation": {
+    "sourceCommit": "462a6c8e5e6477f1eeab07471b0dd6b0f1c99cfc",
+    "originalManifestSha256": "544fe126de69499b3290bfb82d9b61be5a49f6679cc6f0cd507099a8b643796e",
+    "status": "incomplete-license",
+    "changedFiles": [
+      "README.md",
+      "folio",
+      "runtime/PACKAGE_MANIFEST.json",
+      "runtime/core/data-client.js"
+    ],
+    "expandedMailerMembers": 70,
+    "restoredMailerPackages": "14 original ZIPs recovered from the previously committed supplementary archive; original hashes retained",
+    "missingInputs": [
+      "runtime/LICENSE"
+    ],
+    "note": "Repository source reconciliation, not output of the original packaging pipeline. The original builtBy identifies the upstream package builder. The strict verifier must fail until the original license input is resolved."
+  }
 }

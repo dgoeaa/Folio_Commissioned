@@ -1,16 +1,18 @@
 # Folio Commissioned — repository overview and documentation index
 
-This checkout contains documentation, historical flow exports, packaged application
-candidates and the PR #1 Workspace transport overlay. It is **not a complete unpacked
-Workspace, Portal, Mailer or administration application source tree**.
+This checkout contains documentation, historical flow exports and the uploaded unpacked
+application trees. The reconciled suite is in
+[`Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/`](./Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/README.md);
+it contains Workspace, Portal, Mailer and administration/tooling source.
 
 - [`runtime/core/data-client.js`](./runtime/core/data-client.js) is the preserved
-  PR #1 overlay; its application dependencies are not included in the unpacked tree.
-- The three root ZIPs contain candidate application packages and historical exports.
-  Their provenance, application locations and six known supplementary release-manifest
-  gaps are recorded in [`program/stage-0-baseline.md`](./program/stage-0-baseline.md).
+  PR #1 overlay, now also integrated into the supplementary suite. The other Workspace
+  copy in `Folio_Platforms_Pack/` remains the original uploaded package, not the patched suite.
+- Original archive provenance and the subsequent reconciliation are recorded in
+  [`program/stage-0-baseline.md`](./program/stage-0-baseline.md). The uploaded source
+  directories replaced the three root ZIPs; those ZIPs remain in Git history.
   Do not serve the repository root or run deployment utilities to inspect these files.
-- There is no root `package.json` or full application build/launch pipeline. Commands
+- There is no root `package.json`. Commands
   such as `npm run dev`, `npm test` and `npm run package` in the imported documents
   describe their source context, not commands available in this checkout.
 - The existing local checks are:
@@ -22,8 +24,9 @@ Workspace, Portal, Mailer or administration application source tree**.
 Private workflow approval, containment and rotation of the stale disclosed signatures
 are **owner-confirmed**, not independently tenant-verified. Historical exposure and
 readiness statements below do not override those confirmations or establish current
-deployment state. Stage 0 and release readiness remain blocked by the source and
-release gaps described in the baseline.
+deployment state. The suite has its own launchers and integrity checker, but release
+verification still fails for the missing original `runtime/LICENSE`; no license text
+or release approval has been invented.
 
 ## Imported documentation index
 

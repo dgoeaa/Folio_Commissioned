@@ -12,7 +12,45 @@ findings. The owner is the sole administrator, user and developer; separate role
 are not required. These confirmations do not supply the missing application source or
 release inputs and do not close the remaining Stage-0 gates.
 
-## Provenance and source candidates
+### Uploaded-source reconciliation
+
+The current branch includes uploaded source commit `462a6c8` while preserving the earlier
+repository fixes. The unpacked suite is at
+[`Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/`](../Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/README.md).
+Workspace, Portal, Mailer and administration entry points are present there.
+
+- All 14 Mailer ZIPs were recovered byte-for-byte from the previously committed
+  supplementary archive. All 70 expanded members match those ZIPs; both forms are
+  retained and indexed in the reconciled manifest.
+- Four version files were recovered with their original manifest hashes. The POSIX
+  `folio` wrapper was reconstructed to call the existing Node launcher; it is not
+  claimed to match the missing original wrapper.
+- The PR #1 transport overlay is integrated into this suite. Its runtime and suite
+  integrity records are regenerated from the reconciled files, with provenance in
+  `RELEASE_MANIFEST.json`. The other uploaded Workspace package is unchanged.
+- The original `runtime/LICENSE` could not be recovered from the available uploads.
+  Its original manifest entry remains: verification must still fail for that missing
+  file. This is not a fully verified distributable release, and no licensing terms
+  are inferred from repository ownership.
+
+The archive results below describe the earlier packaged baseline, not a fresh failure
+to locate the now-uploaded source. Tenant and release acceptance remain outside this
+repository-only reconciliation.
+
+Checks run on the reconciled source:
+
+| Existing check | Result |
+| --- | --- |
+| Root control-pack and transport tests | 4 + 37 passed; integrated suite transport is byte-identical to the tested overlay |
+| Capsule tests | 12 passed |
+| Administration Centre tests | 53 passed, 7 failed; the same seven failures reproduce on uploaded commit `462a6c8` before reconciliation (catalogue/register and hosted-resource expectations) |
+| Suite release verifier | 514 indexed entries; only `runtime/LICENSE` missing; no altered or unlisted entries |
+| Launcher registry and POSIX launcher help | Passed; all eight declared entry-point files exist; no services or tenant calls started |
+
+The seven inherited administration failures are not waived or represented as passes.
+These checks do not establish full browser acceptance or a working deployed tenant.
+
+## Historical provenance and source candidates
 
 Archive paths below are relative to `/home/runner/work/Folio_Commissioned/Folio_Commissioned/`. Hashes and entry counts were rechecked against the unchanged [PR #1 inventory](../runtime-remediation-inventory.json).
 
