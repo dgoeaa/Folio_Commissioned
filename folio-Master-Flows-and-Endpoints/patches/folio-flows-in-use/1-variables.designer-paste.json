@@ -1,0 +1,728 @@
+{
+  "nodeId": "Scope_Initialize_Variables",
+  "serializedValue": {
+    "type": "Scope",
+    "actions": {
+      "Initialize_variable_varInUse": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varInUse",
+              "type": "array",
+              "value": [
+                {
+                  "Name": "IP_Get_Docs_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_FETCH_ACTIVITIES; DGO_ENDPOINT_GET_DOCS",
+                  "WorkflowId": "c4c26f93ba1e4d7db5247536c30cdc11",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/11/workflows/c4c26f93ba1e4d7db5247536c30cdc11/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "28f6e62a-fea8-437c-a61a-47aec706c4e2"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-19 02:27:17"
+                },
+                {
+                  "Name": "IP_Dynamic_Global_Actions_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_SUBSIDIARY_ACTIONS; DGO_ENDPOINT_DYNAMIC_ACTIONS",
+                  "WorkflowId": "d5e4b3da41e34819b3f953d2acbc2dd7",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/21/workflows/d5e4b3da41e34819b3f953d2acbc2dd7/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "08da1783-927f-4662-a429-45e1249a989f",
+                    "31c0aaf0-ddbb-478c-9a98-bc013265c4c7"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-05 19:36:57"
+                },
+                {
+                  "Name": "FETCH_ALL",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_FETCH_ALL",
+                  "WorkflowId": "aa662769f13a4666bfadf3039cd8d247",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/20/workflows/aa662769f13a4666bfadf3039cd8d247/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+                    "be1f89bd-d7ea-4a15-87c9-2ce6fd4d0eaa"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-24 03:49:02"
+                },
+                {
+                  "Name": "IP_Reference_Data_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_REFERENCE_DATA",
+                  "WorkflowId": "885fad5ec91f460490e8c772d5d10cb8",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/885fad5ec91f460490e8c772d5d10cb8/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "9a4dea8e-15f2-42b6-904d-3655056fa3c2"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-19 02:28:40"
+                },
+                {
+                  "Name": "IP_Retrieve_Email_Attachment_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_FETCH_EMAIL_ATTACHMENTS",
+                  "WorkflowId": "d2c773332f6f4fbf97ee4a5baa01f70b",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/d2c773332f6f4fbf97ee4a5baa01f70b/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "5bc87cf3-7a99-4259-b6a2-315fbc794d9b"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-18 16:51:31"
+                },
+                {
+                  "Name": "Single_Task_Assignment",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_SINGLE_ASSIGNMENT",
+                  "WorkflowId": "72acfc6a694f414f9fe39c939ead7f08",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/26/workflows/72acfc6a694f414f9fe39c939ead7f08/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "05825db0-c806-4974-807c-c062f386cc41",
+                    "3caf9458-8d95-4740-a01b-6803dad97d34"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-04 06:06:13"
+                },
+                {
+                  "Name": "BULK OPS DATA RETRIEVAL HTTP",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_BULK_ASSIGNMENT",
+                  "WorkflowId": "a705e453f922457c95ca19f32731e4d7",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/30/workflows/a705e453f922457c95ca19f32731e4d7/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06"
+                  ],
+                  "State": "",
+                  "Modified": ""
+                },
+                {
+                  "Name": "IP_User_Admin_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_USER_ADMIN",
+                  "WorkflowId": "466cf7ea66c54240aaede85a5a500f1c",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/25/workflows/466cf7ea66c54240aaede85a5a500f1c/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "e3e5c825-55ba-447e-88c1-96b7e89fd013"
+                  ],
+                  "State": "",
+                  "Modified": ""
+                },
+                {
+                  "Name": "IP_Activity_Lifecycle_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_ACTIVITY_LIFECYCLE",
+                  "WorkflowId": "35fa90bfad8f4a639cc20882f1688149",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/00/workflows/35fa90bfad8f4a639cc20882f1688149/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "b4db02d8-02a0-4bc9-b9d3-06e2aae2448c"
+                  ],
+                  "State": "",
+                  "Modified": ""
+                },
+                {
+                  "Name": "IP_SEND_EMAIL",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_EMAIL",
+                  "WorkflowId": "378b491ec39a4beca886ddec250e6961",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/378b491ec39a4beca886ddec250e6961/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "df59a69f-92ca-4554-ae68-6b464aa73ef7"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-02 05:35:58"
+                },
+                {
+                  "Name": "IP_Create__Task__for_received_Email_Endpoint",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_EMAIL_RELATED_TASK",
+                  "WorkflowId": "8fbf2896fceb4567afe9ebf47628c3a1",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/11/workflows/8fbf2896fceb4567afe9ebf47628c3a1/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "2fbb5485-6244-46eb-8a38-48e443a1d9fb",
+                    "ab1a3555-7fce-4bfe-a193-b8b84654b0a4"
+                  ],
+                  "State": "",
+                  "Modified": ""
+                },
+                {
+                  "Name": "AI_Document_Processing",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_AI_EMAIL_ANALYSIS; DGO_ENDPOINT_AI_DOC_ANALYSIS; DGO_ENDPOINT_AI_CHAT",
+                  "WorkflowId": "3f018fea1031490fb73dff6a8d6341f2",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/18/workflows/3f018fea1031490fb73dff6a8d6341f2/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-03 21:45:34"
+                },
+                {
+                  "Name": "IP_OTP_GENERATE",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_OTP_GENERATE",
+                  "WorkflowId": "741465e483714d48a07e336eb4571b89",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/741465e483714d48a07e336eb4571b89/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "e5632336-641f-4b9b-bd93-99185b5eb975"
+                  ],
+                  "State": "",
+                  "Modified": ""
+                },
+                {
+                  "Name": "IP_OTP_VERIFY",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_OTP_VERIFY",
+                  "WorkflowId": "b372d45e4b2a47d88b8e8b032da67fcd",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/29/workflows/b372d45e4b2a47d88b8e8b032da67fcd/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+                    "913bd078-5411-404f-85ac-507c10fe1a09"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-05 06:52:40"
+                },
+                {
+                  "Name": "IP_SCAN_INTAKE",
+                  "Platform": "Folio Workspace",
+                  "PrimaryRole": "Folio Workspace",
+                  "ContractKeys": "DGO_ENDPOINT_SCAN_INTAKE",
+                  "WorkflowId": "88401ce1f44148539c0da53c9491f8e6",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/26/workflows/88401ce1f44148539c0da53c9491f8e6/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "5504d7f9-cc96-470c-be79-217582faf415"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-24 04:55:02"
+                },
+                {
+                  "Name": "CG_Submission_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_SUBMISSION",
+                  "WorkflowId": "1041ed37ce924e3c886d891f23e8142c",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/24/workflows/1041ed37ce924e3c886d891f23e8142c/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "de9ef13b-ae4c-42b0-9afa-20e71a180759"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-01 02:58:13"
+                },
+                {
+                  "Name": "CG_Upload_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_UPLOAD",
+                  "WorkflowId": "62fe121e5a95416bb91275e43dd0e37e",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/10/workflows/62fe121e5a95416bb91275e43dd0e37e/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "df82e331-b800-4a8d-996e-d2b2ca846c77"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-04 03:22:43"
+                },
+                {
+                  "Name": "CG_Portal_Support_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_SUPPORT",
+                  "WorkflowId": "052013da80724713a4285edee72ccb4a",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/00/workflows/052013da80724713a4285edee72ccb4a/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "1b2c2e53-6c07-46a3-80b2-c43be1ef69db",
+                    "4873c936-a2be-4726-8e69-426edb8f70e6"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-01 03:06:48"
+                },
+                {
+                  "Name": "CG_Portal_Verification_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_VERIFY",
+                  "WorkflowId": "c0d58004c53348539d0d5aeaf49dcded",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/25/workflows/c0d58004c53348539d0d5aeaf49dcded/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "86897b2f-9770-4efa-8486-2642f24bb947",
+                    "ba47f79b-a831-49e8-b00b-3f8937c331df"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-16 22:26:49"
+                },
+                {
+                  "Name": "CG_Portal_Verification_Confirmation_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_VERIFY_CONFIRM",
+                  "WorkflowId": "b270894ff410499ebbc090e32ffe899b",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/28/workflows/b270894ff410499ebbc090e32ffe899b/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "f96e3448-3c79-4d42-b224-825258a552ba"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-06 04:30:53"
+                },
+                {
+                  "Name": "CG_Portal_Status_Check_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_STATUS",
+                  "WorkflowId": "34dd28b4a5664927b66e581c74a0ab94",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/10/workflows/34dd28b4a5664927b66e581c74a0ab94/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "60042a2e-dadb-4ad8-a672-38b4132d299f",
+                    "badb65d8-f472-407e-8975-c29d77b855d7"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-06 04:50:14"
+                },
+                {
+                  "Name": "CG_Portal_Writeback_Endpoint",
+                  "Platform": "NITDA Document Portal",
+                  "PrimaryRole": "NITDA Document Portal",
+                  "ContractKeys": "PF_ENDPOINT_WRITEBACK",
+                  "WorkflowId": "abf3a3ca53e64ba58c9ce5933e4e97e3",
+                  "ConfiguredUrl": "https://defaultca6a4b3f912349bcbcb927085ebbf1.a1.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/24/workflows/abf3a3ca53e64ba58c9ce5933e4e97e3/triggers/manual/paths/invoke?api-version=1&sp=/triggers/manual/run&sv=1.0&sig=<redacted>",
+                  "Candidates": [
+                    "bde13d27-73b3-4e1a-9687-eb289b039c7a"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-06 04:30:51"
+                },
+                {
+                  "Name": "DGO_MAIL_AUTH",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "7d90f8f0-fa91-4aed-899c-b2bce5b70694"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:31:22"
+                },
+                {
+                  "Name": "DGO_MAIL_DATA",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "d44a67e3-c55a-415a-afe9-ef50a4702117"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:32:04"
+                },
+                {
+                  "Name": "DGO_MAIL_DIRECTORY",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:31:03"
+                },
+                {
+                  "Name": "DGO_MAIL_LOG",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "98ce8b40-d386-4ec5-a277-1a35688fef4f"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:30:58"
+                },
+                {
+                  "Name": "DGO_MAIL_PROVISION",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "c5a0f936-40a5-4044-a383-2530468f8413"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:31:16"
+                },
+                {
+                  "Name": "DGO_MAIL_SEND",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "0fb53e16-fa57-41a9-9880-752c3a4d4749"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:30:52"
+                },
+                {
+                  "Name": "DGO_MAIL_TEMPLATES",
+                  "Platform": "Correspondence Mailer",
+                  "PrimaryRole": "Correspondence Mailer",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "176f7af5-7ffc-41d0-910b-e17b5587ebbd"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-26 19:31:10"
+                },
+                {
+                  "Name": "01 - GOV - Provision HTTP Flow Registry",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-10 07:31:27"
+                },
+                {
+                  "Name": "02 - GOV - Register HTTP Flow Truth",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "651ae389-eeed-4bf0-9799-67bd964ebe71"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 23:52:46"
+                },
+                {
+                  "Name": "03 - GOV - Record HTTP Flow Execution",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "0545e19a-c34a-45db-bd11-27b87a34973e"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 23:53:22"
+                },
+                {
+                  "Name": "04 - GOV - Audit HTTP Flow Registry",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-16 10:48:52"
+                },
+                {
+                  "Name": "05 - GOV - Retire HTTP Flow",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "493b4ab7-8f63-4fab-8121-746c2cac7f98"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 22:23:58"
+                },
+                {
+                  "Name": "06 - GOV - Registry Exception Notification",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "87a74d7e-7435-4e34-baa1-7e759ebf5565"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 22:32:11"
+                },
+                {
+                  "Name": "07 - GOV - Consumer HTTP Self-Registration Template",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "c6a011c5-7b11-4241-82ae-a45b88ebf276"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 23:46:33"
+                },
+                {
+                  "Name": "08 - GOV - Discover and Register HTTP Consumers",
+                  "Platform": "Estate Console / Flow Workbench",
+                  "PrimaryRole": "Estate Console / Flow Workbench",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-09-08 23:50:19"
+                },
+                {
+                  "Name": "AUTO_SCHEDULED_SWEEP",
+                  "Platform": "Background automation",
+                  "PrimaryRole": "Background automation",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae"
+                  ],
+                  "State": "Stopped",
+                  "Modified": "2026-09-05 09:33:36"
+                },
+                {
+                  "Name": "DGSO INCOMING AI PROCESSING",
+                  "Platform": "Background automation",
+                  "PrimaryRole": "Background automation",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "b6d92bae-591e-fa1e-52eb-b350cad988a7"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-08-21 10:26:32"
+                },
+                {
+                  "Name": "Global_Gap_Remediation_Provisioning",
+                  "Platform": "Background automation",
+                  "PrimaryRole": "Background automation",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "3f96478b-117f-4d70-aa09-668c121e084d"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-08-18 04:18:49"
+                },
+                {
+                  "Name": "Repair the DGO_* governance lists",
+                  "Platform": "Background automation",
+                  "PrimaryRole": "Background automation",
+                  "ContractKeys": "",
+                  "WorkflowId": "",
+                  "ConfiguredUrl": "",
+                  "Candidates": [
+                    "bc095fa2-28a4-4312-9076-87caac5ca116"
+                  ],
+                  "State": "Started",
+                  "Modified": "2026-08-22 21:56:24"
+                }
+              ]
+            }
+          ]
+        },
+        "runAfter": {}
+      },
+      "Initialize_variable_varSources": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varSources",
+              "type": "object",
+              "value": {
+                "usageAnalysis": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json",
+                "tenantExport": "dgsRegistry@nitda.gov.ng — Power Automate \"List My Flows\" export of 2026-09-26",
+                "estateRegister": "docs/folio-Master-Flows-and-Endpoints/reference/estate-register.json",
+                "endpointRegister": "docs/folio-Master-Flows-and-Endpoints/registers/endpoint-register.json",
+                "crosswalk": "docs/folio-Master-Flows-and-Endpoints/registers/flow-identity-crosswalk.json",
+                "mailer": "mailer/js/settings.js"
+              }
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varInUse": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varEnvironment": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varEnvironment",
+              "type": "string",
+              "value": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1"
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varSources": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varLiveFlows": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varLiveFlows",
+              "type": "array",
+              "value": []
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varEnvironment": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varNotRetrieved": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varNotRetrieved",
+              "type": "array",
+              "value": []
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varLiveFlows": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varListsTouched": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varListsTouched",
+              "type": "array",
+              "value": []
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varNotRetrieved": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varChanges": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varChanges",
+              "type": "array",
+              "value": []
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varListsTouched": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varResolvedFlow": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varResolvedFlow",
+              "type": "string",
+              "value": "@string('')"
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varChanges": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varCallbackUrls": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varCallbackUrls",
+              "type": "array",
+              "value": []
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varResolvedFlow": [
+            "Succeeded"
+          ]
+        }
+      },
+      "Initialize_variable_varReportTemplate": {
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "varReportTemplate",
+              "type": "string",
+              "value": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>Folio Flow Estate — Interactive Report</title>\n<style>\n:root{--deep:#05583B;--smart:#17B255;--ink:#373435;--line:#E8E6E7;--paper:#FAFAF9;--muted:#5F5C5D;--on:#011610;--warn:#A87500;--bad:#C8102E;--card:#fff}\n*{box-sizing:border-box}\nbody{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 \"Segoe UI\",Arial,sans-serif}\na{color:var(--deep)}\nheader.top{background:var(--deep);color:#fff;padding:14px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:5}\nheader.top .min{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.9}\nheader.top h1{margin:2px 0 0;font-size:18px}\nheader.top .meta{font-size:12px;opacity:.9}\nheader.top .tools{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}\nbutton,.chip{font:inherit;font-size:12px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}\nbutton.primary{background:var(--smart);color:var(--on);border-color:var(--smart)}\n.chip[aria-pressed=true]{background:var(--deep);color:#fff;border-color:var(--deep)}\n.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 70px)}\nnav.side{border-right:1px solid var(--line);background:#fff;padding:14px 10px;position:sticky;top:70px;height:calc(100vh - 70px);overflow:auto}\nnav.side a{display:flex;justify-content:space-between;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:13px}\nnav.side a:hover,nav.side a.on{background:var(--paper);color:var(--deep);font-weight:600}\nnav.side .n{color:var(--muted);font-weight:400}\nmain{padding:20px 26px;min-width:0}\nsection{margin:0 0 30px;scroll-margin-top:84px}\nsection>h2{color:var(--deep);font-size:18px;margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid var(--smart);display:flex;gap:10px;align-items:baseline}\nsection>h2 .sub{font-size:12px;color:var(--muted);font-weight:400}\n.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}\n.tile{background:#fff;border:1px solid var(--line);border-top:4px solid var(--smart);border-radius:12px;padding:10px 12px;cursor:default}\n.tile[data-go]{cursor:pointer}.tile[data-go]:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}\n.tile b{display:block;font-size:24px;color:var(--deep)}\n.tile span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}\n.tile.warn{border-top-color:var(--warn)}.tile.bad{border-top-color:var(--bad)}\n.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}\n.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}\n.panel h3{margin:0 0 8px;font-size:13px;color:var(--deep)}\n.bar{display:grid;grid-template-columns:150px 1fr 40px;gap:8px;align-items:center;font-size:12px;margin:5px 0}\n.bar .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.bar .trk{background:var(--paper);border-radius:6px;height:14px;overflow:hidden}\n.bar .fil{height:100%;background:var(--deep);border-radius:6px}\n.bar .val{text-align:right;color:var(--muted)}\n.donut{display:flex;gap:14px;align-items:center}\n.legend div{font-size:12px;display:flex;gap:6px;align-items:center;margin:3px 0}\n.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}\n.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}\n.filters input{font:inherit;border:1px solid var(--line);border-radius:999px;padding:6px 12px;min-width:240px}\ntable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:12.5px}\nth{background:var(--deep);color:#fff;text-align:left;padding:8px 10px;cursor:pointer;white-space:nowrap}\nth:after{content:\" ↕\";opacity:.5}\ntd{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top;word-break:break-word}\ntr:hover td{background:#EAF3EF}\n.pill{display:inline-block;white-space:nowrap;border-radius:999px;padding:1px 8px;font-size:11px;background:var(--paper);border:1px solid var(--line)}\n.pill.ok{background:#E6F7ED;border-color:#C2EED2;color:#05583B}.pill.no{background:#FBE7EB;border-color:#F6C2CB;color:var(--bad)}.pill.na{color:var(--muted)}\ndetails.flow{background:#fff;border:1px solid var(--line);border-left:5px solid var(--deep);border-radius:12px;margin:10px 0}\ndetails.flow>summary{list-style:none;cursor:pointer;padding:10px 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}\ndetails.flow>summary::-webkit-details-marker{display:none}\ndetails.flow>summary b{color:var(--deep);font-size:14px}\ndetails.flow .body{padding:0 14px 14px}\n.kv{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}\n.kv div{padding:6px 10px;border-top:1px solid var(--line);font-size:12.5px;word-break:break-all}\n.kv div:nth-child(-n+2){border-top:0}\n.kv .k{color:var(--muted);background:var(--paper)}\n.tabs{display:flex;gap:6px;margin:12px 0 8px}\npre.def{background:#022819;color:#CFE3D8;border-radius:8px;padding:12px;max-height:420px;overflow:auto;font-size:11.5px;white-space:pre-wrap;word-break:break-all}\n.empty{color:var(--muted);font-style:italic;padding:8px 0}\nfooter{border-top:1px solid var(--line);padding:14px 22px;color:var(--muted);font-size:12px;background:#fff}\n@media (max-width:860px){.layout{grid-template-columns:1fr}nav.side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px}.kv{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 34px}th{position:static}}\n@media print{header.top{position:static}nav.side,.filters,.tools,.tabs{display:none}.layout{display:block}details.flow{break-inside:avoid}details.flow .body{display:block}pre.def{max-height:none}}\n</style>\n</head>\n<body>\n<header class=\"top\">\n  <div><div class=\"min\">Federal Ministry of Communications, Innovation &amp; Digital Economy</div><h1>National Information Technology Development Agency — Folio Flow Estate</h1><div class=\"meta\" id=\"meta\"></div></div>\n  <div class=\"tools\">\n    <button id=\"expand\">Expand all</button><button id=\"collapse\">Collapse all</button>\n    <button id=\"dl\">Download JSON</button><button class=\"primary\" onclick=\"window.print()\">Print / PDF</button>\n  </div>\n</header>\n<div class=\"layout\">\n  <nav class=\"side\" id=\"nav\"></nav>\n  <main id=\"main\"></main>\n</div>\n<footer>Confidentiality Notice: This report is for internal use within the Agency. Callback URLs are shown with their signature removed; the signed URLs are filed separately in the restricted callback file. · National Information Technology Development Agency · Office of the Director-General/CEO</footer>\n<script>\nvar DATA = \"__REPORT_DATA__\";\n(function () {\n  var D = typeof DATA === 'string' ? JSON.parse(DATA) : DATA;\n  var flows = D.flowsLive || [], gone = D.notRetrieved || [], changes = D.changesSinceBaseline || [], lists = D.listsTouched || [], T = D.totals || {}, R = D.report || {};\n  var $ = function (s, r) { return (r || document).querySelector(s); };\n  var esc = function (v) { return String(v == null ? '' : v).replace(/[&<>\"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[c]; }); };\n  var pill = function (v) { var s = String(v); var c = /^(yes|started|true|on)$/i.test(s) ? 'ok' : /^(no|false|stopped|suspended)$/i.test(s) ? 'no' : 'na'; return '<span class=\"pill ' + c + '\">' + esc(s) + '</span>'; };\n  var count = function (arr, key) { var m = {}; arr.forEach(function (x) { var k = x[key] === '' || x[key] == null ? '(none)' : String(x[key]); m[k] = (m[k] || 0) + 1; }); return Object.keys(m).map(function (k) { return [k, m[k]]; }).sort(function (a, b) { return b[1] - a[1]; }); };\n  $('#meta').textContent = 'Read live ' + (R.generatedUtc || '') + ' UTC · run ' + (R.runId || '') + ' · ' + (R.environment || '');\n\n  var sections = [\n    ['overview', 'Overview', ''], ['dashboard', 'Dashboard', ''], ['endpoints', 'Endpoints & flows', flows.length],\n    ['details', 'Flow details', flows.length], ['changes', 'Changes', changes.length], ['unread', 'Not readable', gone.length],\n    ['lists', 'SharePoint lists', lists.length], ['governance', 'Governance lists', ''], ['sources', 'Sources', '']];\n  $('#nav').innerHTML = sections.map(function (s) { return '<a href=\"#' + s[0] + '\" data-s=\"' + s[0] + '\">' + s[1] + '<span class=\"n\">' + s[2] + '</span></a>'; }).join('');\n\n  var tile = function (n, l, go, cls) { return '<div class=\"tile ' + (cls || '') + '\"' + (go ? ' data-go=\"' + go + '\"' : '') + '><b>' + esc(n) + '</b><span>' + esc(l) + '</span></div>'; };\n  var bars = function (rows) { var max = Math.max.apply(null, rows.map(function (r) { return r[1]; }).concat([1])); return rows.map(function (r) { return '<div class=\"bar\"><span class=\"lbl\" title=\"' + esc(r[0]) + '\">' + esc(r[0]) + '</span><span class=\"trk\"><span class=\"fil\" style=\"display:block;width:' + (100 * r[1] / max) + '%\"></span></span><span class=\"val\">' + r[1] + '</span></div>'; }).join('') || '<div class=\"empty\">Nothing to show.</div>'; };\n  var donut = function (rows) {\n    var cols = ['#05583B', '#17B255', '#A87500', '#C8102E', '#5F5C5D', '#0B6BB0'], tot = rows.reduce(function (s, r) { return s + r[1]; }, 0) || 1, a = 0, segs = '';\n    rows.forEach(function (r, i) { var f = r[1] / tot, x1 = Math.cos(2 * Math.PI * a), y1 = Math.sin(2 * Math.PI * a); a += f; var x2 = Math.cos(2 * Math.PI * a), y2 = Math.sin(2 * Math.PI * a);\n      segs += f >= 1 ? '<circle r=\"1\" fill=\"' + cols[i % 6] + '\"/>' : '<path d=\"M0 0 L' + x1 + ' ' + y1 + ' A1 1 0 ' + (f > .5 ? 1 : 0) + ' 1 ' + x2 + ' ' + y2 + ' Z\" fill=\"' + cols[i % 6] + '\"/>'; });\n    return '<div class=\"donut\"><svg viewBox=\"-1.1 -1.1 2.2 2.2\" width=\"120\" height=\"120\" style=\"transform:rotate(-90deg)\">' + segs + '<circle r=\".55\" fill=\"#fff\"/></svg><div class=\"legend\">' + rows.map(function (r, i) { return '<div><i style=\"background:' + cols[i % 6] + '\"></i>' + esc(r[0]) + ' — ' + r[1] + '</div>'; }).join('') + '</div></div>';\n  };\n  var connectorRows = (function () { var m = {}; flows.forEach(function (f) { String(f.Connectors || '').split('; ').filter(Boolean).forEach(function (c) { m[c] = (m[c] || 0) + 1; }); }); return Object.keys(m).map(function (k) { return [k.replace(/^shared_/, ''), m[k]]; }).sort(function (a, b) { return b[1] - a[1]; }); })();\n  var platformAll = count(flows.concat(gone), 'Platform');\n\n  var main = '';\n  main += '<section id=\"overview\"><h2>Overview <span class=\"sub\">Only what the folio\\'s platforms call now, read live from the tenant</span></h2><div class=\"tiles\">' +\n    tile(T.inUse, 'In use by the platforms', 'endpoints') + tile(T.retrievedLive, 'Read live', 'details') + tile(T.notRetrieved, 'Not readable', 'unread', T.notRetrieved ? 'bad' : '') +\n    tile(T.on, 'On') + tile(T.notOn, 'Not on', '', T.notOn ? 'warn' : '') + tile(T.callbackMatches, 'Callback = configured', 'endpoints') +\n    tile(T.callbackMismatches, 'Callback ≠ configured', 'endpoints', T.callbackMismatches ? 'bad' : '') + tile(T.modifiedSinceBaseline, 'Modified since 2026-09-26', 'changes') +\n    tile(T.stateChanged, 'State changed', 'changes', T.stateChanged ? 'warn' : '') + tile(T.inRegistry, 'In flow registry') + tile(T.listTouches, 'List touches', 'lists') + '</div></section>';\n  main += '<section id=\"dashboard\"><h2>Dashboard</h2><div class=\"charts\">' +\n    '<div class=\"panel\"><h3>In use, by platform</h3>' + bars(platformAll) + '</div>' +\n    '<div class=\"panel\"><h3>Read status</h3>' + donut([['Read live', flows.length], ['Not readable', gone.length]]) + '</div>' +\n    '<div class=\"panel\"><h3>Live state</h3>' + donut(count(flows, 'State')) + '</div>' +\n    '<div class=\"panel\"><h3>Callback URL against configuration</h3>' + donut(count(flows, 'CallbackMatchesConfiguration')) + '</div>' +\n    '<div class=\"panel\"><h3>Trigger type</h3>' + bars(count(flows, 'TriggerType')) + '</div>' +\n    '<div class=\"panel\"><h3>Connectors used (flows)</h3>' + bars(connectorRows) + '</div>' +\n    '<div class=\"panel\"><h3>Actions per flow</h3>' + bars(flows.map(function (f) { return [f.Name, Number(f.ActionCount) || 0]; }).sort(function (a, b) { return b[1] - a[1]; })) + '</div>' +\n    '<div class=\"panel\"><h3>SharePoint lists per flow</h3>' + bars(flows.map(function (f) { return [f.Name, Number(f.ListCount) || 0]; }).filter(function (r) { return r[1]; }).sort(function (a, b) { return b[1] - a[1]; })) + '</div>' +\n    '</div></section>';\n  var platforms = platformAll.map(function (r) { return r[0]; });\n  main += '<section id=\"endpoints\"><h2>Endpoints &amp; flows <span class=\"sub\">click a heading to sort · click a name for its details</span></h2>' +\n    '<div class=\"filters\"><input id=\"q\" type=\"search\" placeholder=\"Search name, contract key, workflow or flow ID…\">' +\n    '<button class=\"chip\" aria-pressed=\"true\" data-p=\"*\">All platforms</button>' + platforms.map(function (p) { return '<button class=\"chip\" aria-pressed=\"false\" data-p=\"' + esc(p) + '\">' + esc(p) + '</button>'; }).join('') +\n    '<button class=\"chip\" aria-pressed=\"false\" data-x=\"mismatch\">Callback ≠ configured</button></div>' +\n    '<table id=\"tbl\"><thead><tr><th data-k=\"Name\">Flow</th><th data-k=\"Platform\">Platform</th><th data-k=\"ContractKeys\">Contract keys</th><th data-k=\"State\">State</th><th data-k=\"TriggerType\">Trigger</th><th data-k=\"ActionCount\">Actions</th><th data-k=\"CallbackMatchesConfiguration\">Callback = configured</th><th data-k=\"Modified\">Modified</th></tr></thead><tbody></tbody></table></section>';\n  main += '<section id=\"details\"><h2>Flow details <span class=\"sub\">every field, the redacted callback URL and the full live definition</span></h2><div id=\"cards\"></div></section>';\n  var simple = function (id, title, cols, rows, keys) { return '<section id=\"' + id + '\"><h2>' + title + '</h2>' + (rows.length ? '<table><thead><tr>' + cols.map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.map(function (r) { return '<tr>' + keys.map(function (k) { return '<td>' + (k === 'OpenInDesigner' ? (r[k] ? '<a target=\"_blank\" href=\"' + esc(r[k]) + '\">Open</a>' : '') : esc(r[k])) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>' : '<div class=\"empty\">None.</div>') + '</section>'; };\n  main += simple('changes', 'Changes since the 2026-09-26 export', ['Flow', 'Change', 'Designer'], changes, ['Flow', 'Change', 'OpenInDesigner']);\n  main += simple('unread', 'Not readable', ['Flow', 'Platform', 'Contract keys', 'Workflow ID', 'Candidates', 'Reason'], gone, ['Name', 'Platform', 'ContractKeys', 'WorkflowId', 'CandidateFlows', 'Reason']);\n  main += simple('lists', 'SharePoint lists the flows touch (live definitions)', ['Flow', 'List', 'Sites in that flow'], lists, ['Flow', 'List', 'Sites']);\n  var G = D.governance || {};\n  main += '<section id=\"governance\"><h2>Governance lists</h2><table><thead><tr><th>List</th><th>Read</th><th>Rows</th></tr></thead><tbody>' + ['Registry', 'Ledger', 'Exceptions'].map(function (k) { var g = G[k] || {}; return '<tr><td>' + esc(g.list) + '</td><td>' + (g.read ? pill('Yes') : pill('No') + ' ' + esc(g.error)) + '</td><td>' + esc(g.rowCount) + '</td></tr>'; }).join('') + '</tbody></table></section>';\n  main += '<section id=\"sources\"><h2>Sources</h2><div class=\"kv\">' + Object.keys(R.sources || {}).map(function (k) { return '<div class=\"k\">' + esc(k) + '</div><div>' + esc(R.sources[k]) + '</div>'; }).join('') + '</div></section>';\n  $('#main').innerHTML = main;\n\n  var FIELDS = [['Platform', 'Platform'], ['Contract keys', 'ContractKeys'], ['Configured workflow ID', 'WorkflowId'], ['Configured endpoint (register)', 'ConfiguredUrl'], ['Live callback URL', 'CallbackUrlRedacted'], ['Callback signature length', 'CallbackSignatureLength'], ['Callback = configured', 'CallbackMatchesConfiguration'], ['Tenant flow ID', 'FlowGuid'], ['Candidates checked', 'CandidateFlows'], ['State (live / 2026-09-26)', ['State', 'BaselineState']], ['Modified (live / 2026-09-26)', ['Modified', 'BaselineModified']], ['Created', 'Created'], ['Trigger', ['TriggerType', 'Method']], ['Actions', 'ActionCount'], ['Connectors', 'Connectors'], ['SharePoint sites', 'Sites'], ['SharePoint lists', 'ListCount'], ['Owners', ['Owners', 'OwnerRoles']], ['Creator (object ID)', 'Creator'], ['Failure alerts', 'FailureAlerts'], ['In DGO_HTTPFlowRegistry', 'InRegistry'], ['Execution ledger mentions', 'LedgerMentions'], ['Registry exception mentions', 'ExceptionMentions']];\n  $('#cards').innerHTML = flows.map(function (f, i) {\n    var kv = FIELDS.map(function (x) { var v = Array.isArray(x[1]) ? x[1].map(function (k) { return f[k]; }).filter(function (s) { return s !== '' && s != null; }).join(' / ') : f[x[1]]; return '<div class=\"k\">' + x[0] + '</div><div>' + esc(v) + '</div>'; }).join('');\n    return '<details class=\"flow\" id=\"f-' + esc(f.FlowGuid) + '\"><summary><b>' + esc(f.Name) + '</b><span class=\"pill\">' + esc(f.Platform) + '</span>' + pill(f.State) + '<span class=\"pill\">' + esc(f.TriggerType) + '</span>' + (f.OpenInDesigner ? '<a target=\"_blank\" href=\"' + esc(f.OpenInDesigner) + '\" onclick=\"event.stopPropagation()\">Open in designer</a>' : '') + '</summary><div class=\"body\"><div class=\"kv\">' + kv + '</div>' +\n      '<div class=\"tabs\"><button data-t=\"def\" data-i=\"' + i + '\">Definition</button><button data-t=\"trg\" data-i=\"' + i + '\">Triggers</button><button data-t=\"cr\" data-i=\"' + i + '\">Connection references</button><button data-t=\"copy\" data-i=\"' + i + '\">Copy definition</button></div><pre class=\"def\" id=\"pre-' + i + '\">Choose Definition, Triggers or Connection references.</pre></div></details>';\n  }).join('') || '<div class=\"empty\">No flow was read.</div>';\n\n  var state = { q: '', p: '*', mismatch: false, sort: 'Name', dir: 1 };\n  var render = function () {\n    var q = state.q.toLowerCase();\n    var rows = flows.filter(function (f) { return (state.p === '*' || f.Platform === state.p) && (!state.mismatch || f.CallbackMatchesConfiguration === 'No') && (!q || [f.Name, f.ContractKeys, f.WorkflowId, f.FlowGuid, f.Platform].join(' ').toLowerCase().indexOf(q) > -1); })\n      .sort(function (a, b) { var x = a[state.sort], y = b[state.sort]; return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y))) * state.dir; });\n    $('#tbl tbody').innerHTML = rows.map(function (f) { return '<tr><td><a href=\"#f-' + esc(f.FlowGuid) + '\" data-open=\"' + esc(f.FlowGuid) + '\">' + esc(f.Name) + '</a></td><td>' + esc(f.Platform) + '</td><td>' + esc(f.ContractKeys) + '</td><td>' + pill(f.State) + '</td><td>' + esc(f.TriggerType) + (f.Method ? ' · ' + esc(f.Method) : '') + '</td><td>' + esc(f.ActionCount) + '</td><td>' + pill(f.CallbackMatchesConfiguration) + '</td><td>' + esc(f.Modified) + '</td></tr>'; }).join('') || '<tr><td colspan=\"8\" class=\"empty\">No flow matches.</td></tr>';\n  };\n  render();\n  $('#q').addEventListener('input', function (e) { state.q = e.target.value; render(); });\n  document.querySelectorAll('.chip[data-p]').forEach(function (b) { b.addEventListener('click', function () { document.querySelectorAll('.chip[data-p]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); state.p = b.getAttribute('data-p'); render(); }); });\n  $('.chip[data-x]').addEventListener('click', function (e) { state.mismatch = !state.mismatch; e.target.setAttribute('aria-pressed', String(state.mismatch)); render(); });\n  document.querySelectorAll('#tbl th').forEach(function (th) { th.addEventListener('click', function () { var k = th.getAttribute('data-k'); state.dir = state.sort === k ? -state.dir : 1; state.sort = k; render(); }); });\n  document.addEventListener('click', function (e) {\n    var o = e.target.closest('[data-open]'); if (o) { var d = document.getElementById('f-' + o.getAttribute('data-open')); if (d) d.open = true; }\n    var g = e.target.closest('[data-go]'); if (g) location.hash = g.getAttribute('data-go');\n    var t = e.target.closest('[data-t]'); if (t) { var f = flows[+t.getAttribute('data-i')], k = t.getAttribute('data-t'), pre = document.getElementById('pre-' + t.getAttribute('data-i'));\n      if (k === 'copy') { navigator.clipboard && navigator.clipboard.writeText(JSON.stringify(f.Definition, null, 2)); t.textContent = 'Copied'; return; }\n      pre.textContent = JSON.stringify(k === 'def' ? f.Definition : k === 'trg' ? f.Triggers : f.ConnectionReferences, null, 2); }\n  });\n  $('#expand').onclick = function () { document.querySelectorAll('details.flow').forEach(function (d) { d.open = true; }); };\n  $('#collapse').onclick = function () { document.querySelectorAll('details.flow').forEach(function (d) { d.open = false; }); };\n  $('#dl').onclick = function () { var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(D, null, 2)], { type: 'application/json' })); a.download = 'Folio-Flow-Estate.json'; a.click(); };\n  var links = document.querySelectorAll('nav.side a');\n  var spy = function () { var y = window.scrollY + 120, cur = sections[0][0]; sections.forEach(function (s) { var el = document.getElementById(s[0]); if (el && el.offsetTop <= y) cur = s[0]; }); links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-s') === cur); }); };\n  window.addEventListener('scroll', spy); spy();\n})();\n</script>\n</body>\n</html>\n"
+            }
+          ]
+        },
+        "runAfter": {
+          "Initialize_variable_varCallbackUrls": [
+            "Succeeded"
+          ]
+        }
+      }
+    },
+    "runAfter": {}
+  },
+  "allConnectionData": {},
+  "staticResults": {},
+  "isScopeNode": true,
+  "mslaNode": true
+}

@@ -1,0 +1,20 @@
+{
+  "reportType": "DGO Power Automate Execution Report",
+  "schemaVersion": "5.0.0",
+  "flow": "08 - GOV - Discover and Register HTTP Consumers",
+  "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+  "runId": "08584121627965591673607458636CU07",
+  "environmentId": "Default-[REDACTED_CONFIDENTIAL_IDENTIFIER]",
+  "generatedAtUtc": "2026-09-15T03:48:10.0029018Z",
+  "status": "Succeeded",
+  "details": {
+    "discoveryWindowHours": 24,
+    "executionRowsRetrieved": 0,
+    "maximumRowsPerRun": 5000,
+    "consumerType": "DiscoveredCaller",
+    "defaultOwnerEmail": "[REDACTED_EMAIL]",
+    "approvalPolicy": "Discovery never grants approval",
+    "registryPolicy": "Consumers are registered only for active registry records"
+  },
+  "runUrl": "https://make.powerautomate.com/environments/Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1/flows/f5e7679f-ca1b-4216-8a6e-bb6c044ed06f/runs/08584121627965591673607458636CU07"
+}

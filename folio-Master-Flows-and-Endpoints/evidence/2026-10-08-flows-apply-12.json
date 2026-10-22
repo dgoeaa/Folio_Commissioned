@@ -1,0 +1,30 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "2cf8fa58a00b1d0c3d765c0ff581ea68ccf127e1",
+  "finishedUtc": "2026-10-08T17:38:41.730Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "flow": "IP_OTP_VERIFY",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde",
+          "file": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "cc6555e6eadc1288d40a330eb42293066c7a606c5cf014598449888e774ccc8e",
+          "liveHash": "cc6555e6eadc1288d40a330eb42293066c7a606c5cf014598449888e774ccc8e",
+          "fingerprint": "09ac6dd15fc95c1e",
+          "liveFingerprint": "09ac6dd15fc95c1e",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash cc6555e6eadc…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

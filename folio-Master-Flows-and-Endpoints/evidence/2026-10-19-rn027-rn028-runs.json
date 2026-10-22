@@ -1,0 +1,35 @@
+{
+  "recordedUtc": "2026-10-19T20:20:00Z",
+  "by": "Flow API, signed in as the registry account; recipients masked",
+  "RN-027": {
+    "approval": "owner, 2026-10-19: add a one-run step to the sweep and remove it straight after",
+    "flow": "AUTO_SCHEDULED_SWEEP (8c19b45c-4174-4d2f-9429-ffd08dd1a5ae)",
+    "method": [
+      "the definition was saved; two steps were added in Scope_Global_ScheduledSweep: Create_RN027_Test_Receipt (a Portal Outbox Receipts row ZTEST-RN027, Status failed, Attempts 3, before Get_Undeliverable_Receipts) and Delete_RN027_Test_Receipt (after the undeliverable section); written 200 and read back",
+      "the Recurrence trigger was fired once by hand",
+      "the saved definition was written back straight after the run: 200, read back equal to the saved definition, state Started"
+    ],
+    "run": "08584091665088424061220481763CU11, 2026-10-19T20:06:16Z to 20:06:31Z, Succeeded",
+    "steps": {
+      "Create_RN027_Test_Receipt": "Succeeded, item 1700",
+      "Get_Undeliverable_Receipts": "Succeeded, 1 row: 1700, failed, Attempts 3",
+      "Mark_Receipt_Abandoned": "Succeeded",
+      "Send_Undeliverable_Alert_Email": "Succeeded, To d***@nitda.gov.ng (NOTIFY_OPS_TO, the registry mailbox), subject 'Action required: 1 undeliverable notification(s)'",
+      "Create_Send_Undeliverable_Alert_Email_Receipt": "Succeeded",
+      "Delete_RN027_Test_Receipt": "Succeeded: the planted row was removed in the same run"
+    },
+    "nothingElseSent": "Send_Case_Email, Send_Digest_Email, Send_Task_Reminder_Email and Send_Server_Error_Alert_Email Skipped in that run"
+  },
+  "RN-028": {
+    "run": "08584091667698107804454228732CU21, 2026-10-19T20:01:55Z, started by the owner with Run (owner approval 2026-10-19), ended Failed 20:05:22Z before the report",
+    "defect": "Filter_Validated_Fields had the where expression \"@{equals(item()?['stage'], 'FieldValidation')}\\n\": the @{ } form and the trailing line break make it the text 'False\\n', which the Filter action refuses (InvalidTemplate), so every run stopped before Send_Final_Report_Email. The only such expression in the flow.",
+    "fix": "where set to @equals(item()?['stage'], 'FieldValidation'); Flow API PATCH 200 at 2026-10-19T20:12:44Z; read back: that expression changed, the rest of the definition unchanged, state Started; the capture and the deployed contract in the repository carry the same change",
+    "writes": "the run's create-if-missing and update steps touch only the DGO_HTTPFlow* lists on DGO_ECM_GOVERNANCE",
+    "secondRun": {
+      "run": "08584091639350385155266651334CU07, 2026-10-19T20:49:10Z to 20:52:58Z, Succeeded, started by the owner with Run after the fix",
+      "report": "7 of 7 lists, 101 of 101 fields, 7 of 7 unique keys, 12 of 12 seeds, 7 of 7 views, 7 list settings validated, 0 errors (the report the e-mail carried, received by the owner: evidence/2026-10-19-gov01-provisioning-report.json)",
+      "send": "Send_Final_Report_Email Succeeded, To d***@nitda.gov.ng, subject '[Succeeded] DGO HTTP Flow Registry Complete Provisioning | <run id>'",
+      "receipt": "Create_Send_Final_Report_Email_Receipt Succeeded, RecipientEmail d***@nitda.gov.ng, Status sent"
+    }
+  }
+}

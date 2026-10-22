@@ -1,0 +1,11 @@
+{
+  "readUtc": "2026-10-18T13:58:00Z",
+  "notice": "RN-039",
+  "how": "one test exception (DGO_HTTPFlowRegistryExceptions item 39, ExceptionKey ZTEST-RN039-20261018, Status Open, assigned to the registry) created through Graph; 06 - GOV - Registry Exception Notification run once by hand; the exception set Resolved afterwards",
+  "flow": "06 - GOV - Registry Exception Notification (87a74d7e-7435-4e34-baa1-7e759ebf5565, Started, hourly)",
+  "run": "08584092750309820946529269920CU25",
+  "send": "Send_Exception_Email Succeeded 2026-10-18T13:57:35Z to d***y@nitda.gov.ng, subject \"[UNKNOWN] DGO Registry Exception | ZTEST | ZTEST-RN039-20261018\"",
+  "receipt": "Portal Outbox Receipts item 1623 (sent)",
+  "acknowledged": "Acknowledge_Exception set the row Acknowledged",
+  "cleanup": "item 39 set Resolved"
+}

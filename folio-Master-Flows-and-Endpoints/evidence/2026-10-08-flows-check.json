@@ -1,0 +1,50 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "check",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "f0e2fe779e4b52b79b8a783a77492c96d4fa0c84",
+  "finishedUtc": "2026-10-08T02:28:43.541Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+      "flow": "IP_SCAN_INTAKE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9",
+          "file": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json",
+          "scope": "Scope_Scan_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "56fd1783365eedcb8363ff88a7d74d788cfe9cb2a462561c15e3e7329295cb8e",
+          "liveHash": "56fd1783365eedcb8363ff88a7d74d788cfe9cb2a462561c15e3e7329295cb8e",
+          "fingerprint": "14322d99e5aafb12",
+          "liveFingerprint": "14322d99e5aafb12",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "state": "Stopped",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8",
+          "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+          "scope": "Scope_Scan_Processing",
+          "status": "UP_TO_DATE",
+          "packageHash": "761fa138e949013909b9e97a71c79f6bd2ca9de648618f5785611ba484d66f33",
+          "liveHash": "761fa138e949013909b9e97a71c79f6bd2ca9de648618f5785611ba484d66f33",
+          "fingerprint": "03da93f899fafb14",
+          "liveFingerprint": "03da93f899fafb14",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

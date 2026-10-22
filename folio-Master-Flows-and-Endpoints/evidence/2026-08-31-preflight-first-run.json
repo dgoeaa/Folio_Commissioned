@@ -1,0 +1,70 @@
+{
+  "capturedUtc": "2026-08-31",
+  "purpose": "The first run of scripts/preflight-internal-flows.browser.js against the tenant, by the operator, from a signed-in browser console. It reported three blockers. Two were defects in the preflight; one is real. This records the run and what it changed, because a preflight's own first contact with a tenant is the only test of it that counts.",
+  "runBy": "operator, from https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+  "reported": {
+    "blocking": 3,
+    "warnings": 0,
+    "listsChecked": 12,
+    "seedsChecked": 3
+  },
+  "findings": [
+    {
+      "reportedAs": "BLOCKS PASTE — DGO DIGITAL OPS required columns: the list requires _ModerationStatus, which no flow writes",
+      "alsoOn": "Global Tracking Queue",
+      "verdict": "FALSE POSITIVE — a defect in the preflight",
+      "why": "_ModerationStatus is SharePoint's content-approval status field. It is hidden, read-only and sealed: SharePoint sets it and no caller may supply it. The field query asked only for InternalName, Indexed, Required and TypeAsString, so it could not tell a column a create must carry from one a create may never carry.",
+      "severity": "Two false blockers on the two largest lists in the estate — 21,249 and 15,804 items — with advice ('either the flow must supply them or the column must stop being required') that cannot be followed. An operator acting on it would have edited a SharePoint system field, or stalled.",
+      "fixed": "The query now requests Hidden, ReadOnlyField and Sealed, and the required-column check excludes any column carrying them."
+    },
+    {
+      "reportedAs": "nothing at all — DGO_RoleCatalogue and DGO_UserDirectory printed no result line",
+      "verdict": "DEFECT — found by reading the run output, not reported by it",
+      "why": "The 'ok' line was gated on unwrittenRequired being empty; the blocking line was gated on that AND on the list having writes. A read-only list with any required column therefore satisfied neither, and printed neither a tick nor a cross. Their filter columns had in fact been checked and were present. Nothing said so.",
+      "severity": "Six of the seven flows resolve the caller's permissions from DGO_RoleCatalogue and all seven resolve the caller from DGO_UserDirectory. Silence on the two lists the whole authorisation gate depends on reads as 'not checked'.",
+      "fixed": "Both lines now share one condition, so every list examined reports what was found. A required column on a list nothing writes to is reported as a warning that names why it is not blocking."
+    },
+    {
+      "reportedAs": "BLOCKS PASTE — Flow Configuration: no row matching: at least one row whose ConfigValue is the portal origin",
+      "verdict": "REAL — this is open item 8, and the preflight found it correctly",
+      "why": "No ALLOWED_ORIGIN row has been added to Flow Configuration. CORS fails closed by design, so with no row every response is refused by the browser.",
+      "closes": "Nothing yet. It confirms item 8 from the tenant rather than from the specification."
+    }
+  ],
+  "raisedByTheRun": {
+    "what": "Content approval on DGO DIGITAL OPS and Global Tracking Queue",
+    "why": "_ModerationStatus is reported Required on exactly those two lists and not on the others, which is consistent with content approval being enabled there. If it is, a row a flow creates lands Pending: the write returns success and the item is invisible to readers until approved. Four of the seven flows write to Global Tracking Queue. An assignment nobody can see is the same outcome as an assignment that failed, reached by a path where every check passes.",
+    "notEstablished": "That content approval is actually on. The Required flag is suggestive, not proof — which is why the preflight now reads EnableModeration from each list it writes to and says so outright.",
+    "action": "Re-run the preflight. If it reports content approval ON for either list, that is a decision before the paste, not after."
+  },
+  "whatThisDoesNotEstablish": [
+    "That the remaining checks are right. Two of twelve lists were being mis-reported and two more were reporting nothing; the run is evidence about those four, and about the one real finding.",
+    "Anything about the Power Automate environment. The preflight reads SharePoint only, and the two connection references still resolve or fail on the first paste."
+  ],
+  "relatedOpenItems": [
+    8
+  ],
+  "secondRun": {
+    "capturedUtc": "2026-08-31T20:37Z",
+    "note": "Run on the previous build, so the two _ModerationStatus false blockers were still present. What changed is the seed.",
+    "reported": {
+      "blocking": 2,
+      "warnings": 0
+    },
+    "finding": {
+      "reportedAs": "✓ Flow Configuration — origin(s): *",
+      "verdict": "THE CHECK PASSED SOMETHING IT SHOULD HAVE REFUSED",
+      "what": "An ALLOWED_ORIGIN row had been added, closing the previous run's real blocker. Its ConfigValue is `*`.",
+      "why": "The check tested only that a ConfigValue was non-empty. `*` is non-empty, so it read as satisfied.",
+      "consequence": "Compose_Allowed_Origin is if(contains(list, requestOrigin), requestOrigin, first(list)). With list = ['*'] every caller — listed, unlisted, or sending no Origin at all — receives Access-Control-Allow-Origin: *. That is the wildcard posture CLOSING_STATE.md records as 'a testing posture only' and which item 8 exists to remove, reinstated across all fourteen packages by one row, with every repository check and the preflight itself green.",
+      "verifiedBy": "The resolver expression was evaluated directly against ['*'], ['https://nitdanigeria.sharepoint.com'] and [] for three caller origins. Not inferred from reading it.",
+      "fixed": "The preflight now rejects a wildcard outright and requires scheme://host[:port]. A trailing slash, a bare hostname and an embedded * are all refused, because a browser compares the header literally."
+    },
+    "alsoCorrected": {
+      "where": "OPEN_ITEMS item 8",
+      "was": "'no rows, an unreadable list, or an unlisted origin yields an empty header'",
+      "is": "No rows and an unreadable list yield an empty header. An UNLISTED origin yields the first listed origin, not an empty one. The browser refuses either way, so the security outcome is unchanged — but the documented mechanism disagreed with the expression, and it is the mechanism a reader would check."
+    },
+    "stillOpen": "Item 8. The row exists; its value is not the portal's origin."
+  }
+}

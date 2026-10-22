@@ -1,0 +1,28 @@
+{
+  "readUtc": "2026-10-16",
+  "item": "MANUAL-3",
+  "target": "https://folio-gateway.rf.gd (the deployed Workspace, build of 2026-10-10)",
+  "signIn": "one real sign-in as dgsregistry@nitda.gov.ng with a one-time code supplied by the owner (2026-10-16 21:02Z); the proof was injected into each test page through DGO_SESSION_PROOF (tests/smoke.spec.js)",
+  "command": "DGO_SESSION_PROOF=<proof> DGO_BASE_URL=https://folio-gateway.rf.gd npx playwright test tests/smoke.spec.js",
+  "result": { "passed": 7, "skipped": 1, "failed": 0 },
+  "tests": [
+    { "test": "boots, mounts the shell and loads every same-origin asset", "result": "passed" },
+    { "test": "exposes the accessibility entry points", "result": "passed" },
+    { "test": "every declared route mounts without error", "result": "passed" },
+    { "test": "themes actually repaint the page surfaces", "result": "passed" },
+    { "test": "the welcome overlay is driven by design tokens, not hardcoded literals", "result": "skipped", "reason": "sign-in is enforced on the deployment, so the demonstration welcome is not shown (core/boot.js); it passes locally" },
+    { "test": "?skipWelcome=1 reaches the shell without the welcome overlay", "result": "passed" },
+    { "test": "the retired ECM Activity Hub tree is not served", "result": "passed", "note": "the host answers a missing file with a redirect to its own error page; the retired paths behave exactly like a path that never existed, while a real file (/core/boot.js) answers 200" },
+    { "test": "briefs, meetings and projects live in the root platform", "result": "passed" }
+  ],
+  "firstRunFindings": [
+    "Unsigned, every test stopped at the sign-in dialog: the deployment enforces sign-in, which the suite did not expect. Fixed by DGO_SESSION_PROOF.",
+    "Signed in, three tests failed on test assumptions, not on the site: the demonstration welcome is not shown where sign-in is enforced; the host redirects a missing file instead of answering 404 (a raw request receives the host's bot challenge with 200 for every path); and on a slow host the previous route was still mounted when the route test read its heading. The three tests were corrected and the run repeated."
+  ],
+  "notRunAgainstTheDeployment": [
+    { "specs": "closure, containment, correspondence, document-flags, dual-spine, lookup-commits, portal-status, scan-intake, deeplinks-signin, audit-remediation", "reason": "they drive local fixtures through the development server's stand-in endpoints (scripts/dev/endpoints.mjs); against the deployment they would act on live records. They run locally in the browser suite." },
+    { "specs": "admin-centre, admin-console, admin-suite, endpoint-console, provisioning-console", "reason": "the administrator tools are not part of the uploaded Workspace build" },
+    { "specs": "portal", "reason": "the Portal's deployed address is not recorded in the repository (config/platforms.data.js prodUrl null); it runs when the owner gives the address" }
+  ],
+  "localRun": "npx playwright test tests/smoke.spec.js against the development server: 8 passed (2026-10-16)"
+}

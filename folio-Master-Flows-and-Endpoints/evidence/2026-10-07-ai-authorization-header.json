@@ -1,0 +1,20 @@
+{
+  "schema": "dgo-tenant-change/v1",
+  "changedUtc": "2026-10-07T02:16:13Z",
+  "flow": "AI_Document_Processing",
+  "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+  "item": "ITEM-75",
+  "change": "The HTTP action Authorization header set to the expression reading Flow Configuration, replacing literal key text; written through the Flow API (PATCH /flows/{id}) with a backup taken first and read back after; owner approval 2026-10-07 (Q2).",
+  "readBack": {
+    "readUtc": "2026-10-07T02:16:13.2364357Z",
+    "httpSteps": [
+      {
+        "step": "HTTP",
+        "authorization": "@{outputs('Compose_OpenRouter_Authorization')}"
+      }
+    ],
+    "keyTextInDefinition": false,
+    "gateScopePresent": true
+  },
+  "note": "The key that stood in the header was stored in the flow definition; it is to be revoked in OpenRouter and replaced by the copy in Flow Configuration only. The backup holding it was deleted after the read-back."
+}

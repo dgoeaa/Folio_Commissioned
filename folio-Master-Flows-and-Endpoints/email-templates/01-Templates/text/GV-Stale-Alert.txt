@@ -1,0 +1,35 @@
+Subject: [High] {{flowName}} | {{registryKey}}
+Preview: Flow {{flowName}} requires governance attention. Last observed: {{lastSeenUtc}}.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ Action required · High
+
+Governance exception detected
+=============================
+
+Flow {{flowName}} requires governance attention. Last observed: {{lastSeenUtc}}.
+
+Stale flow · last observed
+
+{{lastSeenUtc}}
+
+Registry record
+
+Registry key: {{registryKey}}
+
+Flow ID: {{flowId}}
+
+Technical owner: {{technicalOwnerEmail}}
+
+Detected UTC: {{nowUtc}}
+
+Open registry record: {{registryRecordUrl}}
+
+DGO Digital Operations · Governance Registry. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

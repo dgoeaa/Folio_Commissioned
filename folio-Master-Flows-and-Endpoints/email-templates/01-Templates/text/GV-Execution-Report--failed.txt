@@ -1,0 +1,37 @@
+Subject: [Failed] {{flowDisplayName}} | {{runId}}
+Preview: DGO Power Automate Execution Report: Failed.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ Failed
+
+DGO Power Automate Execution Report
+===================================
+
+{{flowDisplayName}}
+
+Run ID {{runId}}: Environment {{environmentId}}
+
+Generated UTC {{generatedAtUtc}}: Duration {{elapsedMilliseconds}} ms
+
+Action status summary
+
+Action: Status
+
+{{row.name}}: {{row.status}}
+
+{{row.name}}: {{row.status}}
+
+{{row.name}}: {{row.status}}
+
+{{row.name}}: {{row.status}}
+
+Open this flow run in Power Automate: {{runUrl}}
+
+Automated DGO governance evidence. Sensitive request headers and bodies are excluded. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

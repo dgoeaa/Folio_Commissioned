@@ -1,0 +1,33 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The operator built a new flow, IP_OTP_VERIFY (c5e314c7-68b5-4bdc-8935-0954ef6a256d), by hand from the designer-paste kit on 2026-09-04, and exported it as a legacy package. The export is the evidence. Read against the patched definition, the hardening is in place: all five defects the security patch exists to close, and all four found on 2026-09-03 in the patch itself.",
+  "source": {
+    "capture": "Legacy package export (Power Automate UI), uploaded by the operator as IP_OTP_VERIFY_20260904022421.zip.",
+    "exportedAtUtc": "2026-09-04T02:24:21Z",
+    "exportedAtUtcDerivedFrom": "manifest.json details.createdTime inside the package. That is when the package was built, not when the flow was saved; nothing here depends on the difference.",
+    "storedAs": "docs/reference/flow-contracts/deployed/IP_OTP_VERIFY__c5e314c7-68b5-4bdc-8935-0954ef6a256d__full_definition.json"
+  },
+  "builtFrom": "docs/deployment/power-automate-flows/fresh-flow/ — trigger by hand, twelve variables by hand, one clipboard paste of Scope_Global.",
+  "whatTheExportEstablishes": [
+    { "claim": "The five defects in OTP-VERIFY-SECURITY-PATCH.md are closed in the deployed flow", "how": "read from the export: the lookup filter binds Title to Compose_OTP_Identifier_Verify in both queries; both caller values are escaped with replace(x,'','''); Get_items_OTP_Attempts runAfter Compose_OTP_Identifier_Verify; Condition_Attempt_Cap refuses at 5 with 429; Scope_VERIFY_Complete_No_Trigger appears nowhere." },
+    { "claim": "The four defects found on 2026-09-03 in the patched definition are closed too", "how": "Response.statusCode is @coalesce(variables('varStatusCode'), 500); Scope_Finalize_Response_State no longer declares Set_variable_varStatusCode; Update_item_Attempts is PatchItem; varStatusCode initialises to 500." },
+    { "claim": "The paste landed complete", "how": "36 actions inside Scope_Global, the same 36 names the kit carries. Twelve variables declared, twelve read, none missing and none spare. Seven connector actions, all bound." },
+    { "claim": "The connections are the ones the kit named", "how": "connectionReferences carries shared_sharepointonline 3f1943c5955a4cb8b301e8f22f2b590d and shared_office365 c0b9e7a5b0854c39a435fd8ce92f48ad; the package manifest shows both as dgsRegistry@nitda.gov.ng." },
+    { "claim": "The kit's two omissions were correct", "how": "varCurrentTime and the two schema-holding Compose actions are absent, and no expression reads them. Scope_Flow_Data_Capture was not pasted, which the kit offered as a decision." }
+  ],
+  "differencesFromTheKit": {
+    "state": "COSMETIC ONLY",
+    "detail": "Ten actions differ textually. Every difference is designer bookkeeping: an added metadata.operationMetadataId, key order inside inputs, and runAfter written as null rather than {}. Compared field by field with metadata stripped, the behaviour is identical.",
+    "verifiedBy": "node tests/otp-verify-deployed.test.mjs — 17 assertions read the export itself, nine of them naming the defect each exists to catch."
+  },
+  "whatThisDoesNotClose": [
+    "THE CUTOVER. This is a NEW flow. The portal's configuration still names the old one, 3e201620-f1e8-4c17-a90a-4d95b94a24c2, which still carries all five defects and is still running. Until the portal is repointed and the old flow disabled, the hardening is deployed but not in service, and the authentication bypass and the open mail relay remain reachable by anyone holding the old URL. Register ITEM-43.",
+    "The trigger's request schema. It is empty in the deployed flow; the kit's Web_OTP_Verify.trigger.json carries the schema and it was not pasted in. triggerBody() reads the parsed body regardless, so this is a contract gap rather than a demonstrated runtime failure — but the declared contract is what the estate's data-contract checks read.",
+    "The response's allowed origin. It is the literal https://your-host, carried through from the flow this was built from. That is not introduced here: nineteen deployed flow contracts in this repository carry the same placeholder, and register ITEM-8 tracks it. OTP_VERIFY is called from a browser, so a real origin has to replace it before the portal can read the response.",
+    "Any live call. Nothing in this record was exercised against the flow. The four tests in BUILD.md — verify as another caller, verify as the right one, verify with no code, six wrong guesses — have not been run."
+  ],
+  "notedInPassing": {
+    "observation": "The package manifest offers suggestedCreationType 'Update' and creationType 'Existing, New, Update' for this flow.",
+    "why_it_matters": "scripts/update-flow-definition.ps1 records that legacy package import 'refuses to UPDATE the flow and offers only save as a new flow'. This manifest contradicts that for this package. It is recorded, not acted on: one manifest is not enough to overturn a recorded observation, and the import path was not tried."
+  }
+}

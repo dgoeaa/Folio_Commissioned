@@ -1,0 +1,41 @@
+{
+  "readUtc": "2026-10-17",
+  "by": "a browser and HTTP reads from this session, the Flow Configuration list read back through Graph, and the private build of 2026-10-17",
+  "decision": "Owner, 2026-10-17: activityweb.page.gd could not be updated, so the Portal moved to a new host, https://correspondence-gateway.rf.gd, provisioned with the latest Portal package. activityweb.page.gd is no longer the Portal address.",
+  "origin": {
+    "list": "Flow Configuration (9bc168c3-06e5-4d58-982b-0df06205fd35), NITDADGO-EAAACTIVITYTRACKING site",
+    "row": "item 74, Title ALLOWED_ORIGIN_CORRESPONDENCE_GATEWAY, value https://correspondence-gateway.rf.gd",
+    "readBack": "the row was read back after the write; the Portal flows build their allowed-origin set from every row whose Title starts with ALLOWED_ORIGIN",
+    "liveCall": "STATUS called with Origin https://correspondence-gateway.rf.gd answered 200"
+  },
+  "files": "32 of 32 Portal files served at correspondence-gateway.rf.gd are byte-identical to the 2026-10-17 Portal package",
+  "corsFinding": "The Power Automate HTTP trigger answers Access-Control-Allow-Origin: * whatever the flow decides. The origin check is therefore enforced inside the flows (a request from an unlisted origin is refused in the body), not by the browser. Recorded as a platform property, not a defect of the package.",
+  "browserSuite": {
+    "command": "DGO_BASE_URL=https://correspondence-gateway.rf.gd DGO_PORTAL_PREFIX='' npx playwright test tests/portal.spec.js",
+    "result": "12 passed, 13 not applicable to a live deployment (demonstration data or stubs), 5 failed",
+    "failures": "all five with \"The script has an unsupported MIME type ('text/html')\": the host's bot check answers the browser's service-worker script request with HTML, so registration fails and the page reports an error"
+  },
+  "mitigation": {
+    "code": "document-portal/js/core.js registers the service worker only when PF_CONFIG.serviceWorker is not false",
+    "build": "npm run config:rebuild -- --portal-no-service-worker sets PF_CONFIG.serviceWorker = false in the Portal's config.local.js and writes FOLIO-PORTAL-upload-to-portal-site-root.zip (47 files, files at the site root)",
+    "localSuite": "tests/portal.spec.js locally: 30 passed",
+    "effect": "the Portal works online on this host, without the offline shell",
+    "handedOver": "the root zip of the 2026-10-17 build, privately, for upload to correspondence-gateway.rf.gd",
+    "left": "after the owner uploads it, re-run the browser suite against https://correspondence-gateway.rf.gd"
+  },
+  "afterUpload": {
+    "readUtc": "2026-10-18",
+    "uploadedBy": "owner, 2026-10-18: FOLIO-PORTAL-upload-to-portal-site-root.zip of the 2026-10-17 build (offline shell off)",
+    "files": "36 of 39 served files byte-identical to the build. The other 3 (ds/logo/nitda-lockup.png, nitda-lockup-white.png, nitda-symbol.png) are valid PNGs of the same dimensions (572x260, 544x254, 263x277) that load in the page, recompressed smaller by the upload path; the images are the same",
+    "page": "title \"NITDA Document Portal — submit, track and resolve official documents\"; no service worker registered; no console error",
+    "browserSuite": {
+      "command": "DGO_BASE_URL=https://correspondence-gateway.rf.gd DGO_PORTAL_PREFIX='' npx playwright test tests/portal.spec.js",
+      "result": {
+        "passed": 17,
+        "skipped": 13,
+        "failed": 0
+      },
+      "skippedWhy": "13 tests drive demonstration data or stubbed endpoints and run only locally (30/30 locally)"
+    }
+  }
+}

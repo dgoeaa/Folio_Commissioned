@@ -1,0 +1,1562 @@
+{
+  "schema": "folio-live-operation/v1",
+  "dateUtc": "2026-10-08",
+  "account": "dgsRegistry@nitda.gov.ng (Flow Management API; SharePoint REST)",
+  "authority": "Owner direction, 2026-10-08: resolve every SharePoint list and flow finding conclusively; rebuild the legacy library intake into Folio_Incoming_Correspondence_Scan_Processing_Flow; delete the private configuration copies.",
+  "privateCopiesDeleted": {
+    "files": 19,
+    "note": "every scratch file holding a signed trigger URL (the three config.local.js copies, both values files, the packaged builds, the OTP_GENERATE URL); a search for a signature parameter afterwards found none"
+  },
+  "item84_origins": {
+    "before": [
+      {
+        "Id": 2,
+        "Title": "ALLOWED_ORIGIN",
+        "ConfigValue": "*",
+        "ID": 2,
+        "Modified": "2026-09-06T05:33:53Z"
+      },
+      {
+        "Id": 8,
+        "Title": "ALLOWED_ORIGIN_PORTAL",
+        "ConfigValue": "https://internal-platform.rf.gd",
+        "ID": 8,
+        "Modified": "2026-09-27T13:28:33Z"
+      },
+      {
+        "Id": 9,
+        "Title": "ALLOWED_ORIGIN_PLATFORM",
+        "ConfigValue": "https://internal-platform.rf.gd",
+        "ID": 9,
+        "Modified": "2026-09-27T13:41:18Z"
+      },
+      {
+        "Id": 68,
+        "Title": "NODE_USE_ENV_PROXY",
+        "ConfigValue": "NODE_USE_ENV_PROXY",
+        "ID": 68,
+        "Modified": "2026-10-07T01:51:45Z"
+      }
+    ],
+    "writeRow2": 204,
+    "deleteRow68": 200,
+    "after": [
+      {
+        "Id": 2,
+        "Title": "ALLOWED_ORIGIN",
+        "ConfigValue": "https://activityweb.page.gd",
+        "ID": 2,
+        "Modified": "2026-10-08T00:18:53Z"
+      },
+      {
+        "Id": 8,
+        "Title": "ALLOWED_ORIGIN_PORTAL",
+        "ConfigValue": "https://internal-platform.rf.gd",
+        "ID": 8,
+        "Modified": "2026-09-27T13:28:33Z"
+      },
+      {
+        "Id": 9,
+        "Title": "ALLOWED_ORIGIN_PLATFORM",
+        "ConfigValue": "https://internal-platform.rf.gd",
+        "ID": 9,
+        "Modified": "2026-09-27T13:41:18Z"
+      }
+    ]
+  },
+  "item70_and_gov_startFlows": [
+    {
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "before": "Stopped",
+      "start": 200,
+      "after": "Started",
+      "readUtc": "2026-10-08T00:19:39.246Z"
+    },
+    {
+      "flow": "04 - GOV - Audit HTTP Flow Registry",
+      "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+      "before": "Stopped",
+      "start": 200,
+      "after": "Started",
+      "readUtc": "2026-10-08T00:19:45.470Z"
+    },
+    {
+      "flow": "06 - GOV - Registry Exception Notification",
+      "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+      "before": "Stopped",
+      "start": 200,
+      "after": "Started",
+      "readUtc": "2026-10-08T00:19:50.605Z"
+    },
+    {
+      "flow": "08 - GOV - Discover and Register HTTP Consumers",
+      "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+      "before": "Stopped",
+      "start": 200,
+      "after": "Started",
+      "readUtc": "2026-10-08T00:19:56.115Z"
+    }
+  ],
+  "stoppedFlows": [
+    {
+      "flow": "Folio_LEGACY_INTAKE",
+      "flowId": "326d1fbf-e93b-634b-286c-f5db27be988e",
+      "before": "Started",
+      "stop": 200,
+      "after": "Stopped",
+      "readUtc": "2026-10-08T00:33:47.667Z",
+      "why": "an unregistered copy of DGSO INCOMING AI PROCESSING (created 2026-10-06) on the identical trigger: it ran at the same moments as the legacy flow (2026-10-07 14:47-14:49), so every scan was processed twice"
+    },
+    {
+      "flow": "Repair the DGO_* governance lists",
+      "flowId": "bc095fa2-28a4-4312-9076-87caac5ca116",
+      "before": "Started",
+      "start": 200,
+      "after": "Stopped",
+      "readUtc": "2026-10-08T01:19:33.851Z",
+      "why": "GOV-10: the one flow that recreates DGO_* governance lists by title on the non-authoritative site; hard-coded to NITDADGO-EAAACTIVITYTRACKING"
+    }
+  ],
+  "item85_reportLibrary": {
+    "createLibrary": 201,
+    "listId": "74b304a5-2ae1-46b1-aa6b-11c1d8756764",
+    "createFolder": 200,
+    "readBack": {
+      "folder": {
+        "Exists": true,
+        "ItemCount": 0,
+        "Name": "IP_SCAN_INTAKE",
+        "ServerRelativeUrl": "/sites/DGO_ECM_GOVERNANCE/DGO_Flow_Reports/IP_SCAN_INTAKE"
+      },
+      "library": {
+        "RootFolder": {
+          "ServerRelativeUrl": "/sites/DGO_ECM_GOVERNANCE/DGO_Flow_Reports"
+        },
+        "BaseTemplate": 101,
+        "EnableModeration": false,
+        "Id": "74b304a5-2ae1-46b1-aa6b-11c1d8756764",
+        "ItemCount": 1,
+        "Title": "DGO_Flow_Reports"
+      }
+    }
+  },
+  "item80_scanProcessingWrite": {
+    "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+    "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+    "readUtc": "2026-10-08T00:40:44.236Z",
+    "backup": "scan-processing-backup-2026-10-08T00-40-44-201Z.json",
+    "before": {
+      "state": "Started",
+      "actions": [
+        "Compose_Folio_Incoming_Correspondence_Scan_Processing_Flow"
+      ],
+      "folderId": "6e202211-2856-4d17-9ded-5beb8b8626b0"
+    },
+    "package": {
+      "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+      "fingerprint": "174e604f428f511d"
+    },
+    "declarations": [
+      "Initialise_varResponse",
+      "Initialise_All_Text_Variable",
+      "Initialize_variable_Key_Points",
+      "Initialize_variableDeepLink",
+      "Initialize_variable_Document_Link",
+      "Initialize_variable_New_File_Name"
+    ],
+    "folderSet": false,
+    "write": 200,
+    "state": {
+      "op": "stop",
+      "status": 200
+    },
+    "readBack": {
+      "state": "Stopped",
+      "modified": "2026-10-08T00:40:57.5509641Z",
+      "fingerprint": "174e604f428f511d",
+      "declarations": [
+        "Initialise_varResponse",
+        "Initialise_All_Text_Variable",
+        "Initialize_variable_Key_Points",
+        "Initialize_variableDeepLink",
+        "Initialize_variable_Document_Link",
+        "Initialize_variable_New_File_Name"
+      ],
+      "folderId": "6e202211-2856-4d17-9ded-5beb8b8626b0",
+      "connections": {
+        "shared_onedriveforbusiness": "shared-onedr",
+        "shared_sharepointonline": "3f1943c5955a",
+        "shared_office365": "c0b9e7a5b085"
+      },
+      "matches": true
+    }
+  },
+  "item66_gov04_gov05_governanceWrites": [
+    {
+      "readUtc": "2026-10-08T01:04:40.586Z",
+      "mode": "apply",
+      "flows": [
+        {
+          "flow": "01 - GOV - Provision HTTP Flow Registry",
+          "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+          "state": "Started",
+          "modified": "2026-09-10T07:31:27.4295216Z",
+          "receiptsAdded": 1,
+          "sends": [
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 1,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:04:48.9667065Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "02 - GOV - Register HTTP Flow Truth",
+          "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+          "state": "Started",
+          "modified": "2026-09-08T23:52:46.6126769Z",
+          "correction": "02-register-http-flow-truth.corrected.json",
+          "correctionApplied": true,
+          "receiptsAdded": 1,
+          "sends": [
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 1,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:04:59.4498082Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "03 - GOV - Record HTTP Flow Execution",
+          "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+          "state": "Started",
+          "modified": "2026-09-08T23:53:22.6149836Z",
+          "correction": "03-record-http-flow-execution.corrected.json",
+          "correctionApplied": true,
+          "receiptsAdded": 1,
+          "sends": [
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 1,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:05:09.2199753Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "04 - GOV - Audit HTTP Flow Registry",
+          "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+          "state": "Started",
+          "modified": "2026-10-08T00:19:42.9548962Z",
+          "receiptsAdded": 6,
+          "sends": [
+            "Send_Stale_Owner_And_Governance_Alert",
+            "Send_Stale_Reminder_Or_Escalation",
+            "Send_Failure_Owner_And_Governance_Alert",
+            "Send_Failure_Reminder_Or_Escalation",
+            "Send_Recovery_Notification",
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 6,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:05:18.9824776Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "05 - GOV - Retire HTTP Flow",
+          "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+          "state": "Started",
+          "modified": "2026-09-08T22:23:58.6511403Z",
+          "correction": "05-retire-http-flow.corrected.json",
+          "correctionApplied": true,
+          "receiptsAdded": 2,
+          "sends": [
+            "Send_Execution_Report_Email",
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 400,
+          "status": "FAILED",
+          "error": "{\"error\":{\"code\":\"InvalidOpenApiFlow\",\"message\":\"Flow save failed with code 'InvalidTemplate' and message 'The template validation failed: 'The action(s) 'Reply' referenced by 'inputs' in action 'Compose_Execution_Report_JSON' are not defined in the template.'.'.\"}}"
+        }
+      ]
+    },
+    {
+      "readUtc": "2026-10-08T01:05:54.004Z",
+      "mode": "apply",
+      "flows": [
+        {
+          "flow": "01 - GOV - Provision HTTP Flow Registry",
+          "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+          "state": "Started",
+          "modified": "2026-10-08T01:04:48.9667065Z",
+          "receiptsAdded": 0,
+          "sends": [],
+          "problems": [],
+          "unchanged": true,
+          "status": "UP_TO_DATE"
+        },
+        {
+          "flow": "02 - GOV - Register HTTP Flow Truth",
+          "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+          "state": "Started",
+          "modified": "2026-10-08T01:04:59.4498082Z",
+          "correction": "02-register-http-flow-truth.corrected.json",
+          "correctionApplied": false,
+          "correctionWhy": "the live flow differs from the export the correction was derived from; receipts only",
+          "receiptsAdded": 0,
+          "sends": [],
+          "problems": [],
+          "unchanged": true,
+          "status": "UP_TO_DATE"
+        },
+        {
+          "flow": "03 - GOV - Record HTTP Flow Execution",
+          "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+          "state": "Started",
+          "modified": "2026-10-08T01:05:09.2199753Z",
+          "correction": "03-record-http-flow-execution.corrected.json",
+          "correctionApplied": false,
+          "correctionWhy": "the live flow differs from the export the correction was derived from; receipts only",
+          "receiptsAdded": 0,
+          "sends": [],
+          "problems": [],
+          "unchanged": true,
+          "status": "UP_TO_DATE"
+        },
+        {
+          "flow": "04 - GOV - Audit HTTP Flow Registry",
+          "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+          "state": "Started",
+          "modified": "2026-10-08T01:05:18.9824776Z",
+          "receiptsAdded": 0,
+          "sends": [],
+          "problems": [],
+          "unchanged": true,
+          "status": "UP_TO_DATE"
+        },
+        {
+          "flow": "05 - GOV - Retire HTTP Flow",
+          "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+          "state": "Started",
+          "modified": "2026-09-08T22:23:58.6511403Z",
+          "correction": "05-retire-http-flow.corrected.json",
+          "correctionApplied": true,
+          "receiptsAdded": 2,
+          "sends": [
+            "Send_Execution_Report_Email",
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 2,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:06:07.9873606Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "06 - GOV - Registry Exception Notification",
+          "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+          "state": "Started",
+          "modified": "2026-10-08T00:19:48.5698852Z",
+          "receiptsAdded": 2,
+          "sends": [
+            "Send_Exception_Email",
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 2,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:06:17.7055609Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "07 - GOV - Consumer HTTP Self-Registration Template",
+          "flowId": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+          "state": "Started",
+          "modified": "2026-09-08T23:46:33.5634987Z",
+          "correction": "07-consumer-self-registration.corrected.json",
+          "correctionApplied": true,
+          "receiptsAdded": 1,
+          "sends": [
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 1,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:06:26.2854441Z"
+          },
+          "status": "APPLIED"
+        },
+        {
+          "flow": "08 - GOV - Discover and Register HTTP Consumers",
+          "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+          "state": "Started",
+          "modified": "2026-10-08T00:19:53.9241265Z",
+          "receiptsAdded": 2,
+          "sends": [
+            "Send_Execution_Report_Email",
+            "Send_Final_Report_Email"
+          ],
+          "problems": [],
+          "unchanged": false,
+          "write": 200,
+          "readBack": {
+            "receipts": 2,
+            "fingerprintMatches": true,
+            "state": "Started",
+            "modified": "2026-10-08T01:06:36.2129268Z"
+          },
+          "status": "APPLIED"
+        }
+      ]
+    }
+  ],
+  "gov02_gov09_gov11_cleanup": {
+    "recycled": [
+      {
+        "title": "DGO_RoleCatalogue_02",
+        "id": "2fd99fa9-8527-48c5-9133-eb28bcda2c5e",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "DGO_UserDirectory_02",
+        "id": "22e6f62d-6506-4ad4-96ef-f92d242a4e8f",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "DGO_UserRoleHistory_02",
+        "id": "0cbfa9dd-0aa3-466b-b2e4-5c89f7f032b9",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "NITDA Flow Truth Artefacts",
+        "id": "412d8379-43c0-4a74-bc2d-6ebe11fbb47f",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "NITDA Flow Truth History",
+        "id": "deee0ee9-a62b-49c3-ab0b-28f042b1ff58",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "NITDA Flow Truth Registry",
+        "id": "72183c4b-58f7-4f5a-afdf-189f7430366d",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AccessEvents",
+        "id": "4411f921-2a76-4dea-823d-03f1daf1df6d",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AccessEvents_2",
+        "id": "c107a54f-3f38-4f71-8a47-38c75f047186",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AccessScopes",
+        "id": "3bd611eb-0391-47ee-9dfa-e4520a18787b",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AccessScopes_2",
+        "id": "cccc57f9-1091-4e9c-9826-e46918b057f0",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AuditLog",
+        "id": "74153ee5-e6dd-4347-b1fe-a51d7fd47521",
+        "items": 5,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_AuditLog_2",
+        "id": "7ac06ab8-9754-4578-be86-87c809c8deea",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_DepartmentDirectory",
+        "id": "db2f8e1a-69e4-4c8a-a2ee-4f2a29d85f4b",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_DepartmentDirectory_2",
+        "id": "ed850c51-79e6-4f7e-a725-f8ca9f42ff01",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_EndpointRegistry",
+        "id": "dbc0abbd-51c5-4002-8786-3ebc866a8c35",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_EndpointRegistry_2",
+        "id": "89ac07db-f7d0-43b4-b508-2479580fae18",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_PendingWrites",
+        "id": "66e19c2a-877b-4537-8247-2351d6374cf9",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_PendingWrites_2",
+        "id": "673b687d-5e07-4cd2-89c0-411d10238752",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_PilotCohorts",
+        "id": "22925b7d-9ea7-497f-9c01-70a32bcb6f2f",
+        "items": 1,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_PilotCohorts_2",
+        "id": "146c6162-7bea-4ecb-9b1d-254c1e979e12",
+        "items": 0,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_RoleCatalogue",
+        "id": "55c0daae-8b46-4db7-8c03-be54e3fc536f",
+        "items": 6,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_UserDirectory",
+        "id": "b9b522c6-1219-4fb1-ad01-b54b40416bba",
+        "items": 1,
+        "status": 200
+      },
+      {
+        "title": "ZZ_RETIRED_DGO_UserRoleHistory",
+        "id": "4fdb8379-9f48-466e-a503-a59912be5015",
+        "items": 0,
+        "status": 200
+      }
+    ],
+    "refused": [],
+    "backedUpRows": 13,
+    "remainingAfter": [],
+    "deleteFlowUrl": 200,
+    "endpointRegistryFieldsAfter": [
+      "EndpointFingerprint",
+      "EndpointRedacted"
+    ]
+  },
+  "gov02_rowsBackup": "13 rows backed up outside git before the recycle (they hold personal data); the recycle bin keeps every list recoverable for 93 days",
+  "gov06_workflowId": {
+    "rows": [
+      {
+        "id": 1,
+        "flow": "IP_Get_Docs_Endpoint",
+        "workflowId": "c4c26f93ba1e4d7db5247536c30cdc11",
+        "result": "written 204"
+      },
+      {
+        "id": 2,
+        "flow": "IP_Dynamic_Global_Actions_Endpoint",
+        "workflowId": "d5e4b3da41e34819b3f953d2acbc2dd7",
+        "result": "written 204"
+      },
+      {
+        "id": 3,
+        "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+        "workflowId": "d2c773332f6f4fbf97ee4a5baa01f70b",
+        "result": "written 204"
+      },
+      {
+        "id": 4,
+        "flow": "IP_Reference_Data_Endpoint",
+        "workflowId": "885fad5ec91f460490e8c772d5d10cb8",
+        "result": "written 204"
+      },
+      {
+        "id": 5,
+        "flow": "Single_Task_Assignment",
+        "workflowId": "72acfc6a694f414f9fe39c939ead7f08",
+        "result": "written 204"
+      },
+      {
+        "id": 6,
+        "flow": "IP_FETCH_ALL_BOOTSTRAP",
+        "workflowId": "aa662769f13a4666bfadf3039cd8d247",
+        "result": "written 204"
+      },
+      {
+        "id": 7,
+        "flow": "BULK OPS DATA RETRIEVAL HTTP",
+        "workflowId": "a705e453f922457c95ca19f32731e4d7",
+        "result": "written 204"
+      },
+      {
+        "id": 8,
+        "flow": "IP_Bulk_Assign_Endpoint",
+        "workflowId": "8f6a40a682bb4e79acd2ac5d42f15705",
+        "result": "written 204"
+      },
+      {
+        "id": 9,
+        "flow": "IP_SEND_EMAIL",
+        "workflowId": "378b491ec39a4beca886ddec250e6961",
+        "result": "written 204"
+      },
+      {
+        "id": 10,
+        "flow": "AI_Document_Processing",
+        "workflowId": "3f018fea1031490fb73dff6a8d6341f2",
+        "result": "written 204"
+      },
+      {
+        "id": 11,
+        "flow": "CG_Upload_Endpoint",
+        "workflowId": "62fe121e5a95416bb91275e43dd0e37e",
+        "result": "written 204"
+      },
+      {
+        "id": 12,
+        "flow": "CG_Submission_Endpoint",
+        "workflowId": "1041ed37ce924e3c886d891f23e8142c",
+        "result": "written 204"
+      },
+      {
+        "id": 13,
+        "flow": "IP_SCAN_INTAKE",
+        "workflowId": "88401ce1f44148539c0da53c9491f8e6",
+        "result": "written 204"
+      },
+      {
+        "id": 14,
+        "flow": "IP_OTP_VERIFY",
+        "workflowId": "b372d45e4b2a47d88b8e8b032da67fcd",
+        "result": "written 204"
+      },
+      {
+        "id": 15,
+        "flow": "CG_Portal_Support_Endpoint",
+        "workflowId": "052013da80724713a4285edee72ccb4a",
+        "result": "written 204"
+      },
+      {
+        "id": 16,
+        "flow": "CG_Portal_Verification_Endpoint",
+        "workflowId": "c0d58004c53348539d0d5aeaf49dcded",
+        "result": "written 204"
+      },
+      {
+        "id": 17,
+        "flow": "CG_Portal_Verification_Confirmation_Endpoint",
+        "workflowId": "b270894ff410499ebbc090e32ffe899b",
+        "result": "written 204"
+      },
+      {
+        "id": 18,
+        "flow": "CG_Portal_Status_Check_Endpoint",
+        "workflowId": "34dd28b4a5664927b66e581c74a0ab94",
+        "result": "written 204"
+      },
+      {
+        "id": 19,
+        "flow": "CG_Portal_Writeback_Endpoint",
+        "workflowId": "abf3a3ca53e64ba58c9ce5933e4e97e3",
+        "result": "written 204"
+      },
+      {
+        "id": 20,
+        "flow": "DGO_MAIL_AUTH",
+        "workflowId": "2d31ee5c454a4cf09928ee0f619ad5fd",
+        "result": "written 204"
+      },
+      {
+        "id": 21,
+        "flow": "DGO_MAIL_DATA",
+        "workflowId": "718cc5c0cdd642648d2f0fdaca15e5c7",
+        "result": "written 204"
+      },
+      {
+        "id": 22,
+        "flow": "DGO_MAIL_DIRECTORY",
+        "workflowId": "c971261c310c41e191f0c97d9fa6a467",
+        "result": "written 204"
+      },
+      {
+        "id": 23,
+        "flow": "DGO_MAIL_PROVISION",
+        "workflowId": "86e9880a615644f186bebe6708174dda",
+        "result": "written 204"
+      },
+      {
+        "id": 24,
+        "flow": "DGO_MAIL_LOG",
+        "workflowId": "5a0e2c28505f43c7a358550c0cafbffd",
+        "result": "written 204"
+      },
+      {
+        "id": 25,
+        "flow": "DGO_MAIL_TEMPLATES",
+        "workflowId": "2fa5a114ee654215a7a284ccea1233ca",
+        "result": "written 204"
+      },
+      {
+        "id": 26,
+        "flow": "01 - GOV - Provision HTTP Flow Registry",
+        "workflowId": null,
+        "result": "no workflow id in the callback"
+      },
+      {
+        "id": 27,
+        "flow": "DGO_MAIL_SEND",
+        "workflowId": "3a5205a24a744b4cabd4b13ed050be22",
+        "result": "written 204"
+      },
+      {
+        "id": 28,
+        "flow": "03 - GOV - Record HTTP Flow Execution",
+        "workflowId": "cb5ed5934f844f9d985b7b746b62c185",
+        "result": "written 204"
+      },
+      {
+        "id": 29,
+        "flow": "02 - GOV - Register HTTP Flow Truth",
+        "workflowId": "06a2328961a54d06849525643316f733",
+        "result": "written 204"
+      },
+      {
+        "id": 30,
+        "flow": "04 - GOV - Audit HTTP Flow Registry",
+        "workflowId": null,
+        "result": "not an HTTP trigger (Recurrence)"
+      },
+      {
+        "id": 31,
+        "flow": "05 - GOV - Retire HTTP Flow",
+        "workflowId": "9a4e524c3b6845368ade294eb2824ff7",
+        "result": "written 204"
+      },
+      {
+        "id": 32,
+        "flow": "06 - GOV - Registry Exception Notification",
+        "workflowId": null,
+        "result": "not an HTTP trigger (Recurrence)"
+      },
+      {
+        "id": 33,
+        "flow": "08 - GOV - Discover and Register HTTP Consumers",
+        "workflowId": null,
+        "result": "not an HTTP trigger (Recurrence)"
+      },
+      {
+        "id": 34,
+        "flow": "DGSO INCOMING AI PROCESSING",
+        "workflowId": null,
+        "result": "not an HTTP trigger (OpenApiConnection)"
+      },
+      {
+        "id": 35,
+        "flow": "Repair the DGO_* governance lists",
+        "workflowId": null,
+        "result": "no workflow id in the callback"
+      },
+      {
+        "id": 36,
+        "flow": "Global_Gap_Remediation_Provisioning",
+        "workflowId": null,
+        "result": "no workflow id in the callback"
+      },
+      {
+        "id": 37,
+        "flow": "07 - GOV - Consumer HTTP Self-Registration Template",
+        "workflowId": "c53c3ccee60040f8961bfad62b82d370",
+        "result": "written 204"
+      },
+      {
+        "id": 38,
+        "flow": "AUTO_SCHEDULED_SWEEP",
+        "workflowId": null,
+        "result": "not an HTTP trigger (Recurrence)"
+      }
+    ],
+    "createField": 200,
+    "field": {
+      "Indexed": true,
+      "InternalName": "WorkflowId",
+      "TypeAsString": "Text",
+      "MaxLength": 32
+    },
+    "readBack": {
+      "withWorkflowId": 30,
+      "total": 38,
+      "matches": true
+    }
+  },
+  "item80_scanProcessingRewrite": {
+    "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+    "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+    "readUtc": "2026-10-08T02:27:50.985Z",
+    "backup": "scan-processing-backup-2026-10-08T02-27-50-948Z.json",
+    "before": {
+      "state": "Stopped",
+      "actions": [
+        "Initialise_varResponse",
+        "Initialise_All_Text_Variable",
+        "Initialize_variable_Key_Points",
+        "Initialize_variableDeepLink",
+        "Initialize_variable_Document_Link",
+        "Initialize_variable_New_File_Name",
+        "Scope_Scan_Processing"
+      ],
+      "folderId": "6e202211-2856-4d17-9ded-5beb8b8626b0"
+    },
+    "package": {
+      "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+      "fingerprint": "03da93f899fafb14"
+    },
+    "declarations": [
+      "Initialise_varResponse",
+      "Initialise_All_Text_Variable",
+      "Initialize_variable_Key_Points",
+      "Initialize_variableDeepLink",
+      "Initialize_variable_Document_Link",
+      "Initialize_variable_New_File_Name"
+    ],
+    "folderSet": false,
+    "write": 200,
+    "state": {
+      "op": "stop",
+      "status": 200
+    },
+    "readBack": {
+      "state": "Stopped",
+      "modified": "2026-10-08T02:28:08.9426075Z",
+      "fingerprint": "03da93f899fafb14",
+      "declarations": [
+        "Initialise_varResponse",
+        "Initialise_All_Text_Variable",
+        "Initialize_variable_Key_Points",
+        "Initialize_variableDeepLink",
+        "Initialize_variable_Document_Link",
+        "Initialize_variable_New_File_Name"
+      ],
+      "folderId": "6e202211-2856-4d17-9ded-5beb8b8626b0",
+      "connections": {
+        "shared_onedriveforbusiness": "shared-onedr",
+        "shared_sharepointonline": "3f1943c5955a",
+        "shared_office365": "c0b9e7a5b085"
+      },
+      "matches": true
+    },
+    "why": "Release 6: the rebuild re-written with the deep-link defect fixed (APP_FAST_TRACK_LINK to the internal platform; no stray suffix on Set_variable_Deeplink/_2). Held Stopped until its trigger folder is set."
+  },
+  "item80_scanTriggerFolder": {
+    "readUtc": "2026-10-08T03:56:24.530Z",
+    "finding": "After the owner set the folder in the designer (saved 03:10:46Z) the trigger stored the text path /Scans/Incoming as its folderId; with the flow started (03:53Z, Flow API) its polls at 03:54, 03:55 and 03:56Z were Failed (BadRequest).",
+    "derivation": "The OneDrive for Business connector folder id is <driveId>.<itemId>: driveId = b! + base64url(site, web and list ids, little-endian) and itemId = 01 + base32(4-byte drive prefix + folder UniqueId, little-endian). Checked against the legacy flow's recorded folder /NITDA DOCUMENT ROUTING LIBRARY/from global in the same OneDrive: its drive part and its UniqueId decode exactly. /Scans/Incoming: UniqueId b027ba84-a5ae-490f-801f-7fdbfbfb5600 (SharePoint REST on the registry OneDrive, 0 items).",
+    "folderId": "b!8kLhzz4nN02YpdEzRVmW6X11Y3CFDKtEsKUc7X0pIVuWKqqJrcSaRL4ooqAreLDk.01PEUUL5UEXIT3BLVFB5EYAH373P57WVQA",
+    "write": 200,
+    "state": {
+      "op": "start",
+      "status": 200
+    },
+    "readBack": {
+      "state": "Started",
+      "fingerprint": "03da93f899fafb14",
+      "matches": true,
+      "modified": "2026-10-08T03:56:40.4289796Z"
+    },
+    "triggerAfter": "03:57:02Z Skipped (folder valid, no new file); polls before the write were Failed",
+    "backup": "scan-processing-backup-2026-10-08T03-56-24-427Z.json"
+  },
+  "flowConfiguration_keys": {
+    "readUtc": "2026-10-08T03:53:00Z",
+    "rows": {
+      "65": "OPENROUTER_API_KEY set by the owner (73 characters; modified 01:12:01Z)",
+      "66": "GEMINI_API_KEY set by the owner (53 characters; modified 03:46:35Z)"
+    },
+    "gemini": "GET generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash with the row 66 key: 200 (the endpoint the scan flow calls)",
+    "openrouter": "not callable from this session (openrouter.ai refused by its network policy); proved by an AI flow run"
+  },
+  "row67_restored": {
+    "before": {
+      "Title": "false",
+      "ConfigValue": "IDENTITY_PROOF_REQUIRED",
+      "modified": "2026-10-08T03:48:29Z"
+    },
+    "why": "Title and value were swapped, so no row was titled IDENTITY_PROOF_REQUIRED; the flows filter on that title",
+    "write": 204,
+    "after": {
+      "Title": "IDENTITY_PROOF_REQUIRED",
+      "ConfigValue": "false",
+      "modified": "2026-10-08T03:54:24Z"
+    }
+  },
+  "item86_ecmDocsIntake": {
+    "ownerReport": "2026-10-08 (owner): no flow or endpoint named ECM_DOCS_INTAKE exists in the tenant; the export supplied is IP_SCAN_INTAKE (package created 2026-10-08T03:08:12Z, displayName IP_SCAN_INTAKE, connection dgsRegistry@nitda.gov.ng)",
+    "liveRead": "2026-10-08T03:52Z GET flows/df7ddff1-9275-4f23-acf6-e169525f4e2f: 404 FlowNotFound",
+    "recordedDefinition": "contracts/deployed/ECM_DOCS_INTAKE__df7ddff1…: a Tenant-authenticated POST trigger that returned Portal Registry rows (Get_Registry_Items, Response_Feed); no contract key, so nothing in Folio or the portal called it, and a browser cannot present the Entra token it requires",
+    "functionToday": "Folio reads Portal Registry through IP_Dynamic_Global_Actions_Endpoint (31c0aaf0, DYNAMIC_ACTIONS); status changes reach citizens through CG_Registry_Status_Notifier (8ebf6001)",
+    "ownerAnswer": "Owner, 2026-10-08, answering the request to share ECM_DOCS_INTAKE: \"Done as attached. No flow or endpoint was found as ECM_DOCS_INTAKE; what was found is IP_SCAN_INTAKE.\" The attached export (exports/IP_SCAN_INTAKE_20261008030812.zip) is IP_SCAN_INTAKE: Tenant-authenticated PUT, 241 actions, the scan deposit (caller authorised against DGO_UserDirectory, Create_Scan_Record into Portal Registry). It shares none of ECM_DOCS_INTAKE's feed steps (Get_Registry_Items, Response_Feed); both of its mail sends carry receipts (Create_Send_DGO_Scan_Notification_Email_Receipt, Create_Send_Telemetry_Email_Receipt)."
+  },
+  "item82_otpCodeValue": {
+    "finding": "Folio sign-in at https://folio-gateway.rf.gd failed (\"Failed\"): IP_OTP_GENERATE runs 04:23–04:35Z returned 500 because Create_item_OTP_Record failed BadRequest. varRandomOTP was declared with no value (also in the 2026-10-01 captures of both OTP flows), so every code was 0; OTP_Transactions.OTP_Code is unique and already holds a 0, so every write was refused and no code was mailed.",
+    "fix": "Initialize_variable_varRandomOTP value set to @rand(100000, 1000000) in IP_OTP_GENERATE and IP_OTP_VERIFY through the Flow API; backup before, read-back after; every other action unchanged (fingerprint of the rest equal).",
+    "writes": [
+      {
+        "flow": "IP_OTP_GENERATE",
+        "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+        "before": "{\"name\":\"varRandomOTP\",\"type\":\"integer\"}",
+        "write": 200,
+        "after": "{\"name\":\"varRandomOTP\",\"type\":\"integer\",\"value\":\"@rand(100000, 1000000)\"}",
+        "everythingElseUnchanged": true,
+        "state": "Started",
+        "modified": "2026-10-08T04:51:57.9359203Z"
+      },
+      {
+        "flow": "IP_OTP_VERIFY",
+        "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "before": "{\"name\":\"varRandomOTP\",\"type\":\"integer\"}",
+        "write": 200,
+        "after": "{\"name\":\"varRandomOTP\",\"type\":\"integer\",\"value\":\"@rand(100000, 1000000)\"}",
+        "everythingElseUnchanged": true,
+        "state": "Started",
+        "modified": "2026-10-08T04:52:07.5898725Z"
+      }
+    ]
+  },
+  "item84_originsMoved": {
+    "owner": "2026-10-08 04:22–04:23Z: the owner deleted rows 2, 8 and 9 and created 69 ALLOWED_ORIGIN, 70 ALLOWED_ORIGIN_PLATFORM, 71 ALLOWED_ORIGIN_PORTAL = http://folio-gateway.rf.gd (Folio and the portal now served from that host)",
+    "measured": "Portal Flow Telemetry: every call since 04:23Z carries Origin https://folio-gateway.rf.gd (IP_OTP_GENERATE, CG_Submission_Endpoint, CG_Portal_Status_Check_Endpoint, CG_Portal_Support_Endpoint)",
+    "fix": "rows 69, 70, 71 ConfigValue set to https://folio-gateway.rf.gd (204 each), read back 04:52Z",
+    "portalProved": "the owner submitted NITDA-2026-00018, tracked it and opened CASE-T6EJPU from https://folio-gateway.rf.gd/CG/ at 04:41–04:44Z; telemetry Succeeded for each"
+  },
+  "item82_signInProved": {
+    "generate": "IP_OTP_GENERATE run 2026-10-08T05:14:59Z Succeeded: Create_item_OTP_Record Created, Send_an_email_(V2) OK, receipt Created; origin https://folio-gateway.rf.gd",
+    "verify": "IP_OTP_VERIFY run 2026-10-08T05:16:15Z Succeeded: Get_Otp_Directory_User OK, Create_Otp_Proof Created; origin https://folio-gateway.rf.gd",
+    "owner": "the owner signed in to Folio as dgsregistry@nitda.gov.ng with the mailed code and reached the workspace (2026-10-08 06:16 WAT)",
+    "caseGenerateRemoved": "release 7: OTP_VERIFY package without Case_Generate, applied by npm run flows:update apply and read back (evidence/2026-10-08-flows-apply-2.json)"
+  },
+  "item84_originsAdded": {
+    "owner": "2026-10-08: allow folio-gateway.rf.gd (primary), internal-ops.rf.gd and activityweb.page.gd at once",
+    "rows": {
+      "69 ALLOWED_ORIGIN": "https://folio-gateway.rf.gd (first row: the fallback every flow answers an unlisted origin with)",
+      "70 ALLOWED_ORIGIN_PLATFORM": "https://folio-gateway.rf.gd",
+      "71 ALLOWED_ORIGIN_PORTAL": "https://folio-gateway.rf.gd",
+      "72 ALLOWED_ORIGIN_INTERNAL_OPS": "https://internal-ops.rf.gd (created, 201)",
+      "73 ALLOWED_ORIGIN_ACTIVITYWEB": "https://activityweb.page.gd (created, 201)"
+    },
+    "howRead": "every flow reads startswith(Title,'ALLOWED_ORIGIN') (42 occurrences in the packages) and answers the caller's Origin when listed"
+  },
+  "item85_scanTriggerOpened": {
+    "owner": "2026-10-08: IP_SCAN_INTAKE open to anyone, consistent with the other endpoints, not tenant only",
+    "order": "release 7 scope first (caller from the sign-in proof, not the x-ms-client-principal-name header an open trigger would let anyone send), then the trigger",
+    "trigger": {
+      "flow": "IP_SCAN_INTAKE",
+      "trigger": "manual",
+      "before": "Tenant",
+      "write": 200,
+      "after": "All",
+      "method": "PUT",
+      "actionsUnchanged": true,
+      "state": "Started",
+      "signedUrl": true,
+      "modified": "2026-10-08T05:41:16.8268433Z"
+    },
+    "config": "npm run config:drift reported SCAN_INTAKE not in the last build; npm run config:rebuild wired it (Workspace 17 of 17 signed); ledger updated"
+  },
+  "mise_proofHeader": {
+    "finding": "Folio's signed-in calls answered 401 'MISE unauthorized' before any flow ran: on a signed (sig=) trigger the service treats an Authorization header as an Entra token and rejects it",
+    "fix": "release 9: the proof travels in X-DGO-Proof (config/auth.config.js authorizationHeader); every identification flow reads X-DGO-Proof first and falls back to Authorization",
+    "applied": "evidence/2026-10-08-flows-apply-4.json, -5.json (10 flows + AI_DOC_ANALYSIS); the DGSO legacy packages held (flow being retired)"
+  },
+  "fetchAll_tasksThreshold": {
+    "finding": "FETCH_ALL answered 200 with docs, tasks, users, categories, departments and comments null and register empty",
+    "rootCause": "Get_All_Tasks read Global Tracking Queue (ee82725a, 16,071 rows) ordered by Modified; the list has the 20 indexed columns SharePoint allows, none of them Modified, so the read exceeded the list view threshold (SPQueryThrottledException) and every read chained after it was skipped",
+    "indexAttempt": "Indexed=true on Modified refused: 'the maximum number of columns is currently being indexed in this list'",
+    "fix": "release 10: Get_All_Tasks orders by ID desc (ID is always indexed; checked live: 200)",
+    "applied": "evidence/2026-10-08-flows-apply-6.json",
+    "after": {
+      "http": 200,
+      "docs": 500,
+      "tasks": 500,
+      "users": 854,
+      "categories": 45,
+      "departments": 50,
+      "comments": 3,
+      "register": 18
+    }
+  },
+  "item6_writebackLive": {
+    "defectsFound": [
+      "release 11: SCAN_INTAKE failed every request without X-DGO-Filename (substring of an empty string fails in the service), so every write-back took the scope's catch; DYNAMIC_ACTIONS upsert-record had the same defect for a titled row without text. The simulator (scripts/lib/wdl-sim.mjs) now refuses substring('',0,0) as the service does",
+      "release 12: SCAN_INTAKE read the directory Role choice as text, so the RoleId lookup never matched: every caller 403 (write-back) and no officer could deposit. It now reads the role as FETCH_ALL does (ROLE_OF, shared in scripts/lib/identification-flow-edit.mjs); tests/identification-phase3.test.mjs seeds Role as the connector returns it",
+      "release 13: the write-back's timeline row carries its own EntityKey and RootKey/SubjectKey as the RECEIVED row does"
+    ],
+    "applied": "evidence/2026-10-08-flows-apply-7.json, -8.json, -9.json",
+    "run": "Folio (this repository's build, served locally) signed in as the registry account with a short-lived ledger proof (created and deleted), flow calls relayed with Origin https://folio-gateway.rf.gd: Intake & Assignment > Portal submissions > NITDA-2026-00018 > Under review > Set status",
+    "result": {
+      "writeback": 200,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "rowShown": "Under review."
+    },
+    "portalRegistry": {
+      "referenceId": "NITDA-2026-00018",
+      "Status": "review",
+      "StatusLabel": "Under review.",
+      "UpdatedAtUtc": "2026-10-08T16:20:41Z",
+      "AcknowledgedAtUtc": "2026-10-08T16:20:41Z"
+    },
+    "timeline": {
+      "id": 19,
+      "Action": "STATUS_SET",
+      "Status": "review",
+      "ContractKey": "PORTAL_STATUS_WRITEBACK",
+      "Actor": "the officer of the proof",
+      "Note": "Commissioning test of the staff status write-back."
+    }
+  },
+  "g04_enforced": {
+    "owner": "G-04 enforced posture (owner decision, recorded earlier); switched on after the Folio read and write were proven",
+    "write": {
+      "list": "Flow Configuration",
+      "item": 67,
+      "Title": "IDENTITY_PROOF_REQUIRED",
+      "before": "false",
+      "after": "true",
+      "modified": "2026-10-08T16:24:25Z"
+    },
+    "refused": [
+      {
+        "request": "FETCH_ALL naming the active administrator, no proof",
+        "http": 401,
+        "code": "UNAUTHENTICATED",
+        "runId": "08584101302092766978436818834CU31"
+      },
+      {
+        "request": "the same with a forged X-DGO-Proof",
+        "http": 401,
+        "code": "UNAUTHENTICATED",
+        "runId": "08584101302039946492522694545CU16"
+      }
+    ],
+    "accepted": {
+      "request": "Folio boot with a valid proof",
+      "http": 200,
+      "counts": {
+        "activities": 500,
+        "tracking": 500,
+        "users": 854,
+        "categories": 45,
+        "portalRegister": 18
+      },
+      "consoleErrors": 0
+    }
+  },
+  "item72_ownerStatement": {
+    "owner": "2026-10-08: the API keys were replaced, making any old key inactive",
+    "effect": "the keys still present in the legacy DGSO definition are revoked and inert; the replacement reads its key from Flow Configuration"
+  },
+  "item76_enforcedCalls": {
+    "request": "POST naming the active administrator, no proof, Origin https://folio-gateway.rf.gd, IDENTITY_PROOF_REQUIRED true",
+    "results": [
+      {
+        "key": "REFERENCE_DATA",
+        "http": 401,
+        "code": "UNAUTHENTICATED",
+        "runId": "08584101273555297318087536511CU11"
+      },
+      {
+        "key": "GET_DOCS",
+        "http": 401,
+        "code": "UNAUTHENTICATED",
+        "runId": "08584101273513256466830262581CU19"
+      },
+      {
+        "key": "FETCH_EMAIL_ATTACHMENTS",
+        "http": 401,
+        "runId": "08584101273458984099398543241CU12"
+      },
+      {
+        "key": "EMAIL",
+        "http": 401,
+        "code": "UNAUTHENTICATED",
+        "runId": "08584101273402690935285894493cU14"
+      },
+      {
+        "key": "AI_DOC_ANALYSIS",
+        "http": 502,
+        "code": "NoResponse",
+        "note": "the flow answered nothing on this path: open"
+      }
+    ]
+  },
+  "item76_aiGateOrder": {
+    "finding": "AI_Document_Processing ran Get_item before Scope_AI_Caller_Gate (the scope was pasted after Get_item; flows:update keeps a scope's position), so an unauthenticated call read the named item and a missing item failed with no reply (502 NoResponse)",
+    "write": {
+      "flow": "AI_Document_Processing",
+      "http": 200,
+      "order": {
+        "Scope_AI_Caller_Gate": {
+          "Initialize_variable_2": [
+            "Succeeded"
+          ]
+        },
+        "Get_item": {
+          "Scope_AI_Caller_Gate": [
+            "Succeeded"
+          ]
+        },
+        "Get_attachments": {
+          "Get_item": [
+            "Succeeded"
+          ]
+        }
+      },
+      "otherwiseUnchanged": true,
+      "modified": "2026-10-08T17:31:14.4086229Z"
+    },
+    "accepted": {
+      "request": "no proof, IDENTITY_PROOF_REQUIRED true",
+      "http": 401,
+      "code": "UNAUTHENTICATED",
+      "runId": "08584101261981815074038373263CU07",
+      "Get_item": "Skipped (Terminated)",
+      "Get_attachments": "Skipped (Terminated)"
+    }
+  },
+  "item88_aiNeverWorked": {
+    "finding": "no AI_Document_Processing run has ever reached the model call: AaitemId is declared with no value and never set, so Get_item reads item 0 (NotFound) on every run (runs 2026-09-22, 2026-10-02 and 2026-10-08 all Failed at Get_item); the flow does not read the request Folio sends (operation, referenceId, subject) and answers the model's raw reply, not the envelope Folio reads; Folio waits 8 s"
+  },
+  "item11_statusDenial": {
+    "unknownReference": {
+      "http": 404,
+      "error": "not_found"
+    },
+    "wrongEmail": {
+      "http": 404,
+      "error": "not_found"
+    },
+    "identical": true,
+    "client": "tests/portal.spec.js 'a denial is one message that does not say which half was wrong' renders the same error field (passed in the 2026-10-08 full browser run)"
+  },
+  "item12_attachmentRow": {
+    "list": "Portal Attachments (NEDMS, ecf2ba9b)",
+    "row": 1,
+    "submissionRef": "NITDA-2026-00015",
+    "status": "Stored",
+    "createdAtUtc": "2026-09-30T00:48:48Z",
+    "file": "stored in Portal Attachments library",
+    "note": "live read 2026-10-08"
+  },
+  "item43_otpTests": {
+    "code": "one code issued to the non-existent commissioning-test@nitda.gov.ng (row 99, deleted after)",
+    "results": [
+      {
+        "test": "right code, other caller",
+        "http": 404,
+        "message": "No OTP found"
+      },
+      {
+        "test": "right caller succeeds",
+        "evidence": "item82_signInProved (owner sign-in 2026-10-08)"
+      },
+      {
+        "test": "no valid code sends no mail",
+        "http": 404,
+        "message": "No OTP found",
+        "note": "after release 16; before it the flow answered 500"
+      },
+      {
+        "test": "six wrong guesses",
+        "http": [
+          404,
+          404,
+          404,
+          404,
+          404,
+          429
+        ],
+        "after": "the right code is refused 429"
+      }
+    ],
+    "defectFixed": "release 16: a verify for an address with no code issued answered 500 (Update_item_Attempts had no row)"
+  },
+  "item40_liveCalls": {
+    "changedFlows": 10,
+    "calls": [
+      {
+        "key": "FETCH_ALL",
+        "http": 200
+      },
+      {
+        "key": "DYNAMIC_ACTIONS",
+        "http": 400,
+        "note": "unknown operation, nothing written",
+        "runId": "08584101255395096959622136194CU05"
+      },
+      {
+        "key": "BULK_ASSIGNMENT",
+        "http": 400,
+        "note": "empty batch",
+        "runId": "08584101255156491755474805790CU20"
+      },
+      {
+        "key": "GET_DOCS",
+        "http": 200,
+        "runId": "08584101255553089748003850203CU22"
+      },
+      {
+        "key": "REFERENCE_DATA",
+        "http": 200,
+        "runId": "08584101255449428810894720241CU06"
+      },
+      {
+        "key": "FETCH_EMAIL_ATTACHMENTS",
+        "http": 401
+      },
+      {
+        "key": "EMAIL",
+        "http": 401
+      },
+      {
+        "key": "AI_DOC_ANALYSIS",
+        "http": 401
+      },
+      {
+        "key": "OTP_VERIFY/OTP_GENERATE",
+        "http": "200/404/429"
+      },
+      {
+        "key": "STATUS",
+        "http": "200/404"
+      }
+    ]
+  },
+  "item30_runRecord": {
+    "list": "Portal Flow Telemetry (Global_Digital_Documents_Centre, 726c210d)",
+    "row": 965,
+    "flow": "IP_Dynamic_Global_Actions_Endpoint",
+    "runRecordJson": "flow_run_record capture 2.1.0"
+  },
+  "item56_gatewayOrigin": {
+    "finding": "the Power Platform gateway answers Access-Control-Allow-Origin: * on every signed trigger and overrides the header the flow sets: VERIFY (Compose_Allowed_Origin_Verify Succeeded) and FETCH_ALL answer * to https://folio-gateway.rf.gd, https://internal-ops.rf.gd and https://evil.example alike"
+  },
+  "item89_proofInRunRecord": {
+    "finding": "Compose_Redacted_Headers masked Authorization but not X-DGO-Proof (release 9 moved the proof there), so run records written from 2026-10-08 15:54Z held the bearer proof in clear",
+    "fix": "release 17: every flow that records headers masks X-DGO-Proof under both spellings; applied to 15 flows (evidence/2026-10-08-flows-apply-13.json)",
+    "verified": {
+      "row": 967,
+      "headerValue": "***REDACTED***",
+      "tokenPresent": false
+    },
+    "cleanup": {
+      "scrubbedInPlace": [
+        908,
+        909,
+        910,
+        915,
+        917,
+        921,
+        924,
+        962,
+        964,
+        965
+      ],
+      "deletedOverSizeLimit": [
+        912,
+        913,
+        914,
+        916,
+        919,
+        925
+      ],
+      "allTokensTestOnly": true,
+      "tokensLive": false,
+      "note": "every token was a commissioning test proof, deleted from the proof ledger after its run"
+    }
+  },
+  "ownerAnswers_2026_10_08b": {
+    "testRecordCleaning": "approved",
+    "dispatchArchive": "decide on a needs assessment first"
+  },
+  "ownerAnswers_2026_10_08c": {
+    "answer": "ACCEPT all recommended",
+    "covers": [
+      "G-04 obligations 5-7: 7 met; 5 accepted for REFERENCE_DATA and GET_DOCS (read-only, signed-in staff); 6 deferred for task creation",
+      "ITEM-25: outbound letters go through the Mailer (Folio dispatch records the item Treated); archive is a status and IdState change, no new list",
+      "ITEM-56: accept the gateway's Access-Control-Allow-Origin *",
+      "ITEM-88: the go-live build carries no AI address (AI actions answer unavailable, D2) until the flow is rebuilt"
+    ]
+  },
+  "item25_liveDispatchArchive": {
+    "testRow": "temporary DGO DIGITAL OPS row ZTEST-ITEM25-1791484857173, deleted after (200)",
+    "dispatch": {
+      "key": "DYNAMIC_ACTIONS",
+      "http": 200,
+      "code": "OK",
+      "runId": "08584101220245063729663954612CU01",
+      "sizes": "{\"operation\":\"string\",\"referenceId\":\"string\",\"targetId\":\"number\",\"changed\":\"object\",\"recognised\":\"boolean\",\"replayed\":\"boolean\",\"auditLogged\":\"boolean\"}"
+    },
+    "afterDispatch": {
+      "Status": "Treated",
+      "IdState": "ACTIVE"
+    },
+    "archive": {
+      "key": "DYNAMIC_ACTIONS",
+      "http": 200,
+      "code": "OK",
+      "runId": "08584101219850279182145619449CU03",
+      "sizes": "{\"operation\":\"string\",\"referenceId\":\"string\",\"targetId\":\"number\",\"changed\":\"object\",\"recognised\":\"boolean\",\"replayed\":\"boolean\",\"auditLogged\":\"boolean\"}"
+    },
+    "afterArchive": {
+      "Status": "Treated",
+      "IdState": "ARCHIVED"
+    },
+    "retired": "update-status and delete-record (no caller) refused as unknown (release 19)",
+    "stillRecognisedUnserved": {
+      "user-admin:*": "modules/user-admin.js create/update/disable: changes queue on the device and never reach DGO_UserDirectory",
+      "activity-archive, activity-siwes, activity-nysc": "modules/activities.js lifecycle shortcuts from the Canvas app (FastTrack queue record, Reference_ID, DGO DIGITAL OPS patch)"
+    }
+  },
+  "item90_fetchAllScope": {
+    "finding": "FETCH_ALL admits a caller whose role has the * route or user:view; live, only systemAdmin and userAdmin do, so the operator and 822 active viewers get 403; whoever passes receives the same payload (500 documents, 500 tasks, the whole directory with addresses, every portal submission). Folio's client filter (core/entity-store.js canReadRecord) is presentation only.",
+    "directory": {
+      "total": 854,
+      "systemAdmin/active": 1,
+      "operator/active": 1,
+      "viewer/active": 822,
+      "viewer/disabled": 30
+    },
+    "proposal": "scope by role on the server: admin, registry and executive all; director their directorate's records and tasks; operator and viewer their own tasks, those tasks' documents and comments; the directory as name, department and title (addresses for admins only); portal submissions for registry and admin roles"
+  },
+  "ownerAnswers_2026_10_08d": {
+    "answer": "Approved",
+    "covers": [
+      "ITEM-90: role scoping of FETCH_ALL as proposed",
+      "ITEM-25: user administration on its own flow (an exception to no new flow before commissioning)"
+    ]
+  },
+  "item90_scopingLive": {
+    "release": 22,
+    "testRecords": "a test viewer in DGO_UserDirectory, a test document in DGO DIGITAL OPS and a test task assigned to the viewer naming it; all deleted after (200,200,200,200,200)",
+    "viewer": {
+      "http": 200,
+      "runId": "08584101162106172791813862692CU11",
+      "tasks": 1,
+      "taskIsTheTestTask": true,
+      "docs": 1,
+      "docIsTheTestDoc": true,
+      "register": 0,
+      "approvals": 0,
+      "directory": 855,
+      "addressesShown": 1,
+      "ownAddress": true
+    },
+    "registryAdmin": {
+      "http": 200,
+      "runId": "08584101161941242468415667428CU02",
+      "tasks": 500,
+      "docs": 500,
+      "register": 18,
+      "directory": 855,
+      "addressesShown": 855
+    },
+    "tiers": "all: systemAdmin, userAdmin, executive, operator (the registry role), or the admin, executive or registry persona; directorate: director (own tasks, documents and comments, plus approvals); own: everyone else",
+    "limit": "a director's directorate-wide tasks are not read: Global Tracking Queue holds its 20 indexed columns and GDSUROUT is not one of them; no director is in the directory today"
+  },
+  "item25_userAdminFlow": {
+    "approval": "owner, 2026-10-08 (ownerAnswers_2026_10_08d)",
+    "created": {
+      "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "displayName": "IP_User_Admin_Endpoint",
+      "createStatus": 201,
+      "stateAtCreate": "Stopped",
+      "connections": {
+        "shared_sharepointonline": "3f1943c5955a4cb8b301e8f22f2b590d",
+        "shared_office365": "c0b9e7a5b0854c39a435fd8ce92f48ad"
+      },
+      "trigger": "POST / All",
+      "source": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7 (live, release 19)"
+    },
+    "refusedWrites": [
+      "release 20: user-admin inside DYNAMIC_ACTIONS, 524 actions (limit 500)",
+      "release 23: an expression of 10,391 characters (limit 8,192)"
+    ],
+    "applied": "release 24, written and read back; then started (Started)",
+    "live": {
+      "create": 200,
+      "afterCreate": {
+        "Role": "viewer",
+        "Persona": "general",
+        "Status": "active",
+        "Rev": 1
+      },
+      "createAgain": "409 ALREADY_IN_DIRECTORY",
+      "assignRole": {
+        "http": 200,
+        "previousRole": "viewer",
+        "Role": "operator",
+        "Persona": "registry",
+        "Rev": 2
+      },
+      "badRole": 400,
+      "disable": {
+        "http": 200,
+        "Status": "disabled",
+        "DisabledReason": "Commissioning test",
+        "Role": "operator",
+        "Rev": 3
+      },
+      "missingPerson": "404 NOT_IN_DIRECTORY",
+      "testRowDeleted": 200,
+      "proofDeleted": 200
+    },
+    "dynamicActions": "refuses user-admin:* as unknown (400); release 23"
+  },
+  "gtqIndexes_liveRead": {
+    "list": "Global Tracking Queue (ee82725a), 16,071 rows",
+    "read": "2026-10-08, fields with Indexed eq true",
+    "count": 20,
+    "indexed": [
+      "Title",
+      "Progress",
+      "Priority",
+      "DueDate",
+      "Assigned",
+      "AssignedTo",
+      "Created",
+      "Editor",
+      "Acknowledgement_x0020_Due_x0020_",
+      "Reference_ID",
+      "EntityKey",
+      "IdState",
+      "TaskRef",
+      "ParentKey",
+      "RootKey",
+      "RootRef",
+      "CorrelationId",
+      "AssigneeKey",
+      "RoutedOrgKey",
+      "ClientRequestHash"
+    ],
+    "declaredTargetsNotIndexed": [
+      "RefIDD",
+      "Modified"
+    ],
+    "notIndexedButWanted": [
+      "GDSUROUT (ITEM-91)"
+    ],
+    "effect": "a filter or order on RefIDD, Modified or GDSUROUT exceeds the list view threshold; FETCH_ALL reads tasks by ID (release 10) and own tasks by AssignedTo (release 22); DYNAMIC_ACTIONS' Get_Dynamic_Task uses ID when Folio sends a numeric id (it does: modules/lookup.js) and falls back to RefIDD only otherwise",
+    "indexAttempt": "Indexed=true on Modified refused 2026-10-08: the maximum number of columns is being indexed"
+  },
+  "item23_assignmentAndFlagLive": {
+    "date": "2026-10-08",
+    "records": "commissioning test rows created for the test and deleted after it: DGO DIGITAL OPS items 22688 and 22689, Global Tracking Queue item 16166",
+    "assignment": {
+      "endpoint": "SINGLE_ASSIGNMENT (Single_Task_Assignment, 3caf9458)",
+      "request": "core/assignment-payload.js buildSingleAssignmentPayload, assignee the registry account",
+      "http": 200,
+      "code": "OK",
+      "runId": "08584101059718886947742802494CU18",
+      "taskCreated": "Global Tracking Queue item 16166, TaskRef TASK-2026-00001, EntityKey set, IdState ACTIVE",
+      "documentAfter": "Treated / AssignmentStatus Processed",
+      "note": "the assignment rewrites the document RefIDD to its item ID, the convention existing rows follow; the TASK counter issued its first number to this test (MANUAL-2 records the counter start)"
+    },
+    "flagWrite": {
+      "endpoint": "DYNAMIC_ACTIONS (31c0aaf0)",
+      "request": "core/document-flags.js flagPayload through core/write-manager.js",
+      "byDocId": {
+        "http": 200,
+        "code": "OK"
+      },
+      "byReferenceOnly": {
+        "list": "DGO DIGITAL OPS (1f1cb303), filter RefIDD eq <ref>",
+        "flag": {
+          "http": 200,
+          "code": "OK",
+          "targetId": 22689,
+          "Marked_Item": "Follow-Up"
+        },
+        "unflag": {
+          "http": 200,
+          "code": "OK",
+          "Marked_Item": null
+        }
+      },
+      "observation": "lifting a flag leaves Marked_Item empty, not No; FETCH_ALL reads either as unflagged"
+    },
+    "cleanup": "all three test rows deleted (HTTP 200); the proof rows were deleted after each call"
+  },
+  "item74_noEmailSource": {
+    "date": "2026-10-08",
+    "read": "FETCH_ALL as the registry account: docs 500, tasks 500, emails 0",
+    "finding": "Folio has no source of e-mails in the go-live build. FETCH_ALL returns emails: 0; Lookup sends an e-mail search to SUBSIDIARY_ACTIONS, which is the DYNAMIC_ACTIONS flow and has no e-mail read; the legacy \"get emails\" flow (3931e2ff) is register-only and has no contract key. EMAIL_RELATED_TASK needs a message ID from the registry mailbox (Get_Email), so a task cannot be raised from an e-mail in Folio today.",
+    "notDone": "the flow was not called directly: this session has no mail-read permission to obtain a message ID, and the criterion is a task raised from Folio"
+  },
+  "item67_mailConnectionIdentities": {
+    "date": "2026-10-08",
+    "read": "Power Platform connectivity API (environment host, /connectivity/connectors/{api}/connections) and the Flow API, read-only, as the registry account",
+    "adoptedFlowsUsingMail": 34,
+    "onRegistryConnection": 33,
+    "registryConnection": "shared_office365/c0b9e7a5b0854c39a435fd8ce92f48ad, dgsregistry@nitda.gov.ng, Connected",
+    "senderOverride": "none: no send action in any of the 34 flows sets emailMessage/From",
+    "exception": "DGSO INCOMING AI PROCESSING (b6d92bae) sends one e-mail (Send_an_email_(V2)) through a connection signed in as dgs@nitda.gov.ng",
+    "sendmail": "shared_sendmail has 7 connections and no adopted flow uses them; its only user, Web - Email To Task Processing (447b1b4d), is retired and absent from the environment",
+    "record": "deployment/notification-instrument/tenant-execution/evidence/connection-verification.json"
+  }
+}

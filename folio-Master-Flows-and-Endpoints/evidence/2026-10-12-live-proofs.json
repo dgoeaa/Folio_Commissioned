@@ -1,0 +1,137 @@
+{
+  "dateUtc": "2026-10-12",
+  "signedInAs": "dgsregistry@nitda.gov.ng (systemadmin), proof from OTP_VERIFY with the owner-supplied code; no token recorded",
+  "workspaceBuild": "config build of 2026-10-10T19:47:44Z (commit d4b7004), deployed by the owner to folio-gateway.rf.gd",
+  "ITEM_87_acknowledgementLink": {
+    "email": "TASK-2026-00002 notice (Single_Task_Assignment run 08584100110433772866731334335CU24)",
+    "opened": "https://folio-gateway.rf.gd/index.html?item=16167&… (the e-mail’s Acknowledge Receipt href)",
+    "landed": "#/acknowledgment, heading Acknowledgment Queue, task 16167 (22715 -2026-10-09 -BPP …) shown as the task opened from the link",
+    "writesBlocked": 0,
+    "supportLink": "support.html?ref=… opens Folio at folio-gateway.rf.gd and asks an unsigned browser to sign in"
+  },
+  "FETCH_ALL_live": {
+    "status": 200,
+    "counts": {
+      "docs": 500,
+      "tasks": 500,
+      "users": 855,
+      "emails": 50,
+      "register": 18,
+      "comments": 3
+    },
+    "emailFields": "id,subject,fromAddress,receivedDateTime,bodyPreview,hasAttachments,importance,conversationId,internetMessageId,toRecipients",
+    "replyBytes": 6486304
+  },
+  "ITEM_25_activityLifecycle": {
+    "testActivity": "22720",
+    "steps": [
+      {
+        "operation": "activity-siwes:create-queue-record",
+        "status": 200,
+        "code": null,
+        "ID": 16168,
+        "Reference_ID": null
+      },
+      {
+        "operation": "activity-siwes:set-reference-id",
+        "status": 200,
+        "code": null,
+        "ID": 16168,
+        "Reference_ID": "20261013-22720-INT-SIWES-16168"
+      },
+      {
+        "operation": "activity-siwes:update-activity",
+        "status": 200,
+        "code": null,
+        "ID": null,
+        "Reference_ID": null
+      },
+      {
+        "operation": "activity-nysc:set-reference-id",
+        "status": 409,
+        "code": "QUEUE_RECORD_MISMATCH",
+        "ID": null,
+        "Reference_ID": null
+      }
+    ],
+    "queueRow": {
+      "id": 16168,
+      "Title": "ZTEST ITEM-25 activity lifecycle proof 2026-10-12",
+      "NVERSE": "DGOFASTTRACK",
+      "Classification": "Internships (SIWES)",
+      "Reference_ID": "20261013-22720-INT-SIWES-16168",
+      "RefIDD": "22720",
+      "AssignedTo": "dgs@NITDA.gov.ng",
+      "Progress": "Completed",
+      "Priority": "Low",
+      "IdState": "ACTIVE"
+    },
+    "activityRow": {
+      "id": "22720",
+      "Title": "ZTEST ITEM-25 activity lifecycle proof 2026-10-12",
+      "Status": "Treated",
+      "AssignmentStatus": "Processed",
+      "AssignedTo": "dgs@NITDA.gov.ng",
+      "Category0": "Internships (SIWES)"
+    },
+    "dynamicActionsRefuses": {
+      "status": 400,
+      "code": "UNKNOWN_OPERATION"
+    }
+  },
+  "ITEM_74_taskFromEmail": {
+    "sourceEmailFrom": "registry inbox via FETCH_ALL",
+    "firstRun": {
+      "run": "08584097726339433081123807376CU29",
+      "status": "Succeeded",
+      "task": {
+        "action": "Create_Task_Email",
+        "id": 16169,
+        "Title": "ZTEST ITEM-74 task from e-mail 2026-10-12",
+        "TaskRef": "TASK-2026-00003",
+        "EntityKey": "e25ddc9a-33e1-41cf-ae48-cfb0233e10db",
+        "IdState": "ACTIVE",
+        "TaskTypeChoice": "Standard Task",
+        "ActivityTrackingID": "AAMkADEyZjdlMzA0LTkyZDctNDIyZi04YjdlLTUwOTVjN2NkODA4NQBGAAAAAAD8_RRvHrQsRb5yZ8bEOAG5BwAC-2c_TK_uRJ9zbNBEOGrBAAAAAAEMAAAC-2c_TK_uRJ9zbNBEOGrBAAS-z6mLAAA=",
+        "AssignedTo": "dgsregistry@nitda.gov.ng",
+        "Rev": 1
+      },
+      "sends": [
+        {
+          "action": "Send_an_email_(V2)_Main_1_1_1",
+          "to": "dgsregistry@nitda.gov.ng"
+        },
+        {
+          "action": "Send_an_email_(V2)_Main_1_1_2",
+          "to": "dgsregistry@nitda.gov.ng"
+        }
+      ],
+      "devOpsMirrorTouched": 0,
+      "devOpsMirrorRowsChanged": 0
+    },
+    "defectFound": "two near-identical notices per task (Send_an_email_(V2)_Main_1_1_1 and Scope_3 Send_an_email_(V2)_Main_1_1_2); fixed in release 29",
+    "afterFix": {
+      "run": "08584097723041809658855191517CU27",
+      "status": "Succeeded",
+      "sends": [
+        "Send_an_email_(V2)_Main_1_1_1"
+      ],
+      "task": {
+        "id": 16170,
+        "TaskRef": "TASK-2026-00004",
+        "EntityKey": "e0205d64-5680-4981-b0cd-1ac6a4e306c5",
+        "IdState": "ACTIVE"
+      }
+    }
+  },
+  "testRowsForCleanup": {
+    "DGO DIGITAL OPS": [
+      "22720"
+    ],
+    "Global Tracking Queue": [
+      16168,
+      16169,
+      16170
+    ]
+  }
+}

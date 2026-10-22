@@ -1,0 +1,120 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The apply pass that created the one column the 2026-09-02 dry run had found missing. Run by the operator from a SharePoint page on 2026-09-03: a DRY_RUN pass first, then the same script with DRY_RUN = false. One column created, 102 already present, none failed. Read against the specification, the estate's column set is now complete in the tenant: 103 of 103, and all five index targets indexed.",
+  "againstSpec": {
+    "file": "docs/deployment/sharepoint/portal-field-spec.json",
+    "specVersion": "2.0.0",
+    "lists": 15,
+    "columns": 103
+  },
+  "runner": "scripts/provision-sharepoint-fields.browser.js (generated from the specification; browser devtools console, operator session)",
+  "source": {
+    "capture": "The operator's browser console output, pasted verbatim into the session.",
+    "startedUtc": null,
+    "startedUtcWhyNull": "The provisioner prints no timestamp of its own, and this capture is a paste rather than a saved console export, so it carries no filename epoch to derive one from — the 2026-08-31 record's startedUtc came from such a filename. The date is the session date, 2026-09-03. Nothing in this record depends on the time of day, and a time is not invented to fill the field."
+  },
+  "runs": [
+    {
+      "phase": "dry-run",
+      "mode": "DRY_RUN",
+      "created": 0,
+      "present": 102,
+      "wouldCreate": 1,
+      "failed": 0,
+      "meaning": "A re-read immediately before the apply, in the same session. It agrees with the 2026-09-02 dry run: 102 present, one to create. The estate had not changed between the two dates."
+    },
+    {
+      "phase": "apply",
+      "mode": "APPLY",
+      "created": 1,
+      "present": 102,
+      "failed": 0,
+      "consoleSays": "+ Attempts (Number) / Created: 1   Already present: 102   Failed: 0 / Estate complete: 103/103 columns present.",
+      "meaning": "The provisioner reads each declared field before it writes and creates only what is absent. `Already present: 102` is therefore 102 successful reads; `Created: 1` is one field-creation call SharePoint accepted; `+ Attempts (Number)` names it."
+    },
+    {
+      "phase": "index",
+      "mode": "APPLY",
+      "indexed": 0,
+      "alreadyIndexed": 5,
+      "failed": 0,
+      "consoleSays": "Indexes set: 0   Already indexed: 5   Failed: 0",
+      "meaning": "A third independent read of the five index targets, after 2026-08-31 and 2026-09-02. All five already indexed; nothing to set."
+    }
+  ],
+  "ledger": [
+    {
+      "site": "NITDADGO-EAAACTIVITYTRACKING",
+      "list": "OTP_Transactions",
+      "field": "Attempts",
+      "type": "Number",
+      "result": "created"
+    }
+  ],
+  "noVerifyRun": {
+    "state": "OUTSTANDING",
+    "why": "The operator ran DRY_RUN and then apply, in that order. The dry run is a pre-state read, not a verify: it reports what was missing before the write, not what exists after it. No pass was made after the create, so nothing here re-read the column back out of the tenant. `Estate complete: 103/103` is the script adding its own created and present counters against the specification total — arithmetic over one pass, not a second reading.",
+    "whatIsAlreadyEstablishedWithoutIt": "That SharePoint accepted the create: createfieldasxml returned ok, which is the tenant's own answer, and Failed: 0. What is not established is the created column's settings, or that it survived anything subsequent.",
+    "howItCloses": "Either a DRY_RUN pass of the same script, which would report 103 present and 0 to create; or — requiring no extra step — saving the patched Web - OTP Verify under register ITEM-38. Power Automate validates every item/<Column> parameter against the connector operation AT SAVE TIME and refuses the whole flow with WorkflowOperationParametersExtraParameter when the list lacks the column. The patched definition writes Attempts. A successful save is therefore a read of this column by the platform that would otherwise reject it.",
+    "doesNotBlock": "register ITEM-39, whose resolution criterion is a run record accounting for the column and a provisionedBy naming it. Both hold. This is a strengthening, and it is recorded as outstanding rather than left to be inferred."
+  },
+  "indexRun": {
+    "consoleSays": "Indexes set: 0   Already indexed: 5   Failed: 0",
+    "against": "docs/deployment/sharepoint/index-targets.json",
+    "addressing": "Each target is addressed by list GUID, not title — 'Global Tracking Queue' and 'DGO DIGITAL OPS' each exist on two sites in this tenant, and only the NITDADGO-EAAACTIVITYTRACKING pair are the declared targets.",
+    "ledgerDerivation": "The operator's paste carried the summary line, not the five per-target lines. These rows are DERIVED, not transcribed, and the derivation is exact: the index pass walks the declared targets once each, and every target increments exactly one of indexed / alreadyIndexed / indexFailed. Five declared targets with indexed = 0, alreadyIndexed = 5 and failed = 0 admits one assignment — every declared target read back Indexed: true from the tenant. Nothing per-target is claimed beyond that. (The script's own ledger string for this outcome is 'present'; these records have said 'already indexed' since 2026-08-31 and keep to it.)",
+    "ledger": [
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Rate Limits",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Verification Proofs",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Support Cases",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "RefIDD",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "DGO DIGITAL OPS",
+        "field": "RefIDD",
+        "result": "already indexed"
+      }
+    ],
+    "verified": "A third independent read of all five targets, after the 2026-08-31 apply-and-verify and the 2026-09-02 dry run. Three separate dates agree that all five are indexed. The provisioning half of register ITEM-23 is not in doubt; its remaining criterion is live traffic."
+  },
+  "howStronglyThisIsEstablished": {
+    "created": "CONFIRMED. createField POSTs to /_api/web/lists(guid'…')/fields/createfieldasxml and throws on a non-ok response, so a row is counted 'created' only where SharePoint accepted the create and 'FAILED: <status> <message>' otherwise. The run reported Created: 1, Failed: 0, and one ledger row reading 'created'. The tenant, not the script, is the authority for that.",
+    "estateComplete": "The line `Estate complete: 103/103 columns present.` is the script's own arithmetic — created + present against the specification total — not a re-read after the write. What was read is the 102; what was written is the one. No post-apply verify pass was made, so this record does not present one.",
+    "theSecondReading": "It arrives with register ITEM-38 and needs no extra step from the operator. Power Automate validates every item/<Column> parameter against the connector operation AT SAVE TIME and refuses the whole flow with WorkflowOperationParametersExtraParameter if the list lacks the column. The patched Web - OTP Verify writes Attempts. If it saves, the column exists; if the column did not exist, it could not save. That is a stricter reading than a repeat dry run, and it is the very next action in the sequence.",
+    "notClaimed": "That the column is of the intended precision, display format or default. The specification declares Number with no further constraint, and the run created a Number. Nothing here inspects the created column's settings."
+  },
+  "consoleNoise": {
+    "observation": "The pasted capture carries about a hundred lines of SharePoint's own page chrome around the run: an ad-blocking notice, service-worker router and cache logs from spserviceworker.js, icon re-registration, iframe sandbox warnings, and a `TypeError: Failed to fetch` inside spserviceworker.js during a manifest sync.",
+    "attribution": "None of it originates in scripts/provision-sharepoint-fields.browser.js. The script's output is prefixed and counted, and it reported Failed: 0 across both phases.",
+    "theFailedFetch": "It is raised by SharePoint's service worker against its own manifest endpoint, not by the provisioner. A failed request inside the provisioner is caught per field and printed as a failure row in the ledger; the ledger has one row and it reads 'created'. The run is unaffected."
+  },
+  "closes": [
+    "ITEM-39 — OTP_Transactions.Attempts is provisioned, and portal-field-spec.json now names this record in its provisionedBy.",
+    "The dependency ITEM-38 declared on ITEM-39. The OTP verify patch can now be saved."
+  ],
+  "whatThisDoesNotClose": [
+    "ITEM-38 — the patched definition has not been applied. This run makes the save possible; it does not make it.",
+    "ITEM-23 — the index requirement is now confirmed three times over, but its remaining criterion is live traffic: one assignment and one flag write against a known reference returning 200. Neither has been exercised.",
+    "ITEM-2 — no flow was called. This is SharePoint REST, not a Power Automate execution."
+  ]
+}

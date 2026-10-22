@@ -1,0 +1,55 @@
+{
+  "readUtc": "2026-10-10T16:37:01.517Z",
+  "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+  "flow": "AUTO_SCHEDULED_SWEEP",
+  "decision": "owner direction 2026-10-10: the sweep runs once a working day, not hourly",
+  "before": {
+    "frequency": "Hour",
+    "interval": 1,
+    "timeZone": "W. Central Africa Standard Time"
+  },
+  "written": {
+    "frequency": "Week",
+    "interval": 1,
+    "timeZone": "W. Central Africa Standard Time",
+    "schedule": {
+      "weekDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": [
+        "8"
+      ],
+      "minutes": [
+        45
+      ]
+    }
+  },
+  "writeStatus": 200,
+  "readBack": {
+    "frequency": "Week",
+    "interval": 1,
+    "timeZone": "W. Central Africa Standard Time",
+    "schedule": {
+      "weekDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": [
+        "8"
+      ],
+      "minutes": [
+        45
+      ]
+    }
+  },
+  "matches": true,
+  "actionsUnchanged": true,
+  "state": "Stopped"
+}

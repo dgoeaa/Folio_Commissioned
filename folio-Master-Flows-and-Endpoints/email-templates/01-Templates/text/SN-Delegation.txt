@@ -1,0 +1,39 @@
+Subject: Delegated to you: {{referenceId}} — {{title}}
+Preview: The Director-General/CEO has delegated a record to you.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✓ Delegated
+
+A record has been delegated to you
+==================================
+
+The Director-General/CEO has delegated a record to you.
+
+Dear {{recipientName}},
+
+The executive authority has delegated the record below to you. It is now yours to take forward.
+
+What is expected
+
+{{expected}}
+
+Record
+
+Reference: {{referenceId}}
+
+Subject: {{title}}
+
+Delegated by: {{actorName}}
+
+Open Folio to take it forward.
+
+Take it forward in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

@@ -1,0 +1,700 @@
+{
+  "readUtc": "2026-10-16",
+  "by": "live EMAIL endpoint (IP_SEND_EMAIL, df59a69f) called as the signed-in registry user (sign-in proof from a one-time code, 2026-10-16); run history and receipts read through the Flow API; registry inbox read back through FETCH_ALL",
+  "finding": "IP_SEND_EMAIL had never sent a message before tonight: its four earlier runs (2026-09-22 to 2026-10-08) were commissioning probes that never reached Send_Email. Tonight 51 requests each reached Send_Email (Succeeded) and wrote a Portal Outbox Receipts row with Status sent.",
+  "totals": {
+    "runs": 51,
+    "sendSucceededWithReceiptSent": 51,
+    "byRecipient": {
+      "dgsregistry@nitda.gov.ng": 8,
+      "hkani@nitda.gov.ng": 43
+    }
+  },
+  "item68TemplateSamples": {
+    "to": "hkani@nitda.gov.ng (reviewer named by the owner, 2026-10-16)",
+    "note": "one sample of each of the 43 catalogue templates (47 messages); flow expressions replaced by sample values",
+    "registryTest": {
+      "subject": "[Folio template review 1/43] BULK_ASSIGNMENT.bulk-failure",
+      "to": "dgsregistry@nitda.gov.ng",
+      "run": "08584094211328875088525589340CU21"
+    },
+    "sends": [
+      {
+        "n": 1,
+        "template": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61/Send_Bulk_Failure_Email.html",
+        "messages": [
+          "BULK_ASSIGNMENT.bulk-failure"
+        ],
+        "subject": "[Folio template review 1/43] BULK_ASSIGNMENT.bulk-failure",
+        "http": 200,
+        "run": "08584094211328875088525589340CU21",
+        "receipt": 1394,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 2,
+        "template": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555/Send_an_email_V2_Main_1_1_1.html",
+        "messages": [
+          "EMAIL_RELATED_TASK.an-email-v2-main-1-1-1"
+        ],
+        "subject": "[Folio template review 2/43] EMAIL_RELATED_TASK.an-email-v2-main-1-1-1",
+        "http": 200,
+        "run": "08584094211261257238786309274CU28",
+        "receipt": 1395,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 3,
+        "template": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c/Send_Case_Email.html",
+        "messages": [
+          "NOKEY.case"
+        ],
+        "subject": "[Folio template review 3/43] NOKEY.case",
+        "http": 200,
+        "run": "08584094211191153165319778926CU19",
+        "receipt": 1396,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 4,
+        "template": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c/Send_Digest_Email.html",
+        "messages": [
+          "NOKEY.digest"
+        ],
+        "subject": "[Folio template review 4/43] NOKEY.digest",
+        "http": 200,
+        "run": "08584094211124799575571766551CU29",
+        "receipt": 1397,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 5,
+        "template": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "NOKEY.server-error-alert"
+        ],
+        "subject": "[Folio template review 5/43] NOKEY.server-error-alert",
+        "http": 200,
+        "run": "08584094211056687664801664793CU30",
+        "receipt": 1398,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 6,
+        "template": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c/Send_Undeliverable_Alert_Email.html",
+        "messages": [
+          "NOKEY.undeliverable-alert"
+        ],
+        "subject": "[Folio template review 6/43] NOKEY.undeliverable-alert",
+        "http": 200,
+        "run": "08584094210984595809622625673CU29",
+        "receipt": 1399,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 7,
+        "template": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d/Send_Expired_Upload_Email.html",
+        "messages": [
+          "NOKEY.expired-upload"
+        ],
+        "subject": "[Folio template review 7/43] NOKEY.expired-upload",
+        "http": 200,
+        "run": "08584094210922549383259915598CU09",
+        "receipt": 1400,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 8,
+        "template": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d/Send_Registry_Digest_Email.html",
+        "messages": [
+          "NOKEY.registry-digest"
+        ],
+        "subject": "[Folio template review 8/43] NOKEY.registry-digest",
+        "http": 200,
+        "run": "08584094210859298591839806522CU28",
+        "receipt": 1401,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 9,
+        "template": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "NOKEY.server-error-alert"
+        ],
+        "subject": "[Folio template review 9/43] NOKEY.server-error-alert",
+        "http": 200,
+        "run": "08584094210793662107785558952CU29",
+        "receipt": 1402,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 10,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "NOKEY.server-error-alert"
+        ],
+        "subject": "[Folio template review 10/43] NOKEY.server-error-alert",
+        "http": 200,
+        "run": "08584094210732123541836906675CU10",
+        "receipt": 1403,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 11,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_Acknowledged_Email.html",
+        "messages": [
+          "NOKEY.status-acknowledged"
+        ],
+        "subject": "[Folio template review 11/43] NOKEY.status-acknowledged",
+        "http": 200,
+        "run": "08584094210642765715749749201CU19",
+        "receipt": 1404,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 12,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_ActionRequired_Email.html",
+        "messages": [
+          "NOKEY.status-actionrequired"
+        ],
+        "subject": "[Folio template review 12/43] NOKEY.status-actionrequired",
+        "http": 200,
+        "run": "08584094210585421860768627058CU11",
+        "receipt": 1405,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 13,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_Approved_Email.html",
+        "messages": [
+          "NOKEY.status-approved"
+        ],
+        "subject": "[Folio template review 13/43] NOKEY.status-approved",
+        "http": 200,
+        "run": "08584094210536040227353146735CU04",
+        "receipt": 1406,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 14,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_Declined_Email.html",
+        "messages": [
+          "NOKEY.status-declined"
+        ],
+        "subject": "[Folio template review 14/43] NOKEY.status-declined",
+        "http": 200,
+        "run": "08584094210465041553572729894CU13",
+        "receipt": 1407,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 15,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_Progress_Email.html",
+        "messages": [
+          "NOKEY.status-progress"
+        ],
+        "subject": "[Folio template review 15/43] NOKEY.status-progress",
+        "http": 200,
+        "run": "08584094210394259786250564170CU12",
+        "receipt": 1408,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 16,
+        "template": "NOKEY__CG_Registry_Status_Notifier__8ebf6001/Send_Status_Withdrawn_Email.html",
+        "messages": [
+          "NOKEY.status-withdrawn"
+        ],
+        "subject": "[Folio template review 16/43] NOKEY.status-withdrawn",
+        "http": 200,
+        "run": "08584094210332499128322816582CU18",
+        "receipt": 1409,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 17,
+        "template": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8/Send_an_email_V2.html",
+        "messages": [
+          "NOKEY.an-email-v2"
+        ],
+        "subject": "[Folio template review 17/43] NOKEY.an-email-v2",
+        "http": 200,
+        "run": "08584094210269303389125736214CU18",
+        "receipt": 1410,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 18,
+        "template": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9/Send_DGO_Scan_Notification_Email.html",
+        "messages": [
+          "SCAN_INTAKE.dgo-scan-notification"
+        ],
+        "subject": "[Folio template review 18/43] SCAN_INTAKE.dgo-scan-notification",
+        "http": 200,
+        "run": "08584094210205149126436843610CU26",
+        "receipt": 1411,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 19,
+        "template": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9/Send_Telemetry_Email.html",
+        "messages": [
+          "SCAN_INTAKE.telemetry"
+        ],
+        "subject": "[Folio template review 19/43] SCAN_INTAKE.telemetry",
+        "http": 200,
+        "run": "08584094210128498070826755643CU26",
+        "receipt": 1412,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 20,
+        "template": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "STATUS.server-error-alert"
+        ],
+        "subject": "[Folio template review 20/43] STATUS.server-error-alert",
+        "http": 200,
+        "run": "08584094210070705433341054073CU23",
+        "receipt": 1413,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 21,
+        "template": "SUBMISSION__CG_Submission_Endpoint__de9ef13b/Send_Rate_Limit_Alert_Email.html",
+        "messages": [
+          "SUBMISSION.rate-limit-alert"
+        ],
+        "subject": "[Folio template review 21/43] SUBMISSION.rate-limit-alert",
+        "http": 200,
+        "run": "08584094210016332888096157972CU27",
+        "receipt": 1414,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 22,
+        "template": "SUBMISSION__CG_Submission_Endpoint__de9ef13b/Send_Registry_Alert_Email.html",
+        "messages": [
+          "SUBMISSION.registry-alert"
+        ],
+        "subject": "[Folio template review 22/43] SUBMISSION.registry-alert",
+        "http": 200,
+        "run": "08584094209955237737988571984CU02",
+        "receipt": 1415,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 23,
+        "template": "SUBMISSION__CG_Submission_Endpoint__de9ef13b/Send_Sender_Acknowledgement_Email.html",
+        "messages": [
+          "SUBMISSION.sender-acknowledgement"
+        ],
+        "subject": "[Folio template review 23/43] SUBMISSION.sender-acknowledgement",
+        "http": 200,
+        "run": "08584094209896404408539724834CU08",
+        "receipt": 1416,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 24,
+        "template": "SUBMISSION__CG_Submission_Endpoint__de9ef13b/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "SUBMISSION.server-error-alert"
+        ],
+        "subject": "[Folio template review 24/43] SUBMISSION.server-error-alert",
+        "http": 200,
+        "run": "08584094209849817020222318031CU20",
+        "receipt": 1417,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 25,
+        "template": "SUPPORT__CG_Portal_Support_Endpoint__4873c936/Send_Helpdesk_Alert_Email.html",
+        "messages": [
+          "SUPPORT.helpdesk-alert"
+        ],
+        "subject": "[Folio template review 25/43] SUPPORT.helpdesk-alert",
+        "http": 200,
+        "run": "08584094209784406489638059816CU31",
+        "receipt": 1418,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 26,
+        "template": "SUPPORT__CG_Portal_Support_Endpoint__4873c936/Send_Rate_Limit_Alert_Email.html",
+        "messages": [
+          "SUPPORT.rate-limit-alert"
+        ],
+        "subject": "[Folio template review 26/43] SUPPORT.rate-limit-alert",
+        "http": 200,
+        "run": "08584094209716751370914269349CU19",
+        "receipt": 1419,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 27,
+        "template": "SUPPORT__CG_Portal_Support_Endpoint__4873c936/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "SUPPORT.server-error-alert"
+        ],
+        "subject": "[Folio template review 27/43] SUPPORT.server-error-alert",
+        "http": 200,
+        "run": "08584094209659530113585957591CU29",
+        "receipt": 1420,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 28,
+        "template": "SUPPORT__CG_Portal_Support_Endpoint__4873c936/Send_Support_Acknowledgement_Email.html",
+        "messages": [
+          "SUPPORT.support-acknowledgement"
+        ],
+        "subject": "[Folio template review 28/43] SUPPORT.support-acknowledgement",
+        "http": 200,
+        "run": "08584094209600765896112703241CU20",
+        "receipt": 1421,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 29,
+        "template": "UPLOAD__CG_Upload_Endpoint__df82e331/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "UPLOAD.server-error-alert"
+        ],
+        "subject": "[Folio template review 29/43] UPLOAD.server-error-alert",
+        "http": 200,
+        "run": "08584094209531468457763173085CU15",
+        "receipt": 1422,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 30,
+        "template": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448/Send_Lockout_Alert_Email.html",
+        "messages": [
+          "VERIFY_CONFIRM.lockout-alert"
+        ],
+        "subject": "[Folio template review 30/43] VERIFY_CONFIRM.lockout-alert",
+        "http": 200,
+        "run": "08584094209463919188895667240CU27",
+        "receipt": 1423,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 31,
+        "template": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "VERIFY_CONFIRM.server-error-alert"
+        ],
+        "subject": "[Folio template review 31/43] VERIFY_CONFIRM.server-error-alert",
+        "http": 200,
+        "run": "08584094209407895888654513453CU23",
+        "receipt": 1424,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 32,
+        "template": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "VERIFY.server-error-alert"
+        ],
+        "subject": "[Folio template review 32/43] VERIFY.server-error-alert",
+        "http": 200,
+        "run": "08584094209357546744424265681CU24",
+        "receipt": 1425,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 33,
+        "template": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b/Send_Undelivered_Alert_Email.html",
+        "messages": [
+          "VERIFY.undelivered-alert"
+        ],
+        "subject": "[Folio template review 33/43] VERIFY.undelivered-alert",
+        "http": 200,
+        "run": "08584094209282361240034370196CU00",
+        "receipt": 1426,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 34,
+        "template": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b/Send_Verification_Code_Email.html",
+        "messages": [
+          "VERIFY.verification-code"
+        ],
+        "subject": "[Folio template review 34/43] VERIFY.verification-code",
+        "http": 200,
+        "run": "08584094209220797634701192056CU31",
+        "receipt": 1427,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 35,
+        "template": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27/Send_Citizen_Note_Email.html",
+        "messages": [
+          "WRITEBACK.citizen-note"
+        ],
+        "subject": "[Folio template review 35/43] WRITEBACK.citizen-note",
+        "http": 200,
+        "run": "08584094209161151071037043162CU13",
+        "receipt": 1428,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 36,
+        "template": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27/Send_Citizen_Respond_Email.html",
+        "messages": [
+          "WRITEBACK.citizen-respond"
+        ],
+        "subject": "[Folio template review 36/43] WRITEBACK.citizen-respond",
+        "http": 200,
+        "run": "08584094209084150824675103683CU00",
+        "receipt": 1429,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 37,
+        "template": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27/Send_Citizen_Withdraw_Email.html",
+        "messages": [
+          "WRITEBACK.citizen-withdraw"
+        ],
+        "subject": "[Folio template review 37/43] WRITEBACK.citizen-withdraw",
+        "http": 200,
+        "run": "08584094209012697238107507010CU19",
+        "receipt": 1430,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 38,
+        "template": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27/Send_Server_Error_Alert_Email.html",
+        "messages": [
+          "WRITEBACK.server-error-alert"
+        ],
+        "subject": "[Folio template review 38/43] WRITEBACK.server-error-alert",
+        "http": 200,
+        "run": "08584094208931242300357420250CU02",
+        "receipt": 1431,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 39,
+        "template": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27/Send_Writeback_Alert_Email.html",
+        "messages": [
+          "WRITEBACK.writeback-alert"
+        ],
+        "subject": "[Folio template review 39/43] WRITEBACK.writeback-alert",
+        "http": 200,
+        "run": "08584094208872914049924752427CU19",
+        "receipt": 1432,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 40,
+        "template": "shared/an-email-v2-main-5.html",
+        "messages": [
+          "BULK_ASSIGNMENT.an-email-v2-main-5",
+          "SINGLE_ASSIGNMENT.an-email-v2-main-5"
+        ],
+        "subject": "[Folio template review 40/43] BULK_ASSIGNMENT.an-email-v2-main-5, SINGLE_ASSIGNMENT.an-email-v2-main-5",
+        "http": 200,
+        "run": "08584094208817817814767339988CU30",
+        "receipt": 1433,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 41,
+        "template": "shared/an-email-v2.html",
+        "messages": [
+          "OTP_GENERATE.an-email-v2"
+        ],
+        "subject": "[Folio template review 41/43] OTP_GENERATE.an-email-v2",
+        "http": 200,
+        "run": "08584094208751796371671631537CU19",
+        "receipt": 1434,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 42,
+        "template": "shared/email-with-attachments.html",
+        "messages": [
+          "EMAIL.email-with-attachments",
+          "EMAIL.email"
+        ],
+        "subject": "[Folio template review 42/43] EMAIL.email-with-attachments, EMAIL.email",
+        "http": 200,
+        "run": "08584094208691060869122647944CU20",
+        "receipt": 1435,
+        "receiptStatus": "sent"
+      },
+      {
+        "n": 43,
+        "template": "shared/server-error-alert-email.html",
+        "messages": [
+          "ACTIVITY_LIFECYCLE.server-error-alert",
+          "DYNAMIC_ACTIONS.server-error-alert",
+          "USER_ADMIN.server-error-alert"
+        ],
+        "subject": "[Folio template review 43/43] ACTIVITY_LIFECYCLE.server-error-alert, DYNAMIC_ACTIONS.server-error-alert, USER_ADMIN.server-error-alert",
+        "http": 200,
+        "run": "08584094208627427520204448593CU31",
+        "receipt": 1436,
+        "receiptStatus": "sent"
+      }
+    ]
+  },
+  "item51StaffNotices": {
+    "to": "dgsregistry@nitda.gov.ng (registry hold, StaffNoticeDelivery.recipients = registry)",
+    "note": "built by core/staff-notice-service.js and sent as WriteManager.backend sends them (operation sendStaffNotice)",
+    "sends": [
+      {
+        "notice": "RN-012",
+        "action": "remind-assignee",
+        "subject": "[For Registry (commissioning test)] Reminder: please acknowledge ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207778250270201173233CU15",
+        "receipt": 1437,
+        "receiptStatus": "sent",
+        "idempotencyKey": "06d24cb9af0d78d75c455a29a8ff7e41"
+      },
+      {
+        "notice": "RN-015",
+        "action": "notify-owner",
+        "subject": "[For Registry (commissioning test)] FastTrack notice: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207714185642559960498CU30",
+        "receipt": 1438,
+        "receiptStatus": "sent",
+        "idempotencyKey": "52782d512ae618df8af7f05e4d12893d"
+      },
+      {
+        "notice": "RN-017",
+        "action": "create-approval",
+        "subject": "[For Registry (commissioning test)] Approval requested: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207651059560230741200CU19",
+        "receipt": 1439,
+        "receiptStatus": "sent",
+        "idempotencyKey": "7d9c032b149fc00dc5a5a5c2b564d73f"
+      },
+      {
+        "notice": "RN-018",
+        "action": "approve",
+        "subject": "[For Registry (commissioning test)] Decision on ZTEST-ITEM51: approved",
+        "http": 200,
+        "run": "08584094207585433820065382481CU04",
+        "receipt": 1440,
+        "receiptStatus": "sent",
+        "idempotencyKey": "d771b6ca0e7add5ecc7e4929c701dd44"
+      },
+      {
+        "notice": "RN-019",
+        "action": "reassign",
+        "subject": "[For Registry (commissioning test)] Reassigned to you: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207520895660650348898CU00",
+        "receipt": 1441,
+        "receiptStatus": "sent",
+        "idempotencyKey": "9f4418588369603a9aea36cf877bd901"
+      },
+      {
+        "notice": "RN-034",
+        "action": "escalate-priority",
+        "subject": "[For Registry (commissioning test)] Escalated (level 1): ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207463796159844320545CU19",
+        "receipt": 1442,
+        "receiptStatus": "sent",
+        "idempotencyKey": "896677b2d77ad5322aa9bbc43ef26939"
+      },
+      {
+        "notice": "RN-036",
+        "action": "executive-escalate",
+        "subject": "[For Registry (commissioning test)] Delegated to you: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "http": 200,
+        "run": "08584094207390243408832836945CU22",
+        "receipt": 1443,
+        "receiptStatus": "sent",
+        "idempotencyKey": "a426675f4dfd5ce05c30109ae369c8bc"
+      }
+    ]
+  },
+  "registryInboxReadback": {
+    "readUtc": "2026-10-16T21:32:15.878Z",
+    "status": 200,
+    "inboxReturned": 50,
+    "since": "2026-10-16T20:00:00Z",
+    "messages": [
+      {
+        "receivedUtc": "2026-10-16T21:29:09+00:00",
+        "subject": "[For Registry (commissioning test)] Delegated to you: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132F2D0C88D5F3A95E86A5C9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:29:04+00:00",
+        "subject": "[For Registry (commissioning test)] Escalated (level 1): ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132C80C20805FAC271CBB5C9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:28:58+00:00",
+        "subject": "[For Registry (commissioning test)] Reassigned to you: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31329871D86AF567B86A8F4D9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:28:50+00:00",
+        "subject": "[For Registry (commissioning test)] Decision on ZTEST-ITEM51: approved",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31321242A858C84B6A7B9D979E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:28:44+00:00",
+        "subject": "[For Registry (commissioning test)] Approval requested: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31329FD796DB93AF1B070F7F9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:28:44+00:00",
+        "subject": "[For Registry (commissioning test)] FastTrack notice: ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132AFC33A8A3B22D34540C99E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:28:34+00:00",
+        "subject": "[For Registry (commissioning test)] Reminder: please acknowledge ZTEST-ITEM51 — ZTEST ITEM-51 staff notice proof 2026-10-16",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31324D1E3A9E291CC2D406409E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:22:08+00:00",
+        "subject": "[Folio template review 1/43] BULK_ASSIGNMENT.bulk-failure",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132EF3631342BF556FABDD99E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:03:59+00:00",
+        "subject": "Action required: scheduled sweep run failed (run 08584094222628692446850317154CU23)",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31327C6EEEEBBC2D70D290EC9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T21:03:48+00:00",
+        "subject": "Action required: 16 undeliverable notification(s)",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132D791BBD20B77329A851E9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T20:59:30+00:00",
+        "subject": "Your Verification Code",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB31323D92D52B8CA23170ECA69E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      },
+      {
+        "receivedUtc": "2026-10-16T20:33:09+00:00",
+        "subject": "[Succeeded] 06 - GOV - Registry Exception Notification | 08584094240991849589086060183CU23",
+        "fromAddress": "dgsregistry@nitda.gov.ng",
+        "internetMessageId": "<VI0P193MB3132671EF5AA8077BD6FF80F9E9B2@VI0P193MB3132.EURP193.PROD.OUTLOOK.COM>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "recordedUtc": "2026-10-18T23:05:00Z",
+  "decision": "owner, 2026-10-18: build RN-020, RN-022, RN-025, RN-028, RN-033 and RN-035 as real notifications rather than close them as not required; RN-022 by the dispatch operation, with the Correspondence Email Desk as the mandatory route for approved responses",
+  "builds": {
+    "RN-020": {
+      "what": "add-comment e-mails the record's assignee, unless the assignee wrote the comment",
+      "where": ["modules/comments.js", "core/staff-notice-service.js StaffNotices.comment", "config/staff-notice-templates.config.js RN-020", "config/action-ownership.config.js add-comment backend EMAIL"],
+      "carrier": "EMAIL (IP_SEND_EMAIL), the staff-notice path RN-012 to RN-036 already use; PendingQueue on failure",
+      "release": "none: Workspace code only"
+    },
+    "RN-022": {
+      "what": "an Email dispatch sends the approved response to the recipient through the Correspondence Email Desk, then marks the document Treated through DYNAMIC_ACTIONS dispatchoutbound; a letter that cannot be sent is held and the document is not marked",
+      "where": ["modules/dispatch.js", "core/correspondence-email-service.js sendDraft(row, {recordDispatch:false})"],
+      "carrier": "EMAIL (IP_SEND_EMAIL), the carrier RN-021 proved live (delivery record 1638)",
+      "release": "none: Workspace code only"
+    },
+    "RN-028": {
+      "what": "01 - GOV - Provision HTTP Flow Registry (17a85efb), a Button flow, sends its final report to the registry mailbox and to the person who ran it",
+      "edit": "Send_Final_Report_Email emailMessage/To and Create_Send_Final_Report_Email_Receipt item/RecipientEmail set to concat('dgsregistry@nitda.gov.ng', ';' + the trigger's x-ms-user-email when it is present and not the registry)",
+      "applied": "Flow API PATCH 200 at 2026-10-18T22:58:40Z; read back: state Started, both expressions equal to the applied ones",
+      "recorded": ["docs/folio-Master-Flows-and-Endpoints/captures/01_-_GOV_-_Provision_HTTP_Flow_Registry__17a85efb-1ed2-45c9-a602-2ad6f8bb7ead.json", "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/01 - GOV - Provision HTTP Flow Registry__17a85efb-1ed2-45c9-a602-2ad6f8bb7ead__full_definition.json"]
+    }
+  },
+  "checks": {
+    "npm run test:notifications -- --check": "62 passed, 0 failed; RN-020, RN-022 and RN-028 derive PROVISIONED",
+    "tests/closure.spec.js": "an Email dispatch shows what it sends before anything leaves, and is held, not dropped, when the send fails: passed",
+    "tests/in-app-notices.spec.js": "RN-023, RN-030, RN-031, RN-032: 4 passed locally"
+  }
+}

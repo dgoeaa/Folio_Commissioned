@@ -1,0 +1,34 @@
+{
+  "schema": "dgo-flow-skeleton/v1",
+  "source": "owner export Folio_Incoming_Correspondence_Scan_ProcessingFlow_20261006184440.zip (supplied 2026-10-07; not committed: the flow is not adopted until it is built, ITEM-80)",
+  "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+  "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+  "trigger": {
+    "name": "When_a_file_is_created_(properties_only)",
+    "connector": "shared_onedriveforbusiness",
+    "operation": "OnNewFilesV2",
+    "folderMetadata": {
+      "6e202211-2856-4d17-9ded-5beb8b8626b0": "/",
+      "operationMetadataId": "193b4a90-90b6-4063-b4b3-e868120a8db4"
+    },
+    "parameters": {
+      "folderId": "6e202211-2856-4d17-9ded-5beb8b8626b0",
+      "includeSubfolders": false,
+      "maxFileCount": 10
+    },
+    "recurrence": {
+      "frequency": "Minute",
+      "interval": 1
+    },
+    "splitOn": "@triggerOutputs()?['body']"
+  },
+  "connection": {
+    "shared_onedriveforbusiness": "signed in as dgsRegistry@nitda.gov.ng (export manifest)"
+  },
+  "actions": {
+    "Compose_Folio_Incoming_Correspondence_Scan_Processing_Flow": {
+      "type": "Compose",
+      "inputs": "Folio_Incoming_Correspondence_Scan_Processing_Flow"
+    }
+  }
+}

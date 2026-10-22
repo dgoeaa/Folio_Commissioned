@@ -1,0 +1,47 @@
+Subject: Reminder: {{LetterTitle}} — Ref: {{Reference}}
+Preview: A reminder on our letter Ref: {{PreviousReference}}.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+↻ Reminder
+
+{{LetterTitle}}
+===============
+
+Following up our letter of {{PreviousDate}}
+
+Ref {{Reference}}: Date {{Date}}
+
+{{Addressee}}
+
+{{Institution}}
+
+{{Salutation}},
+
+We refer to our letter Ref: {{PreviousReference}} dated {{PreviousDate}} on the above subject, a copy of which is attached for ease of reference.
+
+Earlier letter
+
+{{PreviousReference}} · {{PreviousDate}}
+
+We would appreciate your response at your earliest convenience.
+
+Please accept the assurances of the highest regards of the {{SenderOffice}}.
+
+Yours faithfully,
+
+{{SenderName}}
+
+{{SenderTitle}}
+
+{{SenderOffice}}, {{Organisation}}
+
+{{SenderEmail}} · {{SenderPhone}}
+
+You received this letter because your organisation is on the Agency's correspondence list. Replies to this e-mail reach the {{SenderOffice}}.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

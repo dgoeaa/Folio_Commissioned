@@ -1,0 +1,41 @@
+Subject: Your submission {{trackingNumber}} is still being processed
+Preview: The Agency has not yet acknowledged your submission. You do not need to resubmit.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+↻ Acknowledgement update
+
+Your submission is still being processed
+========================================
+
+The Agency has not yet acknowledged it within three working days. You do not need to resubmit.
+
+Tracking number {{trackingNumber}}: Submitted {{submittedDate}}
+
+Dear {{citizenName}},
+
+Your submission to the National Information Technology Development Agency was received on {{submittedDate}}. The Agency acknowledges submissions within three working days, and yours has not yet been acknowledged.
+
+Acknowledgement due {{dueDate}}
+
+The registry has been notified and will acknowledge your submission. Your tracking number stays the same.
+
+You can follow progress at any time on the tracking page.
+
+Track your submission: {{trackingUrl}}
+
+Thank you for your patience.
+
+Yours faithfully,
+
+Registry
+
+National Information Technology Development Agency
+
+This is an automated message from the NITDA Correspondence Portal. Please do not reply to it; use the tracking page or quote your tracking number when you contact the Agency.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

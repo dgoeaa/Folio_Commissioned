@@ -1,0 +1,51 @@
+Subject: [Succeeded] DGO HTTP Flow Registry Complete Provisioning | {{runId}}
+Preview: Run report for DGO HTTP Flow Registry Complete Provisioning: Succeeded.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✓ Run record · Succeeded
+
+DGO HTTP Flow Registry Complete Provisioning
+============================================
+
+Complete execution and validation report.
+
+Run ID: {{runId}}
+
+Status: Succeeded
+
+Reported UTC: {{timestamp}}
+
+Validation
+
+Lists: {{validatedLists}} / 7
+
+List settings: {{validatedListSettings}} / 7
+
+Unique keys: {{validatedUniqueKeys}} / 7
+
+Seeds: {{validatedSeeds}} / 12
+
+Views: {{validatedViews}} / 7
+
+Errors: {{errorCount}}
+
+Errors and mismatches
+
+{{row.key}}: {{row.value}}
+
+{{row.key}}: {{row.value}}
+
+{{row.key}}: {{row.value}}
+
+The full report is attached as JSON.
+
+Open this run in Power Automate: {{runUrl}}
+
+Automated DGO governance evidence. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

@@ -1,0 +1,47 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-22",
+  "change": "ITEM-93 T6: the docket band fix (8f520011) on both hosts as build v2026.10.22-2, and seen in the Outlook mobile app.",
+  "report": "The owner sent screenshots taken 2026-10-22 between 06:53 and 07:35 WAT: each host's BUILD-ID.json in the host's file manager, a Mailer transmittal in the Outlook mobile app, and the Workspace sending an assignment after the upload.",
+  "host": {
+    "FOLIO-WORKSPACE": {
+      "version": "2026.10.22-2",
+      "builtUtc": "2026-10-22T05:37:39.484Z",
+      "commit": "8f5200110887cde58065367aedf03fe0d6e0440a",
+      "codeFingerprint": "0708a11e91ca568b",
+      "configDigest": "d4757f0f5f7bc056",
+      "files": 226,
+      "mailer": { "file": "mailer.html", "sha256": "3c45996030c86e2a" }
+    },
+    "FOLIO-PORTAL": {
+      "version": "2026.10.22-2",
+      "builtUtc": "2026-10-22T05:37:39.484Z",
+      "commit": "8f5200110887cde58065367aedf03fe0d6e0440a",
+      "codeFingerprint": "0cfa14c2a6e75a52",
+      "configDigest": "958562b177e12909",
+      "files": 43
+    },
+    "matches": "both equal the config:rebuild output and registers/config-build-ledger.json for v2026.10.22-2 (7c592f52)"
+  },
+  "emails": [
+    {
+      "subject": "Transmittal — NITDA/DGO/EAA/2026/001 — (title as the operator entered it)",
+      "sent": "2026-10-22 06:58 WAT",
+      "client": "Outlook mobile app",
+      "flow": "DGO_MAIL_SEND, Mailer letter on the CL letterhead",
+      "design": "CL-Transmittal",
+      "seen": "The docket band now holds 'NITDA/DGO/EAA/2026/001' whole on its own line and '22 October 2026' whole on the line below. Before the fix (06:11, evidence/2026-10-22-item93-host-and-email-checks.json) both broke mid-word."
+    },
+    {
+      "subject": "22793 -2026-10-21 -'BAK-ABASI UDOESSIEN ABUJA FCT ...",
+      "sent": "2026-10-22 07:35 WAT",
+      "client": "Outlook mobile app",
+      "flow": "Single_Task_Assignment",
+      "seen": "Ref TASK-2026-00009, sent from the Workspace after the v2026.10.22-2 upload, in the release 44 design with one greeting."
+    }
+  ],
+  "workspaceLoad": "After the v2026.10.22-2 upload the Workspace first started without its data while FETCH_ALL ran successfully; the owner reported it working at 07:35 and it sent the assignment above. The deployed code passes the boot and data-loading browser tests (tests/boot-data-deeplinks.spec.js, tests/deeplinks-signin.spec.js: 20 of 20 at 8f520011), so a stale browser copy of the earlier files is the likely cause; no code was changed for it.",
+  "outstanding": ["a staff notice (SN-*) in the Outlook mobile app"],
+  "basis": "The owner's screenshots; the images stay with the owner. Every value above is read off them."
+}

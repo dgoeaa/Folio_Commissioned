@@ -1,0 +1,38 @@
+{
+  "schema": "folio-live-operation/v1",
+  "item": "ITEM-41",
+  "dateUtc": "2026-10-07",
+  "account": "dgsRegistry (SharePoint REST, Sites.FullControl.All)",
+  "target": {
+    "site": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "list": "Global Tracking Queue",
+    "listId": "ee82725a-c408-45e2-a8e8-facf7a092047"
+  },
+  "authority": "Owner decision, Final Closure Decisions: turn content approval off for Global Tracking Queue; provide the read-back EnableModeration: false",
+  "backup": {
+    "DraftVersionVisibility": 0,
+    "EnableModeration": true,
+    "EnableVersioning": true,
+    "Id": "ee82725a-c408-45e2-a8e8-facf7a092047",
+    "ItemCount": 16071,
+    "LastItemUserModifiedDate": "2026-10-06T00:52:10Z",
+    "Title": "Global Tracking Queue"
+  },
+  "write": {
+    "op": "MERGE SP.List",
+    "set": {
+      "EnableModeration": false
+    },
+    "status": 204
+  },
+  "readBack": {
+    "DraftVersionVisibility": 0,
+    "EnableModeration": false,
+    "EnableVersioning": true,
+    "Id": "ee82725a-c408-45e2-a8e8-facf7a092047",
+    "ItemCount": 16071,
+    "LastItemUserModifiedDate": "2026-10-06T00:52:10Z",
+    "Title": "Global Tracking Queue"
+  },
+  "result": "EnableModeration: false"
+}

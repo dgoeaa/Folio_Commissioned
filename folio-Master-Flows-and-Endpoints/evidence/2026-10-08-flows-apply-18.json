@@ -1,0 +1,50 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "8fe615eed769523f906ef8ba9adae000420dc800",
+  "finishedUtc": "2026-10-08T20:23:36.492Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "9ae125388f4273bfbdeeae8869a65a46be3d8f1b73a60368302db7b801f79b6c",
+          "liveHash": "9ae125388f4273bfbdeeae8869a65a46be3d8f1b73a60368302db7b801f79b6c",
+          "fingerprint": "1da3ceff74ba7715",
+          "liveFingerprint": "1da3ceff74ba7715",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 9ae125388f42…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "flow": "IP_User_Admin_Endpoint",
+      "state": "Stopped",
+      "packages": [
+        {
+          "id": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825",
+          "file": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "FAILED",
+          "packageHash": "758ab17c56b0f7e9fab64c72b351dc1866714a17c8e5ee5c99b59e44c639e0b5",
+          "liveHash": "76163083fbe8093004f37c4fdc38030472efd2b0c17b32c5a6e00c3ea51836fe",
+          "fingerprint": "1244c8ccb29a7503",
+          "liveFingerprint": "08146280d212541d",
+          "emptySetVariables": [],
+          "detail": "the service refused the write (400): TemplateValidationError The power flow's logic app flow template was invalid.  The template language expression limit exceeded: maximum '8192' and actual '10391'.",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+Subject: {{referenceId}} — {{subject}}
+Preview: Official correspondence from the National Information Technology Development Agency.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+{{classification}} · {{priority}}
+
+{{subject}}
+===========
+
+Office of the Director-General/CEO
+
+Reference {{referenceId}}: Date {{date}}
+
+Dear {{recipientName}},
+
+Please find below the official correspondence of the Agency on the referenced matter.
+
+{{body}}
+
+Please accept the assurances of our highest consideration.
+
+Yours faithfully,
+
+{{signatoryName}}
+
+{{signatoryTitle}}
+
+Confidentiality Notice: This correspondence and any attachment(s) are intended solely for the addressed recipient(s). If received in error, please notify the sender and delete the message.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

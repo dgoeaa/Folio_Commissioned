@@ -1,0 +1,110 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "check",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "4ff63f080eece18c3ae80adccf132a4be7d9347b",
+  "finishedUtc": "2026-10-20T21:51:37.014Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "flow": "CG_Submission_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUBMISSION__CG_Submission_Endpoint__de9ef13b",
+          "file": "SUBMISSION__CG_Submission_Endpoint__de9ef13b.paste.json",
+          "scope": "Scope_Submission_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "6837b00ebc5abd922c9276f743acd52b5de0b0cafe6ded4c885b43cdf28e5cd1",
+          "liveHash": "6837b00ebc5abd922c9276f743acd52b5de0b0cafe6ded4c885b43cdf28e5cd1",
+          "fingerprint": "03f40cf476c41514",
+          "liveFingerprint": "03f40cf476c41514",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "flow": "CG_Portal_Support_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUPPORT__CG_Portal_Support_Endpoint__4873c936",
+          "file": "SUPPORT__CG_Portal_Support_Endpoint__4873c936.paste.json",
+          "scope": "Scope_Support_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "160bb7d1dcf88a2a6c2035e1930eda0e2342cd7fc69ba91b0cfe5af00cfbfcb8",
+          "liveHash": "160bb7d1dcf88a2a6c2035e1930eda0e2342cd7fc69ba91b0cfe5af00cfbfcb8",
+          "fingerprint": "19bd6079c1824a01",
+          "liveFingerprint": "19bd6079c1824a01",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "flow": "CG_Portal_Writeback_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27",
+          "file": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json",
+          "scope": "Scope_Writeback_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "d8d0f43380e4ca52b3202c00703834a8a6ae7f241b61e0894886da4a1b2c0efa",
+          "liveHash": "d8d0f43380e4ca52b3202c00703834a8a6ae7f241b61e0894886da4a1b2c0efa",
+          "fingerprint": "0e930e0542302708",
+          "liveFingerprint": "0e930e0542302708",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+      "flow": "CG_Portal_Daily_Sweep",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d",
+          "file": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d.paste.json",
+          "scope": "Scope_Sweep_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "eacc6ada9b662bc83bda8e7daca5865c21ecd637f48c1b33a8ea8ea1a02dc9a5",
+          "liveHash": "eacc6ada9b662bc83bda8e7daca5865c21ecd637f48c1b33a8ea8ea1a02dc9a5",
+          "fingerprint": "1531f9ae65559314",
+          "liveFingerprint": "1531f9ae65559314",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c",
+          "file": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c.paste.json",
+          "scope": "Scope_ScheduledSweep_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "f91c1463f506db4a706b9a7b4d50c183110154d794dc47733345e501a0d7b229",
+          "liveHash": "f91c1463f506db4a706b9a7b4d50c183110154d794dc47733345e501a0d7b229",
+          "fingerprint": "1f785470acdd9705",
+          "liveFingerprint": "1f785470acdd9705",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "recordedUtc": "2026-10-19T04:40:00Z",
+  "what": "The Folio flows owned by dgsregistry@nitda.gov.ng are running very slowly. FETCH_ALL (IP_FETCH_ALL_BOOTSTRAP, b79e6707) takes its first 7 steps (variable initialisation) in about one second, then waits for more than 25 minutes, so every call answers 504 after the gateway's 120 s limit and the Workspace cannot load its registry data. DYNAMIC_ACTIONS took 107 s to refuse a request; REFERENCE_DATA answered in 8.5 s. Both refused a session proof that is valid until 07:03 UTC (401 UNAUTHENTICATED), most likely because the proof-check step is also delayed.",
+  "observed": {
+    "fetchAllRunsQueued": "about 650 FETCH_ALL runs were queued as Running, the oldest from 2026-10-18T03:11Z; all were cancelled 2026-10-19T03:55-04:35Z",
+    "probe0429Z": "one FETCH_ALL call: 504 after 123.2 s",
+    "probe0433Z": "DYNAMIC_ACTIONS 401 after 107.3 s; REFERENCE_DATA 401 after 8.5 s",
+    "probe0550Z": "authenticated FETCH_ALL run started 05:50:01; Get_All_Docs Succeeded 05:50:10; Get_All_Tasks, the next step, had not started at 06:43 (53 minutes): Power Automate is delaying the flow's actions. Unauthenticated calls, which stop at the gate after a few steps, still finish in 9-13 s",
+    "probe0643Z": "one authenticated FETCH_ALL call: 504 after 124.5 s",
+    "probe0753Z": "FETCH_ALL run of 06:41 still open after 70 minutes; AUTO_SCHEDULED_SWEEP run 08584092109308149844877424899CU31 at 07:45 finished normally in 27 s, so the delay is on FETCH_ALL alone, consistent with a per-flow allowance used up by the test load",
+    "probe1013Z": "no FETCH_ALL run since 08:00 (no Workspace use); the 05:46:48 probe run ended Failed after 11,210 s (about 08:53), so its actions were progressing, only very slowly; the 05:50 and 06:41 probe runs, still open, were cancelled",
+    "probe1332Z": "recovered: a Workspace load at 13:21:23 ran the full FETCH_ALL read in 44 s (Get_All_Docs 13:21:28-13:21:32, Get_All_Tasks started 0.2 s later, data set 13:21:57); no action delay"
+  },
+  "cause": "Probable cause (not confirmed by Microsoft): Power Automate's action limits for the flows' owner. The live browser runs of 2026-10-18 and 2026-10-19 loaded the Workspace several hundred times, and every load runs FETCH_ALL. Steps that start promptly and then wait for many minutes are how Power Automate shows a flow that it is holding back. The same load is the likely cause of the rf.gd suspension (evidence: the live run logs and this record).",
+  "actionsTaken": [
+    "all live test traffic stopped 2026-10-19T04:30Z",
+    "every queued FETCH_ALL run cancelled, so the backlog no longer consumes the allowance",
+    "the live harness now reads FETCH_ALL once per spec file and reuses static files (tests/live-tmp/live-cache.mjs, git-ignored), for any later live run"
+  ],
+  "recovery": "Recovered by 2026-10-19T13:21Z without a licence change, about 9 hours after the test load stopped. Live testing resumes only with the cached harness (one FETCH_ALL per spec file).",
+  "ownerOptions": "1) Check the account's Power Platform request usage and licence in the Power Platform admin center. 2) A Power Automate Process licence assigned to IP_FETCH_ALL_BOOTSTRAP and IP_Dynamic_Global_Actions_Endpoint gives each its own allowance (250,000 requests per 24 hours each, Microsoft's published figure), or a Power Automate Premium licence on dgsregistry@nitda.gov.ng raises the account's allowance. 3) Without a licence change the delay lifts as the rolling 24-hour window clears.",
+  "capacity": "Every Folio flow runs under one account, dgsregistry@nitda.gov.ng, and every Workspace load runs FETCH_ALL (several dozen actions). If that account is licensed only through Microsoft 365, Microsoft's published Power Platform request limit for it is about 6,000 requests per 24 hours across all its flows, which ordinary staff use of the Workspace can also reach, not only a test run. The licence is not readable from here (Power Platform admin center > Licensing > Capacity, or Analytics, shows it).",
+  "secondEpisode": {
+    "when": "2026-10-19T17:44Z to 18:08Z",
+    "what": "FETCH_ALL held back again after the resumed live run: the smoke spec (17:42, one live read, Succeeded) passed; the Admin Suite spec opened 11 pages that each closed before the ~30 s read returned, so the per-spec cache (which keeps only a completed answer) never filled and every page read again. Seven reads Failed with ActionResponseTimedOut (the closed page) and the later ones stayed Running; one read at 18:07 answered 504 after the gateway limit.",
+    "cause": "the test harness, not the platform: a cache that kept only a completed read could not stop repeated reads when pages close early",
+    "actionsTaken": [
+      "live run stopped 18:08Z",
+      "17 open FETCH_ALL runs cancelled (12 at 18:00Z, 5 at 18:12Z)",
+      "the harness now keeps one read for the whole run, shares the read in flight, and stops reading after one failure (tests/live-tmp/live-cache.mjs, git-ignored)",
+      "the rest of the browser suite runs against the deployed build with every flow call refused in the browser (DGO_FLOWS_OFFLINE), so it adds no load to the tenant"
+    ],
+    "recovery": "Recovered: a Workspace load at 2026-10-19T19:41:19Z ran the full FETCH_ALL read in 34 s (read 2026-10-20T00:00Z). Live test reads now use one read per run at most (tests/live-tmp/live-cache.mjs)."
+  }
+}

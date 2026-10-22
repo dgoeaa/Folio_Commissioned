@@ -1,0 +1,10 @@
+{
+  "readUtc": "2026-10-16",
+  "readBy": "FETCH_ALL live response of 2026-10-12 (registry tier, signed in as dgsregistry@nitda.gov.ng), the 500 newest tasks and documents and the full directory",
+  "purpose": "ITEM-91: whether a director's directorate tasks can be found through DGO DIGITAL OPS (option B) without changing Global Tracking Queue's indexes",
+  "tasks": { "rows": 500, "routedUnitFilled": 497, "topUnits": { "CEO": 164, "CCMR": 57, "AGS": 50, "RC": 30, "HRM": 22, "eGD": 21, "FMC": 20, "ITPC": 15, "DDSD": 15, "LBMU": 14 } },
+  "documents": { "rows": 500, "RoutedToDSU": { "N/A": 474, "eGD": 6, "CEO": 6, "FMC": 3, "RC": 3, "PM": 2, "other": 6 } },
+  "directory": { "users": 855, "roles": { "viewer": 853, "systemAdmin": 1, "operator": 1 }, "directors": 0, "directorateCodes": "ITD, CS, DDSD, DGO, HRM, CPS, ZOC, FMC, ONDI, RC, CCMR, and Unassigned (782)" },
+  "finding": "The DGO DIGITAL OPS route cannot find a directorate's tasks: 474 of the 500 newest documents carry RoutedToDSU N/A, while 497 of 500 tasks carry their routed unit (GDSUROUT). Directory directorate codes are not the same set as task unit codes, so any route needs a unit-to-directorate map. No user holds the director role.",
+  "ownerDecision": "2026-10-16 (Office of the Director-General/CEO, dgsregistry@nitda.gov.ng): option D. For go-live a director receives their own tasks, those tasks' documents and comments, and approvals, not their directorate's routed tasks. Accepted; to be built when the first director is appointed, through RoutedOrgKey (indexed) or a freed index, with a unit-to-directorate map."
+}

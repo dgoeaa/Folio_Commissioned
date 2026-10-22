@@ -1,0 +1,23 @@
+Subject: {{subject}}
+Preview: {{preheader}}
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+{{hero.chip}}
+
+{{hero.title}}
+==============
+
+{{hero.lead}}
+
+Dear {{recipientName}},
+
+{{html}}
+
+{{footerNote}}
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

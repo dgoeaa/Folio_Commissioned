@@ -1,0 +1,2013 @@
+{
+ "schema": "folio-live-read/v1",
+ "dateUtc": "2026-10-07",
+ "readUtc": "2026-10-07T23:01:55.999Z",
+ "account": "dgsRegistry@nitda.gov.ng (Flow Management API; SharePoint REST)",
+ "purpose": "Configuration, flow, endpoint and SharePoint state of the whole Folio estate, read live for the configuration rebuild and closure status (owner directive, 2026-10-07). No URL, signature or key text is recorded.",
+ "flows": [
+  {
+   "name": "CG_Submission_Endpoint",
+   "fn": "Portal submission",
+   "keys": [
+    "SUBMISSION"
+   ],
+   "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T19:18:11.1402783Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 38,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-05T01:51:11.0168352Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-05T01:51:11.0168352Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Upload_Endpoint",
+   "fn": "Portal upload",
+   "keys": [
+    "UPLOAD"
+   ],
+   "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:58:40.1976967Z",
+   "trigger": "HTTP PUT All",
+   "runsRead": 200,
+   "runs": 5,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:45:40.758076Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:45:40.758076Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Status_Check_Endpoint",
+   "fn": "Portal status",
+   "keys": [
+    "STATUS"
+   ],
+   "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:08:16.5105486Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 48,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-05T01:47:44.1516324Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-05T01:47:44.1516324Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Support_Endpoint",
+   "fn": "Portal support",
+   "keys": [
+    "SUPPORT"
+   ],
+   "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T19:18:13.3247767Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-05T01:47:46.8917396Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-05T01:47:46.8917396Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Writeback_Endpoint",
+   "fn": "Portal write-back",
+   "keys": [
+    "WRITEBACK"
+   ],
+   "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:58:28.5153128Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 1,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:45:31.3755348Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:45:31.3755348Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Verification_Endpoint",
+   "fn": "Portal verification",
+   "keys": [
+    "VERIFY"
+   ],
+   "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:59:10.4623524Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 1,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:45:20.7433515Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:45:20.7433515Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Verification_Confirmation_Endpoint",
+   "fn": "Portal verification confirmation",
+   "keys": [
+    "VERIFY_CONFIRM"
+   ],
+   "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:59:21.045681Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 1,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:45:26.0913251Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:45:26.0913251Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Registry_Status_Notifier",
+   "fn": "Registry status notifier (Portal Registry item change)",
+   "keys": [],
+   "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:58:50.6461091Z",
+   "trigger": "OpenApiConnection Minute/1 GetOnUpdatedItems",
+   "runsRead": 200,
+   "runs": 18,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-06T00:31:06.8502796Z",
+    "trig": "When_an_item_is_created_or_modified"
+   },
+   "lastSucceeded": "2026-10-06T00:31:06.8502796Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "CG_Portal_Daily_Sweep",
+   "fn": "Portal daily sweep (schedule)",
+   "keys": [],
+   "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:59:01.1029483Z",
+   "trigger": "Recurrence Day/1",
+   "runsRead": 200,
+   "runs": 6,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-07T08:00:00.6522354Z",
+    "trig": "Recurrence"
+   },
+   "lastSucceeded": "2026-10-07T08:00:00.6522354Z",
+   "succeededSinceModified": 1,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "AUTO_SCHEDULED_SWEEP",
+   "fn": "Task reminder sweep (schedule)",
+   "keys": [],
+   "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+   "read": 200,
+   "state": "Stopped",
+   "modified": "2026-10-02T21:33:48.2129287Z",
+   "trigger": "Recurrence Hour/1",
+   "runsRead": 200,
+   "runs": 6,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T09:55:53.4899149Z",
+    "trig": "Recurrence"
+   },
+   "lastSucceeded": "2026-10-02T09:55:53.4899149Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_FETCH_ALL_BOOTSTRAP",
+   "fn": "Workspace bootstrap",
+   "keys": [
+    "FETCH_ALL"
+   ],
+   "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:06:01.8446201Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-04T03:44:27.9650412Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-04T03:44:27.9650412Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_Get_Docs_Endpoint",
+   "fn": "Documents and activities",
+   "keys": [
+    "GET_DOCS",
+    "FETCH_ACTIVITIES"
+   ],
+   "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:26:05.3203332Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-06T23:12:00.7386519Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-06T23:12:00.7386519Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_Reference_Data_Endpoint",
+   "fn": "Reference data",
+   "keys": [
+    "REFERENCE_DATA"
+   ],
+   "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:25:52.9595458Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 14,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-04T03:44:12.155625Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-04T03:44:12.155625Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_Retrieve_Email_Attachment_Endpoint",
+   "fn": "E-mail attachments",
+   "keys": [
+    "FETCH_EMAIL_ATTACHMENTS"
+   ],
+   "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:26:15.0475959Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 13,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:43:58.2386727Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:43:58.2386727Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_Dynamic_Global_Actions_Endpoint",
+   "fn": "Dynamic and subsidiary actions",
+   "keys": [
+    "DYNAMIC_ACTIONS",
+    "SUBSIDIARY_ACTIONS"
+   ],
+   "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:06:19.9242476Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 17,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:44:53.2870967Z",
+    "trig": "manual",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-02T12:44:53.2870967Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "Single_Task_Assignment",
+   "fn": "Single assignment",
+   "keys": [
+    "SINGLE_ASSIGNMENT"
+   ],
+   "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T02:23:47.796974Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 4,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:44:10.351285Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:44:10.351285Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "BULK_OPS_DATA_RETRIEVAL_HTTP",
+   "fn": "Bulk assignment",
+   "keys": [
+    "BULK_ASSIGNMENT"
+   ],
+   "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:06:40.7564865Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 3,
+   "lastRun": {
+    "s": "Failed",
+    "t": "2026-10-02T12:44:15.2517898Z",
+    "trig": "manual",
+    "code": "ActionFailed"
+   },
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_Create__Task__for_received_Email_Endpoint",
+   "fn": "Task from e-mail",
+   "keys": [
+    "EMAIL_RELATED_TASK"
+   ],
+   "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T02:25:01.2343546Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "AI_Document_Processing",
+   "fn": "AI document, e-mail and chat",
+   "keys": [
+    "AI_CHAT",
+    "AI_DOC_ANALYSIS",
+    "AI_EMAIL_ANALYSIS"
+   ],
+   "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:26:33.8203373Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 9,
+   "lastRun": {
+    "s": "Failed",
+    "t": "2026-10-02T12:44:39.0132354Z",
+    "trig": "manual",
+    "code": "ActionFailed"
+   },
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_OTP_VERIFY",
+   "fn": "One-time code verification",
+   "keys": [
+    "OTP_VERIFY"
+   ],
+   "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:44:02.9561049Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 7,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:45:53.5989849Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:45:53.5989849Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_OTP_GENERATE",
+   "fn": "One-time code generation",
+   "keys": [
+    "OTP_GENERATE"
+   ],
+   "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T21:33:34.0900369Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_SCAN_INTAKE",
+   "fn": "Scan intake",
+   "keys": [
+    "SCAN_INTAKE"
+   ],
+   "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-06T23:59:31.8248206Z",
+   "trigger": "HTTP PUT Tenant",
+   "runsRead": 200,
+   "runs": 6,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-24T04:56:33.8539127Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-24T04:56:33.8539127Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "IP_SEND_EMAIL",
+   "fn": "Send e-mail",
+   "keys": [
+    "EMAIL"
+   ],
+   "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-10-07T20:26:23.6937198Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 3,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T12:44:25.0085472Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-10-02T12:44:25.0085472Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "ECM_DOCS_INTAKE",
+   "fn": "Portal-to-staff crossing (status write-back)",
+   "keys": [],
+   "flowId": "df7ddff1-9275-4f23-acf6-e169525f4e2f",
+   "read": 404,
+   "trigger": "",
+   "runsRead": 404,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGSO INCOMING AI PROCESSING",
+   "fn": "Library intake (document library)",
+   "keys": [],
+   "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-08-21T10:26:32Z",
+   "trigger": "OpenApiConnection Minute/1 OnNewFileV2",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-07T14:49:48.2581737Z",
+    "trig": "TRIGGER_DOCUMENT",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-07T14:49:48.2581737Z",
+   "succeededSinceModified": 46,
+   "failedSinceModified": 4
+  },
+  {
+   "name": "01 - GOV - Provision HTTP Flow Registry",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-10T07:31:27.4295216Z",
+   "trigger": "HTTP any",
+   "runsRead": 200,
+   "runs": 2,
+   "lastRun": {
+    "s": "Failed",
+    "t": "2026-09-07T08:43:15.4270229Z",
+    "trig": "manual",
+    "code": "ActionFailed"
+   },
+   "lastSucceeded": "2026-09-07T03:38:22.4345806Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "02 - GOV - Register HTTP Flow Truth",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-08T23:52:46.6126769Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 38,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T05:02:49.8521036Z",
+    "trig": "manual",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-02T05:02:49.8521036Z",
+   "succeededSinceModified": 38,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "03 - GOV - Record HTTP Flow Execution",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-08T23:53:22.6149836Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "04 - GOV - Audit HTTP Flow Registry",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+   "read": 200,
+   "state": "Stopped",
+   "modified": "2026-10-02T10:25:32.2408673Z",
+   "trigger": "Recurrence Day/1",
+   "runsRead": 200,
+   "runs": 30,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T04:45:43.6701202Z",
+    "trig": "Recurrence",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-02T04:45:43.6701202Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "05 - GOV - Retire HTTP Flow",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-08T22:23:58.6511403Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "06 - GOV - Registry Exception Notification",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+   "read": 200,
+   "state": "Stopped",
+   "modified": "2026-10-02T10:26:41.8405709Z",
+   "trigger": "Recurrence Hour/1",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T09:31:47.0835695Z",
+    "trig": "Recurrence",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-02T09:31:47.0835695Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-08T23:46:33.5634987Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 0,
+   "lastRun": null,
+   "lastSucceeded": null,
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "08 - GOV - Discover and Register HTTP Consumers",
+   "fn": "Governance flow registry",
+   "keys": [],
+   "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+   "read": 200,
+   "state": "Stopped",
+   "modified": "2026-10-02T10:26:36.8993321Z",
+   "trigger": "Recurrence Day/1",
+   "runsRead": 200,
+   "runs": 24,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-10-02T03:48:09.3068822Z",
+    "trig": "Recurrence",
+    "code": "Terminated"
+   },
+   "lastSucceeded": "2026-10-02T03:48:09.3068822Z",
+   "succeededSinceModified": 0,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_AUTH",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:46.6071421Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:28:05.8938284Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:28:05.8938284Z",
+   "succeededSinceModified": 27,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_DATA",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:53.5759307Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:25:05.1839801Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:25:05.1839801Z",
+   "succeededSinceModified": 50,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_DIRECTORY",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:28.8617652Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 50,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:22:04.8550587Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:22:04.8550587Z",
+   "succeededSinceModified": 10,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_LOG",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:23.0805497Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 30,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:25:03.1372768Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:25:03.1372768Z",
+   "succeededSinceModified": 6,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_PROVISION",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "c5a0f936-40a5-4044-a383-2530468f8413",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:40.8015796Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 44,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-27T02:58:13.0539097Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-27T02:58:13.0539097Z",
+   "succeededSinceModified": 5,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_SEND",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:16.9048103Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 30,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:23:49.2705009Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:23:49.2705009Z",
+   "succeededSinceModified": 6,
+   "failedSinceModified": 0
+  },
+  {
+   "name": "DGO_MAIL_TEMPLATES",
+   "fn": "Correspondence Mailer",
+   "keys": [],
+   "flowId": "176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+   "read": 200,
+   "state": "Started",
+   "modified": "2026-09-27T02:42:34.963885Z",
+   "trigger": "HTTP POST All",
+   "runsRead": 200,
+   "runs": 41,
+   "lastRun": {
+    "s": "Succeeded",
+    "t": "2026-09-28T23:18:50.9886389Z",
+    "trig": "manual"
+   },
+   "lastSucceeded": "2026-09-28T23:18:50.9886389Z",
+   "succeededSinceModified": 9,
+   "failedSinceModified": 1
+  }
+ ],
+ "notVisible": [
+  {
+   "flow": "ECM_DOCS_INTAKE",
+   "flowId": "df7ddff1-9275-4f23-acf6-e169525f4e2f",
+   "status": 404,
+   "code": "FlowNotFound",
+   "meaning": "not visible to dgsRegistry: owned by another account and not shared, or deleted"
+  }
+ ],
+ "scanProcessingFlow": {
+  "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+  "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+  "state": "Started",
+  "modified": "2026-10-06T03:41:23.4741193Z",
+  "trigger": "OneDrive OnNewFilesV2, folderId 6e202211-2856-4d17-9ded-5beb8b8626b0",
+  "actions": [
+   "Compose_Folio_Incoming_Correspondence_Scan_Processing_Flow"
+  ]
+ },
+ "endpointValues": {
+  "read": "listCallbackUrl per adopted flow",
+  "rows": [
+   {
+    "key": "FETCH_ALL",
+    "surface": "runtime",
+    "flow": "IP_FETCH_ALL_BOOTSTRAP",
+    "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "aa662769f13a4666bfadf3039cd8d247",
+    "registerWorkflow": "aa662769f13a4666bfadf3039cd8d247",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "DYNAMIC_ACTIONS",
+    "surface": "runtime",
+    "flow": "IP_Dynamic_Global_Actions_Endpoint",
+    "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "d5e4b3da41e34819b3f953d2acbc2dd7",
+    "registerWorkflow": "d5e4b3da41e34819b3f953d2acbc2dd7",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "SINGLE_ASSIGNMENT",
+    "surface": "runtime",
+    "flow": "Single_Task_Assignment",
+    "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "72acfc6a694f414f9fe39c939ead7f08",
+    "registerWorkflow": "72acfc6a694f414f9fe39c939ead7f08",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "BULK_ASSIGNMENT",
+    "surface": "runtime",
+    "flow": "BULK_OPS_DATA_RETRIEVAL_HTTP",
+    "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "a705e453f922457c95ca19f32731e4d7",
+    "registerWorkflow": "a705e453f922457c95ca19f32731e4d7",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "FETCH_ACTIVITIES",
+    "surface": "runtime",
+    "flow": "IP_Get_Docs_Endpoint",
+    "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "c4c26f93ba1e4d7db5247536c30cdc11",
+    "registerWorkflow": "c4c26f93ba1e4d7db5247536c30cdc11",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "REFERENCE_DATA",
+    "surface": "runtime",
+    "flow": "IP_Reference_Data_Endpoint",
+    "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "885fad5ec91f460490e8c772d5d10cb8",
+    "registerWorkflow": "885fad5ec91f460490e8c772d5d10cb8",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "GET_DOCS",
+    "surface": "runtime",
+    "flow": "IP_Get_Docs_Endpoint",
+    "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "c4c26f93ba1e4d7db5247536c30cdc11",
+    "registerWorkflow": "c4c26f93ba1e4d7db5247536c30cdc11",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "FETCH_EMAIL_ATTACHMENTS",
+    "surface": "runtime",
+    "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+    "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "d2c773332f6f4fbf97ee4a5baa01f70b",
+    "registerWorkflow": "d2c773332f6f4fbf97ee4a5baa01f70b",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "EMAIL",
+    "surface": "runtime",
+    "flow": "IP_SEND_EMAIL",
+    "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "378b491ec39a4beca886ddec250e6961",
+    "registerWorkflow": "378b491ec39a4beca886ddec250e6961",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "EMAIL_RELATED_TASK",
+    "surface": "runtime",
+    "flow": "IP_Create__Task__for_received_Email_Endpoint",
+    "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "8fbf2896fceb4567afe9ebf47628c3a1",
+    "registerWorkflow": "8fbf2896fceb4567afe9ebf47628c3a1",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "AI_EMAIL_ANALYSIS",
+    "surface": "runtime",
+    "flow": "AI_Document_Processing",
+    "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "registerWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "AI_DOC_ANALYSIS",
+    "surface": "runtime",
+    "flow": "AI_Document_Processing",
+    "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "registerWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "AI_CHAT",
+    "surface": "runtime",
+    "flow": "AI_Document_Processing",
+    "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "registerWorkflow": "3f018fea1031490fb73dff6a8d6341f2",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "OTP_GENERATE",
+    "surface": "runtime",
+    "flow": "IP_OTP_GENERATE",
+    "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "741465e483714d48a07e336eb4571b89",
+    "registerWorkflow": "741465e483714d48a07e336eb4571b89",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "OTP_VERIFY",
+    "surface": "runtime",
+    "flow": "IP_OTP_VERIFY",
+    "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "b372d45e4b2a47d88b8e8b032da67fcd",
+    "registerWorkflow": "b372d45e4b2a47d88b8e8b032da67fcd",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "SUBSIDIARY_ACTIONS",
+    "surface": "runtime",
+    "flow": "IP_Dynamic_Global_Actions_Endpoint",
+    "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "d5e4b3da41e34819b3f953d2acbc2dd7",
+    "registerWorkflow": "d5e4b3da41e34819b3f953d2acbc2dd7",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "SCAN_INTAKE",
+    "surface": "runtime",
+    "flow": "IP_SCAN_INTAKE",
+    "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+    "trigger": "manual",
+    "method": "PUT",
+    "schema": false,
+    "urlWorkflow": "88401ce1f44148539c0da53c9491f8e6",
+    "registerWorkflow": "88401ce1f44148539c0da53c9491f8e6",
+    "status": "NO_SIGNATURE"
+   },
+   {
+    "key": "SUBMISSION",
+    "surface": "portal",
+    "flow": "CG_Submission_Endpoint",
+    "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "1041ed37ce924e3c886d891f23e8142c",
+    "registerWorkflow": "1041ed37ce924e3c886d891f23e8142c",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "UPLOAD",
+    "surface": "portal",
+    "flow": "CG_Upload_Endpoint",
+    "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+    "trigger": "manual",
+    "method": "PUT",
+    "schema": false,
+    "urlWorkflow": "62fe121e5a95416bb91275e43dd0e37e",
+    "registerWorkflow": "62fe121e5a95416bb91275e43dd0e37e",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "STATUS",
+    "surface": "portal",
+    "flow": "CG_Portal_Status_Check_Endpoint",
+    "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "34dd28b4a5664927b66e581c74a0ab94",
+    "registerWorkflow": "34dd28b4a5664927b66e581c74a0ab94",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "SUPPORT",
+    "surface": "portal",
+    "flow": "CG_Portal_Support_Endpoint",
+    "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "052013da80724713a4285edee72ccb4a",
+    "registerWorkflow": "052013da80724713a4285edee72ccb4a",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "VERIFY",
+    "surface": "portal",
+    "flow": "CG_Portal_Verification_Endpoint",
+    "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "c0d58004c53348539d0d5aeaf49dcded",
+    "registerWorkflow": "c0d58004c53348539d0d5aeaf49dcded",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "VERIFY_CONFIRM",
+    "surface": "portal",
+    "flow": "CG_Portal_Verification_Confirmation_Endpoint",
+    "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "b270894ff410499ebbc090e32ffe899b",
+    "registerWorkflow": "b270894ff410499ebbc090e32ffe899b",
+    "status": "WRITTEN"
+   },
+   {
+    "key": "WRITEBACK",
+    "surface": "portal",
+    "flow": "CG_Portal_Writeback_Endpoint",
+    "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+    "trigger": "manual",
+    "method": "POST",
+    "schema": true,
+    "urlWorkflow": "abf3a3ca53e64ba58c9ce5933e4e97e3",
+    "registerWorkflow": "abf3a3ca53e64ba58c9ce5933e4e97e3",
+    "status": "WRITTEN"
+   }
+  ],
+  "collisions": [],
+  "mailer": [
+   {
+    "key": "MAIL_SEND",
+    "flow": "DGO_MAIL_SEND",
+    "flowId": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "3a5205a24a744b4cabd4b13ed050be22",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_LOG",
+    "flow": "DGO_MAIL_LOG",
+    "flowId": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "5a0e2c28505f43c7a358550c0cafbffd",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_DIRECTORY",
+    "flow": "DGO_MAIL_DIRECTORY",
+    "flowId": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "c971261c310c41e191f0c97d9fa6a467",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_TEMPLATES",
+    "flow": "DGO_MAIL_TEMPLATES",
+    "flowId": "176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "2fa5a114ee654215a7a284ccea1233ca",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_PROVISION",
+    "flow": "DGO_MAIL_PROVISION",
+    "flowId": "c5a0f936-40a5-4044-a383-2530468f8413",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "86e9880a615644f186bebe6708174dda",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_AUTH",
+    "flow": "DGO_MAIL_AUTH",
+    "flowId": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "2d31ee5c454a4cf09928ee0f619ad5fd",
+    "signed": true,
+    "status": "WRITTEN"
+   },
+   {
+    "key": "MAIL_DATA",
+    "flow": "DGO_MAIL_DATA",
+    "flowId": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+    "state": "Started",
+    "method": "POST",
+    "auth": "All",
+    "workflow": "718cc5c0cdd642648d2f0fdaca15e5c7",
+    "signed": true,
+    "status": "WRITTEN"
+   }
+  ]
+ },
+ "flowConfiguration": {
+  "list": "9bc168c3-06e5-4d58-982b-0df06205fd35 (NITDADGO-EAAACTIVITYTRACKING)",
+  "rows": [
+   {
+    "id": 2,
+    "title": "ALLOWED_ORIGIN",
+    "value": "*",
+    "modified": "2026-09-06T05:33:53Z"
+   },
+   {
+    "id": 8,
+    "title": "ALLOWED_ORIGIN_PORTAL",
+    "value": "https://internal-platform.rf.gd",
+    "modified": "2026-09-27T13:28:33Z"
+   },
+   {
+    "id": 9,
+    "title": "ALLOWED_ORIGIN_PLATFORM",
+    "value": "https://internal-platform.rf.gd",
+    "modified": "2026-09-27T13:41:18Z"
+   },
+   {
+    "id": 10,
+    "title": "ENVIRONMENT_CODE",
+    "value": "prd",
+    "modified": "2026-10-04T00:20:32Z"
+   },
+   {
+    "id": 11,
+    "title": "DATASET_INTAKE_REGISTER_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:20:33Z"
+   },
+   {
+    "id": 12,
+    "title": "DATASET_INTAKE_REGISTER_LIST_ID",
+    "value": "4c49f66a-23cd-4e1f-8ce7-ec1bb40eb667",
+    "modified": "2026-10-04T00:20:34Z"
+   },
+   {
+    "id": 13,
+    "title": "DATASET_ATTACHMENTS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:20:35Z"
+   },
+   {
+    "id": 14,
+    "title": "DATASET_ATTACHMENTS_LIST_ID",
+    "value": "ecf2ba9b-968f-4fbc-ac9c-7b5e36d5099e",
+    "modified": "2026-10-04T00:20:36Z"
+   },
+   {
+    "id": 15,
+    "title": "DATASET_SCAN_LIBRARY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:20:37Z"
+   },
+   {
+    "id": 16,
+    "title": "DATASET_SCAN_LIBRARY_LIST_ID",
+    "value": "f553959f-d55b-4591-aa87-d61fb6f9eda9",
+    "modified": "2026-10-04T00:20:38Z"
+   },
+   {
+    "id": 17,
+    "title": "DATASET_STATUS_TIMELINE_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:20:39Z"
+   },
+   {
+    "id": 18,
+    "title": "DATASET_STATUS_TIMELINE_LIST_ID",
+    "value": "5b486a5e-0ce7-46d7-a159-d84c77f3d1fd",
+    "modified": "2026-10-04T00:20:40Z"
+   },
+   {
+    "id": 19,
+    "title": "DATASET_SUPPORT_CASES_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/Global_Digital_Documents_Centre",
+    "modified": "2026-10-04T00:20:41Z"
+   },
+   {
+    "id": 20,
+    "title": "DATASET_SUPPORT_CASES_LIST_ID",
+    "value": "b984645b-8e3a-457f-a305-b95650fd3f23",
+    "modified": "2026-10-04T00:20:42Z"
+   },
+   {
+    "id": 21,
+    "title": "DATASET_SEQUENCE_COUNTERS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/Global_Digital_Documents_Centre",
+    "modified": "2026-10-04T00:20:44Z"
+   },
+   {
+    "id": 22,
+    "title": "DATASET_SEQUENCE_COUNTERS_LIST_ID",
+    "value": "d95409a4-2b48-4d34-9f60-da5d27db862d",
+    "modified": "2026-10-04T00:20:44Z"
+   },
+   {
+    "id": 23,
+    "title": "DATASET_FLOW_TELEMETRY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/Global_Digital_Documents_Centre",
+    "modified": "2026-10-04T00:20:45Z"
+   },
+   {
+    "id": 24,
+    "title": "DATASET_FLOW_TELEMETRY_LIST_ID",
+    "value": "726c210d-09d5-45d9-952d-7a506b644b13",
+    "modified": "2026-10-04T00:20:46Z"
+   },
+   {
+    "id": 25,
+    "title": "DATASET_TASK_QUEUE_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:48Z"
+   },
+   {
+    "id": 26,
+    "title": "DATASET_TASK_QUEUE_LIST_ID",
+    "value": "ee82725a-c408-45e2-a8e8-facf7a092047",
+    "modified": "2026-10-04T00:20:48Z"
+   },
+   {
+    "id": 27,
+    "title": "DATASET_TASK_QUEUE_MIRROR_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:50Z"
+   },
+   {
+    "id": 28,
+    "title": "DATASET_TASK_QUEUE_MIRROR_LIST_ID",
+    "value": "22c4e38d-5040-4e0f-aa47-dd3aa3f28abf",
+    "modified": "2026-10-04T00:20:50Z"
+   },
+   {
+    "id": 29,
+    "title": "DATASET_OPS_WORKING_REGISTER_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:51Z"
+   },
+   {
+    "id": 30,
+    "title": "DATASET_OPS_WORKING_REGISTER_LIST_ID",
+    "value": "1f1cb303-3fd2-43c8-8f24-c409b6c2fde3",
+    "modified": "2026-10-04T00:20:51Z"
+   },
+   {
+    "id": 31,
+    "title": "DATASET_MINUTES_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:52Z"
+   },
+   {
+    "id": 32,
+    "title": "DATASET_MINUTES_LIST_ID",
+    "value": "1932d687-e77a-4929-9047-a1f544c68a0b",
+    "modified": "2026-10-04T00:20:53Z"
+   },
+   {
+    "id": 33,
+    "title": "DATASET_AI_TEXT_LOG_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:54Z"
+   },
+   {
+    "id": 34,
+    "title": "DATASET_AI_TEXT_LOG_LIST_ID",
+    "value": "d46a2be7-eaca-4056-bc4f-a439eb59721a",
+    "modified": "2026-10-04T00:20:55Z"
+   },
+   {
+    "id": 35,
+    "title": "DATASET_FLOW_CONFIGURATION_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:20:56Z"
+   },
+   {
+    "id": 36,
+    "title": "DATASET_FLOW_CONFIGURATION_LIST_ID",
+    "value": "9bc168c3-06e5-4d58-982b-0df06205fd35",
+    "modified": "2026-10-04T00:20:57Z"
+   },
+   {
+    "id": 37,
+    "title": "DATASET_AUDIT_LOG_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:20:59Z"
+   },
+   {
+    "id": 38,
+    "title": "DATASET_AUDIT_LOG_LIST_ID",
+    "value": "be0c7af1-b21d-4efe-8c30-53fc55598d95",
+    "modified": "2026-10-04T00:20:59Z"
+   },
+   {
+    "id": 39,
+    "title": "DATASET_USER_DIRECTORY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:00Z"
+   },
+   {
+    "id": 40,
+    "title": "DATASET_USER_DIRECTORY_LIST_ID",
+    "value": "3d591f5b-3f2f-409c-983a-a77b5c174834",
+    "modified": "2026-10-04T00:21:01Z"
+   },
+   {
+    "id": 41,
+    "title": "DATASET_ORG_DIRECTORY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:02Z"
+   },
+   {
+    "id": 42,
+    "title": "DATASET_ORG_DIRECTORY_LIST_ID",
+    "value": "eed0ba42-ece1-40e2-bf66-79827de02766",
+    "modified": "2026-10-04T00:21:03Z"
+   },
+   {
+    "id": 43,
+    "title": "DATASET_ENDPOINT_REGISTRY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:04Z"
+   },
+   {
+    "id": 44,
+    "title": "DATASET_ENDPOINT_REGISTRY_LIST_ID",
+    "value": "08c6e1c4-f2b1-4810-933d-69b4327fb6af",
+    "modified": "2026-10-04T00:21:06Z"
+   },
+   {
+    "id": 45,
+    "title": "DATASET_FLOW_REGISTRY_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:06Z"
+   },
+   {
+    "id": 46,
+    "title": "DATASET_FLOW_REGISTRY_LIST_ID",
+    "value": "d9a6eef7-cb58-497b-a478-9f526d4a9d8b",
+    "modified": "2026-10-04T00:21:08Z"
+   },
+   {
+    "id": 47,
+    "title": "DATASET_FLOW_DEPENDENCIES_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:08Z"
+   },
+   {
+    "id": 48,
+    "title": "DATASET_FLOW_DEPENDENCIES_LIST_ID",
+    "value": "f2cd5180-f1a0-4433-be2d-bc8ddfa0291c",
+    "modified": "2026-10-04T00:21:09Z"
+   },
+   {
+    "id": 49,
+    "title": "DATASET_RECORD_LINKS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:10Z"
+   },
+   {
+    "id": 50,
+    "title": "DATASET_RECORD_LINKS_LIST_ID",
+    "value": "c3875803-8a9c-42d6-86b9-85e3f0ca5eef",
+    "modified": "2026-10-04T00:21:11Z"
+   },
+   {
+    "id": 51,
+    "title": "DATASET_IDENTITY_MAP_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "modified": "2026-10-04T00:21:12Z"
+   },
+   {
+    "id": 52,
+    "title": "DATASET_IDENTITY_MAP_LIST_ID",
+    "value": "b25086d4-15da-493a-b45e-a8d068dc6220",
+    "modified": "2026-10-04T00:21:14Z"
+   },
+   {
+    "id": 53,
+    "title": "DATASET_BRIEFS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:21:15Z"
+   },
+   {
+    "id": 54,
+    "title": "DATASET_BRIEFS_LIST_ID",
+    "value": "e73a701a-fbcd-4d1d-b800-9fe26d12b2b6",
+    "modified": "2026-10-04T00:21:16Z"
+   },
+   {
+    "id": 55,
+    "title": "DATASET_MEETINGS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:21:17Z"
+   },
+   {
+    "id": 56,
+    "title": "DATASET_MEETINGS_LIST_ID",
+    "value": "6987151e-f4a7-4cff-9d4b-57f92383ef0b",
+    "modified": "2026-10-04T00:21:17Z"
+   },
+   {
+    "id": 57,
+    "title": "DATASET_PROJECTS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:21:19Z"
+   },
+   {
+    "id": 58,
+    "title": "DATASET_PROJECTS_LIST_ID",
+    "value": "38cf8739-4a63-48fb-9351-7373b797db7c",
+    "modified": "2026-10-04T00:21:20Z"
+   },
+   {
+    "id": 59,
+    "title": "DATASET_APPROVALS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "modified": "2026-10-04T00:21:22Z"
+   },
+   {
+    "id": 60,
+    "title": "DATASET_APPROVALS_LIST_ID",
+    "value": "5bcb98f3-3a86-408b-aa91-a75165b8246e",
+    "modified": "2026-10-04T00:21:23Z"
+   },
+   {
+    "id": 61,
+    "title": "DATASET_REGISTRY_FILES_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:21:25Z"
+   },
+   {
+    "id": 62,
+    "title": "DATASET_REGISTRY_FILES_LIST_ID",
+    "value": "98e85c69-d72a-4e8b-b1b2-1809fec74786",
+    "modified": "2026-10-04T00:21:26Z"
+   },
+   {
+    "id": 63,
+    "title": "DATASET_FILE_MOVEMENTS_SITE_URL",
+    "value": "https://nitdanigeria.sharepoint.com/sites/NEDMS",
+    "modified": "2026-10-04T00:21:28Z"
+   },
+   {
+    "id": 64,
+    "title": "DATASET_FILE_MOVEMENTS_LIST_ID",
+    "value": "0c3d7dec-6a1a-49d8-b3c2-b21c7fd85521",
+    "modified": "2026-10-04T00:21:29Z"
+   },
+   {
+    "id": 65,
+    "title": "OPENROUTER_API_KEY",
+    "value": "<equals its own Title>",
+    "modified": "2026-10-07T01:48:17Z"
+   },
+   {
+    "id": 66,
+    "title": "GEMINI_API_KEY",
+    "value": "<equals its own Title>",
+    "modified": "2026-10-07T01:51:09Z"
+   },
+   {
+    "id": 67,
+    "title": "IDENTITY_PROOF_REQUIRED",
+    "value": "<equals its own Title>",
+    "modified": "2026-10-07T01:51:27Z"
+   },
+   {
+    "id": 68,
+    "title": "NODE_USE_ENV_PROXY",
+    "value": "<equals its own Title>",
+    "modified": "2026-10-07T01:51:45Z"
+   }
+  ],
+  "note": "rows whose Title names a key, secret or token are reported as set/empty with length only; four rows hold their own Title as ConfigValue"
+ },
+ "datasetBindings": [
+  {
+   "binding": "INTAKE_REGISTER",
+   "site": "NEDMS",
+   "listId": "4c49f66a-23cd-4e1f-8ce7-ec1bb40eb667",
+   "status": 200,
+   "title": "Portal Registry",
+   "items": 17,
+   "template": 100
+  },
+  {
+   "binding": "ATTACHMENTS",
+   "site": "NEDMS",
+   "listId": "ecf2ba9b-968f-4fbc-ac9c-7b5e36d5099e",
+   "status": 200,
+   "title": "Portal Attachments",
+   "items": 1,
+   "template": 100
+  },
+  {
+   "binding": "SCAN_LIBRARY",
+   "site": "NEDMS",
+   "listId": "f553959f-d55b-4591-aa87-d61fb6f9eda9",
+   "status": 200,
+   "title": "NITDA_Central_Registry",
+   "items": 9,
+   "template": 101
+  },
+  {
+   "binding": "STATUS_TIMELINE",
+   "site": "NEDMS",
+   "listId": "5b486a5e-0ce7-46d7-a159-d84c77f3d1fd",
+   "status": 200,
+   "title": "Portal Status Timeline",
+   "items": 17,
+   "template": 100
+  },
+  {
+   "binding": "SUPPORT_CASES",
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "b984645b-8e3a-457f-a305-b95650fd3f23",
+   "status": 200,
+   "title": "Portal Support Cases",
+   "items": 86,
+   "template": 100
+  },
+  {
+   "binding": "SEQUENCE_COUNTERS",
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "d95409a4-2b48-4d34-9f60-da5d27db862d",
+   "status": 200,
+   "title": "Portal Sequence Counters",
+   "items": 3,
+   "template": 100
+  },
+  {
+   "binding": "FLOW_TELEMETRY",
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "726c210d-09d5-45d9-952d-7a506b644b13",
+   "status": 200,
+   "title": "Portal Flow Telemetry",
+   "items": 886,
+   "template": 100
+  },
+  {
+   "binding": "TASK_QUEUE",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "ee82725a-c408-45e2-a8e8-facf7a092047",
+   "status": 200,
+   "title": "Global Tracking Queue",
+   "items": 16071,
+   "template": 100
+  },
+  {
+   "binding": "TASK_QUEUE_MIRROR",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "22c4e38d-5040-4e0f-aa47-dd3aa3f28abf",
+   "status": 200,
+   "title": "DEV_OPS_Global_Tracking_Queue",
+   "items": 2503,
+   "template": 100
+  },
+  {
+   "binding": "OPS_WORKING_REGISTER",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "1f1cb303-3fd2-43c8-8f24-c409b6c2fde3",
+   "status": 200,
+   "title": "DGO DIGITAL OPS",
+   "items": 22234,
+   "template": 100
+  },
+  {
+   "binding": "MINUTES",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "1932d687-e77a-4929-9047-a1f544c68a0b",
+   "status": 200,
+   "title": "Task_Comments",
+   "items": 3,
+   "template": 100
+  },
+  {
+   "binding": "AI_TEXT_LOG",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "d46a2be7-eaca-4056-bc4f-a439eb59721a",
+   "status": 200,
+   "title": "AI TEXT DATA LOG",
+   "items": 2106,
+   "template": 100
+  },
+  {
+   "binding": "FLOW_CONFIGURATION",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "9bc168c3-06e5-4d58-982b-0df06205fd35",
+   "status": 200,
+   "title": "Flow Configuration",
+   "items": 62,
+   "template": 100
+  },
+  {
+   "binding": "AUDIT_LOG",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "be0c7af1-b21d-4efe-8c30-53fc55598d95",
+   "status": 200,
+   "title": "DGO_AuditLog",
+   "items": 15,
+   "template": 100
+  },
+  {
+   "binding": "USER_DIRECTORY",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "3d591f5b-3f2f-409c-983a-a77b5c174834",
+   "status": 200,
+   "title": "DGO_UserDirectory",
+   "items": 854,
+   "template": 100
+  },
+  {
+   "binding": "ORG_DIRECTORY",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "eed0ba42-ece1-40e2-bf66-79827de02766",
+   "status": 200,
+   "title": "DGO_DepartmentDirectory",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "ENDPOINT_REGISTRY",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "08c6e1c4-f2b1-4810-933d-69b4327fb6af",
+   "status": 200,
+   "title": "DGO_EndpointRegistry",
+   "items": 6,
+   "template": 100
+  },
+  {
+   "binding": "FLOW_REGISTRY",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "d9a6eef7-cb58-497b-a478-9f526d4a9d8b",
+   "status": 200,
+   "title": "DGO_HTTPFlowRegistry",
+   "items": 38,
+   "template": 100
+  },
+  {
+   "binding": "FLOW_DEPENDENCIES",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "f2cd5180-f1a0-4433-be2d-bc8ddfa0291c",
+   "status": 200,
+   "title": "DGO_HTTPFlowDependencies",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "RECORD_LINKS",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "c3875803-8a9c-42d6-86b9-85e3f0ca5eef",
+   "status": 200,
+   "title": "DGO_RecordLinks",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "IDENTITY_MAP",
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "b25086d4-15da-493a-b45e-a8d068dc6220",
+   "status": 200,
+   "title": "DGO_IdentityMap",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "BRIEFS",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "e73a701a-fbcd-4d1d-b800-9fe26d12b2b6",
+   "status": 200,
+   "title": "DGO_Briefs",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "MEETINGS",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "6987151e-f4a7-4cff-9d4b-57f92383ef0b",
+   "status": 200,
+   "title": "DGO_Meetings",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "PROJECTS",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "38cf8739-4a63-48fb-9351-7373b797db7c",
+   "status": 200,
+   "title": "DGO_Projects",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "APPROVALS",
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "5bcb98f3-3a86-408b-aa91-a75165b8246e",
+   "status": 200,
+   "title": "DGO_Approvals",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "REGISTRY_FILES",
+   "site": "NEDMS",
+   "listId": "98e85c69-d72a-4e8b-b1b2-1809fec74786",
+   "status": 200,
+   "title": "DGO_RegistryFiles",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "binding": "FILE_MOVEMENTS",
+   "site": "NEDMS",
+   "listId": "0c3d7dec-6a1a-49d8-b3c2-b21c7fd85521",
+   "status": 200,
+   "title": "DGO_FileMovements",
+   "items": 0,
+   "template": 100
+  }
+ ],
+ "directLists": [
+  {
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "444102d6-2c29-45cf-8b59-52774d7c4dd4",
+   "status": 200,
+   "title": "DGO_SessionProofs",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "site": "DGO_ECM_GOVERNANCE",
+   "listId": "f675598b-271d-4200-8d75-2597aad4057f",
+   "status": 200,
+   "title": "DGO_RoleCatalogue",
+   "items": 6,
+   "template": 100
+  },
+  {
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "3f85213c-1fdc-4be0-8c0c-e28aa77fbe56",
+   "status": 200,
+   "title": "Portal OTP Codes",
+   "items": 11,
+   "template": 100
+  },
+  {
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "88a81ca1-319a-45f5-8409-f91a24538ffa",
+   "status": 200,
+   "title": "Portal Outbox Receipts",
+   "items": 767,
+   "template": 100
+  },
+  {
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "d6b97198-489c-4bd7-8647-1133c55efdf9",
+   "status": 200,
+   "title": "Portal Rate Limits",
+   "items": 70,
+   "template": 100
+  },
+  {
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "f59026cc-9fd7-4322-b681-73c599b852c6",
+   "status": 200,
+   "title": "Portal Audit Events",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "site": "Global_Digital_Documents_Centre",
+   "listId": "f5c9698e-4b6c-4ec7-97ee-dc540efab8a9",
+   "status": 200,
+   "title": "Portal Verification Proofs",
+   "items": 0,
+   "template": 100
+  },
+  {
+   "site": "NEDMS",
+   "listId": "d777f3cd-0696-426e-8096-ffc860e7c0d4",
+   "status": 200,
+   "title": "Portal Upload Tickets",
+   "items": 18,
+   "template": 100
+  },
+  {
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "8aab9c4e-001f-4e32-862c-8a50e750f04e",
+   "status": 200,
+   "title": "Organizaitonal_Departments_Information",
+   "items": 50,
+   "template": 100
+  },
+  {
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "9421d473-8906-43b7-a41f-a213046683c1",
+   "status": 200,
+   "title": "OTP_Transactions",
+   "items": 87,
+   "template": 100
+  },
+  {
+   "site": "NITDADGO-EAAACTIVITYTRACKING",
+   "listId": "f64c8b65-c921-46e9-8814-a8cef61f6016",
+   "status": 200,
+   "title": "Organizational_Categories_Matrix",
+   "items": 45,
+   "template": 100
+  },
+  {
+   "site": "NEDMS",
+   "folder": "/sites/NEDMS/NITDA_Central_Registry",
+   "status": 200,
+   "title": "NITDA_Central_Registry",
+   "items": 9
+  },
+  {
+   "site": "NEDMS",
+   "folder": "/sites/NEDMS/Portal Attachments",
+   "status": 404
+  },
+  {
+   "site": "NEDMS",
+   "folder": "/sites/NEDMS/Shared Documents/Portal Attachments",
+   "status": 200,
+   "title": "Portal Attachments",
+   "items": 1
+  },
+  {
+   "site": "DGO_ECM_GOVERNANCE",
+   "folder": "/sites/DGO_ECM_GOVERNANCE/DGO_Flow_Reports/IP_SCAN_INTAKE",
+   "status": 404
+  },
+  {
+   "site": "DGO_ECM_GOVERNANCE",
+   "folder": "/sites/DGO_ECM_GOVERNANCE/DGO_Flow_Reports",
+   "status": 404,
+   "note": "no such library; the site's document libraries are Controlled_References_Library, Documents, ECM_Data_Information_Architecture, Form Templates, Site Assets, Style Library"
+  }
+ ],
+ "connectionReferences": {
+  "CG_Submission_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Upload_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Status_Check_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Support_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Writeback_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Verification_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Verification_Confirmation_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Registry_Status_Notifier": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "CG_Portal_Daily_Sweep": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "AUTO_SCHEDULED_SWEEP": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "IP_FETCH_ALL_BOOTSTRAP": "sharepointonline:3f1943c5 flowmanagement:shared-f office365:c0b9e7a5",
+  "IP_Get_Docs_Endpoint": "sharepointonline:3f1943c5 flowmanagement:shared-f office365:c0b9e7a5",
+  "IP_Reference_Data_Endpoint": "sharepointonline:3f1943c5 flowmanagement:shared-f office365:c0b9e7a5",
+  "IP_Retrieve_Email_Attachment_Endpoint": "office365:c0b9e7a5 sharepointonline:3f1943c5",
+  "IP_Dynamic_Global_Actions_Endpoint": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "Single_Task_Assignment": "sharepointonline:d71143a7 sharepointonline:d71143a7 office365:c0b9e7a5 sharepointonline:d71143a7 sharepointonline:d71143a7",
+  "BULK_OPS_DATA_RETRIEVAL_HTTP": "office365:c0b9e7a5 flowmanagement:shared-f sharepointonline:3f1943c5",
+  "IP_Create__Task__for_received_Email_Endpoint": "sharepointonline:3f1943c5 sharepointonline:shared-s office365:c0b9e7a5 office365:c0b9e7a5",
+  "AI_Document_Processing": "sharepointonline:3f1943c5 adobepdftools:shared-a",
+  "IP_OTP_VERIFY": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "IP_OTP_GENERATE": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "IP_SCAN_INTAKE": "sharepointonline:3f1943c5 office365:c0b9e7a5 flowmanagement:shared-f",
+  "IP_SEND_EMAIL": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "ECM_DOCS_INTAKE": "read 404",
+  "DGSO INCOMING AI PROCESSING": "sharepointonline:shared-s sharepointonline:shared-s onedriveforbusiness:shared-o onedriveforbusiness:shared-o onedriveforbusiness:shared-o flowmanagement:shared-f office365:shared-o office365:shared-o",
+  "01 - GOV - Provision HTTP Flow Registry": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "02 - GOV - Register HTTP Flow Truth": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "03 - GOV - Record HTTP Flow Execution": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "04 - GOV - Audit HTTP Flow Registry": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "05 - GOV - Retire HTTP Flow": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "06 - GOV - Registry Exception Notification": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "07 - GOV - Consumer HTTP Self-Registration Template": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "08 - GOV - Discover and Register HTTP Consumers": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "DGO_MAIL_AUTH": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "DGO_MAIL_DATA": "sharepointonline:3f1943c5",
+  "DGO_MAIL_DIRECTORY": "sharepointonline:3f1943c5",
+  "DGO_MAIL_LOG": "sharepointonline:3f1943c5",
+  "DGO_MAIL_PROVISION": "sharepointonline:3f1943c5",
+  "DGO_MAIL_SEND": "sharepointonline:3f1943c5 office365:c0b9e7a5",
+  "DGO_MAIL_TEMPLATES": "sharepointonline:3f1943c5"
+ }
+}

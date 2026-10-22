@@ -1,0 +1,30 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "41b06ba8a95192769b5419cf0245d194c7f6dc57",
+  "finishedUtc": "2026-10-18T20:40:51.762Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8",
+          "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+          "scope": "Scope_Scan_Processing",
+          "status": "APPLIED",
+          "packageHash": "19f5dafd7669e5c49e55246a4631b43173ffb6f900fb1caa2a33336d189a7fe2",
+          "liveHash": "19f5dafd7669e5c49e55246a4631b43173ffb6f900fb1caa2a33336d189a7fe2",
+          "fingerprint": "15465080b4251511",
+          "liveFingerprint": "15465080b4251511",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 19f5dafd7669…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

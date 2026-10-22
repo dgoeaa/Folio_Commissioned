@@ -1,0 +1,832 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The run that closed the document-portal and internal-governance provisioning gates. Every column the specification requires is present in the tenant.",
+  "againstSpec": {
+    "file": "docs/deployment/sharepoint/portal-field-spec.json",
+    "specVersion": "2.0.0"
+  },
+  "runner": "scripts/provision-sharepoint-fields.browser.js (browser devtools console, operator session)",
+  "runs": [
+    {
+      "phase": "apply",
+      "startedUtc": "2026-08-19T04:02:44Z",
+      "created": 85,
+      "present": 12,
+      "failed": 0,
+      "consoleSays": "Created: 85   Already present: 12   Failed: 0 / Estate complete: 97/97 columns present."
+    },
+    {
+      "phase": "verify",
+      "startedUtc": "2026-08-19T04:06:57Z",
+      "created": 0,
+      "present": 97,
+      "failed": 0,
+      "consoleSays": "Created: 0   Already present: 97   Failed: 0 / Estate complete: 97/97 columns present.",
+      "meaning": "The second run created nothing. That is the idempotency proof and the completeness proof in one: every column the specification names was already there when the run looked."
+    }
+  ],
+  "reconciliation": {
+    "specFields": 97,
+    "ledgerRows": 97,
+    "inSpecNotInLedger": 0,
+    "inLedgerNotInSpec": 0,
+    "siteMismatches": 0,
+    "typeMismatches": 0,
+    "predictionExact": true,
+    "note": "Every column whose capturedState was LIVE came back \"present\", and every column whose capturedState was MISSING came back \"created\" — all 97, with no exceptions. The 2026-08-14 tenant capture the specification was built from was exactly right about the estate. tests/sharepoint-field-spec.test.mjs re-checks this on every run."
+  },
+  "perList": [
+    {
+      "site": "DGO_ECM_GOVERNANCE",
+      "list": "DGO_AccessScopes",
+      "created": 1,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "created": 6,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "created": 7,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "created": 5,
+      "present": 2,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "created": 7,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Rate Limits",
+      "created": 3,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "created": 0,
+      "present": 7,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "created": 8,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "created": 5,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "created": 8,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "created": 20,
+      "present": 3,
+      "failed": 0
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "created": 6,
+      "present": 0,
+      "failed": 0
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "created": 9,
+      "present": 0,
+      "failed": 0
+    }
+  ],
+  "gateEffect": [
+    {
+      "gateItem": "Document portal",
+      "was": "REMEDIATE BEFORE TRAFFIC",
+      "now": "CLOSED",
+      "evidence": "96/96 columns present across the twelve portal lists."
+    },
+    {
+      "gateItem": "Internal governance",
+      "was": "REMEDIATE IF GOVERNANCE IN RELEASE",
+      "now": "CLOSED",
+      "evidence": "DGO_AccessScopes.AccessScopeId created; 1/1 present."
+    },
+    {
+      "gateItem": "Internal operations",
+      "was": "BLOCK FULL-SCOPE ABSOLUTE SIGN-OFF",
+      "now": "OPEN",
+      "evidence": "Not a provisioning gap — no column is missing for it. See INTERNAL_OPS_COVERAGE.md; 11 flow exports remain."
+    }
+  ],
+  "ledger": [
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "ReferenceId",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SenderEmail",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "Status",
+      "type": "Choice",
+      "result": "present"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "Subject",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "Category",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "CorrespondenceType",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "Channel",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SenderName",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SenderPhone",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SenderOrganisation",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SenderOrganisationType",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "EventDate",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "Description",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "AttachmentCount",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SubmittedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "UpdatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "AcknowledgedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "ClosedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "StatusLabel",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "ActionRequired",
+      "type": "Boolean",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "VerifiedSubmission",
+      "type": "Boolean",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "SourceIp",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Registry",
+      "field": "LocalId",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "SubmissionRef",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "DeclaredName",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "StoredName",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "DeclaredSizeBytes",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "DeclaredSha256",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "AttachmentLink",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "CreatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Attachments",
+      "field": "Status",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "SubmissionRef",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "AtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "Status",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "Label",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "Actor",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Status Timeline",
+      "field": "Note",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "SubmissionRef",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "DeclaredName",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "StoredName",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "DeclaredSizeBytes",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "DeclaredSha256",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "ExpiresAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "CreatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "Redeemed",
+      "type": "Boolean",
+      "result": "created"
+    },
+    {
+      "site": "NEDMS",
+      "list": "Portal Upload Tickets",
+      "field": "Status",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Rate Limits",
+      "field": "WindowStartUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Rate Limits",
+      "field": "UpdatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Rate Limits",
+      "field": "RequestCount",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "OTP_Code",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "Expires_At",
+      "type": "DateTime",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "Email",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "Attempts",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "Consumed",
+      "type": "Boolean",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "SourceIp",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal OTP Codes",
+      "field": "CreatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "field": "Email",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "field": "Purpose",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "field": "ExpiresAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "field": "CreatedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Verification Proofs",
+      "field": "Consumed",
+      "type": "Boolean",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "Name",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "Email",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "Topic",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "AboutReference",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "Message",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "Status",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "SubmittedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Support Cases",
+      "field": "SourceIp",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "CurrentSequence",
+      "type": "Number",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "LastIssuedAt",
+      "type": "DateTime",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "LastReferenceId",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "LockToken",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "ModifiedByFlowRun",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "Prefix",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Sequence Counters",
+      "field": "Year",
+      "type": "Text",
+      "result": "present"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "Flow",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "EventType",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "AtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "Reference",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "SourceIp",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Audit Events",
+      "field": "Detail",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "Flow",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "RunId",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "StartedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "CompletedAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "Outcome",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "DurationMs",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "ErrorMessage",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "MessageType",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "RecipientEmail",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "Reference",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "SentAtUtc",
+      "type": "DateTime",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "Status",
+      "type": "Text",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "Attempts",
+      "type": "Number",
+      "result": "created"
+    },
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Outbox Receipts",
+      "field": "LastError",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "DGO_ECM_GOVERNANCE",
+      "list": "DGO_AccessScopes",
+      "field": "AccessScopeId",
+      "type": "Text",
+      "result": "created"
+    }
+  ]
+}

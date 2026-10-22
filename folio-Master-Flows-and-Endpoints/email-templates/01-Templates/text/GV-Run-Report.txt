@@ -1,0 +1,37 @@
+Subject: [Succeeded] {{flowName}} | {{runId}}
+Preview: Run report for {{flowName}}: Succeeded.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✓ Run record · Succeeded
+
+{{flowName}}
+============
+
+Run report (final status) to the registry.
+
+Run ID: {{runId}}
+
+Status: Succeeded
+
+Reported UTC: {{timestamp}}
+
+Details
+
+{{row.key}}: {{row.value}}
+
+{{row.key}}: {{row.value}}
+
+{{row.key}}: {{row.value}}
+
+The full report is attached as JSON.
+
+Open this run in Power Automate: {{runUrl}}
+
+Automated DGO governance evidence. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

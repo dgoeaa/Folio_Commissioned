@@ -1,0 +1,56 @@
+{
+  "readUtc": "2026-10-18T19:14:00Z",
+  "item": "ITEM-68",
+  "release": "identification release 36: the owner-supplied brand template set in all 21 sending flows, applied by flows:update with read-back (evidence/2026-10-18-flows-apply-2.json)",
+  "by": "live calls (Portal SUPPORT endpoint from the Portal origin; SCAN_INTAKE writeback as the signed-in registry officer); runs read through the Flow API; the composed Body checked for the hosted NITDA lockup, a greeting and no unresolved @{ expression; no body text recorded",
+  "sends": [
+    {
+      "flow": "CG_Portal_Support_Endpoint",
+      "run": "08584092562056865084182963685CU06",
+      "step": "Send_Support_Acknowledgement_Email",
+      "status": "Succeeded",
+      "receipt": 1632,
+      "masthead": true,
+      "greeting": true,
+      "unresolvedExpression": false
+    },
+    {
+      "flow": "CG_Portal_Support_Endpoint",
+      "run": "08584092562056865084182963685CU06",
+      "step": "Send_Helpdesk_Alert_Email",
+      "status": "Succeeded",
+      "receipt": 1633,
+      "masthead": true,
+      "greeting": true,
+      "unresolvedExpression": false
+    },
+    {
+      "flow": "CG_Registry_Status_Notifier",
+      "run": "08584092561620668159859518920CU19",
+      "step": "Send_Status_Progress_Email (split expression)",
+      "status": "Succeeded",
+      "receipt": 1635,
+      "masthead": true,
+      "greeting": true,
+      "unresolvedExpression": false
+    },
+    {
+      "flow": "CG_Registry_Status_Notifier",
+      "run": "08584092560889236004548346433CU04",
+      "step": "Send_Status_Approved_Email",
+      "status": "Succeeded",
+      "receipt": 1637,
+      "masthead": true,
+      "greeting": true,
+      "unresolvedExpression": false
+    }
+  ],
+  "testRecords": "support case CASE-3B9592 and status changes on NITDA-2026-00020 are commissioning test records, removed in MANUAL-2",
+  "assets": "email-assets/nitda-lockup-white.png (544x254) and dgo-logo-whiteout.png (880x224), identical to the owner package, in document-portal/email-assets/; Portal package handed to the owner for upload 2026-10-18",
+  "deployed": {
+    "readUtc": "2026-10-18T21:26:10.292Z",
+    "by": "browser and plain HTTP reads after the owner uploaded the production builds (2026-10-18)",
+    "workspace": "https://folio-gateway.rf.gd serves config/notification-delivery.config.js with recipients:'staff' (commissioned) and core/failure-health.js",
+    "portalAssets": "https://correspondence-gateway.rf.gd/email-assets/nitda-lockup-white.png (544x254) and dgo-logo-whiteout.png (880x224): 200 image/png to a browser and to a plain image-proxy request; recompressed smaller by the upload path, same images and dimensions"
+  }
+}

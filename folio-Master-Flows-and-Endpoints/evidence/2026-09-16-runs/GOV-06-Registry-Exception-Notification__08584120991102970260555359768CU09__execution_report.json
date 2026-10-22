@@ -1,0 +1,17 @@
+{
+  "reportType": "DGO Power Automate Execution Report",
+  "schemaVersion": "5.0.0",
+  "flow": "06 - GOV - Registry Exception Notification",
+  "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+  "runId": "08584120991102970260555359768CU09",
+  "environmentId": "Default-[REDACTED_CONFIDENTIAL_IDENTIFIER]",
+  "generatedAtUtc": "2026-09-15T21:29:35.7347155Z",
+  "status": "Succeeded",
+  "details": {
+    "openExceptionsRetrieved": 0,
+    "notificationLimit": 5000,
+    "notificationTarget": "Assigned owner and [REDACTED_EMAIL]",
+    "acknowledgementPolicy": "Acknowledged only after successful email delivery"
+  },
+  "runUrl": "https://make.powerautomate.com/environments/Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1/flows/87a74d7e-7435-4e34-baa1-7e759ebf5565/runs/08584120991102970260555359768CU09"
+}

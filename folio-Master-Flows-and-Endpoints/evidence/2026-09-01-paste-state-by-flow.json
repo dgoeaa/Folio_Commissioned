@@ -1,0 +1,283 @@
+{
+  "capturedUtc": "2026-09-01",
+  "purpose": "Twelve live flow exports compared action-by-action and parameter-by-parameter against the packages built to replace them. This is the paste state of the estate, read from the tenant rather than from a checklist.",
+  "method": "Legacy export definition.json, actions flattened across every nesting level, matched by name, compared on inputs.parameters key by key. JSON key ordering is not a difference.",
+  "pasted_and_current": [
+    {
+      "package": "Portal_STATUS_ECM_DOCS",
+      "flow": "CG_Status_Check_Endpoint",
+      "outstanding": "none — 55 of 55 actions, zero parameter differences"
+    },
+    {
+      "package": "DGO_SINGLE_ASSIGNMENT",
+      "flow": "IP_Single_Assignment_Endpoint",
+      "outstanding": "none — 53 of 53 actions, zero parameter differences"
+    }
+  ],
+  "pasted_from_an_earlier_build": [
+    {
+      "package": "DGO_DYNAMIC_GLOBAL_ACTIONS",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "outstanding": [
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "DGO_OTP",
+      "flow": "IP_OTP_Endpoint",
+      "outstanding": [
+        "CORS wildcard → resolver",
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "DGO_FETCH_ALL",
+      "flow": "IP_Fetch_All_Endpoint",
+      "outstanding": [
+        "CORS wildcard → resolver",
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "DGO_GET_DOCS",
+      "flow": "IP_Get_Docs_Endpoint",
+      "outstanding": [
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "DGO_REFERENCE_DATA",
+      "flow": "IP_Reference_Data_Endpoint",
+      "outstanding": [
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "Portal_SUPPORT_ECM_DOCS",
+      "flow": "CG_Support_Endpoint",
+      "outstanding": [
+        "the whole CORS resolver (4 actions)",
+        "Create_Flow_Telemetry",
+        "Access-Control-Allow-Methods advertises GET on a POST-only trigger"
+      ]
+    },
+    {
+      "package": "Portal_VERIFY_CONFIRM_ECM_DOCS",
+      "flow": "CG_Verification_Confirmation_Endpoint",
+      "outstanding": [
+        "the whole CORS resolver (4 actions)",
+        "Scope_Global_Verify",
+        "Response_Verify",
+        "item/RunRecordJson",
+        "three OTP patches re-send OTP_Code and Expires_At",
+        "varStatusCode compared without int()",
+        "THE OTP EMAIL BODY"
+      ]
+    },
+    {
+      "package": "Portal_WRITEBACK_ECM_DOCS",
+      "flow": "CG_Writeback_Endpoint",
+      "outstanding": [
+        "two registry patches re-send ReferenceId and SenderEmail",
+        "item/RunRecordJson",
+        "delete the orphaned Scope_Flow_Data_Capture_1"
+      ]
+    },
+    {
+      "package": "DGO_BULK_ASSIGNMENT",
+      "flow": "IP_Bulk_Assignment_Endpoint",
+      "outstanding": [
+        "item/RunRecordJson"
+      ]
+    },
+    {
+      "package": "Portal_UPLOAD_ECM_DOCS",
+      "flow": "CG_Upload_Endpoint",
+      "outstanding": [
+        "the whole CORS resolver (4 actions)",
+        "Create_Flow_Telemetry"
+      ]
+    },
+    {
+      "package": "Portal_SUBMISSION_ECM_DOCS",
+      "flow": "CG_Submission_Endpoint",
+      "outstanding": [
+        "two sequence-counter patches re-send fields they must not write"
+      ]
+    }
+  ],
+  "not_pasted": [
+    {
+      "package": "Portal_VERIFY_ECM_DOCS",
+      "flow": "CG_Verification_Endpoint",
+      "state": "the original body. Only 8 of 66 action names are shared, and those 8 are the telemetry block's naming convention rather than pasted content. Nothing of the package is in this flow."
+    }
+  ],
+  "still_unverified": [],
+  "live_defects_the_packages_remove": [
+    {
+      "flow": "CG_Verification_Confirmation_Endpoint",
+      "action": "Send_Otp_Email",
+      "severity": "the verification path cannot complete",
+      "what": "emailMessage/Body is the literal string \"<div>...</div>\" — 14 characters, no code, no expression. Subject and recipient are correct, so a citizen requesting a verification code receives an email containing nothing but an empty div.",
+      "package": "sends the full template carrying @{outputs('Compose_Verify_RandomOtp')} and the five-minute expiry notice"
+    },
+    {
+      "flow": "CG_Verification_Confirmation_Endpoint",
+      "action": "Create_Flow_Telemetry",
+      "what": "item/Outcome compares variables('varStatusCode') to 400 without int(). That flow's varStatusCode lineage is the one portal-endpoint-workflow-ids.json records as having been declared String.",
+      "package": "casts with int() before comparing"
+    },
+    {
+      "flow": "CG_Verification_Confirmation_Endpoint",
+      "actions": [
+        "Consume_Otp_Record",
+        "Increment_Otp_Attempts",
+        "Consume_Expired_Otp"
+      ],
+      "what": "each re-sends item/OTP_Code and item/Expires_At. Re-writing the expiry on an attempt increment is how a challenge window gets extended by the act of guessing at it.",
+      "package": "writes only what each action changes, plus the required Title"
+    },
+    {
+      "flow": "CG_Support_Endpoint",
+      "action": "Response_Support",
+      "what": "Access-Control-Allow-Methods advertises GET, POST, OPTIONS. The trigger accepts POST only, so a browser preflight is told GET is allowed against a flow that rejects it.",
+      "package": "advertises POST, OPTIONS — what the trigger actually accepts"
+    },
+    {
+      "flow": "CG_Submission_Endpoint (the live endpoint, not the copy)",
+      "action": "Claim_Sequence_Counter",
+      "severity": "duplicate reference ids under concurrency",
+      "what": "item/CurrentSequence is written from ?['CurrrentSequence'] — three r's. Portal Sequence Counters has CurrentSequence and no CurrrentSequence, so the expression resolves to null and the LOCK CLAIM writes null into the counter. Update_Sequence_Counter later writes the correct next value, computed from the read taken before the claim, so a single run self-corrects. Between the claim and the update the row holds null, and any concurrent run reading in that window coalesces null to 0 and mints a reference that has already been issued.",
+      "package": "the claim writes LockToken, ModifiedByFlowRun and Title only. It cannot touch the counter, so the window does not exist.",
+      "note": "The COPY exported earlier carried a different typo in the same area — item/Prefix from ?['YPrefix'] with a trailing newline. The live endpoint spells Prefix correctly. Two different corruptions of the same block, which is what an un-versioned hand-edited flow looks like."
+    }
+  ],
+  "notCountedAsDifferences": "Whitespace inside expressions (coalesce(a, b) against coalesce(a,b)) and JSON key ordering. Both appear throughout and neither changes behaviour.",
+  "item37_settled": {
+    "question": "Does the workflow the specification calls the single sanctioned crossing still perform its Portal Registry read?",
+    "answer": "NO. The live CG_Upload_Endpoint, exported 2026-09-01, performs ZERO Portal Registry operations of any kind.",
+    "readFrom": "the tenant, not a stale export — this is the point on which the earlier finding rested",
+    "consequence": "The intake feed described in portal-wiring.json does not exist in that flow. D1 and D6 both rest on a crossing that is not there. Pasting Portal_UPLOAD_ECM_DOCS does not destroy it, because there is nothing left to destroy.",
+    "whatIsStillOpen": "Whether the feed should be restored, and where. That is a decision, not a measurement."
+  },
+  "finalState_2026_09_01_03_10": {
+    "verifiedCurrent": [
+      "CG_Status_Check_Endpoint",
+      "IP_Single_Assignment_Endpoint",
+      "IP_OTP_Endpoint",
+      "IP_Fetch_All_Endpoint",
+      "IP_Reference_Data_Endpoint",
+      "IP_Bulk_Assignment_Endpoint",
+      "CG_Verification_Endpoint",
+      "CG_Verification_Confirmation_Endpoint",
+      "CG_Submission_Endpoint",
+      "CG_Writeback_Endpoint",
+      "CG_Support_Endpoint",
+      "CG_Upload_Endpoint"
+    ],
+    "outstanding": [
+      "IP_Dynamic_Global_Actions_Endpoint — Update_Dynamic_Task writes item/Priority and item/Progress directly where every accepted write to Global Tracking Queue uses /Value. The 03:13 upload of this flow is byte-identical to the 02:33 one, so it has not been re-pasted."
+    ],
+    "defectsConfirmedRESOLVED": [
+      {
+        "flow": "CG_Verification_Confirmation_Endpoint",
+        "was": "OTP email body was the literal '<div>...</div>', 14 characters, no code — the verification path could not complete",
+        "now": "403 characters carrying the generated code"
+      },
+      {
+        "flow": "CG_Submission_Endpoint",
+        "was": "Claim_Sequence_Counter wrote item/CurrentSequence from ?['CurrrentSequence'] — three r's, no such column — nulling the counter and allowing duplicate references under concurrency",
+        "now": "reads ?['CurrentSequence'] from the row it is patching, preserving the value"
+      },
+      {
+        "flow": "CG_Writeback_Endpoint",
+        "was": "the orphaned Scope_Flow_Data_Capture_1 co-existed with the pasted body",
+        "now": "removed; Scope_Writeback_Flow is the only top-level scope"
+      }
+    ],
+    "item37_recheck": {
+      "readAt": "2026-09-01T03:13Z, after the Upload re-paste",
+      "portalRegistryOperations": "NONE",
+      "meaning": "Unchanged. The intake feed is not in this workflow and the re-paste did not remove it — it was already gone. The measurement is settled; whether to restore the feed, and where, is a decision for the agency."
+    }
+  },
+  "CLOSED_2026_09_01_03_26": {
+    "state": "All fourteen flows verified current against the tenant. Every action present, every parameter identical, zero differences on every one. IP_Get_Docs_Endpoint closed last, from an export sent 2026-09-01 19:38: 47 of 47 actions across every nesting level, zero parameter differences.",
+    "flows": [
+      "CG_Status_Check_Endpoint",
+      "CG_Verification_Endpoint",
+      "CG_Verification_Confirmation_Endpoint",
+      "CG_Submission_Endpoint",
+      "CG_Writeback_Endpoint",
+      "CG_Support_Endpoint",
+      "CG_Upload_Endpoint",
+      "IP_OTP_Endpoint",
+      "IP_Fetch_All_Endpoint",
+      "IP_Reference_Data_Endpoint",
+      "IP_Single_Assignment_Endpoint",
+      "IP_Bulk_Assignment_Endpoint",
+      "IP_Dynamic_Global_Actions_Endpoint",
+      "IP_Get_Docs_Endpoint"
+    ],
+    "lastToClose": "IP_Dynamic_Global_Actions_Endpoint — Update_Dynamic_Task now writes item/Priority/Value and item/Progress/Value, matching every accepted write to Global Tracking Queue in the estate.",
+    "connectorCorpus": "493 SharePoint operations across 88 definitions, all of them accepted by the platform. Every export sent during this exercise tightened the rules the packages are checked against.",
+    "remaining": [
+      {
+        "item": "ALLOWED_ORIGIN_1 in Flow Configuration reads https://activityweb.page.gd",
+        "action": "confirm it equals location.origin on the platform exactly — scheme, no trailing slash. Nothing in this repository can verify that host."
+      },
+      {
+        "item": "Content approval was ON for DGO DIGITAL OPS and Global Tracking Queue",
+        "action": "DGO DIGITAL OPS: turned OFF 2026-09-01, confirmed by read-back; 14,882 rows that were Pending are visible again. Global Tracking Queue: still ON, 12,079 of 15,936 hidden, decision outstanding. See 2026-09-01-content-approval-counts.json.",
+        "directedBy": "the agency, 2026-09-01",
+        "status": "half closed"
+      },
+      {
+        "item": "No flow has ever been executed against the tenant (ITEM-2)",
+        "action": "one real call, then read the Portal Flow Telemetry row it writes"
+      }
+    ]
+  },
+  "getDocsClosure_2026_09_01": {
+    "flow": "IP_Get_Docs_Endpoint",
+    "flowId": "2e066f71-2b41-4f93-be69-932fabb4bf1a",
+    "export": "IP_Get_Docs_Endpoint_20260901193808.zip",
+    "comparedAgainst": "dist-bundle/dgo-flow-packages-2026-09-01/01-INTERNAL-FLOWS/04-DGO_GET_DOCS",
+    "result": "47 of 47 actions present, none extra, zero parameter differences.",
+    "nonDifferences": [
+      "Scope_GetDocs_Flow runAfter: the package ships it standalone ({}), live it runs after Initialize_variable_varDurationMs. That is what the package README instructs — variables first, then the scope after them.",
+      "Scope_Global_GetDocs runAfter: package {} vs live absent. Both mean 'first action in its parent scope'.",
+      "Initialize_variable_varStatusCode runAfter: package absent vs live {}. Same thing, inverted.",
+      "Scope_Variables_DGO_GET_DOCS is in the package and not live. It is the paste container the README tells the operator to empty and delete; its eight Initialize variable actions are all present at top level, in the documented order."
+    ],
+    "triggerFinding": {
+      "severity": "open, not blocking the paste closure",
+      "live": {
+        "type": "Request",
+        "kind": "Http",
+        "triggerAuthenticationType": "All",
+        "method": null,
+        "schema": null
+      },
+      "what_is_wrong": "The trigger carries no method restriction and no request schema. FLOW-BUILD-WALKTHROUGH C7.9, C8.4, C10.4 and C11.4 all instruct Method = POST, and every current-generation flow whose definition this repository holds carries method POST. With no method set the endpoint answers GET, PUT and DELETE as readily as POST.",
+      "is_it_exploitable": "Not directly. On a verb with no body triggerBody() is null, Compose_GetDocs_Caller coalesces to the empty string, the directory lookup finds nobody and the flow refuses. The cost is that the endpoint answers on verbs it should reject, and that a signed URL is that much broader than the one contract the platform uses.",
+      "reads_from_the_body": [
+        "action",
+        "operation",
+        "reference",
+        "requestId",
+        "request_id",
+        "source",
+        "trackingId",
+        "userEmail",
+        "payload/operation",
+        "payload/reference",
+        "payload/source",
+        "payload/trackingId",
+        "payload/userEmail"
+      ]
+    },
+    "methodGap": "Trigger configuration was never part of the comparison method used to close any of the fourteen flows — that method flattened actions and compared inputs.parameters. This finding surfaced only because the fresh export was read whole. The trigger method and schema of the other thirteen flows are therefore unverified, not verified-good."
+  }
+}

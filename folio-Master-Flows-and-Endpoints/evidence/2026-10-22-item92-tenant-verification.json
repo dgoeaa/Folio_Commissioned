@@ -1,0 +1,31 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-22",
+  "item": "ITEM-92",
+  "report": "The owner ran T3 and T4 in session on 2026-10-21 and returned the received e-mails and both build identity files as screenshots, 2026-10-21 23:27 to 2026-10-22 01:04 (WAT). Transcribed here; the screenshots hold personal mailboxes and are not committed.",
+  "steps": {
+    "T3": {
+      "what": "Mailer release 2.1.5: node tools/setup.mjs --export-flows, --plan --update-flows, --update-flows (twice: the first run stopped at DGO_MAIL_AUTH on the 8,192-character expression limit, fixed in 016b1133 and re-released)",
+      "result": "DGO_MAIL_SEND and DGO_MAIL_PROVISION brought up to the release on the first run, DGO_MAIL_AUTH and DGO_MAIL_DATA on the second; DGO_MAIL_LOG, DGO_MAIL_DIRECTORY and DGO_MAIL_TEMPLATES already matched. The admin key was kept (7 of 7 flows hold it); all seven healthy and verified over HTTP; all eight SharePoint lists present; mailer.html written.",
+      "observed": "The Mailer sign-in code e-mail (2026-10-21 23:27) is ML-Sign-In-Code: SIGN-IN CODE chip, the code in its own panel, requested-for and valid-for rows, the warning note and the Agency footer. Subject: \"Your DGO Correspondence Mailer sign-in code\", no code in it."
+    },
+    "T4": {
+      "what": "npm run config:rebuild -- --mailer <mailer.html>, build v2026.10.21-3 of commit 016b1133 (registers/config-build-ledger.json); the Workspace and Portal uploads",
+      "observed": {
+        "https://folio-platform.page.gd/BUILD-ID.json": "package FOLIO-WORKSPACE, version 2026.10.21-3, commit 016b11331b43177f0d9cf4ab6cd52d38a2656e7b, codeFingerprint 6ac7da227dcf64a4, configDigest 8af750db77975ff8, files 217, mailer.html sha256 866503d560e1d788",
+        "https://folio-portal.page.gd/BUILD-ID.json": "package FOLIO-PORTAL, version 2026.10.21-3, commit 016b11331b43177f0d9cf4ab6cd52d38a2656e7b, codeFingerprint 0cfa14c2a6e75a52, configDigest c02a6e289e19326e, files 43"
+      }
+    },
+    "T5": [
+      { "message": "Staff notice: assignment directed to an office (Single_Task_Assignment, TASK-2026-00007)", "received": "2026-10-22 00:14", "observed": "NITDA and DGO masthead, INTERNAL MEMO chip, one greeting (\"Dear EAA To DGCEO,\"), Acknowledge receipt, Open document and Support access buttons" },
+      { "message": "Correspondence Desk letter, template official-correspondence (reference 22812)", "received": "2026-10-22 00:41", "observed": "CL-Official: masthead, OFFICIAL · NORMAL chip, reference and date, one greeting (\"Dear Sir/Ma,\"), sign-off and Agency footer. The body is the text entered in the Desk's Correspondence body box for the test." },
+      { "message": "Report e-mail: Dual Report 2026-10-07 to 2026-10-21 (Reports)", "received": "2026-10-22 00:19", "observed": "RP-Management: REPORT · DUAL REPORT chip, insight tiles 1001 / 500 / 501 / 483, task list, one greeting (\"Dear Registry,\")" },
+      { "message": "Support request: [high] Access Error (Workspace, sent through EMAIL)", "received": "2026-10-22 00:21", "observed": "WS-Support-Request: SUPPORT REQUEST · HIGH chip, Message, Request and Context from Folio sections, Open the record in Folio, one greeting (\"Dear Sir/Madam,\")" },
+      { "message": "GOV run report: 06 - GOV - Registry Exception Notification, run 08584089841076596417956075780CU15", "received": "2026-10-21 23:46", "observed": "GV-Run-Report: NITDA and DGO masthead, RUN RECORD · SUCCEEDED chip, details, JSON attached, Open this run in Power Automate, Agency footer" },
+      { "message": "Mailer letter on the CL-Official base (TEST transmittal NITDA/DGO/NPF-NCCC/2026/001)", "received": "2026-10-21 23:34", "observed": "Ministry, Agency and Office masthead, Official · normal chip, headline, reference and date, one greeting (\"Dear Sir/Madam,\"), confidentiality footer. Headline and one body line were test input." },
+      { "message": "Release 43 internal messages: New E-Scan (scan processing flow) and IP_SCAN_INTAKE run record", "received": "2026-10-21 10:16 and 23:35", "observed": "DGO masthead (Blocks A and B), one greeting each" }
+    ]
+  },
+  "basis": "Owner screenshots of the received messages and of both BUILD-ID.json files, read in session. Each T5 message arrived in its package design with one greeting."
+}

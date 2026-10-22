@@ -1,0 +1,31 @@
+Subject: [REMINDER] {{flowName}} | {{registryKey}}
+Preview: This governance exception remains unresolved for flow {{flowName}}.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+↻ Action required · High
+
+Outstanding governance exception
+================================
+
+This governance exception remains unresolved for flow {{flowName}}. Immediate review is required.
+
+Stale flow exception
+
+Registry key: {{registryKey}}
+
+Detected UTC: {{detectedUtc}}
+
+Reminder UTC: {{nowUtc}}
+
+Escalation level: 1
+
+Review exception now: {{registryRecordUrl}}
+
+DGO Digital Operations · Governance Registry. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

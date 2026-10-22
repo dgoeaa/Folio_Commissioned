@@ -1,0 +1,31 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The first run of AUTO_SCHEDULED_SWEEP after both halves of ITEM-45 were applied: the index pass of 2026-09-05 and the bounded 30-day window in the 09:02:19 export. It is the observation ITEM-45 was held open for.",
+  "flow": "AUTO_SCHEDULED_SWEEP",
+  "workflowId": "1cb48715-b1e4-4b9b-8740-fb3ee8c4d6f1",
+  "run": "08584130061891154567402797399CU18",
+  "startedAtUtc": "2026-09-05T09:31:36.7141993Z",
+  "completedAtUtc": "2026-09-05T09:41:26.3385170Z",
+  "durationSeconds": 590,
+  "source": {
+    "capture": "the operator's run summary, pasted verbatim into the session",
+    "runner": "Power Automate run history"
+  },
+  "scopes": {
+    "ackOverdue": "Succeeded",
+    "dueBreached": "Succeeded",
+    "outbox": "Succeeded",
+    "status": "Succeeded",
+    "support": "Succeeded"
+  },
+  "errors": [],
+  "whatThisEstablishes": {
+    "thresholdFailureIsClosed": "CONFIRMED. Get_Due_Breached and Get_Ack_Overdue sit inside Scope_Due_Breached and Scope_Ack_Overdue; both scopes report Succeeded and the error list is empty. The 400 'exceeds the list view threshold' that ITEM-45 records did not recur. Indexing alone could not have achieved this — the 05:57:10 export filtered all history on a 15,804-item list — so this is the bounded window and the index together.",
+    "theSweepRuns": "CONFIRMED. The estate now has a working scheduled trigger, which ITEM-49 recorded as its largest structural gap."
+  },
+  "whatThisDoesNotEstablish": {
+    "howMuchMailWentOut": "The summary reports scope outcomes, not counts. The run took 9 minutes 50 seconds, which is long for six SharePoint reads over empty result sets, so it is likely the Foreach bodies did work. A first run carries no dedupe history — Get_Sent_Due and Get_Sent_Ack find nothing — so every row passing Filter_Due_Open could send. Bounded at $top 500 per action. Check Portal Outbox Receipts for what was actually sent.",
+    "theSixthScope": "The flow carries six scopes; this summary names five. Scope_Flow_Data_Capture is not reported. Absent from the summary is not the same as absent from the run, and nothing here says which.",
+    "correctness": "That the right people received the right messages. This records that the queries no longer fail, not that the notifications are right."
+  }
+}

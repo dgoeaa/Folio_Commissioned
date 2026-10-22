@@ -1,0 +1,37 @@
+{
+  "recordedUtc": "2026-10-19T19:30:00Z",
+  "item": "MANUAL-3",
+  "what": "The browser suite run against the deployed build: the Workspace at https://folio-platform.page.gd (the hold build of 2026-10-19, build-2026-10-19c, uploaded by the owner) and the Portal at https://folio-portal.page.gd",
+  "session": "signed in as the registry account (systemAdmin) with a session proof issued by IP_OTP_VERIFY from the owner's sign-in code of 2026-10-19 (not recorded); every flow call except the read flows was refused in the browser, so no test record reached the tenant",
+  "flows": "smoke ran with the live registry read (FETCH_ALL run of 17:42Z, Succeeded); the read was then held back by the tenant (evidence/2026-10-19-flow-throttling-incident.json, secondEpisode), so the remaining specs ran with every flow call refused in the browser. The suite is built to pass without flow access (the local server has none), so this is the same contract as the local suite, against the deployed files and the deployed config.local.js",
+  "results": {
+    "smoke": "7 passed, 1 not applicable (the demonstration welcome, not shown where sign-in is enforced)",
+    "admin-centre": "3 passed",
+    "admin-console": "7 passed",
+    "admin-suite": "12 passed",
+    "in-app-notices": "4 passed (RN-023, RN-030, RN-031, RN-032)",
+    "audit-remediation": "29 passed, 5 not applicable (demonstration sign-in paths)",
+    "closure": "23 passed (including the RN-022 Email dispatch: shown before it leaves, held when the send fails)",
+    "containment": "18 passed",
+    "document-flags": "10 passed",
+    "dual-spine": "9 passed",
+    "endpoint-console": "2 passed",
+    "lookup-commits": "10 passed",
+    "scan-intake": "8 passed",
+    "portal": "17 passed, 13 local-only (service worker and local fixtures)"
+  },
+  "totals": { "passed": 159, "failed": 0, "notApplicable": 19 },
+  "notDeployed": "provisioning-console (8 tests): docs/folio-Master-Flows-and-Endpoints/provisioning/ is a repository reference page and is not in the Workspace build (220 files, FOLIO-WORKSPACE-upload-to-site-root.zip); its local result stands",
+  "harnessCorrections": [
+    "the host's browser check (__test cookie) is bound to the browser's user agent; the stored state is warmed with the test browser's own user agent, or every first page load is redirected without its #route",
+    "the scan-intake mock endpoint is https, since the deployment is https and an http mock is blocked as mixed content",
+    "scan-intake waits for its own route stage, not the Command Center's",
+    "the live copy of closure.spec.js was refreshed from tests/closure.spec.js (the RN-022 dispatch test)"
+  ],
+  "defectFound": {
+    "what": "the host's browser check redirects without the #fragment, so a first visit (once every 6 hours per browser) through a link to /#/acknowledgment opened the Command Center",
+    "where": "the digest, task-reminder and bulk-failure e-mails",
+    "fix": "identification release 41: those links go to /acknowledge.html, which the Workspace routes to the acknowledgment queue (config/deeplink.config.js pathRoutes); applied and read back, evidence/2026-10-19-flows-apply-4.json"
+  },
+  "logs": "tests/live-tmp (git-ignored) and the session's run logs; no proof, signature or code is recorded here"
+}

@@ -1,0 +1,18 @@
+{
+  "confirmedUtc": "2026-09-04",
+  "item": "ITEM-8",
+  "question": "does the origin recorded in ALLOWED_ORIGIN_1 equal the origin the platform actually runs on?",
+  "how": "read from the running platform, not from a record: https://activityweb.page.gd opened in a browser, F12 console, location.origin",
+  "printed": "https://activityweb.page.gd",
+  "recordedInFlowConfiguration": "https://activityweb.page.gd",
+  "match": true,
+  "notes": [
+    "Scheme included, no trailing slash, no path — the three ways this value is usually wrong.",
+    "It had been recorded since 2026-08-30 and never compared against the platform. The record was right; that it was right was not established until now.",
+    "This value gates two things: the sitemap and robots.txt absolutisation (ITEM-42), and the Access-Control-Allow-Origin literal that replaces https://your-host on IP_OTP_VERIFY before the cutover (ITEM-43)."
+  ],
+  "actedOn": {
+    "ITEM-42": "document-portal/sitemap.xml and robots.txt absolutised against this origin by scripts/portal-seo.mjs; npm run test:portalseo now passes. The deployed copies still carry the relative form until the portal is re-uploaded.",
+    "ITEM-43": "not yet — the origin literal on IP_OTP_VERIFY is step 1 of CUTOVER.md and is done in the designer"
+  }
+}

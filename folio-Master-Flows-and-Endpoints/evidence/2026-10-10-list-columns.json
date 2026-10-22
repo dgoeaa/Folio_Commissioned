@@ -1,0 +1,789 @@
+{
+  "readUtc": "2026-10-10T11:56:38.772Z",
+  "by": "Microsoft Graph /sites/{site}/lists/{list}/columns as dgsregistry@nitda.gov.ng (read only)",
+  "purpose": "Writable columns of the lists the ITEM-25 activity lifecycle writes (2026-10-10).",
+  "lists": [
+    {
+      "title": "Global Tracking Queue",
+      "listGuid": "ee82725a-c408-45e2-a8e8-facf7a092047",
+      "site": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+      "columns": [
+        {
+          "internalName": "Title",
+          "displayName": "Title",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "Description",
+          "displayName": "Description",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Progress",
+          "displayName": "Status",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "Not started",
+            "In progress",
+            "Completed",
+            "Blocked",
+            "Behind"
+          ]
+        },
+        {
+          "internalName": "Priority",
+          "displayName": "Priority",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Pending Review",
+            "Review in Progress",
+            "Awaiting Processing",
+            "Review Completed"
+          ]
+        },
+        {
+          "internalName": "StartDate",
+          "displayName": "StartDate",
+          "type": "dateTime",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "DueDate",
+          "displayName": "DueDate",
+          "type": "dateTime",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "Notes",
+          "displayName": "Notes",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ActivityTrackingID",
+          "displayName": "Activity Tracking ID",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Assigned",
+          "displayName": "Co-Assignees",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "Classification",
+          "displayName": "Category",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AssignedBy",
+          "displayName": "AssignedBy",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "_x0032_ndAssignedTo",
+          "displayName": "ODGWatchList",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "internalName": "_x0033_rdAssigned",
+          "displayName": "CCTo",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Comments",
+          "displayName": "Comments",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Attachment",
+          "displayName": "Attachment",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AttachmentLink",
+          "displayName": "AttachmentLink",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TicketLink",
+          "displayName": "TicketLink",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TicketThumbnail",
+          "displayName": "TicketThumbnail",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "CompletionDate",
+          "displayName": "CompletionDate",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "GDSUROUT",
+          "displayName": "RoutedToDSU",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Followuptrigger",
+          "displayName": "DGOWatchList",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "RefID",
+          "displayName": "MasterActivity",
+          "type": "lookup",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "RefIDD",
+          "displayName": "RefIDD",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "HTML_x0020_TEXT",
+          "displayName": "InitiationInfo",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "HDSUTitltetxt",
+          "displayName": "RoutedToHDSUTitle",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "SPT",
+          "displayName": "SPT",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "GTQGrouping",
+          "displayName": "GTQGrouping",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Acknowledge_x0020_Task",
+          "displayName": "AssignedToAcknowledgementStatus",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Acknowledged",
+            "Not Acknowledged"
+          ]
+        },
+        {
+          "internalName": "AcknowledgedBy",
+          "displayName": "AcknowledgedBy",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "CompletionConfirmation",
+          "displayName": "Completion Confirmation",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Completion Requested",
+            "Completion Accepted",
+            "Completion Rejected"
+          ]
+        },
+        {
+          "internalName": "CompletionResponseDate",
+          "displayName": "CompletionResponseDate",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AssignedTo",
+          "displayName": "AssignedTo",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "AssignedToUserTitle",
+          "displayName": "AssignedToUserTitle",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AssgnedTpUserDSU",
+          "displayName": "Co-AssigneesDSU",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Attach",
+          "displayName": "Attach",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AcknowledgedTime",
+          "displayName": "Acknowledged Time",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "LinktoDoc",
+          "displayName": "Link to Doc",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Auto_x0020_Routed_x0020_By_x0020",
+          "displayName": "Auto Routed By System",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "NVERSE",
+          "displayName": "NVERSE",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "RefIDDN",
+          "displayName": "RefIDDN",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ViewStatus",
+          "displayName": "ViewStatus",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Image",
+          "displayName": "Image",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Directives",
+          "displayName": "Directives",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Acknowledgement_x0020_Due_x0020_",
+          "displayName": "Acknowledgement Due Date",
+          "type": "dateTime",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "GBDLookUp",
+          "displayName": "GDBLookUp",
+          "type": "lookup",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ctest",
+          "displayName": "ctest",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Reference_ID",
+          "displayName": "Reference_ID",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "ParentTask",
+          "displayName": "ParentTask",
+          "type": "lookup",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TaskTypeChoice",
+          "displayName": "TaskTypeChoice",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Standard Task",
+            "Draft Response"
+          ]
+        },
+        {
+          "internalName": "DraftResponse",
+          "displayName": "DraftResponse",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TaskType",
+          "displayName": "TaskType",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "STandard Task",
+            "Draft Response",
+            "Event"
+          ]
+        },
+        {
+          "internalName": "EntityKey",
+          "displayName": "EntityKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "IdState",
+          "displayName": "IdState",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "ACTIVE",
+            "ARCHIVED",
+            "MERGED",
+            "VOID"
+          ]
+        },
+        {
+          "internalName": "CreatedByRequest",
+          "displayName": "CreatedByRequest",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TaskRef",
+          "displayName": "TaskRef",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "ParentKey",
+          "displayName": "ParentKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "RootKey",
+          "displayName": "RootKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "RootRef",
+          "displayName": "RootRef",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "Rev",
+          "displayName": "Rev",
+          "type": "number",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "SupersededBy",
+          "displayName": "SupersededBy",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "CorrelationId",
+          "displayName": "CorrelationId",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "AssigneeKey",
+          "displayName": "AssigneeKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "RoutedOrgKey",
+          "displayName": "RoutedOrgKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "ClientRequestHash",
+          "displayName": "ClientRequestHash",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "ContentType",
+          "displayName": "Content Type",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Attachments",
+          "displayName": "Attachments",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "title": "DGO DIGITAL OPS",
+      "listGuid": "1f1cb303-3fd2-43c8-8f24-c409b6c2fde3",
+      "site": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+      "columns": [
+        {
+          "internalName": "Title",
+          "displayName": "Title",
+          "type": "text",
+          "required": true,
+          "indexed": true
+        },
+        {
+          "internalName": "Description",
+          "displayName": "Description",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Category0",
+          "displayName": "Category",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "StartDate",
+          "displayName": "Start date",
+          "type": "dateTime",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Notes",
+          "displayName": "Notes",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Routed_x0020_To",
+          "displayName": "RoutedTo",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Minutes_x002f_Notes",
+          "displayName": "Minutes/Notes",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Comment",
+          "displayName": "Comment",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AttachmentLink",
+          "displayName": "AttachmentLink",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ThumbnailLink",
+          "displayName": "ThumbnailLink",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "link",
+          "displayName": "link",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "v3_x0020_link",
+          "displayName": "v3 link",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "RefIDD",
+          "displayName": "RefIDD",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "RoutedToDSU",
+          "displayName": "RoutedToDSU",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AssignedTo",
+          "displayName": "AssignedTo",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "AssignmentStatus",
+          "displayName": "AssignmentStatus",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "Processed",
+            "Pending"
+          ]
+        },
+        {
+          "internalName": "Assigned",
+          "displayName": "Assigned",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "RoutedToHDSUTitle",
+          "displayName": "RoutedToHDSUTitle",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "CC_x0027_dTo",
+          "displayName": "CC'dTo",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Status",
+          "displayName": "Status",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "Treated",
+            "Not Treated"
+          ]
+        },
+        {
+          "internalName": "ATTACHMENTITEMFILEID",
+          "displayName": "ATTACHMENT ITEM FILE ID",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "TextExtraxt",
+          "displayName": "TextExtraxt",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "BodyExtract",
+          "displayName": "BodyExtract",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "AppFlter",
+          "displayName": "AppFlter",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "Marked_Item",
+          "displayName": "Marked_Item",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "internalName": "OverallStatus",
+          "displayName": "OverallStatus",
+          "type": "choice",
+          "required": false,
+          "indexed": false,
+          "choices": [
+            "Not Treated",
+            "Treated",
+            "In Progress"
+          ]
+        },
+        {
+          "internalName": "EntityKey",
+          "displayName": "EntityKey",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "IdState",
+          "displayName": "IdState",
+          "type": "choice",
+          "required": false,
+          "indexed": true,
+          "choices": [
+            "ACTIVE",
+            "ARCHIVED",
+            "MERGED",
+            "VOID"
+          ]
+        },
+        {
+          "internalName": "CreatedByRequest",
+          "displayName": "CreatedByRequest",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ReferenceId",
+          "displayName": "ReferenceId",
+          "type": "text",
+          "required": false,
+          "indexed": true
+        },
+        {
+          "internalName": "SupersededBy",
+          "displayName": "SupersededBy",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "CorrelationId",
+          "displayName": "CorrelationId",
+          "type": "text",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "ContentType",
+          "displayName": "Content Type",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        },
+        {
+          "internalName": "Attachments",
+          "displayName": "Attachments",
+          "type": "other",
+          "required": false,
+          "indexed": false
+        }
+      ]
+    }
+  ]
+}

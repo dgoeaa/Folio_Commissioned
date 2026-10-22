@@ -1,0 +1,55 @@
+{
+  "capturedUtc": "2026-09-01",
+  "purpose": "Two live flows were exported from the tenant and compared action-by-action, parameter-by-parameter, against the packages built to replace them. This records what the replacement changes and why, and two defects it removes that nothing in this repository had found.",
+  "method": "Legacy Power Automate export packages, definition.json read directly. Actions flattened across every nesting level, matched by name, then compared on inputs.parameters key by key. Ordering differences in the serialised JSON are not differences and are excluded.",
+  "STATUS": {
+    "liveFlow": "CG_Status_Check_Endpoint",
+    "exportWorkflowId": "c61bdc52-50a4-4440-a754-a749bc4ce96d",
+    "suggestedCreationType": "Update",
+    "finding": "The package is ALREADY PASTED. The live flow is 11 top-level Initialize variable actions plus Scope_Status_Flow, which contains exactly the 55 actions of Portal_STATUS_ECM_DOCS — all 55 present, none extra, and ZERO parameter-level differences.",
+    "orphans": {
+      "what": ["varUploads", "varReferenceId", "varVerifiedSubmission"],
+      "why": "Declared at the top level and used by nothing. The package references none of them. They are left over from the body the paste replaced.",
+      "action": "Harmless. Remove when convenient; an unread declaration costs nothing."
+    }
+  },
+  "SUBMISSION": {
+    "liveFlow": "Copy of - CG_Submission_Endpoint",
+    "exportWorkflowId": "61fb891a-1ce0-48e7-a8a2-6f0a358ec2b7",
+    "suggestedCreationType": "New",
+    "note": "This is a COPY, not the endpoint the portal calls. The live SUBMISSION endpoint is de9ef13b-ae4c-42b0-9afa-20e71a180759.",
+    "structure": "16 top-level variables, a Set_variable, then Scope_Global holding BOTH Scope_Submission_Flow (the 70 actions of Portal_SUBMISSION_ECM_DOCS) and Scope_Flow_Data_Capture_1 (the previous telemetry block, suffixed _1 by the designer on a name collision). The flow therefore writes TWO Portal Flow Telemetry rows per run.",
+    "differences": [
+      {
+        "action": "Response_Submission",
+        "live": "Access-Control-Allow-Origin: *",
+        "package": "Access-Control-Allow-Origin: @outputs('Compose_Allowed_Origin_Submission')",
+        "verdict": "THE PACKAGE IS THE FIX. The wildcard is the posture CLOSING_STATE.md records as testing-only; the resolver reads the allowed origins from Flow Configuration and fails closed."
+      },
+      {
+        "action": "Create_Flow_Telemetry",
+        "live": "no item/RunRecordJson",
+        "package": "writes item/RunRecordJson",
+        "verdict": "THE PACKAGE IS THE FIX. The column was created in the tenant on 2026-08-31; until then the write had to be stripped or the flow could not be saved. The live flow retains no run record."
+      },
+      {
+        "action": "Claim_Sequence_Counter",
+        "live": "re-writes item/Year, item/CurrentSequence and item/Prefix during the LOCK CLAIM, taking CurrentSequence from the value it read a moment earlier",
+        "package": "writes item/LockToken, item/ModifiedByFlowRun and item/Title only",
+        "verdict": "THE PACKAGE REMOVES A LOST-UPDATE WINDOW. Reading a counter and writing the same value back during a claim means a concurrent run's increment, landing between the read and the claim, is overwritten with the stale number. Two submissions in the same instant can be minted the same reference. A claim should take the lock and change nothing else."
+      },
+      {
+        "action": "Update_Sequence_Counter",
+        "live": "item/Prefix = \"@{first(outputs('Get_Sequence_Counter_Confirm')?['body/value'])?['YPrefix']}\\n\"",
+        "package": "does not write item/Prefix at all",
+        "verdict": "THE PACKAGE REMOVES A SILENT CORRUPTION. Portal Sequence Counters has a Prefix column and no YPrefix column, so the expression resolves to null, interpolates to an empty string, and the trailing newline is written on its own. Every submission overwrites Prefix with a newline. Prefix is immutable on that row and the package does not re-send it.",
+        "confirmedBy": "portal-field-spec.json — Portal Sequence Counters carries CurrentSequence, LastIssuedAt, LastReferenceId, LockToken, ModifiedByFlowRun, Prefix, Year. There is no YPrefix."
+      }
+    ]
+  },
+  "triggerAuthentication": "Both exports carry triggerAuthenticationType = All on their Request trigger. The packages do not change a trigger; that posture is unchanged by any paste.",
+  "whatThisDoesNotEstablish": [
+    "That the SUBMISSION copy matches the endpoint the portal actually calls. It is a copy, and the live endpoint has a different id.",
+    "How long the Prefix corruption has been running, or how many rows it has touched. Portal Sequence Counters held 0 items at the 2026-08-18 capture."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "readUtc": "2026-10-18T13:30:00Z",
+  "by": "Flow API (registry account): runs read step by step; recipients masked; no message body or URL recorded",
+  "release": "identification releases 31-34 applied (flows:update apply, every write read back; evidence 2026-10-18-flows-apply.json)",
+  "flowCreated": {
+    "flow": "Folio_Failure_Watch",
+    "id": "c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+    "created": "2026-10-18T13:06Z",
+    "trigger": "Week recurrence, Monday-Friday, hours 07-18 at :05, W. Central Africa Standard Time (an Hour recurrence with set hours is refused by the tenant)",
+    "state": "Started 2026-10-18T13:30Z"
+  },
+  "defectsFoundAndFixed": [
+    {
+      "run": "08584093115454153780858604181CU30",
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "defect": "convertFromUtc refused a date-only list value without Z; the digest stopped",
+      "release": 31,
+      "evidence": "2026-10-18-sweep-date-defect.json"
+    },
+    {
+      "run": "08584092775455011877820853803CU24",
+      "flow": "Folio_Failure_Watch",
+      "defect": "substring() of an empty LastError; the run still ended Succeeded",
+      "fix": "empty guard; the run ends Failed when the watch cannot do its job; the cursor does not move past a window whose report failed",
+      "release": 33
+    },
+    {
+      "run": "08584092772023323576656283964CU24",
+      "flow": "Folio_Failure_Watch",
+      "defect": "the list handed the stored cursor back reformatted (10/18/2026 13:19:08), so the window matched nothing",
+      "fix": "cursor stored as utc:<ISO>; an unprefixed value is still parsed",
+      "release": 34
+    }
+  ],
+  "sweepAfterFix": {
+    "run": "08584092776486677252446832903CU08",
+    "at": "2026-10-18T13:14Z",
+    "note": "out of working hours by setting Flow Configuration NOTIFY_WORKING_HOURS_ONLY=false (item 75) for the run, restored to true at 13:28Z; staff mail held: every digest to the registry mailbox",
+    "digests": 10,
+    "receipts": "1585-1594 (task-digest, sent)",
+    "proves": [
+      "RN-013 unacknowledged assignments",
+      "RN-014 overdue tasks"
+    ]
+  },
+  "watchProof": {
+    "injected": "5 failed receipts marked ZTEST (one per group: citizen status-approved, codes verification-code, staff report-delivery, ops registry-alert, outward outward-correspondence) through a temporary flow, deleted after its run; a first injection ran twice (10 rows) and is included in the cleanup",
+    "run": "08584092768960904317751902395CU01",
+    "read": 5,
+    "reported": [
+      "citizen: ZTEST-FW-citizen"
+    ],
+    "notReported": [
+      "codes",
+      "staff",
+      "ops",
+      "outward"
+    ],
+    "burst": true,
+    "subject": "Folio: mail connection may be broken; 1 new failed notice(s)",
+    "reportTo": "d*****y@nitda.gov.ng",
+    "reportReceipt": 1610,
+    "onceOnly": {
+      "run": "08584092768416494862941022691CU02",
+      "newFailures": 0,
+      "sent": "nothing"
+    }
+  },
+  "cleanup": {
+    "resolvedSuperseded": 39,
+    "which": "the 15 ZTEST rows and 24 historical failed receipts (17 support-acknowledgement of 14-15 Sep 2026 whose send was skipped by the earlier flow version, ActionConditionFailed; 7 verification-code of 27 Aug 2026)",
+    "how": "Status set to resolved-superseded by a temporary flow (deleted); Modified/Editor record who and when",
+    "verified": {
+      "run": "08584092767076874054663097244CU17",
+      "open": {
+        "citizen": 0,
+        "codes": 0,
+        "staff": 0,
+        "ops": 0,
+        "outward": 0,
+        "unclassified": 0
+      }
+    }
+  }
+}

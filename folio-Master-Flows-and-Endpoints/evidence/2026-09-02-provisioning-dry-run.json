@@ -1,0 +1,68 @@
+{
+  "recordVersion": "1.0",
+  "what": "A DRY_RUN pass of scripts/provision-sharepoint-fields.browser.js against the tenant, run by the operator from a SharePoint page on 2026-09-02. It creates nothing. It is recorded because a dry run that reads every list is a complete reading of the estate's column state, and this one confirms two things that had been standing on inference.",
+  "againstSpec": { "specVersion": "2.0.0", "lists": 15, "columns": 103 },
+  "runner": "scripts/provision-sharepoint-fields.browser.js (generated from docs/deployment/sharepoint/portal-field-spec.json)",
+  "mode": "DRY_RUN",
+  "source": "operator's browser console output, pasted verbatim into the session",
+  "runs": [
+    {
+      "phase": "columns",
+      "mode": "DRY_RUN",
+      "present": 102,
+      "wouldCreate": 1,
+      "created": 0,
+      "failed": 0,
+      "sitesUnreachable": 0,
+      "listsUnreadable": 0
+    },
+    {
+      "phase": "index",
+      "mode": "DRY_RUN",
+      "targets": 5,
+      "alreadyIndexed": 5,
+      "wouldIndex": 0,
+      "failed": 0
+    }
+  ],
+  "noVerifyRun": {
+    "state": "NOT_APPLICABLE",
+    "why": "A DRY_RUN pass reads every column in the specification and creates nothing, so it is itself the stronger form of a verify pass: it cannot mask an incomplete estate by quietly finishing the job."
+  },
+  "theOneOutstandingColumn": {
+    "site": "NITDADGO-EAAACTIVITYTRACKING",
+    "list": "OTP_Transactions",
+    "listGuid": "9421d473-8906-43b7-a41f-a213046683c1",
+    "field": "Attempts",
+    "type": "Number",
+    "result": "would create",
+    "closes": "register ITEM-39, and unblocks ITEM-38",
+    "action": "set DRY_RUN = false at the top of the script and paste again"
+  },
+  "whatThisConfirms": [
+    {
+      "claim": "OTP_Transactions.OTP_Code, .Expires_At and .Is_Verified exist in the tenant",
+      "wasRecordedAs": "capturedState LIVE on a strong inference — the deployed Web - OTP Verify writes them and the flow is saved, and Power Automate validates every item/<Column> against the connector operation at save time and refuses the flow otherwise.",
+      "nowEstablishedBy": "a direct read of the list's fields: all three reported present. The inference is retired; this is a reading."
+    },
+    {
+      "claim": "All five declared index targets are indexed",
+      "wasRecordedAs": "APPLIED_UNVERIFIED — the 2026-08-31 apply pass set three and found two already indexed, and its verify pass re-read all five.",
+      "nowEstablishedBy": "a second, independent read on a later date: Portal Rate Limits.Title, Portal Verification Proofs.Title, Portal Support Cases.Title, Global Tracking Queue.RefIDD and DGO DIGITAL OPS.RefIDD all already indexed, 0 to set, 0 unreadable. The provisioning half of ITEM-23 is confirmed twice over."
+    },
+    {
+      "claim": "The operator's account can write to every site the specification names",
+      "wasRecordedAs": "unstated — the script warns that Manage Lists is needed on each of the four sites and that a missing permission fails only that site.",
+      "nowEstablishedBy": "0 sites unreachable and 0 lists unreadable across DGO_ECM_GOVERNANCE, Global_Digital_Documents_Centre, NEDMS and NITDADGO-EAAACTIVITYTRACKING. contextinfo is a POST, so reaching it also exercises the write path's authentication."
+    }
+  ],
+  "whatThisDoesNotClose": [
+    "ITEM-39 — nothing was created. This run establishes that exactly one column is missing and that the account can create it; the apply pass has not been made.",
+    "ITEM-23 — the index requirement is confirmed, but its remaining criterion is live traffic: one assignment and one flag write against a known reference returning 200. Neither has been exercised.",
+    "ITEM-2 — no flow was called. This is a SharePoint REST read, not a Power Automate execution."
+  ],
+  "notedInPassing": {
+    "observation": "Portal OTP Codes (3f85213c-1fdc-4be0-8c0c-e28aa77fbe56, Global_Digital_Documents_Centre) already carries its own Attempts column, present.",
+    "why_it_is_not_a_conflict": "It is a different list on a different site. The OTP verify flow this estate patches writes to OTP_Transactions on NITDADGO-EAAACTIVITYTRACKING. The two are not addressed interchangeably anywhere — every write in the specification and in the flow definitions is by list GUID."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "e0751d8f96c16da29968ee01e72fce6c5f862384",
+  "finishedUtc": "2026-10-08T16:13:40.692Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+      "flow": "IP_SCAN_INTAKE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9",
+          "file": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json",
+          "scope": "Scope_Scan_Flow",
+          "status": "APPLIED",
+          "packageHash": "51249b95ecb75d884e7dd515b779083307b4df18e895ab642328cd8a5a0169f2",
+          "liveHash": "51249b95ecb75d884e7dd515b779083307b4df18e895ab642328cd8a5a0169f2",
+          "fingerprint": "13bdc2e0d21a4302",
+          "liveFingerprint": "13bdc2e0d21a4302",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 51249b95ecb7…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "039cab36b7a4c90ddfc8b75a6ca705fbc51dbefc2810ed7296a87c31b14dc635",
+          "liveHash": "039cab36b7a4c90ddfc8b75a6ca705fbc51dbefc2810ed7296a87c31b14dc635",
+          "fingerprint": "18fe9ecd22617c14",
+          "liveFingerprint": "18fe9ecd22617c14",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 039cab36b7a4…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

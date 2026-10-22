@@ -1,0 +1,65 @@
+{
+  "measuredUtc": "2026-09-01",
+  "how": "scripts/set-content-approval.browser.js, read-only run (APPLY=false), pasted into the console signed in to https://nitdanigeria.sharepoint.com. Counted by paging every row on Id and tallying _ModerationStatus in the browser; $filter on that column returns HTTP 500 on both lists because it is unindexed and both are over the 5,000-item view threshold.",
+  "completeness": "both tallies are complete: the state totals equal the list's reported ItemCount exactly, so no page was dropped.",
+  "lists": [
+    {
+      "title": "DGO DIGITAL OPS",
+      "guid": "1f1cb303-3fd2-43c8-8f24-c409b6c2fde3",
+      "site": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+      "enableModeration": true,
+      "itemCount": 21532,
+      "byState": {
+        "Approved": 6650,
+        "Rejected": 0,
+        "Pending": 14882,
+        "Draft": 0,
+        "Scheduled": 0,
+        "Other": 0
+      },
+      "notVisibleToReaders": 14882,
+      "directive": "the agency has directed that content approval is not to be on for this list",
+      "changed": true,
+      "note": "69% of the list is Pending. Every reader-facing query has been returning 6,650 of 21,532 rows.",
+      "appliedUtc": "2026-09-01",
+      "appliedBy": "scripts/set-content-approval.browser.js with APPLY=true, run by the operator in the browser",
+      "enableModerationAfter": false,
+      "verification": "the script re-read EnableModeration after the MERGE and reported 'content approval is now OFF'. The change is confirmed by read-back, not by the write returning success.",
+      "effect": "14,882 rows that were Pending are now visible to everyone who already had read access to the list. Nothing was approved and nothing was deleted: moderation is simply no longer applied.",
+      "reversal": "set EnableModeration back to true on the list's versioning settings page. That restores moderation but not which rows were approved, so these counts are the only record of the prior state."
+    },
+    {
+      "title": "Global Tracking Queue",
+      "guid": "ee82725a-c408-45e2-a8e8-facf7a092047",
+      "site": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+      "enableModeration": true,
+      "itemCount": 15936,
+      "byState": {
+        "Approved": 3857,
+        "Rejected": 0,
+        "Pending": 12079,
+        "Draft": 0,
+        "Scheduled": 0,
+        "Other": 0
+      },
+      "notVisibleToReaders": 12079,
+      "directive": "none — this list carries its own decision and was not changed",
+      "changed": false,
+      "stillOn": true,
+      "openDecision": "content approval remains ON for this list, with 12,079 of 15,936 rows hidden. Four of the seven internal flows write here, so rows they create land Pending and invisible. This list carries its own decision and the script will not make it by implication."
+    }
+  ],
+  "reading": [
+    "Rejected is 0 and Draft is 0 on both lists. Nothing was ever deliberately withheld or turned back: this is an approval queue that was switched on and never worked, so every row written since has accumulated as Pending.",
+    "A Pending row is invisible to readers. The write returns success, so a flow that created an assignment reported success while nobody could see the assignment — the failure mode BLOCK 7 describes, already realised at a scale of 14,882 rows on DGO DIGITAL OPS.",
+    "Turning approval off makes those rows visible to whoever already has read access to the list. It does not widen who can reach the list."
+  ],
+  "supersedes": {
+    "claim": "an earlier run of this script reported '0 row(s) are currently NOT approved and would become visible' for both lists",
+    "why_it_was_wrong": "that run counted with $filter=OData__ModerationStatus, which returned HTTP 500 on every state; the totals were strings, and the sum treated them as zero. The zero was a defect, not a measurement. Fixed in d2beb84."
+  },
+  "blockStatus": {
+    "DGO DIGITAL OPS": "closed 2026-09-01 — approval off, verified by read-back",
+    "Global Tracking Queue": "open — still ON, decision outstanding"
+  }
+}

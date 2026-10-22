@@ -1,0 +1,45 @@
+Subject: {{LetterTitle}} — Ref: {{Reference}}
+Preview: A letter from the {{SenderOffice}} is attached for your attention.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+✉ Letter attached
+
+{{LetterTitle}}
+===============
+
+{{SenderOffice}}, {{Organisation}}
+
+Ref {{Reference}}: Date {{Date}}
+
+{{Addressee}}
+
+{{Institution}}
+
+{{Salutation}},
+
+Please find attached a letter from the {{SenderOffice}}, {{Organisation}}, on the above subject, for your kind attention and necessary action.
+
+{{Message}}
+
+We would be grateful if you could acknowledge receipt of this correspondence by replying to this email.
+
+Please accept the assurances of the highest regards of the {{SenderOffice}}.
+
+Yours faithfully,
+
+{{SenderName}}
+
+{{SenderTitle}}
+
+{{SenderOffice}}, {{Organisation}}
+
+{{SenderEmail}} · {{SenderPhone}}
+
+You received this letter because your organisation is on the Agency's correspondence list. Replies to this e-mail reach the {{SenderOffice}}.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

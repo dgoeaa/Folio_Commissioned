@@ -1,0 +1,28 @@
+{
+  "readUtc": "2026-10-16",
+  "readBy": "Flow API, signed in as dgsregistry@nitda.gov.ng",
+  "trigger": "The owner saved one PDF to /E-DOCUMENT STATION (dgs@nitda.gov.ng OneDrive).",
+  "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow (197527c8-e76c-4f7d-81b8-3cb5c88b1c6c)",
+  "run": "08584094654223940386992234639CU22",
+  "startedUtc": "2026-10-16T09:04:24Z",
+  "status": "Succeeded (ended by Terminate_2 with runStatus Succeeded)",
+  "file": "/E-DOCUMENT STATION/universal_filename_policy_one_page_memo.pdf, 2809 bytes, application/pdf",
+  "results": {
+    "CREATE_SHARELINK_OF_TRIGGER_DOCUMENT": "Succeeded; edit link in personal/dgs_nitda_gov_ng (ITEM-73)",
+    "CREATE_MAIN_ITEM_IN_DDOPS": "Created DGO DIGITAL OPS row 22721, AssignmentStatus Not Assigned, AttachmentLink set",
+    "Scope_Library_Identity": "referenceId NITDA-2026-00019, Entity Key set, row keyed, locator created",
+    "Update_item_3": "row 22721 updated (Title, Description, Notes, RefIDD, AttachmentLink)",
+    "Rename_Trigger_File_3": "/E-DOCUMENT STATION/22721 -2026-10-16 -UNIVERSAL_FILENAME_POLICY_ONE_PAGE_MEMO.PDF",
+    "Add_attachment_2": "file attached to row 22721",
+    "Send_an_email_(V2)": "one e-mail to dgs@nitda.gov.ng, \"New E-Scan -22721 -2026-10-16 -…\", through shared_office365 c0b9e7a5 (signed in as dgsRegistry@nitda.gov.ng)",
+    "Create_Send_an_email_(V2)_Receipt": "receipt 1377, status sent"
+  },
+  "connections": {
+    "shared_onedriveforbusiness": "shared-onedriveforbu-eaffabe7, signed in as dgs@nitda.gov.ng (reads, renames and links the scan in dgs@'s OneDrive)",
+    "shared_sharepointonline": "3f1943c5, signed in as dgsRegistry@nitda.gov.ng",
+    "shared_office365": "c0b9e7a5, signed in as dgsRegistry@nitda.gov.ng"
+  },
+  "aiProcessing": "Not run, the same as the legacy flow: Terminate_2 runs after the e-mail and before Scope_HTML_Templates and Scope_Gemini_Text_Processing; the legacy flow's last live run (08584100499034430398471761778CU01) skipped them the same way. Owner decision 2026-10-16: keep it off; turning it on would send each document to Google Gemini on keys including one labelled with a personal Gmail address, and is a separate decision.",
+  "legacyFlow": "DGSO INCOMING AI PROCESSING (b6d92bae) Stopped since 2026-10-16T08:13:25Z; no run since 2026-10-09.",
+  "testRecords": "DGO DIGITAL OPS row 22721 and registry reference NITDA-2026-00019 are a test document's records (MANUAL-2 clean-up)."
+}
