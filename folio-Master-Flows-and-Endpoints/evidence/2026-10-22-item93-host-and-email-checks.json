@@ -1,0 +1,81 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-22",
+  "change": "ITEM-93 T4 and T5: build v2026.10.22-1 on both hosts, and e-mails sent after the tenant changes of 2026-10-22 (release 44 at 02:53Z, GOV designs at 04:12Z, DGO_MAIL_AUTH), read in Outlook on the web and in the Outlook mobile app.",
+  "report": "The owner sent screenshots taken 2026-10-22 between 05:45 and 06:11 WAT: each host's BUILD-ID.json open in the host's file manager; messages in the Registry mailbox in Outlook on the web (phone browser) and in the Outlook mobile app (Android, split view); and the Correspondence Mailer at https://folio-platform.page.gd/mailer.html before a send. Transcribed here; the one-time and sign-in codes shown are not recorded.",
+  "host": {
+    "FOLIO-WORKSPACE": {
+      "file": "BUILD-ID.json at the Workspace site root",
+      "schema": "folio-build-id/v1",
+      "version": "2026.10.22-1",
+      "builtUtc": "2026-10-22T04:13:45.040Z",
+      "commit": "b1920d881811e3cb46f18afafc193226d219ce92",
+      "codeFingerprint": "499dc5fc3860c986",
+      "configDigest": "66404188f49df394",
+      "files": 223,
+      "mailer": { "file": "mailer.html", "sha256": "0ee1747603b15451" }
+    },
+    "FOLIO-PORTAL": {
+      "file": "BUILD-ID.json at the Portal root",
+      "schema": "folio-build-id/v1",
+      "version": "2026.10.22-1",
+      "builtUtc": "2026-10-22T04:13:45.040Z",
+      "commit": "b1920d881811e3cb46f18afafc193226d219ce92",
+      "codeFingerprint": "0cfa14c2a6e75a52",
+      "configDigest": "9b90989e9b49b54a",
+      "files": 43
+    },
+    "matches": "both equal the config:rebuild output and registers/config-build-ledger.json for v2026.10.22-1; the Mailer page served at /mailer.html reports itself Live and up to date"
+  },
+  "emails": [
+    {
+      "subject": "[Succeeded] 06 - GOV - Registry Exception Notification | 08584089625048308036287697618CU23",
+      "reportedUtc": "2026-10-22T04:46:21Z",
+      "client": "Outlook on the web",
+      "design": "GV-Run-Report",
+      "seen": "NITDA and DGO Digital Ops masthead; chip, headline and sub-line; Run ID, Status (pill) and Reported UTC as labels above values in a bordered panel; DETAILS section label with its bar; detail rows stacked. Sent after the T2 apply (04:12Z)."
+    },
+    {
+      "subject": "Your Verification Code",
+      "received": "2026-10-22 05:48 WAT",
+      "client": "Outlook on the web",
+      "design": "verification code (catalogue message on the package design)",
+      "seen": "NITDA and DGO masthead; chip, headline, sub-line; one greeting; the code panel with its expiry pill; the 'Keep this code private' callout with its square marker; notes and Agency footer."
+    },
+    {
+      "subject": "22793 -2026-10-21 -'BAK-ABASI UDOESSIEN ABUJA FCT ( APPLICATION FOR AN ENTRY- LEVEL TECHNOLOGY POSITION ).PDF",
+      "sent": "2026-10-22 05:47 WAT",
+      "client": "Outlook on the web and the Outlook mobile app",
+      "flow": "Single_Task_Assignment (release 44)",
+      "seen": "DGO masthead; chip; one greeting; the document title linked; Reference, Handling status and Response priority as labels above values; Acknowledge receipt, Open document and Support access buttons whole on the phone."
+    },
+    {
+      "subject": "Your DGO Correspondence Mailer sign-in code",
+      "received": "2026-10-22 06:07 WAT",
+      "client": "Outlook mobile app",
+      "flow": "DGO_MAIL_AUTH (T3)",
+      "design": "ML-Sign-In-Code",
+      "seen": "NITDA and DGO masthead with 'Correspondence Mailer · Secure sign-in' as the issuing line; 'Sign-in code' chip, headline and sub-line; the code panel; 'Requested for' label above value. The code is not in the subject."
+    },
+    {
+      "subject": "Transmittal — NITDA/DGO/EAA/2026/001 — Dangote acquires 25% stake in Kenya oil pipeline",
+      "sent": "2026-10-22 06:11 WAT",
+      "client": "Outlook mobile app (and the Mailer's own preview before sending)",
+      "flow": "DGO_MAIL_SEND, Mailer letter on the CL letterhead",
+      "design": "CL-Transmittal",
+      "seen": "'OFFICIAL' classification band; NITDA masthead with 'Office of the Director-General/CEO' as the issuing line; 'Transmittal · Normal' chip and headline; the docket band with Reference and Date, the reference shown once; one greeting ('Dear Sir/Madam,'); the attachment carried.",
+      "defect": "In the Outlook mobile app the docket band's values break mid-word: the reference reads 'NITDA/DGO/EA' / 'A/2026/001' and the date '22 October 2' / '026'. Cause, in the package documents (01-Templates/email/CL-*.html): both values carry word-break:break-all inside a two-column table-layout:fixed table, and the mobile app enlarges the text, so each value is forced to break at the column edge."
+    }
+  ],
+  "observations": [
+    "The Mailer's preview (before sending) showed the masthead logo's alternative text instead of the image; the delivered e-mail shows the logo. Preview only.",
+    "On 'New submission NITDA-2026-00118' (CG_Submission_Endpoint, not changed by ITEM-93) the line 'Unverified sender — confirm identity before acting or replying.' is orange-red on the dark green hero and reads as low contrast."
+  ],
+  "outOfScope": "The screenshots also show 'New submission NITDA-2026-00118', 'CG_Upload_Endpoint — Flow Run Record' and '[DGO][SUCCEEDED] User Directory sync'. None of these flows was changed by ITEM-93.",
+  "outstanding": [
+    "the docket band defect in the Outlook mobile app (CL letters): fix, then confirm in the app",
+    "a staff notice (SN-*)"
+  ],
+  "basis": "The owner's screenshots; the images stay with the owner. Every value above is read off them."
+}

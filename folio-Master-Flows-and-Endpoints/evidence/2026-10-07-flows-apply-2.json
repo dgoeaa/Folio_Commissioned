@@ -1,0 +1,126 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "ddd2157ca49243e0652a9490933d6662f858f40c",
+  "finishedUtc": "2026-10-07T00:01:43.441Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "802e9d496487cdce5bd6b71a188785525d860fa569fc07d119b1c345d36cef69",
+          "liveHash": "802e9d496487cdce5bd6b71a188785525d860fa569fc07d119b1c345d36cef69",
+          "detail": "written and read back: hash 802e9d496487…; 2 connection(s) rebound",
+          "rebinds": [
+            {
+              "reference": "shared_office365-2",
+              "from": null,
+              "to": "c0b9e7a5b0854c39a435fd8ce92f48ad",
+              "alsoUsedOutside": 0
+            },
+            {
+              "reference": "shared_office365-1",
+              "from": null,
+              "to": "c0b9e7a5b0854c39a435fd8ce92f48ad",
+              "alsoUsedOutside": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "flow": "IP_OTP_VERIFY",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "5b3f5806a32755b37a1cf56c4ec8c58e41c2985126dedb0b202ef1e8f5215aeb",
+          "liveHash": "5b3f5806a32755b37a1cf56c4ec8c58e41c2985126dedb0b202ef1e8f5215aeb",
+          "detail": "written and read back: hash 5b3f5806a327…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "flow": "IP_Reference_Data_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "807e1c122fa5bc270b6aab90094cfb7315c7d9c4ca7f21a32f04f30723d5f3cc",
+          "liveHash": "807e1c122fa5bc270b6aab90094cfb7315c7d9c4ca7f21a32f04f30723d5f3cc",
+          "detail": "written and read back: hash 807e1c122fa5…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "flow": "IP_Get_Docs_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "90076d9107f9e26d7ed76c65907166215b3b842d7a3d4d8467870749fcb644b0",
+          "liveHash": "90076d9107f9e26d7ed76c65907166215b3b842d7a3d4d8467870749fcb644b0",
+          "detail": "written and read back: hash 90076d9107f9…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3",
+          "scope": "Scope_Email_Attachment_Endpoint_REBUILT",
+          "status": "APPLIED",
+          "packageHash": "8ee2e874516e4d1a7190adb4ffaa02ddddaa88d1e466d2fc89a19a50fc851835",
+          "liveHash": "8ee2e874516e4d1a7190adb4ffaa02ddddaa88d1e466d2fc89a19a50fc851835",
+          "detail": "written and read back: hash 8ee2e874516e…; 1 connection(s) rebound",
+          "rebinds": [
+            {
+              "reference": "shared_sharepointonline",
+              "from": null,
+              "to": "3f1943c5955a4cb8b301e8f22f2b590d",
+              "alsoUsedOutside": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "flow": "IP_SEND_EMAIL",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL__IP_SEND_EMAIL__df59a69f",
+          "scope": "Scope_Send_Email_Flow",
+          "status": "APPLIED",
+          "packageHash": "94516e0e88090bf5122c278418c757a01ecf2be3e40a39d7768be4d4f0053531",
+          "liveHash": "94516e0e88090bf5122c278418c757a01ecf2be3e40a39d7768be4d4f0053531",
+          "detail": "written and read back: hash 94516e0e8809…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

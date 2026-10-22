@@ -1,0 +1,41 @@
+Subject: {{flowDisplayName}} — Flow Run Record — {{runId}}
+Preview: Automated flow run record capture.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ Run record · not ok
+
+{{flowDisplayName}}
+===================
+
+Automated flow run record capture.
+
+Flow: {{flowDisplayName}}
+
+Run: {{runId}}
+
+Outcome
+
+ok: {{standardResponse.ok}}
+
+status: {{standardResponse.status}}
+
+request: {{standardResponse.request}}
+
+Attached
+
+…__flow_run_record.json
+
+…__flow_run_record_schema.json
+
+…__trigger_input_schema.json
+
+…__full_definition.json
+
+…__varResponse.json
+
+Automated DGO run evidence for the registry. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

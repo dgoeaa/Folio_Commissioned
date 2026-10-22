@@ -1,0 +1,170 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "f0b7179396f5fee9c4c9dcbf02828434aff2dda6",
+  "finishedUtc": "2026-10-10T16:22:48.533Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+      "flow": "Single_Task_Assignment",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458",
+          "file": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "205b9ccd2fec28265cc626c7ea7a9678084e2fcc66705a60554db52c253a1aee",
+          "liveHash": "205b9ccd2fec28265cc626c7ea7a9678084e2fcc66705a60554db52c253a1aee",
+          "fingerprint": "0a2387dca2ddfe0f",
+          "liveFingerprint": "0a2387dca2ddfe0f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 205b9ccd2fec…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "flow": "BULK OPS DATA RETRIEVAL HTTP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61",
+          "file": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "c2795b1ee8934e153928fb4f77656542983962defe2493bcc56fb9d53fd5b473",
+          "liveHash": "c2795b1ee8934e153928fb4f77656542983962defe2493bcc56fb9d53fd5b473",
+          "fingerprint": "18d437468ef29019",
+          "liveFingerprint": "18d437468ef29019",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash c2795b1ee893…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "090b3efcaf0092d193e1b247b7b27220e6e0e44cccc222ff206bb6a3b1861fdf",
+          "liveHash": "090b3efcaf0092d193e1b247b7b27220e6e0e44cccc222ff206bb6a3b1861fdf",
+          "fingerprint": "07ce0affd47e040b",
+          "liveFingerprint": "07ce0affd47e040b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 090b3efcaf00…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "11256773f4c7989054f494ac8300f53d94fd93c42b5d8e7fb8bf112128b24e31",
+          "liveHash": "11256773f4c7989054f494ac8300f53d94fd93c42b5d8e7fb8bf112128b24e31",
+          "fingerprint": "1a8bacdb183afb0d",
+          "liveFingerprint": "1a8bacdb183afb0d",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 11256773f4c7…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "flow": "IP_User_Admin_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825",
+          "file": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "788e8cd2c5d56e13aae13ebf7a1c426667c35210b21d913ecd48091e0e28910b",
+          "liveHash": "788e8cd2c5d56e13aae13ebf7a1c426667c35210b21d913ecd48091e0e28910b",
+          "fingerprint": "167f2e2ebca26d15",
+          "liveFingerprint": "167f2e2ebca26d15",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 788e8cd2c5d5…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+      "flow": "IP_OTP_GENERATE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_GENERATE__IP_OTP_GENERATE__e5632336",
+          "file": "OTP_GENERATE__IP_OTP_GENERATE__e5632336.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "d1e950be10d984baaf3c659136b6f6d5d8efeeec2db146e5f4f6f23de3fe6ee2",
+          "liveHash": "d1e950be10d984baaf3c659136b6f6d5d8efeeec2db146e5f4f6f23de3fe6ee2",
+          "fingerprint": "1710e8ea5c91ab0d",
+          "liveFingerprint": "1710e8ea5c91ab0d",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash d1e950be10d9…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "flow": "IP_Reference_Data_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e",
+          "file": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "6fe8ac18b0ddfe94009520e3342b57e352992ce4b62eee9c1ccc8da304058c0f",
+          "liveHash": "6fe8ac18b0ddfe94009520e3342b57e352992ce4b62eee9c1ccc8da304058c0f",
+          "fingerprint": "178eac8c90727b19",
+          "liveFingerprint": "178eac8c90727b19",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 6fe8ac18b0dd…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "flow": "IP_Get_Docs_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a",
+          "file": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "7ae8c2e73062b78435240d650897e0bcf83350241a9fbaad12adc869da01a3ee",
+          "liveHash": "7ae8c2e73062b78435240d650897e0bcf83350241a9fbaad12adc869da01a3ee",
+          "fingerprint": "1a4ba31f5953e610",
+          "liveFingerprint": "1a4ba31f5953e610",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 7ae8c2e73062…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

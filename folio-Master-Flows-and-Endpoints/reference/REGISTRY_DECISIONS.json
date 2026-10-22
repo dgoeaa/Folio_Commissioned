@@ -1,0 +1,2241 @@
+{
+  "schema": "dgo-registry-decisions/v1",
+  "generatedBy": "npm run registry:decisions",
+  "purpose": "The four REQUIRED DGO_HTTPFlowRegistry columns that need a person, with what can be proposed from evidence and what cannot. Proposals are kept out of the seed on purpose.",
+  "totals": {
+    "rows": 69,
+    "columns": 4,
+    "blanks": 276,
+    "toRatify": 76,
+    "toAuthor": 131,
+    "toObserve": 69,
+    "proposed": {
+      "SystemName": 49,
+      "Criticality": 27,
+      "TechnicalOwnerEmail": 0,
+      "LastSeenUtc": 0
+    },
+    "needsPerson": {
+      "SystemName": 20,
+      "Criticality": 42,
+      "TechnicalOwnerEmail": 69,
+      "LastSeenUtc": 0
+    }
+  },
+  "columns": [
+    {
+      "column": "SystemName",
+      "proposable": true,
+      "whatItIs": "The business or technical system a flow belongs to.",
+      "howProposed": "From the estate's own naming convention, one rule per prefix, each stated. A flow matching no rule gets no proposal."
+    },
+    {
+      "column": "Criticality",
+      "proposable": true,
+      "whatItIs": "How much depends on this flow working.",
+      "howProposed": "From wiring, never from name: a flow a contract key calls is High because the platform cannot serve that key without it; a flow touching five or more lists with no key is Medium. Anything else is left for a person."
+    },
+    {
+      "column": "TechnicalOwnerEmail",
+      "proposable": false,
+      "whatItIs": "Who is accountable for this flow.",
+      "howProposed": "Not proposable. Nothing in a repository knows who owns a flow, and an invented address is worse than an empty column because a flow with a plausible owner stops being chased."
+    },
+    {
+      "column": "LastSeenUtc",
+      "proposable": false,
+      "whatItIs": "When the flow was last observed running.",
+      "howProposed": "Not a decision at all — an observation. No person can supply it and no repository holds it; it is written by the first registration that reads run history, or by the flow itself."
+    }
+  ],
+  "rules": {
+    "SystemName": [
+      {
+        "pattern": "/^IP_/i",
+        "value": "Internal Platform",
+        "why": "name begins IP_ — the internal platform's own prefix"
+      },
+      {
+        "pattern": "/^CG_/i",
+        "value": "Public Portal",
+        "why": "name begins CG_ — the portal endpoints, per the endpoint atlas"
+      },
+      {
+        "pattern": "/^Portal[_ ]/i",
+        "value": "Public Portal",
+        "why": "name begins Portal_"
+      },
+      {
+        "pattern": "/^\\d+\\s*-\\s*GOV\\s*-/i",
+        "value": "Governance",
+        "why": "name is a numbered GOV- flow"
+      },
+      {
+        "pattern": "/^GOV[_ -]/i",
+        "value": "Governance",
+        "why": "name begins GOV"
+      },
+      {
+        "pattern": "/^DGO[_ ]/i",
+        "value": "Digital Operations",
+        "why": "name begins DGO_"
+      },
+      {
+        "pattern": "/^AI[_ ]|AI_DOC|AI_CHAT|AI_EMAIL/i",
+        "value": "AI Processing",
+        "why": "name marks it an AI processing flow"
+      },
+      {
+        "pattern": "/^AUTO_|SCHEDULED_SWEEP/i",
+        "value": "Scheduled Processing",
+        "why": "name marks it a scheduled sweep"
+      },
+      {
+        "pattern": "/^BULK/i",
+        "value": "Internal Platform",
+        "why": "name begins BULK — bulk operations on the internal platform"
+      },
+      {
+        "pattern": "/^SUBMISSION_|^DGSO/i",
+        "value": "Public Portal",
+        "why": "name marks it a portal submission path"
+      }
+    ],
+    "Criticality": [
+      {
+        "rule": "serves at least one contract key",
+        "value": "High"
+      },
+      {
+        "rule": "touches five or more SharePoint lists and serves no contract key",
+        "value": "Medium"
+      },
+      {
+        "rule": "anything else",
+        "value": null
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "RegistryKey": "DGO:fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "FlowName": "AI_Document_Processing",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "AI_EMAIL_ANALYSIS",
+        "AI_DOC_ANALYSIS",
+        "AI_CHAT"
+      ],
+      "listsTouched": 1,
+      "proposals": {
+        "SystemName": {
+          "proposed": "AI Processing",
+          "because": "name marks it an AI processing flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract keys AI_EMAIL_ANALYSIS, AI_DOC_ANALYSIS, AI_CHAT — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "FlowName": "BULK OPS DATA RETRIEVAL HTTP",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "BULK_ASSIGNMENT"
+      ],
+      "listsTouched": 2,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins BULK — bulk operations on the internal platform",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key BULK_ASSIGNMENT — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "FlowName": "CG_Portal_Status_Check_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "STATUS"
+      ],
+      "listsTouched": 6,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key STATUS — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:4873c936-a2be-4726-8e69-426edb8f70e6",
+      "FlowName": "CG_Portal_Support_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "SUPPORT"
+      ],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key SUPPORT — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:f96e3448-3c79-4d42-b224-825258a552ba",
+      "FlowName": "CG_Portal_Verification_Confirmation_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "VERIFY_CONFIRM"
+      ],
+      "listsTouched": 5,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key VERIFY_CONFIRM — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:ba47f79b-a831-49e8-b00b-3f8937c331df",
+      "FlowName": "CG_Portal_Verification_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "VERIFY"
+      ],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key VERIFY — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "FlowName": "CG_Portal_Writeback_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "WRITEBACK"
+      ],
+      "listsTouched": 7,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key WRITEBACK — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "FlowName": "CG_Submission_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "SUBMISSION"
+      ],
+      "listsTouched": 8,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key SUBMISSION — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "FlowName": "CG_Upload_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "UPLOAD"
+      ],
+      "listsTouched": 5,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key UPLOAD — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:b4db02d8-02a0-4bc9-b9d3-06e2aae2448c",
+      "FlowName": "IP_Activity_Lifecycle_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "ACTIVITY_LIFECYCLE"
+      ],
+      "listsTouched": 11,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key ACTIVITY_LIFECYCLE — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "FlowName": "IP_Create__Task__for_received_Email_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "EMAIL_RELATED_TASK"
+      ],
+      "listsTouched": 8,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key EMAIL_RELATED_TASK — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "FlowName": "IP_Dynamic_Global_Actions_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "SUBSIDIARY_ACTIONS",
+        "DYNAMIC_ACTIONS"
+      ],
+      "listsTouched": 11,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract keys SUBSIDIARY_ACTIONS, DYNAMIC_ACTIONS — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "FlowName": "IP_Get_Docs_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "FETCH_ACTIVITIES",
+        "GET_DOCS"
+      ],
+      "listsTouched": 5,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract keys FETCH_ACTIVITIES, GET_DOCS — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:e5632336-641f-4b9b-bd93-99185b5eb975",
+      "FlowName": "IP_OTP_GENERATE",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "OTP_GENERATE"
+      ],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key OTP_GENERATE — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "FlowName": "IP_OTP_VERIFY",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "OTP_VERIFY"
+      ],
+      "listsTouched": 3,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key OTP_VERIFY — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "FlowName": "IP_Reference_Data_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "REFERENCE_DATA"
+      ],
+      "listsTouched": 6,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key REFERENCE_DATA — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "FlowName": "IP_Retrieve_Email_Attachment_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "FETCH_EMAIL_ATTACHMENTS"
+      ],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key FETCH_EMAIL_ATTACHMENTS — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:5504d7f9-cc96-470c-be79-217582faf415",
+      "FlowName": "IP_SCAN_INTAKE",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "SCAN_INTAKE"
+      ],
+      "listsTouched": 7,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key SCAN_INTAKE — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "FlowName": "IP_SEND_EMAIL",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "EMAIL"
+      ],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key EMAIL — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "FlowName": "IP_User_Admin_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "USER_ADMIN"
+      ],
+      "listsTouched": 8,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key USER_ADMIN — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:3caf9458-8d95-4740-a01b-6803dad97d34",
+      "FlowName": "Single_Task_Assignment",
+      "alsoKnownAs": [],
+      "identity": "name-join",
+      "servesContractKeys": [
+        "SINGLE_ASSIGNMENT"
+      ],
+      "listsTouched": 3,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key SINGLE_ASSIGNMENT — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+      "FlowName": "01 - GOV - Provision HTTP Flow Registry",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 6,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "Medium",
+          "because": "writes or reads 6 SharePoint lists; no contract key calls it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:651ae389-eeed-4bf0-9799-67bd964ebe71",
+      "FlowName": "02 - GOV - Register HTTP Flow Truth",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:0545e19a-c34a-45db-bd11-27b87a34973e",
+      "FlowName": "03 - GOV - Record HTTP Flow Execution",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 3,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+      "FlowName": "04 - GOV - Audit HTTP Flow Registry",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:493b4ab7-8f63-4fab-8121-746c2cac7f98",
+      "FlowName": "05 - GOV - Retire HTTP Flow",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 6,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "Medium",
+          "because": "writes or reads 6 SharePoint lists; no contract key calls it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:87a74d7e-7435-4e34-baa1-7e759ebf5565",
+      "FlowName": "06 - GOV - Registry Exception Notification",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 2,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:c6a011c5-7b11-4241-82ae-a45b88ebf276",
+      "FlowName": "07 - GOV - Consumer HTTP Self-Registration Template",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 3,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+      "FlowName": "08 - GOV - Discover and Register HTTP Consumers",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Governance",
+          "because": "name is a numbered GOV- flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "FlowName": "AUTO_SCHEDULED_SWEEP",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 5,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Scheduled Processing",
+          "because": "name marks it a scheduled sweep",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "Medium",
+          "because": "writes or reads 5 SharePoint lists; no contract key calls it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:f12aec6d-1554-483d-a525-a96ddb60d06f",
+      "FlowName": "CG_Portal_Daily_Sweep",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+      "FlowName": "CG_Registry_Status_Notifier",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 4,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:b6d92bae-591e-fa1e-52eb-b350cad988a7",
+      "FlowName": " DGSO INCOMING AI PROCESSING",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 1,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+      "FlowName": "Folio_Failure_Watch",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 2,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "FlowName": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 5,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": "Medium",
+          "because": "writes or reads 5 SharePoint lists; no contract key calls it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "FlowName": "IP_FETCH_ALL_BOOTSTRAP",
+      "alsoKnownAs": [],
+      "identity": "export only — no register record",
+      "servesContractKeys": [],
+      "listsTouched": 9,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": "Medium",
+          "because": "writes or reads 9 SharePoint lists; no contract key calls it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:a942d230337c4ddfa9a386e92bbd048b",
+      "FlowName": "IP_Create_Email_Assignment",
+      "alsoKnownAs": [
+        "IP_Create_Email_Assignment_Endpoint"
+      ],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:9bca499081814c25a1715054ac8466b2",
+      "FlowName": "IP_DGO_OTP_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:df90ba34cb494ba59700ec60f39590a1",
+      "FlowName": "IP_Subsidiary_Actions_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:aa662769f13a4666bfadf3039cd8d247",
+      "FlowName": "FETCH_ALL",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [
+        "FETCH_ALL"
+      ],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": "High",
+          "because": "serves contract key FETCH_ALL — the platform cannot answer that call without it",
+          "status": "PROPOSED — ratify or override"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:c8033987b2d94fa3bec8c71f609cd71e",
+      "FlowName": "DOC INFO UPDATE",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:27272c09bb4a4cc2985134310c080bab",
+      "FlowName": "IP_Single_Assignment_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:9464c917ef7c409a882736464a66da6b",
+      "FlowName": "IP_Bulk_Assignment_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:90235520ba464495bbd81871055408f4",
+      "FlowName": "IP_Global_Actions_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:cf1e66eb8ac2460794b7f683d9aa8ac0",
+      "FlowName": "CG_Status_Check_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:ee627334d2e34ba7ac1b899bdb3ff2d0",
+      "FlowName": "CG_Verification_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:2569134db3514e838594319ea8e2a4a9",
+      "FlowName": "CG_Verification_Confirmation_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:91292a0347d443619316b3d0118462f2",
+      "FlowName": "CG_Writeback_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:8f948e0a298b493b8c56fae2b37397bf",
+      "FlowName": "CG_Support_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Public Portal",
+          "because": "name begins CG_ — the portal endpoints, per the endpoint atlas",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:20e6340941ce4b1bbb87b43c9102a777",
+      "FlowName": "IP_Fetch_Email_Attachment",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:6b3bad3005b44bf6bced0f8074d3f2ed",
+      "FlowName": "IP_Create_Task",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:0c2497d2b9884412b4ead9eb94f8da0d",
+      "FlowName": "RE-ALIGNMENT-DOCUMENT_INCOMING_CORRESPONDENCE_PROCESSING",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:84f062159fe9422eb0195c251ca285b8",
+      "FlowName": "EDTMS NITDA_Update_Task (Resolution)",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:3bd7208d65b541539b2c206239e7790a",
+      "FlowName": "HtTP_Create_New_Document_metadata_and_watermark",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:c43388639d14452faef4ca3042a95b23",
+      "FlowName": "Deployed Bulk Task Assignment_Create Task",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:62b0802c45a7477da46e05278fcd7f2f",
+      "FlowName": "Fetch_Users_Categories_Departments_Data_Sync",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:ff455c68e9ac493e858fb984bcfd01fb",
+      "FlowName": "Fetch_References_and_Lookups_Data",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:818ec4053f1e4f0b87845114241d8b74",
+      "FlowName": "Get Docs",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:37642ba3597f4cf58288cc71b5e6b519",
+      "FlowName": "fetch tasks",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:3931e2ff995242b6b2c920c8b2209797",
+      "FlowName": "get emails",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:7e71fffe770a45ccb93bf216bb53786e",
+      "FlowName": "bulk Assign direct",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins BULK — bulk operations on the internal platform",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:1154b50e1d17420dadb3b012e7e2a02c",
+      "FlowName": "optimized bulk assign",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:8f6a40a682bb4e79acd2ac5d42f15705",
+      "FlowName": "IP_Bulk_Assign_Endpoint",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "Internal Platform",
+          "because": "name begins IP_ — the internal platform's own prefix",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:85c556f10b8244ba9d839a2ebe240b91",
+      "FlowName": "FETCH_ACTIVITIES",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:bc83d98acf474a088832d78f50085388",
+      "FlowName": "DYNAMIC_ACTIONS",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:fe794e0139784ac694768e5a716e0be7",
+      "FlowName": "AI_EMAIL_ANALYSIS",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "AI Processing",
+          "because": "name marks it an AI processing flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:a13c8b577bd44f8787c50d095ea3faf9",
+      "FlowName": "AI_CHAT",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": "AI Processing",
+          "because": "name marks it an AI processing flow",
+          "status": "PROPOSED — ratify or override"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:314aaf27593147089b38322e5ca25936",
+      "FlowName": "OTP_GENERATE",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    },
+    {
+      "RegistryKey": "DGO:c5e314c768b54bdc89350954ef6a256d",
+      "FlowName": "OTP_VERIFY",
+      "alsoKnownAs": [],
+      "identity": "register only — no exported definition",
+      "servesContractKeys": [],
+      "listsTouched": 0,
+      "proposals": {
+        "SystemName": {
+          "proposed": null,
+          "because": "no naming rule matches",
+          "status": "NEEDS A PERSON"
+        },
+        "Criticality": {
+          "proposed": null,
+          "because": "no contract key calls it and it touches fewer than five lists",
+          "status": "NEEDS A PERSON"
+        },
+        "TechnicalOwnerEmail": {
+          "proposed": null,
+          "because": "not derivable from any repository",
+          "status": "NEEDS A PERSON"
+        },
+        "LastSeenUtc": {
+          "proposed": null,
+          "because": "an observation, not a decision",
+          "status": "NEEDS A RUN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Subject: Decision on {{referenceId}}: {{decision}}
+Preview: The request you raised has been decided.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✕ Not approved
+
+Your request has been decided
+=============================
+
+The request you raised has been decided.
+
+Dear {{recipientName}},
+
+The request you raised has been {{decision}}.
+
+Reference
+
+{{referenceId}}
+
+Decision
+
+Request: {{title}}
+
+Decision: {{decision}}
+
+Decided by: {{actorName}}
+
+Minute: {{minute}}
+
+Open Folio to see the decision record.
+
+See the decision in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

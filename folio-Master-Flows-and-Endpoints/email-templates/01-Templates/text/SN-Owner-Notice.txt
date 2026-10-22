@@ -1,0 +1,41 @@
+Subject: FastTrack notice: {{referenceId}} — {{title}}
+Preview: A record you own has been fast-tracked.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ FastTrack
+
+A record you own needs attention
+================================
+
+A record you own has been fast-tracked.
+
+Dear {{recipientName}},
+
+{{actorName}} has raised a FastTrack notice on the record below.
+
+Reference
+
+{{referenceId}}
+
+Record
+
+Task: {{title}}
+
+Due: {{dueDate}}
+
+FastTrack status: {{risk}}
+
+Escalation level: L{{level}}
+
+Open Folio to act on it.
+
+Open the record in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

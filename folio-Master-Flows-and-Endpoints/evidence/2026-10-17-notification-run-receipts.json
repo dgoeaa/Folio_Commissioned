@@ -1,0 +1,142 @@
+{
+  "readUtc": "2026-10-17T23:40:00Z",
+  "by": "Flow API run history (registry account): every run since 2026-10-15 of the seven flows below, and each succeeded receipt-writing step (Create_*_Receipt) with its inputs and created item id. Recipients masked; no message body, code or URL recorded.",
+  "flowsRead": [
+    "CG_Submission_Endpoint (de9ef13b)",
+    "CG_Registry_Status_Notifier (8ebf6001)",
+    "CG_Portal_Writeback_Endpoint (bde13d27)",
+    "CG_Portal_Verification_Endpoint (ba47f79b)",
+    "BULK_ASSIGNMENT (5aab9e61)",
+    "IP_OTP_GENERATE (e5632336)",
+    "CG_Portal_Support_Endpoint (4873c936)"
+  ],
+  "receipts": [
+    {
+      "flow": "CG_Registry_Status_Notifier (8ebf6001-89cd-49c9-a9b6-4dedb9a5768b)",
+      "run": "08584094197415345084091523758CU19",
+      "step": "Create_Send_Status_ActionRequired_Email_Receipt",
+      "writtenUtc": "2026-10-16T21:45:48.2019894Z",
+      "receiptItem": 1451,
+      "messageType": "status-actionrequired",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "CG_Portal_Writeback_Endpoint (bde13d27-73b3-4e1a-9687-eb289b039c7a)",
+      "run": "08584093997715877388742240085CU15",
+      "step": "Create_Send_Citizen_Withdraw_Email_Receipt",
+      "writtenUtc": "2026-10-17T03:18:57.1420712Z",
+      "receiptItem": 1460,
+      "messageType": "citizen-withdraw",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "CG_Portal_Writeback_Endpoint (bde13d27-73b3-4e1a-9687-eb289b039c7a)",
+      "run": "08584093997715877388742240085CU15",
+      "step": "Create_Send_Writeback_Alert_Email_Receipt",
+      "writtenUtc": "2026-10-17T03:18:55.3006008Z",
+      "receiptItem": 1459,
+      "messageType": "writeback-alert",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "CG_Portal_Verification_Endpoint (ba47f79b-a831-49e8-b00b-3f8937c331df)",
+      "run": "08584093998325985794883261776CU14",
+      "step": "Create_Send_Verification_Code_Email_Receipt",
+      "writtenUtc": "2026-10-17T03:17:37.853054Z",
+      "receiptItem": 1458,
+      "messageType": "verification-code",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "CG_Portal_Verification_Endpoint (ba47f79b-a831-49e8-b00b-3f8937c331df)",
+      "run": "08584094200686983368585848949CU12",
+      "step": "Create_Send_Verification_Code_Email_Receipt",
+      "writtenUtc": "2026-10-16T21:40:21.6364865Z",
+      "receiptItem": 1447,
+      "messageType": "verification-code",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "IP_OTP_GENERATE (e5632336-641f-4b9b-bd93-99185b5eb975)",
+      "run": "08584093266732431312597840583CU10",
+      "step": "Create_Send_an_email_(V2)_Receipt",
+      "writtenUtc": "2026-10-17T23:36:54.1419883Z",
+      "receiptItem": 1484,
+      "messageType": "an-email-v2",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "IP_OTP_GENERATE (e5632336-641f-4b9b-bd93-99185b5eb975)",
+      "run": "08584093356529176797288659718CU23",
+      "step": "Create_Send_an_email_(V2)_Receipt",
+      "writtenUtc": "2026-10-17T21:07:14.838173Z",
+      "receiptItem": 1480,
+      "messageType": "an-email-v2",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "IP_OTP_GENERATE (e5632336-641f-4b9b-bd93-99185b5eb975)",
+      "run": "08584094225190256799778187701CU29",
+      "step": "Create_Send_an_email_(V2)_Receipt",
+      "writtenUtc": "2026-10-16T20:59:28.9555324Z",
+      "receiptItem": 1390,
+      "messageType": "an-email-v2",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng"
+    },
+    {
+      "flow": "CG_Submission_Endpoint (de9ef13b-ae4c-42b0-9afa-20e71a180759)",
+      "run": "08584094198263186611340344930CU12",
+      "step": "Send_Sender_Acknowledgement_Email / Create_Send_Sender_Acknowledgement_Email_Receipt",
+      "writtenUtc": "2026-10-16T21:44:38Z",
+      "receiptItem": 1448,
+      "messageType": "sender-acknowledgement",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "subject": "Submission received — reference NITDA-2026-00020"
+    },
+    {
+      "flow": "CG_Submission_Endpoint (de9ef13b-ae4c-42b0-9afa-20e71a180759)",
+      "run": "08584094198263186611340344930CU12",
+      "step": "Send_Registry_Alert_Email / Create_Send_Registry_Alert_Email_Receipt",
+      "writtenUtc": "2026-10-16T21:44:38Z",
+      "receiptItem": 1449,
+      "messageType": "registry-alert",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "subject": "New submission NITDA-2026-00020 · General Correspondence"
+    },
+    {
+      "flow": "BULK_ASSIGNMENT (5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06)",
+      "run": "08584094203045371253347598881CU15",
+      "step": "Send_an_email_(V2)_Main_5 (repetition 000000) / Create_Send_an_email_(V2)_Main_5_Receipt",
+      "writtenUtc": "2026-10-16T21:36:32Z",
+      "receiptItem": 1446,
+      "messageType": "an-email-v2-main-5",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "ccMasked": "d*********y@nitda.gov.ng",
+      "subject": "22721 -2026-10-16 -UNIVERSAL_FILENAME_POLICY_ONE_PAGE_MEMO.PDF",
+      "note": "commissioning hold: assignee (To), supporting and copy-to (Cc) all resolved to the registry mailbox"
+    },
+    {
+      "flow": "IP_SEND_EMAIL (df59a69f-92ca-4554-ae68-6b464aa73ef7)",
+      "run": "08584094204196932796754679092CU16",
+      "step": "Send_Email / Create_SendEmail_Receipt_Plain",
+      "writtenUtc": "2026-10-16T21:34:28Z",
+      "receiptItem": 1445,
+      "messageType": "send-email",
+      "status": "sent",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "subject": "ZTEST RN-024 report e-mail 2026-10-16"
+    }
+  ],
+  "correction": "2026-10-18: the first read listed only the first page of each run's steps. Read again with every page: CG_Submission_Endpoint, BULK_ASSIGNMENT and IP_SEND_EMAIL do write receipts for these sends; they are added below."
+}

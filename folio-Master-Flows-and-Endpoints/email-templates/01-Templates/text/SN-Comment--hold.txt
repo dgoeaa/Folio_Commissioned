@@ -1,0 +1,41 @@
+Subject: New comment on {{referenceId}} — {{title}}
+Preview: Someone has commented on a record you are working.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✉ New comment
+
+A comment has been added to your record
+=======================================
+
+Someone has commented on a record you are working.
+
+Commissioning: this notice is for {{intendedName}} <{{intendedEmail}}>. It comes to the registry until StaffNoticeDelivery.recipients is staff.
+
+Dear {{recipientName}},
+
+{{actorName}} has commented on the record below, which is assigned to you.
+
+{{actorName}} wrote
+
+“{{comment}}”
+
+Record
+
+Reference: {{referenceId}}
+
+Task: {{title}}
+
+Comment by: {{actorName}}
+
+Open Folio to read the thread and reply.
+
+Reply in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

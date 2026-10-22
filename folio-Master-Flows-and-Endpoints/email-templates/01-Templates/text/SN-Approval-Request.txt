@@ -1,0 +1,39 @@
+Subject: Approval requested: {{referenceId}} — {{title}}
+Preview: A request is waiting for your decision.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✉ Approval requested
+
+Your approval is requested
+==========================
+
+A request is waiting for your decision.
+
+Dear {{recipientName}},
+
+{{actorName}} has asked you to approve the request below. It stays pending until you decide it.
+
+Reference
+
+{{referenceId}}
+
+Request
+
+Request: {{title}}
+
+Summary: {{summary}}
+
+Raised by: {{actorName}}
+
+Open Folio and record your decision under Review & Approval.
+
+Decide in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

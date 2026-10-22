@@ -1,0 +1,190 @@
+{
+  "schema": "dgo-contract-key-flow-map/v1",
+  "recordedUtc": "2026-09-24",
+  "whatThisIs": "The contract key → Power Automate flow mapping, supplied by the platform owner on 2026-09-24 as the authoritative statement of which flow serves which key. It is the answer to GOV-06 from the side this repository could never reach: exports carry no workflow id, and the tenant capture of 2026-09-18 resolved only some keys. This resolves all 23; EMAIL was added on 2026-09-24 from the same authority, making 24.",
+  "authority": "Supplied by the platform owner. It is a statement of INTENT — expectedFlowName is the field's own word — and where it names a different flow from the one currently wired, the difference is a migration to be performed, not an error in either source. Those differences are enumerated in docs/folio-Master-Flows-and-Endpoints/reference/contract-key-flow-reconciliation.json rather than silently resolved in favour of one side.",
+  "howToUseIt": "For the flow a package should be installed into, this file governs. For what is serving traffic TODAY, docs/folio-Master-Flows-and-Endpoints/registers/endpoint-register.json and the tenant evidence govern. Where they disagree the reconciliation names it, and the reconciliation is the work list.",
+  "confidenceVocabulary": {
+    "EXACT_ALIAS": "the flow name matches the contract key's canonical name, allowing for the estate's known aliases",
+    "PROBABLE_ALIAS": "the name is close but not canonical; confirm against the trigger URL before installing",
+    "SHARED_CONTRACT_KEYS": "one flow serves several keys — here the three AI keys — so the key does not identify a flow on its own"
+  },
+  "counts": {
+    "keys": 24,
+    "distinctFlows": 22,
+    "internal": 17,
+    "portal": 7
+  },
+  "map": [
+    {
+      "sequence": 1,
+      "contractKey": "FETCH_ALL",
+      "expectedFlowName": "IP_FETCH_ALL__EXTENDED_ENDPOINT",
+      "flowId": "ce2cbed8-d180-4160-a0c7-f552101bc412",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 2,
+      "contractKey": "GET_DOCS",
+      "expectedFlowName": "IP_Get_Docs_Endpoint",
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 3,
+      "contractKey": "REFERENCE_DATA",
+      "expectedFlowName": "IP_Reference_Data_Endpoint",
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 4,
+      "contractKey": "FETCH_EMAIL_ATTACHMENTS",
+      "expectedFlowName": "IP_Retrieve_Email_Attachment_Endpoint",
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 5,
+      "contractKey": "SUBSIDIARY_ACTIONS",
+      "expectedFlowName": "IP_Subsidiary_Actions_Endpoint",
+      "flowId": "08da1783-927f-4662-a429-45e1249a989f",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 6,
+      "contractKey": "SINGLE_ASSIGNMENT",
+      "expectedFlowName": "IP_Single_Assignment_Endpoint",
+      "flowId": "05825db0-c806-4974-807c-c062f386cc41",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 7,
+      "contractKey": "BULK_ASSIGNMENT",
+      "expectedFlowName": "IP_Bulk_Assignment_Endpoint",
+      "flowId": "f96399c6-31d9-493a-a304-3fa8efda6ef8",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 8,
+      "contractKey": "BULK_ASSIGNMENT_DIRECT",
+      "expectedFlowName": "Deployed Bulk Task Assignment_Create Task",
+      "flowId": "122bb363-ddea-40c7-8578-d0d613a17bf7",
+      "mappingConfidence": "PROBABLE_ALIAS"
+    },
+    {
+      "sequence": 9,
+      "contractKey": "DYNAMIC_GLOBAL_ACTIONS",
+      "expectedFlowName": "IP_Dynamic_Global_Actions_Endpoint",
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 10,
+      "contractKey": "EMAIL_RELATED_TASK",
+      "expectedFlowName": "IP_Create_Email_Assignment_Endpoint",
+      "flowId": "2fbb5485-6244-46eb-8a38-48e443a1d9fb",
+      "mappingConfidence": "PROBABLE_ALIAS"
+    },
+    {
+      "sequence": 11,
+      "contractKey": "AI_CHAT",
+      "expectedFlowName": "AI_Document_Processing",
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "mappingConfidence": "SHARED_CONTRACT_KEYS"
+    },
+    {
+      "sequence": 12,
+      "contractKey": "AI_DOC_ANALYSIS",
+      "expectedFlowName": "AI_Document_Processing",
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "mappingConfidence": "SHARED_CONTRACT_KEYS"
+    },
+    {
+      "sequence": 13,
+      "contractKey": "AI_EMAIL_ANALYSIS",
+      "expectedFlowName": "AI_Document_Processing",
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "mappingConfidence": "SHARED_CONTRACT_KEYS"
+    },
+    {
+      "sequence": 14,
+      "contractKey": "OTP_GENERATE",
+      "expectedFlowName": "IP_OTP_Endpoint",
+      "flowId": "913bd078-5411-404f-85ac-507c10fe1a09",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 15,
+      "contractKey": "OTP_VERIFY",
+      "expectedFlowName": "IP_OTP_VERIFY",
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 16,
+      "contractKey": "SCAN_INTAKE",
+      "expectedFlowName": "IP_SCAN_INTAKE_Endpoint_v2.1",
+      "flowId": "12b6e690-a065-468d-b470-fcfba015f1f8",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 17,
+      "contractKey": "CG_Status_Check",
+      "expectedFlowName": "CG_Portal_Status_Check_Endpoint",
+      "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 18,
+      "contractKey": "CG_Verification",
+      "expectedFlowName": "CG_Verification_Endpoint",
+      "flowId": "86897b2f-9770-4efa-8486-2642f24bb947",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 19,
+      "contractKey": "CG_Verification_Confirmation",
+      "expectedFlowName": "CG_Portal_Verification_Confirmation_Endpoint",
+      "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 20,
+      "contractKey": "CG_Submission",
+      "expectedFlowName": "CG_Submission_Endpoint",
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 21,
+      "contractKey": "CG_Support",
+      "expectedFlowName": "CG_Portal_Support_Endpoint",
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 22,
+      "contractKey": "CG_Writeback",
+      "expectedFlowName": "CG_Portal_Writeback_Endpoint",
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 23,
+      "contractKey": "CG_Upload",
+      "expectedFlowName": "CG_Upload_Endpoint",
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "mappingConfidence": "EXACT_ALIAS"
+    },
+    {
+      "sequence": 24,
+      "contractKey": "EMAIL",
+      "expectedFlowName": "IP_SEND_EMAIL",
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "mappingConfidence": "EXACT_ALIAS",
+      "addedUtc": "2026-09-24",
+      "addedNote": "Not in the platform owner's mapping of 2026-09-24, which covered 23 keys. Added on the owner's instruction of the same day, after two candidate packages were supplied and compared: see docs/folio-Master-Flows-and-Endpoints/deployment/internal/evidence/2026-09-24-email-flow-adoption.json. The flow id is the one the endpoint register and the tenant reading already agreed on."
+    }
+  ]
+}

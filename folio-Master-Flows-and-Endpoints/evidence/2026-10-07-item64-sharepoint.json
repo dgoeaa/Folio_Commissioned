@@ -1,0 +1,147 @@
+{
+  "schema": "folio-live-operation/v1",
+  "item": "ITEM-64",
+  "dateUtc": "2026-10-07",
+  "account": "dgsRegistry (SharePoint REST, Sites.FullControl.All)",
+  "target": {
+    "site": "https://nitdanigeria.sharepoint.com/sites/DGO_ECM_GOVERNANCE",
+    "list": "DGO_SessionProofs",
+    "listId": "444102d6-2c29-45cf-8b59-52774d7c4dd4",
+    "itemCount": 0
+  },
+  "authority": "Owner decision, Final Closure Decisions: create the five columns with exact internal names and index Title; specification docs/reference/internal-proof-ledger.json",
+  "backup": {
+    "fields": [
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "Title",
+        "Required": false,
+        "TypeAsString": "Text"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "ContentType",
+        "Required": false,
+        "TypeAsString": "Computed"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "Attachments",
+        "Required": false,
+        "TypeAsString": "Attachments"
+      }
+    ]
+  },
+  "writes": [
+    {
+      "op": "createfieldasxml",
+      "field": "Email",
+      "status": 200
+    },
+    {
+      "op": "createfieldasxml",
+      "field": "Purpose",
+      "status": 200
+    },
+    {
+      "op": "createfieldasxml",
+      "field": "ExpiresAtUtc",
+      "status": 200
+    },
+    {
+      "op": "createfieldasxml",
+      "field": "CreatedAtUtc",
+      "status": 200
+    },
+    {
+      "op": "createfieldasxml",
+      "field": "Consumed",
+      "status": 200
+    },
+    {
+      "op": "MERGE field Title",
+      "set": {
+        "Indexed": true,
+        "Required": true
+      },
+      "status": 204
+    }
+  ],
+  "readBack": {
+    "fields": [
+      {
+        "DefaultValue": null,
+        "Indexed": true,
+        "InternalName": "Title",
+        "Required": true,
+        "TypeAsString": "Text"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "Email",
+        "Required": true,
+        "TypeAsString": "Text"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "Purpose",
+        "Required": true,
+        "TypeAsString": "Text"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "ExpiresAtUtc",
+        "Required": true,
+        "TypeAsString": "DateTime",
+        "DisplayFormat": 1
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "CreatedAtUtc",
+        "Required": true,
+        "TypeAsString": "DateTime",
+        "DisplayFormat": 1
+      },
+      {
+        "DefaultValue": "0",
+        "Indexed": false,
+        "InternalName": "Consumed",
+        "Required": true,
+        "TypeAsString": "Boolean"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "ContentType",
+        "Required": false,
+        "TypeAsString": "Computed"
+      },
+      {
+        "DefaultValue": null,
+        "Indexed": false,
+        "InternalName": "Attachments",
+        "Required": false,
+        "TypeAsString": "Attachments"
+      }
+    ]
+  },
+  "result": "All five columns present with the specified internal names, types and required flags (DateTime DisplayFormat 1 = date and time; Consumed default 0). Title indexed and required.",
+  "relatedRead": {
+    "item": "G-04",
+    "list": "Flow Configuration 9bc168c3-06e5-4d58-982b-0df06205fd35 (NITDADGO-EAAACTIVITYTRACKING)",
+    "row": {
+      "Id": 67,
+      "Title": "IDENTITY_PROOF_REQUIRED",
+      "ConfigValue": "IDENTITY_PROOF_REQUIRED",
+      "Modified": "2026-10-07T01:51:27Z"
+    },
+    "reading": "The packages switch on equals(toLower(trim(ConfigValue)),'true'). ConfigValue holds the key name, not true, so every flow runs with the switch OFF: the required posture until OTP_VERIFY is written."
+  }
+}

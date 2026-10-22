@@ -1,0 +1,33 @@
+{
+  "foundUtc": "2026-09-04",
+  "found": "while writing the cutover test plan for ITEM-43",
+  "summary": "The platform and the OTP flow do not speak the same protocol. Neither the dispatch value nor the field placement matches, so the flow's Switch matches no case and no OTP path runs.",
+  "notCausedByTheCutover": "Web - OTP Verify switches on the same two case values, so this mismatch exists today and is not introduced by pointing at IP_OTP_VERIFY. It is consistent with ITEM-2: no flow has ever been executed against the tenant, so nothing has ever exercised this.",
+  "theMismatch": [
+    {
+      "axis": "dispatch value",
+      "clientSends": "action: \"otpGenerate\" / \"otpVerify\"  — config/endpoints.config.js:79-80, emitted by core/data-client.js:28",
+      "flowExpects": "action: \"generate\" / \"verify\"  — Scope_Global/Switch cases in both flows",
+      "result": "the Switch matches neither case"
+    },
+    {
+      "axis": "field placement",
+      "clientSends": "everything nested under payload: { action, payload: { operation, email, code }, requestId, timestamp } — core/data-client.js:28 takes the nested branch because options.flatPayload is never set for these contracts",
+      "flowExpects": "top level: triggerBody()?['identifier'] (Case_Generate writes item/Title from it directly, with no coalesce), and triggerBody()?['otp_code'] for the code",
+      "result": "even with the dispatch value corrected, identity and code would read as empty"
+    },
+    {
+      "axis": "field names",
+      "clientSends": "email, code  — core/otp-identity.js:90 and :119",
+      "flowExpects": "identifier | userEmail | id | device.id, and otp_code",
+      "result": "no overlap at all on the code; email overlaps nothing the generate path reads"
+    }
+  ],
+  "howItFails": "loudly, not silently. The fresh build starts varStatusCode at 500 and the Response returns @coalesce(variables('varStatusCode'), 500), so an unmatched request answers 500 rather than a misleading 200.",
+  "consequenceForITEM43": "The cutover should still proceed: it closes a live authentication bypass and an open mail relay on the old flow, and this mismatch is present either way. But the four tests in BUILD.md and CUTOVER.md cannot be run through the platform, because the platform cannot currently reach either OTP path. They must be run as direct calls in the flow's own protocol.",
+  "alsoFound": {
+    "hardcodedRecipient": "Case_Generate's Send_an_email_(V2) sends to the literal dgsregistry@nitda.gov.ng, not to the requester. The code is mailed to the registry mailbox and never reaches the person asking for it, so 'generate for A, read A's inbox' does not describe what happens.",
+    "titleWithoutCoalesce": "Case_Generate writes item/Title from triggerBody()?['identifier'] with no fallback, while Case_Verify's identity uses a four-way coalesce. A caller who sends userEmail rather than identifier writes an empty Title, and the verify lookup — which binds on Title — can then never match it."
+  },
+  "whoMustDecide": "the reconciliation direction is a design decision: change the client to speak the flow's protocol, change the flow to speak the client's, or put a translation in one of them. It is not a defect with one correct fix."
+}

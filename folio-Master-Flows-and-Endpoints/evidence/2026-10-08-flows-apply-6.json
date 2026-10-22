@@ -1,0 +1,30 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "e0751d8f96c16da29968ee01e72fce6c5f862384",
+  "finishedUtc": "2026-10-08T16:04:15.289Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "d50a17244f1b84a2ead66326742f82fc98bc7a8598872ee9058cae51c227bd7f",
+          "liveHash": "d50a17244f1b84a2ead66326742f82fc98bc7a8598872ee9058cae51c227bd7f",
+          "fingerprint": "1a635ec0b0d1cb07",
+          "liveFingerprint": "1a635ec0b0d1cb07",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash d50a17244f1b…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

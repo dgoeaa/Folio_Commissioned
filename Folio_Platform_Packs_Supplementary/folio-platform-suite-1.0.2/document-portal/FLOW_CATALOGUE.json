@@ -1,0 +1,109 @@
+{
+  "catalogueFormat": "dgo.flow-catalogue/1",
+  "package": "dgo-document-portal",
+  "platform": "Public document portal",
+  "buildId": "77c26e7b4c3addb6",
+  "builtAt": "2026-01-01T00:00:00.000Z",
+  "posture": "demo",
+  "availableFlowsRetired": "availableFlows is empty, and that is the current correct state rather than a build fault. It carried the documented estate, whose trigger signatures ITEM-22 revoked: all 25 contract keys now resolve to different workflows than that corpus records. Listing those URLs here would ship dead bearer credentials inside a deliverable and offer them as flows to point a key at. For what the tenant actually holds — 25 keys across 20 workflows, and all 51 workflows in the environment, with every signature removed — read docs/folio-Master-Flows-and-Endpoints/registers/endpoint-register.json or open tools/admin-console.html.",
+  "howToRepoint": "To point a key at a different flow: find the flow in docs/folio-Master-Flows-and-Endpoints/registers/endpoint-register.json (or tools/admin-console.html), take its trigger URL from the flow's own trigger card in Power Automate — the register carries every URL complete except the signature, which it may never hold — write \"<PREFIX><KEY>=<url>\" into a values file (prefix PF_ENDPOINT_), and rebuild with `npm run package -- --values <file>`. There is no longer a fallback: a key you do not supply ships unprovisioned and says so.",
+  "provisioned": [
+    {
+      "key": "SUBMISSION",
+      "transport": "json",
+      "pilot": true,
+      "actions": [
+        "CREATE"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "UPLOAD",
+      "transport": "bytes",
+      "pilot": true,
+      "actions": [
+        "(raw PUT)"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "STATUS",
+      "transport": "json",
+      "pilot": false,
+      "actions": [
+        "TRACK"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "SUPPORT",
+      "transport": "json",
+      "pilot": false,
+      "actions": [
+        "CREATESUPPORTREQUEST"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "VERIFY",
+      "transport": "json",
+      "pilot": false,
+      "actions": [
+        "otpGenerate"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "VERIFY_CONFIRM",
+      "transport": "json",
+      "pilot": false,
+      "actions": [
+        "otpVerify"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    },
+    {
+      "key": "WRITEBACK",
+      "transport": "json",
+      "pilot": false,
+      "actions": [
+        "respond",
+        "note",
+        "withdraw"
+      ],
+      "url": null,
+      "workflowId": null,
+      "flow": null,
+      "source": "not provisioned",
+      "alternates": []
+    }
+  ],
+  "availableFlows": [],
+  "availableFlowCount": 0,
+  "unwiredFlowCount": 0,
+  "unavailable": {}
+}

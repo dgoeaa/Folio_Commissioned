@@ -1,0 +1,53 @@
+Subject: Invitation: {{LetterTitle}} — {{EventDate}}
+Preview: The {{Organisation}} invites you, or a senior representative.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+✉ Invitation
+
+{{LetterTitle}}
+===============
+
+{{EventDate}} · {{EventTime}} · {{Venue}}
+
+Ref {{Reference}}: Date of letter {{Date}}
+
+{{Addressee}}
+
+{{Institution}}
+
+{{Salutation}},
+
+The {{Organisation}} has the honour to invite {{Addressee}}, or a senior representative, to the {{LetterTitle}}.
+
+Event
+
+Event date: {{EventDate}}
+
+Time: {{EventTime}}
+
+Venue: {{Venue}}
+
+{{Message}}
+
+The formal letter of invitation is attached. Kindly confirm attendance by replying to this email.
+
+Please accept the assurances of the highest regards of the {{SenderOffice}}.
+
+Yours faithfully,
+
+{{SenderName}}
+
+{{SenderTitle}}
+
+{{SenderOffice}}, {{Organisation}}
+
+{{SenderEmail}} · {{SenderPhone}}
+
+You received this letter because your organisation is on the Agency's correspondence list. Replies to this e-mail reach the {{SenderOffice}}.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

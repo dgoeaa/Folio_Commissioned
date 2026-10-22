@@ -1,0 +1,39 @@
+{
+  "schema": "folio-live-operation/v1",
+  "item": "ITEM-82",
+  "dateUtc": "2026-10-07",
+  "authority": "Owner decision (2026-10-07): OTP generation and OTP verification run on separate flows. Owner approval (2026-10-07): IP_OTP_GENERATE is the only exception to the Final Closure Decisions rule of no new flow or endpoint before commissioning, limited to the changes unavoidable for its implementation and operation.",
+  "account": "dgsRegistry (Flow Management API)",
+  "operation": "create flow",
+  "derivation": {
+    "source": "IP_OTP_VERIFY 4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61, live definition read 2026-10-07 (release 3, written 20:44 UTC)",
+    "change": "Scope_Global/Switch/Case_Verify removed, with the connections only it used; trigger, variables, connections and every other step unchanged",
+    "problems": []
+  },
+  "sent": {
+    "displayName": "IP_OTP_GENERATE",
+    "state": "Started",
+    "scopeFingerprint": "04e2516acc364e03"
+  },
+  "createStatus": 201,
+  "created": {
+    "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+    "workflowId": "741465e483714d48a07e336eb4571b89",
+    "triggerSignatureLength": 43,
+    "signedUrl": "held outside git, handed to the owner privately"
+  },
+  "readBack": {
+    "status": 200,
+    "displayName": "IP_OTP_GENERATE",
+    "state": "Started",
+    "scopeFingerprint": "04e2516acc364e03",
+    "connections": {
+      "shared_sharepointonline": "3f1943c5955a4cb8b301e8f22f2b590d",
+      "shared_office365": "c0b9e7a5b0854c39a435fd8ce92f48ad"
+    },
+    "trigger": "POST",
+    "matches": true
+  },
+  "liveCall": "Not made from the session: its network policy refuses the trigger host (proxy 403). The end-to-end check is the owner's Folio sign-in once OTP_GENERATE points at this flow.",
+  "result": "Created, Started, and read back: the stored Scope_Global has the fingerprint sent; connections SharePoint 3f1943c5 and Office 365 c0b9e7a5 (dgsregistry@nitda.gov.ng); trigger POST."
+}

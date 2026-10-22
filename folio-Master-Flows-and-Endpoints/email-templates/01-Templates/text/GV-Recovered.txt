@@ -1,0 +1,29 @@
+Subject: [CLEARED] {{flowName}} | {{registryKey}}
+Preview: The monitored flow {{flowName}} has returned to a compliant operating state.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+✓ Closed · Normal
+
+Governance exception cleared
+============================
+
+The monitored flow {{flowName}} has returned to a compliant operating state.
+
+Resolved exception
+
+Registry key: {{registryKey}}
+
+Exception type: {{exceptionType}}
+
+Resolved UTC: {{nowUtc}}
+
+Open registry record: {{registryRecordUrl}}
+
+DGO Digital Operations · Governance Registry. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

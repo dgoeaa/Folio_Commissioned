@@ -1,0 +1,27 @@
+{
+  "readUtc": "2026-10-17",
+  "by": "a browser on this session (after the owner allowed activityweb.page.gd), the repository and today's private builds",
+  "workspace": {
+    "host": "https://folio-gateway.rf.gd",
+    "uploadedBy": "owner, 2026-10-17 (build of 2026-10-17)",
+    "check": "core/staff-notice-service.js, config/notification-delivery.config.js (StaffNoticeDelivery) and modules/bulk-assignment.js with {flatPayload:true} are served: the upload carries ITEM-51 and the bulk-assignment fix"
+  },
+  "portal": {
+    "host": "https://activityweb.page.gd (owner, 2026-10-17)",
+    "finding": "The Portal served there is an older version (branded 'NITDA Intelligent Portal'; js/core.js lacks setReference and referenceFor). Of 32 Portal files, 13 match the repository and 17 differ, and 2 are absent (ds/tokens/tokens.platforms.css, manifest.webmanifest). Today's Portal package (built to a CG/ folder) is not at folio-gateway.rf.gd/CG/ either, so the 10 October Portal package is not live at either address.",
+    "action": "a root-level Portal package for activityweb.page.gd built from today's build (FOLIO-PORTAL-upload-to-activityweb-root.zip, 47 files, 7 endpoint addresses) handed to the owner 2026-10-17",
+    "serviceWorker": "the host answers the browser's service-worker script request with its bot-challenge HTML (the page itself receives sw.js as application/javascript), so the Portal's offline shell cannot register on this host; the Portal works online. Host limitation, not a code defect.",
+    "browserSuite": {
+      "command": "DGO_BASE_URL=https://activityweb.page.gd DGO_PORTAL_PREFIX='' npx playwright test tests/portal.spec.js",
+      "result": "12 passed, 13 not applicable to a configured deployment (demonstration records or stubbed endpoints; they pass locally on the same files), 5 failed: each page's console reports the service-worker registration refused by the host",
+      "rerun": "after the owner uploads the current Portal"
+    }
+  },
+  "arrival": {
+    "item": "ITEM-66",
+    "basis": "owner decision 2026-10-16: the owner confirms arrival in the registry mailbox and that no non-delivery report came back",
+    "ownerEvidence": "three screenshots of the registry mailbox (Outlook, 17 Oct 22:00 WAT) supplied by the owner",
+    "seen": ["Action required on your submission NITDA-2026-00020", "New submission NITDA-2026-00020", "Submission received — reference NITDA-2026-00020", "Your NITDA portal verification code (16 Oct and 17 Oct)", "Withdrawn at the request of the submitter · NITDA-2026-00020", "22721 -2026-10-16 -UNIVERSAL_FILENAME_POLICY_ONE_PAGE_MEMO.PDF (bulk assignment notice)", "ZTEST RN-024 report e-mail 2026-10-16", "[For Registry (commissioning test)] Delegated to you", "[For Registry (commissioning test)] Escalated (level 1)", "flow run records and GOV notifications"],
+    "nonDeliveryReports": "none visible"
+  }
+}

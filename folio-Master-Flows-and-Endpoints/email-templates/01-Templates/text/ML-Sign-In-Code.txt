@@ -1,0 +1,29 @@
+Subject: Your DGO Correspondence Mailer sign-in code
+Preview: It works once, for {{codeMinutes}} minutes.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+Sign-in code
+
+Your sign-in code for the DGO Correspondence Mailer
+===================================================
+
+It works once, for {{codeMinutes}} minutes.
+
+Your sign-in code for the DGO Correspondence Mailer is:
+
+{{code}}
+
+Requested for: {{email}}
+
+Valid for: {{codeMinutes}} minutes, one use
+
+If you did not ask for it, ignore this message: nobody can sign in without the code.
+
+You received this because someone asked to sign in to the DGO Correspondence Mailer with this address. Internal: for NITDA staff only.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

@@ -1,0 +1,70 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "e0751d8f96c16da29968ee01e72fce6c5f862384",
+  "finishedUtc": "2026-10-08T16:38:36.108Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+      "flow": "Single_Task_Assignment",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458",
+          "file": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "5cd524c3a83c8a4e3f7438ea8188a325a2d6a51aa40a0cd53793de8858c54344",
+          "liveHash": "5cd524c3a83c8a4e3f7438ea8188a325a2d6a51aa40a0cd53793de8858c54344",
+          "fingerprint": "0d072673a437dd1e",
+          "liveFingerprint": "0d072673a437dd1e",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 5cd524c3a83c…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "flow": "BULK OPS DATA RETRIEVAL HTTP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61",
+          "file": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "6ec0f0d33fcdffef78dc633df5fab8ce560166600aa41d119704eefecbf719b7",
+          "liveHash": "6ec0f0d33fcdffef78dc633df5fab8ce560166600aa41d119704eefecbf719b7",
+          "fingerprint": "0d472af578618f07",
+          "liveFingerprint": "0d472af578618f07",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 6ec0f0d33fcd…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "be36f34701510fa22eab73ceeeb1509ab850a7248e9604d167462c3355a523a4",
+          "liveHash": "be36f34701510fa22eab73ceeeb1509ab850a7248e9604d167462c3355a523a4",
+          "fingerprint": "16c6f137b471e00b",
+          "liveFingerprint": "16c6f137b471e00b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash be36f3470151…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

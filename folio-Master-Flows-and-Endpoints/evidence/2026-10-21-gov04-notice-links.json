@@ -1,0 +1,11 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-21",
+  "flow": "04 - GOV - Audit HTTP Flow Registry",
+  "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+  "change": "docs/folio-Master-Flows-and-Endpoints/deployment/NOTICE_LINKS.md, GOV-04: the five registry alerts (Send_Stale_Owner_And_Governance_Alert, Send_Stale_Reminder_Or_Escalation, Send_Failure_Owner_And_Governance_Alert, Send_Failure_Reminder_Or_Escalation, Send_Recovery_Notification) link to https://folio-platform.page.gd/?notice=http-flow-registry&record=<Id> instead of the DGO_HTTPFlowRegistry list item; 'Open registry record' reads 'Open in the Folio Admin Suite'.",
+  "report": "The owner reported in session, 2026-10-21: \"The GOV 04 is updated\".",
+  "basis": "Owner report. No read-back from the recording session, which has no tenant sign-in. The flow's capture in captures/ predates the change and stays the tenant export it is until the next tenant read; npm run gov04:noticelinks (dry run) reads the live flow and reports `applied` when the change is there.",
+  "completes": "The last of the ten staff e-mail templates that linked to a SharePoint list or list item (release 42 covered the other five catalogue templates; evidence/2026-10-20-flows-check.json)."
+}

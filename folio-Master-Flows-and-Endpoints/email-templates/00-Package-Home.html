@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Folio E-mail Templates — Production Package</title>
+<link rel="stylesheet" href="02-Design-System/web/styles.css">
+<style>
+html,body{margin:0;background:#F5F4F4}
+a{color:#05583B}a:hover{color:#17B255}
+.page{min-height:100vh;display:flex;flex-direction:column;font-family:Verdana,Geneva,sans-serif;color:#373435}
+.hero{position:relative;overflow:hidden;background:#05583B;border-bottom:3px solid #17B255}
+.hero .wm{position:absolute;right:-48px;top:50%;transform:translateY(-50%);width:min(440px,62vw);opacity:.12;pointer-events:none}
+.wrap{max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding-left:clamp(18px,4vw,32px);padding-right:clamp(18px,4vw,32px)}
+.hero .wrap{position:relative;padding-top:clamp(22px,4vw,36px);padding-bottom:clamp(22px,4vw,36px);display:flex;flex-direction:column;gap:16px}
+.eyebrow{margin:0;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#C2EED2}
+h1{margin:0;color:#FFFFFF;font:700 clamp(28px,4.2vw,40px)/1.15 Outfit,'Segoe UI',Arial,sans-serif;letter-spacing:-.4px;text-wrap:balance;max-width:760px}
+.lead{margin:0;font-size:15px;line-height:24px;color:#EAF3EF;text-wrap:pretty;max-width:640px}
+.bar{background:#FFFFFF;border-bottom:1px solid #E8E6E7}
+.bar .wrap{padding-top:14px;padding-bottom:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.row.btns{gap:10px}
+.metrics{padding-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px}
+.hint{font-size:12px;color:var(--dgo-color-fg-muted,#5F5C5D)}
+.sec{padding-top:32px}
+.sec h2{margin:0 0 14px;font:700 22px/28px Outfit,'Segoe UI',Arial,sans-serif;color:#1B1A1A}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.tile{background:#FFFFFF;border:1px solid #E8E6E7;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:border-color .2s cubic-bezier(.2,0,0,1),box-shadow .2s cubic-bezier(.2,0,0,1)}
+.tile:hover{border-color:#CFE3D8;box-shadow:0 6px 24px rgba(5,88,59,.10);color:inherit}
+.tile b{font:700 17px/23px Outfit,'Segoe UI',Arial,sans-serif;color:#05583B}
+.tile span{font-size:13px;line-height:20px;color:#4A4849}
+.tile code{font-family:'Cascadia Mono',Consolas,'Courier New',monospace;font-size:12px;color:#5F5C5D}
+footer{margin-top:auto;padding-top:40px}
+footer .wrap{padding-top:20px;padding-bottom:32px;border-top:1px solid #E8E6E7;font-size:12px;line-height:18px;color:#5F5C5D}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <img class="wm" src="02-Design-System/assets/logos/nitda-infoweb-watermark-white.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <img src="../../../styles/dgo-design-system/brand/nitda/nitda-lockup-digital-white.png" alt="NITDA — National Information Technology Development Agency" style="width:168px;display:block">
+      <p class="eyebrow">Folio · DGO Digital Operations · Production package</p>
+      <h1>Folio E-mail Templates</h1>
+      <p class="lead">59 send-ready templates with fragments, plain-text versions, registers, integration changes and validation results. Release status: proposed, not deployed.</p>
+    </div>
+  </header>
+  <div class="bar"><div class="wrap">
+    <div class="row">
+      <span class="dgo-pill dgo-pill--info"><span class="dgo-pill__dot"></span>Proposed · not deployed</span>
+      <span class="dgo-pill dgo-pill--success"><span class="dgo-pill__dot"></span>18 external · NITDA</span>
+      <span class="dgo-pill dgo-pill--success"><span class="dgo-pill__dot"></span>41 internal · NITDA + DGO Digital Ops</span>
+    </div>
+    <div class="row btns">
+      <a class="dgo-btn dgo-btn--secondary" href="README.md">Read me</a>
+      <a class="dgo-btn dgo-btn--secondary" href="MANIFEST.md">Manifest</a>
+      <a class="dgo-btn dgo-btn--primary" href="00-Visual-Index.html">Open visual index →</a>
+    </div>
+  </div></div>
+  <main class="wrap">
+    <section class="metrics" aria-label="Package figures">
+      <div class="dgo-metric"><div class="dgo-metric__label">Templates</div><div class="dgo-metric__value dgo-tnum">59</div><div class="hint">32 designs, every variant</div></div>
+      <div class="dgo-metric"><div class="dgo-metric__label">Passing every check</div><div class="dgo-metric__value dgo-tnum">59 / 59</div><div class="hint">Lowest text contrast 4.86:1</div></div>
+      <div class="dgo-metric"><div class="dgo-metric__label">GAP rows closed</div><div class="dgo-metric__value dgo-tnum">46 / 46</div><div class="hint">Plus TR-108, TR-133, TR-143</div></div>
+      <div class="dgo-metric"><div class="dgo-metric__label">Placeholders kept</div><div class="dgo-metric__value dgo-tnum">582</div><div class="hint">Power Automate references unchanged</div></div>
+      <div class="dgo-metric"><div class="dgo-metric__label">Unique colour schemes</div><div class="dgo-metric__value dgo-tnum">59</div><div class="hint">0 shared ground and rule pairs</div></div>
+    </section>
+    <section class="sec">
+      <h2>Package contents</h2>
+      <div class="tiles">
+        <a class="tile" href="00-Visual-Index.html"><b>Visual index</b><span>Every template rendered offline, filterable by family, with its colour scheme and file links.</span><code>00-Visual-Index.html</code></a>
+        <a class="tile" href="01-Templates/email/CL-Official.html"><b>Templates</b><span>59 complete e-mail documents, 29 IP_SEND_EMAIL fragments and 59 plain-text versions.</span><code>01-Templates/</code></a>
+        <a class="tile" href="02-Design-System/email-design-system.md"><b>Design system</b><span>E-mail brand rules, hero schemes, tokens, logo masters, fonts and the web stylesheets this page uses.</span><code>02-Design-System/</code></a>
+        <a class="tile" href="03-Registers/template-catalogue.csv"><b>Registers</b><span>Catalogue, colour variants, Power Automate map, status register (268 rows) and file manifest, plus one Excel workbook.</span><code>03-Registers/</code></a>
+        <a class="tile" href="04-Validation/validation-report.md"><b>Validation</b><span>Every check, per-template results, mobile behaviour and client compatibility.</span><code>04-Validation/</code></a>
+        <a class="tile" href="06-Integration/repository-change-set.md"><b>Integration</b><span>Repository and flow changes for every finding, the frame hero lookup, and the design-system bundle fix.</span><code>06-Integration/</code></a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">National Information Technology Development Agency · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja · <a href="https://nitda.gov.ng">nitda.gov.ng</a></div></footer>
+</div>
+</body>
+</html>

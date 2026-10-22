@@ -1,0 +1,19 @@
+{
+  "recordedUtc": "2026-10-19T19:30:00Z",
+  "deployment": "https://folio-platform.page.gd, hold build (config/notification-delivery.config.js recipients 'registry', read from the deployed file 2026-10-19T19:15Z)",
+  "session": "registry account (systemAdmin); only IP_SEND_EMAIL (df59a69f) was allowed to be called; DYNAMIC_ACTIONS refused in the browser, so no record was written",
+  "RN-022": {
+    "action": "Dispatch screen, channel Email, recipient the registry mailbox, record COMMISSIONING-PROOF-RN022",
+    "route": "Correspondence Email Desk (saveDraft, sendDraft) to IP_SEND_EMAIL",
+    "run": "08584091700345693881613862855CU02, 2026-10-19T19:07:30Z, Succeeded",
+    "send": "Send_Email Succeeded, To d***@nitda.gov.ng (the registry mailbox), subject 'COMMISSIONING-PROOF-RN022 — RN-022 commissioning proof: dispatch by e-mail'",
+    "receipt": "Create_SendEmail_Receipt_Plain Succeeded (Portal Outbox Receipts)"
+  },
+  "RN-020": {
+    "action": "Comments screen, a comment on COMMISSIONING-PROOF-RN020, a record assigned to another officer",
+    "run": "08584091695603385166627758472CU24, 2026-10-19T19:15:25Z, Succeeded",
+    "send": "operation sendStaffNotice; held: To the registry mailbox, subject '[For h***i@nitda.gov.ng] New comment on COMMISSIONING-PROOF-RN020 — …'; the officer was not e-mailed (staff-notice hold, owner 2026-10-19)",
+    "receipt": "Create_SendEmail_Receipt_Plain Succeeded",
+    "screen": "the confirmation names the officer and says the notice went to the registry mailbox, staff not e-mailed until commissioning"
+  }
+}

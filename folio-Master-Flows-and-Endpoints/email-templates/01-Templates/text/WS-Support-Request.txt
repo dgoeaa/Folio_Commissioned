@@ -1,0 +1,49 @@
+Subject: [{{priority}}] Support request: {{categoryLabel}} — {{ref}}
+Preview: {{profile.name}} asked the support team for help from Folio.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+Support request · {{priority}}
+
+{{categoryLabel}}
+=================
+
+From {{profile.name}} · {{profile.email}}
+
+Message
+
+{{message}}
+
+Request
+
+Reference: {{ref}}
+
+Task: {{taskId}}
+
+Officer: {{profile.name}} · {{profile.persona}}
+
+Submitted at: {{at}}
+
+Context from Folio
+
+Screen: {{route}}
+
+Selected item: {{selectedId}}
+
+Last action: {{lastAction}}
+
+Last error: {{lastError}}
+
+Pending items: {{pendingStats.count}} ({{pendingStats.ack}} acknowledgements)
+
+Recent receipts: {{receipts}}
+
+Browser · online: {{userAgent}} · {{online}}
+
+Open the record in Folio: {{recordUrl}}
+
+Sent by Folio from the officer's "Ask the support team" request. Reply to the officer at {{profile.email}}. Internal: for NITDA staff only.
+
+National Information Technology Development Agency
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

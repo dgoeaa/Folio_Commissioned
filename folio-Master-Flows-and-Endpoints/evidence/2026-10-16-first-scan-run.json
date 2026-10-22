@@ -1,0 +1,44 @@
+{
+  "readUtc": "2026-10-16",
+  "readBy": "Flow API, signed in as dgsregistry@nitda.gov.ng",
+  "trigger": "The owner saved one PDF to /Scans/Incoming on the dgsregistry@nitda.gov.ng OneDrive.",
+  "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow (197527c8-e76c-4f7d-81b8-3cb5c88b1c6c)",
+  "run": "08584094695256120949208847112CU14",
+  "startedUtc": "2026-10-16T07:56:01Z",
+  "status": "Failed",
+  "legacyFlowFired": false,
+  "steps": {
+    "Get_Trigger_Document_Content": "Succeeded",
+    "Get_Trigger_Document_Metadata": "Succeeded: /Scans/Incoming/Submit a document — NITDA Document Portal.PDF, 215548 bytes",
+    "CREATE_SHARELINK_OF_TRIGGER_DOCUMENT": "Failed 404: Error occured while creating share link: The operation to break role inheritance failed because too many items have been shared in the library.",
+    "CREATE_MAIN_ITEM_IN_DDOPS": "Skipped",
+    "registry reference claim and library record": "Skipped",
+    "Gemini extraction": "Skipped",
+    "Send_an_email_(V2)": "Skipped",
+    "Update_item_3 (failure branch)": "Failed 404: no DGO DIGITAL OPS row to update"
+  },
+  "sideEffects": "None. No DGO DIGITAL OPS row, no library record, no registry number claimed, no e-mail sent, file not renamed.",
+  "finding": "The trigger, the folder and the file read work. The run stops at the per-file sharing link: the shareV2 call (type Edit, scope Anonymous, ITEM-73) must give the file its own permissions, and the registry OneDrive's document library has reached SharePoint's limit on separately shared items. No other adopted flow creates sharing links, so the shared items were created outside the platform. Any per-file link (Anonymous or Organization) needs the same new permission, so changing the link scope alone does not fix it.",
+  "ownerDecision": "2026-10-16 (owner): the new flow watches /E-DOCUMENT STATION, the folder the scanner already saves to, instead of the registry OneDrive. Reverses the 2026-10-07 and 2026-10-14 folder decisions.",
+  "switch": {
+    "utc": "2026-10-16T08:13Z",
+    "command": "node scripts/write-scan-processing-flow.mjs --folder <E-DOCUMENT STATION id> --folder-path \"/E-DOCUMENT STATION\" --onedrive-connection shared-onedriveforbu-eaffabe7-bad2-4b40-94a9-815a8e368fe9 --yes",
+    "order": "DGSO INCOMING AI PROCESSING (b6d92bae) stopped first (08:13:25Z, read back Stopped), then the new flow written, so no scan is processed by both.",
+    "write": 200,
+    "readBack": {
+      "state": "Started",
+      "modified": "2026-10-16T08:13:59Z",
+      "fingerprint": "17f3057e6a97b106",
+      "matchesPackage": true,
+      "trigger": "OnNewFilesV2 on drive b!KHjX..., folder 01VO7INW3K5GI43NF2UNEIAQWKRSWMRARB (/E-DOCUMENT STATION), the folder the legacy flow watched",
+      "connections": {
+        "shared_onedriveforbusiness": "shared-onedriveforbu-eaffabe7 (the legacy flow's trigger connection, which reaches the folder)",
+        "shared_sharepointonline": "3f1943c5 (registry)",
+        "shared_office365": "c0b9e7a5 (registry mailbox)"
+      }
+    },
+    "triggerPolls": "08:12, 08:13, 08:14, 08:15 UTC: Skipped / Accepted (polled, no new file, no error)",
+    "legacyFlow": "b6d92bae Stopped"
+  },
+  "remainingStep": "The next scan saved to /E-DOCUMENT STATION is processed by 197527c8: DGO DIGITAL OPS row, edit link, registry reference, one e-mail through the registry mailbox. Its run closes ITEM-80 and ITEM-67."
+}

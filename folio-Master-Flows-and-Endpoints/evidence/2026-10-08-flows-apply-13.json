@@ -1,0 +1,503 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "2cf8fa58a00b1d0c3d765c0ff581ea68ccf127e1",
+  "finishedUtc": "2026-10-08T17:49:59.767Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "flow": "CG_Submission_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUBMISSION__CG_Submission_Endpoint__de9ef13b",
+          "file": "SUBMISSION__CG_Submission_Endpoint__de9ef13b.paste.json",
+          "scope": "Scope_Submission_Flow",
+          "status": "APPLIED",
+          "packageHash": "970f07d3edc21c1264e4003966b36ccd83206eceeab24e54d35430804c21fe34",
+          "liveHash": "970f07d3edc21c1264e4003966b36ccd83206eceeab24e54d35430804c21fe34",
+          "fingerprint": "100cd429e380170b",
+          "liveFingerprint": "100cd429e380170b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 970f07d3edc2…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "flow": "CG_Portal_Support_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUPPORT__CG_Portal_Support_Endpoint__4873c936",
+          "file": "SUPPORT__CG_Portal_Support_Endpoint__4873c936.paste.json",
+          "scope": "Scope_Support_Flow",
+          "status": "APPLIED",
+          "packageHash": "c5df0efe7fdb555c613a797e6476d7f3db304f0ff044c18369a69dbb283b431d",
+          "liveHash": "c5df0efe7fdb555c613a797e6476d7f3db304f0ff044c18369a69dbb283b431d",
+          "fingerprint": "0408011c403af913",
+          "liveFingerprint": "0408011c403af913",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash c5df0efe7fdb…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "flow": "CG_Portal_Status_Check_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e",
+          "file": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e.paste.json",
+          "scope": "Scope_Status_Flow",
+          "status": "APPLIED",
+          "packageHash": "3590b42f17b583a39c185f4237ab86bf68ec5a6bbddde845258f99fe36625ea8",
+          "liveHash": "3590b42f17b583a39c185f4237ab86bf68ec5a6bbddde845258f99fe36625ea8",
+          "fingerprint": "07916ce981b2fb07",
+          "liveFingerprint": "07916ce981b2fb07",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 3590b42f17b5…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "flow": "CG_Portal_Writeback_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27",
+          "file": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json",
+          "scope": "Scope_Writeback_Flow",
+          "status": "APPLIED",
+          "packageHash": "4ff80ce832e3ae46c2ad39366d1c32e1076c81e207ed305c8ddd568be1ee5b2d",
+          "liveHash": "4ff80ce832e3ae46c2ad39366d1c32e1076c81e207ed305c8ddd568be1ee5b2d",
+          "fingerprint": "1078c62f19d77810",
+          "liveFingerprint": "1078c62f19d77810",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 4ff80ce832e3…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "flow": "CG_Upload_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "UPLOAD__CG_Upload_Endpoint__df82e331",
+          "file": "UPLOAD__CG_Upload_Endpoint__df82e331.paste.json",
+          "scope": "Scope_Upload_Flow",
+          "status": "APPLIED",
+          "packageHash": "e7a4478c65879faf961846cd3c1b0c3374174dd166ab82913cb134a39c3800ea",
+          "liveHash": "e7a4478c65879faf961846cd3c1b0c3374174dd166ab82913cb134a39c3800ea",
+          "fingerprint": "16021f37185e8403",
+          "liveFingerprint": "16021f37185e8403",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash e7a4478c6587…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+      "flow": "CG_Registry_Status_Notifier",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Registry_Status_Notifier__8ebf6001",
+          "file": "NOKEY__CG_Registry_Status_Notifier__8ebf6001.paste.json",
+          "scope": "Scope_StatusNotify_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "45716f7d0f05f9e84a1c777936a84fdd65f0158d6c1e1a13d8a9c404e3621418",
+          "liveHash": "45716f7d0f05f9e84a1c777936a84fdd65f0158d6c1e1a13d8a9c404e3621418",
+          "fingerprint": "00fd5b5ea5d33000",
+          "liveFingerprint": "00fd5b5ea5d33000",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+      "flow": "CG_Portal_Daily_Sweep",
+      "state": "Stopped",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d",
+          "file": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d.paste.json",
+          "scope": "Scope_Sweep_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "cd17dc0764b3dd999bacf23ff67a343c04b6abdd62072a60d2c26bb9b43a1a76",
+          "liveHash": "cd17dc0764b3dd999bacf23ff67a343c04b6abdd62072a60d2c26bb9b43a1a76",
+          "fingerprint": "03010ea674716e1c",
+          "liveFingerprint": "03010ea674716e1c",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+      "flow": "CG_Portal_Verification_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b",
+          "file": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b.paste.json",
+          "scope": "Scope_Verify_Flow",
+          "status": "APPLIED",
+          "packageHash": "1ae25b14d96eb8dbec5bac0584ff6bca6b9da3c4c15814cd95e940429f1349d5",
+          "liveHash": "1ae25b14d96eb8dbec5bac0584ff6bca6b9da3c4c15814cd95e940429f1349d5",
+          "fingerprint": "038426c10429e00a",
+          "liveFingerprint": "038426c10429e00a",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 1ae25b14d96e…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+      "flow": "CG_Portal_Verification_Confirmation_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448",
+          "file": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448.paste.json",
+          "scope": "Scope_VerifyConfirm_Flow",
+          "status": "APPLIED",
+          "packageHash": "b8b64a9c2632c2f36b9e7c9fba472c185e641ba1f1acb38929425b665cb36473",
+          "liveHash": "b8b64a9c2632c2f36b9e7c9fba472c185e641ba1f1acb38929425b665cb36473",
+          "fingerprint": "062dbfa97bdac408",
+          "liveFingerprint": "062dbfa97bdac408",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash b8b64a9c2632…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+      "flow": "IP_SCAN_INTAKE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9",
+          "file": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json",
+          "scope": "Scope_Scan_Flow",
+          "status": "APPLIED",
+          "packageHash": "bcf259cb4c005543ed2a357e21dc6b3dcc835d264654452ce2f86a6f40eccc63",
+          "liveHash": "bcf259cb4c005543ed2a357e21dc6b3dcc835d264654452ce2f86a6f40eccc63",
+          "fingerprint": "0405235a0279a409",
+          "liveFingerprint": "0405235a0279a409",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash bcf259cb4c00…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+      "flow": "Single_Task_Assignment",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458",
+          "file": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json",
+          "scope": "Scope_Global",
+          "status": "UP_TO_DATE",
+          "packageHash": "5cd524c3a83c8a4e3f7438ea8188a325a2d6a51aa40a0cd53793de8858c54344",
+          "liveHash": "5cd524c3a83c8a4e3f7438ea8188a325a2d6a51aa40a0cd53793de8858c54344",
+          "fingerprint": "0d072673a437dd1e",
+          "liveFingerprint": "0d072673a437dd1e",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "flow": "BULK OPS DATA RETRIEVAL HTTP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61",
+          "file": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json",
+          "scope": "Scope_Global",
+          "status": "UP_TO_DATE",
+          "packageHash": "6ec0f0d33fcdffef78dc633df5fab8ce560166600aa41d119704eefecbf719b7",
+          "liveHash": "6ec0f0d33fcdffef78dc633df5fab8ce560166600aa41d119704eefecbf719b7",
+          "fingerprint": "0d472af578618f07",
+          "liveFingerprint": "0d472af578618f07",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "13a73ce85ec3387ddcfe1de27efab203bf74000fac9df749d47f7e1464c371d6",
+          "liveHash": "13a73ce85ec3387ddcfe1de27efab203bf74000fac9df749d47f7e1464c371d6",
+          "fingerprint": "0005c5ffb37d9b13",
+          "liveFingerprint": "0005c5ffb37d9b13",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 13a73ce85ec3…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "491921190a6d168455799dbac1cc3d9087e8f23583ba54208796f199881867ec",
+          "liveHash": "491921190a6d168455799dbac1cc3d9087e8f23583ba54208796f199881867ec",
+          "fingerprint": "032ab90234b76719",
+          "liveFingerprint": "032ab90234b76719",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 491921190a6d…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "UP_TO_DATE",
+          "packageHash": "be36f34701510fa22eab73ceeeb1509ab850a7248e9604d167462c3355a523a4",
+          "liveHash": "be36f34701510fa22eab73ceeeb1509ab850a7248e9604d167462c3355a523a4",
+          "fingerprint": "16c6f137b471e00b",
+          "liveFingerprint": "16c6f137b471e00b",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "flow": "IP_OTP_VERIFY",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde",
+          "file": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "85af02c2c0cb36bd3c9f338f5039549c80e9133739abdfad2f04b0c6b8efcfba",
+          "liveHash": "85af02c2c0cb36bd3c9f338f5039549c80e9133739abdfad2f04b0c6b8efcfba",
+          "fingerprint": "1c6655ae8be15503",
+          "liveFingerprint": "1c6655ae8be15503",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 85af02c2c0cb…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+      "flow": "IP_OTP_GENERATE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_GENERATE__IP_OTP_GENERATE__e5632336",
+          "file": "OTP_GENERATE__IP_OTP_GENERATE__e5632336.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "eebc8744fbf2ae00a66d7823c7b69602dce43bb6bbdb788c60240225a34872ce",
+          "liveHash": "eebc8744fbf2ae00a66d7823c7b69602dce43bb6bbdb788c60240225a34872ce",
+          "fingerprint": "18e9110d8dbb9f1d",
+          "liveFingerprint": "18e9110d8dbb9f1d",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash eebc8744fbf2…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "flow": "IP_Reference_Data_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e",
+          "file": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "c5142e696e01efd937194697b4b2f8e9df9124be13d628e492971b5c0ea2d84d",
+          "liveHash": "c5142e696e01efd937194697b4b2f8e9df9124be13d628e492971b5c0ea2d84d",
+          "fingerprint": "08db8e22ef40861f",
+          "liveFingerprint": "08db8e22ef40861f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash c5142e696e01…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "flow": "IP_Get_Docs_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a",
+          "file": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "5777d1018532e16c79b18275b3e45b26df2a7a9697a5331410043a68a365ff4e",
+          "liveHash": "5777d1018532e16c79b18275b3e45b26df2a7a9697a5331410043a68a365ff4e",
+          "fingerprint": "15fba4c4d5016b11",
+          "liveFingerprint": "15fba4c4d5016b11",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 5777d1018532…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3",
+          "file": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3.paste.json",
+          "scope": "Scope_Email_Attachment_Endpoint_REBUILT",
+          "status": "UP_TO_DATE",
+          "packageHash": "d6596cbbc2c48579ae56d20c04535552863dc6f86cd0af7c581a015106eb1c14",
+          "liveHash": "d6596cbbc2c48579ae56d20c04535552863dc6f86cd0af7c581a015106eb1c14",
+          "fingerprint": "1446a2b78727dc03",
+          "liveFingerprint": "1446a2b78727dc03",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "flow": "IP_SEND_EMAIL",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL__IP_SEND_EMAIL__df59a69f",
+          "file": "EMAIL__IP_SEND_EMAIL__df59a69f.paste.json",
+          "scope": "Scope_Send_Email_Flow",
+          "status": "APPLIED",
+          "packageHash": "e10a9ab4c7d47327ab997cfdd9f3a19c5ab853a3329655d73a1a5c9b56ed7831",
+          "liveHash": "e10a9ab4c7d47327ab997cfdd9f3a19c5ab853a3329655d73a1a5c9b56ed7831",
+          "fingerprint": "0eb7d664cf5c6c12",
+          "liveFingerprint": "0eb7d664cf5c6c12",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash e10a9ab4c7d4…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "flow": "AI_Document_Processing",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6",
+          "file": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6.paste.json",
+          "scope": "Scope_AI_Caller_Gate",
+          "status": "UP_TO_DATE",
+          "packageHash": "1779a2a4375e12d91561d803d29100ff513f2945842f72c1fda161c7190028e0",
+          "liveHash": "1779a2a4375e12d91561d803d29100ff513f2945842f72c1fda161c7190028e0",
+          "fingerprint": "196182c15102a70c",
+          "liveFingerprint": "196182c15102a70c",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8",
+          "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+          "scope": "Scope_Scan_Processing",
+          "status": "APPLIED",
+          "packageHash": "f6a150b2f596d7d7a6f0b5425801300c5390445e6481d6b9223761dc24c472b8",
+          "liveHash": "f6a150b2f596d7d7a6f0b5425801300c5390445e6481d6b9223761dc24c472b8",
+          "fingerprint": "17f3057e6a97b106",
+          "liveFingerprint": "17f3057e6a97b106",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash f6a150b2f596…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+      "flow": " DGSO INCOMING AI PROCESSING",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References",
+          "file": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References.paste.json",
+          "scope": "Scope_References",
+          "status": "HELD",
+          "packageHash": "5e7437b6973a39df5fad6e7712f60fbecf2836b0b8696eed0042a5ef85aa2197",
+          "liveHash": "f9e6d90544346384dd2d4898ef96f4e77b48865c0338cd70ab1cc37b42cf24ad",
+          "fingerprint": "1f993178ad64350d",
+          "liveFingerprint": "10654f1b64bf661f",
+          "emptySetVariables": [],
+          "detail": "differs at actions.Categories_List.runAfter (only in the package). First: Flow Configuration holds rows GEMINI_API_KEY (and GEMINI_API_KEY_2, if the text extraction keeps its own key) with new keys created in Google Cloud. After the write, revoke the three old keys. Then name it: --only NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References",
+          "rebinds": []
+        },
+        {
+          "id": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_Library_Identity",
+          "file": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_Library_Identity.paste.json",
+          "scope": "Scope_Library_Identity",
+          "status": "BLOCKED",
+          "packageHash": null,
+          "liveHash": null,
+          "fingerprint": "0086a3ec67a7b801",
+          "liveFingerprint": null,
+          "emptySetVariables": [],
+          "detail": "the flow has no top-level step Scope_Library_Identity. It is added, not replaced: paste it once in the designer as docs/folio-Master-Flows-and-Endpoints/packages/identification-phase4/README.md says; from then on this command keeps it current",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

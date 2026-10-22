@@ -1,0 +1,2006 @@
+{
+  "schema": "folio-flow-requirements/v1",
+  "generatedBy": "scripts/build-flow-requirements.mjs",
+  "standards": "docs/reference/identification/IDENTIFICATION_SYSTEM.md (ID-11, ID-12, ID-24, §17)",
+  "evidence": {
+    "liveReading": "docs/folio-Master-Flows-and-Endpoints/deployment/internal/evidence/2026-09-27-live-endpoint-wiring.json",
+    "liveDate": "2026-09-27",
+    "captures": "docs/folio-Master-Flows-and-Endpoints/captures/",
+    "captureDate": "2026-10-01",
+    "flowOwnerList": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json",
+    "deployedExports": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/"
+  },
+  "totals": {
+    "endpoints": 37,
+    "endpointsServed": 31,
+    "endpointsSharingAnAddress": 2,
+    "endpointsWithNoFlow": 2,
+    "externalServices": 2,
+    "flowsNotCalledByCode": 20,
+    "flowsWithTenantEvidence": 14,
+    "notificationsWithNoCarrier": 0
+  },
+  "endpoints": [
+    {
+      "platform": "runtime",
+      "key": "FETCH_ACTIVITIES",
+      "address": "FETCH_ACTIVITIES",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 31
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 63
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/data-loader.js",
+          "line": 87
+        },
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 11
+        },
+        {
+          "file": "modules/lookup.js",
+          "line": 76
+        }
+      ],
+      "vaultAlias": "runtime.fetch-activities",
+      "flow": {
+        "name": "IP_Get_Docs_Endpoint",
+        "guid": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:28f6e62a-fea8-437c-a61a-47aec706c4e2",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "FETCH_ACTIVITIES",
+          "GET_DOCS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "FETCH_ALL",
+      "address": "FETCH_ALL",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 32
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 64
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/data-loader.js",
+          "line": 75
+        },
+        {
+          "file": "core/entry-point-feeds.js",
+          "line": 79
+        },
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 14
+        }
+      ],
+      "vaultAlias": "runtime.fetch-all",
+      "flow": {
+        "name": "IP_FETCH_ALL_BOOTSTRAP",
+        "guid": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "FETCH_ALL"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "REFERENCE_DATA",
+      "address": "REFERENCE_DATA",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 33
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 65
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 9
+        }
+      ],
+      "vaultAlias": "runtime.reference-data",
+      "flow": {
+        "name": "IP_Reference_Data_Endpoint",
+        "guid": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "REFERENCE_DATA"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "GET_DOCS",
+      "address": "GET_DOCS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 34
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 66
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 10
+        },
+        {
+          "file": "modules/lookup.js",
+          "line": 76
+        }
+      ],
+      "vaultAlias": "runtime.get-docs",
+      "flow": {
+        "name": "IP_Get_Docs_Endpoint",
+        "guid": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:28f6e62a-fea8-437c-a61a-47aec706c4e2",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "FETCH_ACTIVITIES",
+          "GET_DOCS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "FETCH_EMAIL_ATTACHMENTS",
+      "address": "FETCH_EMAIL_ATTACHMENTS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 67
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "modules/activities.js",
+          "line": 141
+        }
+      ],
+      "vaultAlias": "runtime.fetch-email-attachments",
+      "flow": {
+        "name": "IP_Retrieve_Email_Attachment_Endpoint",
+        "guid": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "FETCH_EMAIL_ATTACHMENTS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "SINGLE_ASSIGNMENT",
+      "address": "SINGLE_ASSIGNMENT",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 36
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 68
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 16
+        },
+        {
+          "file": "modules/single-assignment.js",
+          "line": 144
+        }
+      ],
+      "vaultAlias": "runtime.single-assignment",
+      "flow": {
+        "name": "Single_Task_Assignment",
+        "guid": "3caf9458-8d95-4740-a01b-6803dad97d34",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:3caf9458-8d95-4740-a01b-6803dad97d34",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "SINGLE_ASSIGNMENT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "BULK_ASSIGNMENT",
+      "address": "BULK_ASSIGNMENT",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 37
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 69
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 17
+        },
+        {
+          "file": "modules/bulk-assignment.js",
+          "line": 23
+        }
+      ],
+      "vaultAlias": "runtime.bulk-assignment",
+      "flow": {
+        "name": "BULK OPS DATA RETRIEVAL HTTP",
+        "guid": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "BULK_ASSIGNMENT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "DYNAMIC_ACTIONS",
+      "address": "DYNAMIC_ACTIONS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 38
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 70
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/api.js",
+          "line": 6
+        },
+        {
+          "file": "core/data-loader.js",
+          "line": 93
+        },
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 50
+        }
+      ],
+      "vaultAlias": "runtime.dynamic-actions",
+      "flow": {
+        "name": "IP_Dynamic_Global_Actions_Endpoint",
+        "guid": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "DYNAMIC_ACTIONS",
+          "SUBSIDIARY_ACTIONS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "USER_ADMIN",
+      "address": "USER_ADMIN",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 39
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 72
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "modules/user-admin.js",
+          "line": 35
+        }
+      ],
+      "vaultAlias": "runtime.user-admin",
+      "flow": null,
+      "status": "No flow in the evidence",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "ACTIVITY_LIFECYCLE",
+      "address": "ACTIVITY_LIFECYCLE",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 40
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 74
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "modules/activities.js",
+          "line": 180
+        }
+      ],
+      "vaultAlias": "runtime.activity-lifecycle",
+      "flow": null,
+      "status": "No flow in the evidence",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "EMAIL",
+      "address": "EMAIL",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 41
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 75
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/correspondence-email-service.js",
+          "line": 73
+        },
+        {
+          "file": "core/staff-notice-service.js",
+          "line": 88
+        },
+        {
+          "file": "modules/reports.js",
+          "line": 56
+        }
+      ],
+      "vaultAlias": "runtime.email",
+      "flow": {
+        "name": "IP_SEND_EMAIL",
+        "guid": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:df59a69f-92ca-4554-ae68-6b464aa73ef7",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "EMAIL"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "DISPATCH_OUTBOUND",
+      "address": "DYNAMIC_ACTIONS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 77
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/dispatch-service.js",
+          "line": 17
+        }
+      ],
+      "vaultAlias": "runtime.dispatch-outbound",
+      "flow": {
+        "name": "IP_Dynamic_Global_Actions_Endpoint",
+        "guid": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "DYNAMIC_ACTIONS",
+          "SUBSIDIARY_ACTIONS"
+        ]
+      },
+      "status": "Shares the DYNAMIC_ACTIONS address",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "ARCHIVE_REFERENCE",
+      "address": "DYNAMIC_ACTIONS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 78
+        }
+      ],
+      "calledBy": [],
+      "vaultAlias": "runtime.archive-reference",
+      "flow": {
+        "name": "IP_Dynamic_Global_Actions_Endpoint",
+        "guid": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "DYNAMIC_ACTIONS",
+          "SUBSIDIARY_ACTIONS"
+        ]
+      },
+      "status": "Shares the DYNAMIC_ACTIONS address",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "EMAIL_RELATED_TASK",
+      "address": "EMAIL_RELATED_TASK",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 42
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 79
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "modules/lookup.js",
+          "line": 172
+        }
+      ],
+      "vaultAlias": "runtime.email-related-task",
+      "flow": {
+        "name": "IP_Create_Email_Assignment",
+        "guid": "3f2f649b-55af-48e0-9a1e-43135e11a4b0",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:3f2f649b-55af-48e0-9a1e-43135e11a4b0",
+        "nameFollowsRule": false,
+        "captured": false,
+        "servesKeys": [
+          "EMAIL_RELATED_TASK"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "AI_EMAIL_ANALYSIS",
+      "address": "AI_EMAIL_ANALYSIS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 43
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 80
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/contracts.js",
+          "line": 44
+        }
+      ],
+      "vaultAlias": "runtime.ai-email-analysis",
+      "flow": {
+        "name": "AI_Document_Processing",
+        "guid": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "AI_EMAIL_ANALYSIS",
+          "AI_DOC_ANALYSIS",
+          "AI_CHAT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "AI_DOC_ANALYSIS",
+      "address": "AI_DOC_ANALYSIS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 44
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 81
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/contracts.js",
+          "line": 44
+        },
+        {
+          "file": "modules/correspondence.js",
+          "line": 184
+        },
+        {
+          "file": "shared/record-page.js",
+          "line": 301
+        }
+      ],
+      "vaultAlias": "runtime.ai-doc-analysis",
+      "flow": {
+        "name": "AI_Document_Processing",
+        "guid": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "AI_EMAIL_ANALYSIS",
+          "AI_DOC_ANALYSIS",
+          "AI_CHAT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "AI_CHAT",
+      "address": "AI_CHAT",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 45
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 82
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/contracts.js",
+          "line": 44
+        },
+        {
+          "file": "modules/assistant.js",
+          "line": 48
+        }
+      ],
+      "vaultAlias": "runtime.ai-chat",
+      "flow": {
+        "name": "AI_Document_Processing",
+        "guid": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "AI_EMAIL_ANALYSIS",
+          "AI_DOC_ANALYSIS",
+          "AI_CHAT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "OTP_GENERATE",
+      "address": "OTP_GENERATE",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 46
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 83
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/api.js",
+          "line": 6
+        },
+        {
+          "file": "core/contracts.js",
+          "line": 45
+        },
+        {
+          "file": "core/security-actions.js",
+          "line": 4
+        }
+      ],
+      "vaultAlias": "runtime.otp-generate",
+      "flow": {
+        "name": "IP_OTP_VERIFY",
+        "guid": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "OTP_GENERATE",
+          "OTP_VERIFY"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "OTP_VERIFY",
+      "address": "OTP_VERIFY",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 47
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 84
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/api.js",
+          "line": 6
+        },
+        {
+          "file": "core/contracts.js",
+          "line": 45
+        },
+        {
+          "file": "core/security-actions.js",
+          "line": 4
+        }
+      ],
+      "vaultAlias": "runtime.otp-verify",
+      "flow": {
+        "name": "IP_OTP_VERIFY",
+        "guid": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "OTP_GENERATE",
+          "OTP_VERIFY"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "SUBSIDIARY_ACTIONS",
+      "address": "SUBSIDIARY_ACTIONS",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 48
+        },
+        {
+          "file": "config/endpoints.config.js",
+          "line": 85
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/nitda-module-adapter.js",
+          "line": 12
+        },
+        {
+          "file": "core/offline-action-queue.js",
+          "line": 7
+        },
+        {
+          "file": "modules/diagnostics.js",
+          "line": 47
+        }
+      ],
+      "vaultAlias": "runtime.subsidiary-actions",
+      "flow": {
+        "name": "IP_Dynamic_Global_Actions_Endpoint",
+        "guid": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "DYNAMIC_ACTIONS",
+          "SUBSIDIARY_ACTIONS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "runtime",
+      "key": "SCAN_INTAKE",
+      "address": "SCAN_INTAKE",
+      "declared": [
+        {
+          "file": "config/endpoints.config.js",
+          "line": 59
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "core/portal-status-service.js",
+          "line": 30
+        },
+        {
+          "file": "core/scan-intake-service.js",
+          "line": 43
+        }
+      ],
+      "vaultAlias": "runtime.scan-intake",
+      "flow": {
+        "name": "IP_SCAN_INTAKE",
+        "guid": "5504d7f9-cc96-470c-be79-217582faf415",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:5504d7f9-cc96-470c-be79-217582faf415",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "SCAN_INTAKE"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "SUBMISSION",
+      "address": "SUBMISSION",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 30
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 382
+        },
+        {
+          "file": "document-portal/js/core.js",
+          "line": 397
+        }
+      ],
+      "vaultAlias": "portal.submission",
+      "flow": {
+        "name": "CG_Submission_Endpoint",
+        "guid": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:de9ef13b-ae4c-42b0-9afa-20e71a180759",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "SUBMISSION"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "UPLOAD",
+      "address": "UPLOAD",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 36
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 435
+        }
+      ],
+      "vaultAlias": "portal.upload",
+      "flow": {
+        "name": "CG_Upload_Endpoint",
+        "guid": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:df82e331-b800-4a8d-996e-d2b2ca846c77",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "UPLOAD"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "SUPPORT",
+      "address": "SUPPORT",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 41
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 454
+        }
+      ],
+      "vaultAlias": "portal.support",
+      "flow": {
+        "name": "CG_Portal_Support_Endpoint",
+        "guid": "4873c936-a2be-4726-8e69-426edb8f70e6",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:4873c936-a2be-4726-8e69-426edb8f70e6",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "SUPPORT"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "VERIFY",
+      "address": "VERIFY",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 46
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 490
+        },
+        {
+          "file": "document-portal/js/core.js",
+          "line": 625
+        }
+      ],
+      "vaultAlias": "portal.verify",
+      "flow": {
+        "name": "CG_Portal_Verification_Endpoint",
+        "guid": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:ba47f79b-a831-49e8-b00b-3f8937c331df",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "VERIFY"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "VERIFY_CONFIRM",
+      "address": "VERIFY_CONFIRM",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 51
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 507
+        },
+        {
+          "file": "document-portal/js/core.js",
+          "line": 625
+        }
+      ],
+      "vaultAlias": "portal.verify-confirm",
+      "flow": {
+        "name": "CG_Portal_Verification_Confirmation_Endpoint",
+        "guid": "f96e3448-3c79-4d42-b224-825258a552ba",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:f96e3448-3c79-4d42-b224-825258a552ba",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "VERIFY_CONFIRM"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "STATUS",
+      "address": "STATUS",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 56
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 576
+        }
+      ],
+      "vaultAlias": "portal.status",
+      "flow": {
+        "name": "CG_Portal_Status_Check_Endpoint",
+        "guid": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:60042a2e-dadb-4ad8-a672-38b4132d299f",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "STATUS"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "portal",
+      "key": "WRITEBACK",
+      "address": "WRITEBACK",
+      "declared": [
+        {
+          "file": "document-portal/config.example.js",
+          "line": 62
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "document-portal/js/core.js",
+          "line": 527
+        },
+        {
+          "file": "document-portal/js/core.js",
+          "line": 631
+        }
+      ],
+      "vaultAlias": "portal.writeback",
+      "flow": {
+        "name": "CG_Portal_Writeback_Endpoint",
+        "guid": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+        "source": "live reading 2026-09-27",
+        "registryKey": "DGO:bde13d27-73b3-4e1a-9687-eb289b039c7a",
+        "nameFollowsRule": false,
+        "captured": true,
+        "servesKeys": [
+          "WRITEBACK"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_SEND",
+      "address": "MAIL_SEND",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 14
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/sender.js",
+          "line": 193
+        },
+        {
+          "file": "mailer/js/views/letter.js",
+          "line": 809
+        }
+      ],
+      "catalogueName": "DGO_MAIL_SEND",
+      "vaultAlias": "mailer.mail-send",
+      "flow": {
+        "name": "DGO_MAIL_SEND",
+        "guid": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:0fb53e16-fa57-41a9-9880-752c3a4d4749",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_SEND"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_LOG",
+      "address": "MAIL_LOG",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 15
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/logcheck.js",
+          "line": 16
+        },
+        {
+          "file": "mailer/js/sender.js",
+          "line": 274
+        },
+        {
+          "file": "mailer/js/views/outbox.js",
+          "line": 89
+        }
+      ],
+      "catalogueName": "DGO_MAIL_LOG",
+      "vaultAlias": "mailer.mail-log",
+      "flow": {
+        "name": "DGO_MAIL_LOG",
+        "guid": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:98ce8b40-d386-4ec5-a277-1a35688fef4f",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_LOG"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_DIRECTORY",
+      "address": "MAIL_DIRECTORY",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 16
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/sync.js",
+          "line": 185
+        },
+        {
+          "file": "mailer/js/views/directory.js",
+          "line": 168
+        }
+      ],
+      "catalogueName": "DGO_MAIL_DIRECTORY",
+      "vaultAlias": "mailer.mail-directory",
+      "flow": {
+        "name": "DGO_MAIL_DIRECTORY",
+        "guid": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_DIRECTORY"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_TEMPLATES",
+      "address": "MAIL_TEMPLATES",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 17
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/sync.js",
+          "line": 211
+        },
+        {
+          "file": "mailer/js/views/templates.js",
+          "line": 143
+        }
+      ],
+      "catalogueName": "DGO_MAIL_TEMPLATES",
+      "vaultAlias": "mailer.mail-templates",
+      "flow": {
+        "name": "DGO_MAIL_TEMPLATES",
+        "guid": "176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_TEMPLATES"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_PROVISION",
+      "address": "MAIL_PROVISION",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 18
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/views/flows.js",
+          "line": 129
+        }
+      ],
+      "catalogueName": "DGO_MAIL_PROVISION",
+      "vaultAlias": "mailer.mail-provision",
+      "flow": {
+        "name": "DGO_MAIL_PROVISION",
+        "guid": "c5a0f936-40a5-4044-a383-2530468f8413",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:c5a0f936-40a5-4044-a383-2530468f8413",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_PROVISION"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_AUTH",
+      "address": "MAIL_AUTH",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 19
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/session.js",
+          "line": 42
+        }
+      ],
+      "catalogueName": "DGO_MAIL_AUTH",
+      "vaultAlias": "mailer.mail-auth",
+      "flow": {
+        "name": "DGO_MAIL_AUTH",
+        "guid": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_AUTH"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "mailer",
+      "key": "MAIL_DATA",
+      "address": "MAIL_DATA",
+      "declared": [
+        {
+          "file": "mailer/js/settings.js",
+          "line": 20
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "mailer/js/sync.js",
+          "line": 141
+        }
+      ],
+      "catalogueName": "DGO_MAIL_DATA",
+      "vaultAlias": "mailer.mail-data",
+      "flow": {
+        "name": "DGO_MAIL_DATA",
+        "guid": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+        "source": "tenant capture 2026-10-01",
+        "registryKey": "DGO:d44a67e3-c55a-415a-afe9-ef50a4702117",
+        "nameFollowsRule": true,
+        "captured": true,
+        "servesKeys": [
+          "MAIL_DATA"
+        ]
+      },
+      "status": "Served",
+      "openItems": []
+    },
+    {
+      "platform": "centre",
+      "key": "loginBase",
+      "address": "https://login.microsoftonline.com",
+      "declared": [
+        {
+          "file": "tools/admin-centre/config/settings.json",
+          "line": 21
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "tools/admin-centre/server.py",
+          "line": 198
+        },
+        {
+          "file": "tools/admin-centre/server.py",
+          "line": 313
+        }
+      ],
+      "external": "The flow owner's Microsoft sign-in",
+      "status": "External service",
+      "flow": null
+    },
+    {
+      "platform": "centre",
+      "key": "flowApiBase",
+      "address": "https://api.flow.microsoft.com",
+      "declared": [
+        {
+          "file": "tools/admin-centre/config/settings.json",
+          "line": 20
+        }
+      ],
+      "calledBy": [
+        {
+          "file": "tools/admin-centre/server.py",
+          "line": 197
+        },
+        {
+          "file": "tools/admin-centre/server.py",
+          "line": 312
+        }
+      ],
+      "external": "Power Automate: flow state, run history, turn on or off",
+      "status": "External service",
+      "flow": null
+    }
+  ],
+  "flows": [
+    {
+      "name": "ECM_DOCS_INTAKE",
+      "kind": "Bridge",
+      "what": "Portal submissions into the Workspace, and status written back",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/deployment/sharepoint/DECISIONS.md",
+          "line": 12
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "AUTO_SCHEDULED_SWEEP",
+      "kind": "Scheduled",
+      "what": "Hourly sweep: status, overdue and due-date mails, retries",
+      "requiredBy": [
+        {
+          "file": "config/notification-matrix.config.js",
+          "line": 498
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "AUTO_SCHEDULED_SWEEP",
+          "guid": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/AUTO_SCHEDULED_SWEEP__8c19b45c-4174-4d2f-9429-ffd08dd1a5ae.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "AUTO_SCHEDULED_SWEEP",
+          "guid": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+          "state": "Stopped",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "AUTO_SCHEDULED_SWEEP",
+          "guid": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/AUTO_SCHEDULED_SWEEP__8c19b45c-4174-4d2f-9429-ffd08dd1a5ae__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:8c19b45c-4174-4d2f-9429-ffd08dd1a5ae"
+      ],
+      "states": [
+        "AUTO_SCHEDULED_SWEEP: Stopped"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "CG_Portal_Daily_Sweep",
+      "kind": "Scheduled",
+      "what": "The Portal's daily sweep",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase3/README.md",
+          "line": 46
+        }
+      ],
+      "note": {
+        "text": "Daily Sweep, created but not captured",
+        "file": "scripts/build-identification-conformance.mjs",
+        "line": 16
+      },
+      "evidence": [
+        {
+          "source": "deployed export",
+          "name": "CG_Portal_Daily_Sweep",
+          "guid": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Portal_Daily_Sweep__f12aec6d-1554-483d-a525-a96ddb60d06f__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:f12aec6d-1554-483d-a525-a96ddb60d06f"
+      ],
+      "states": [],
+      "status": "Deployed export only",
+      "nameFollowsRule": false,
+      "openItems": [
+        "ITEM-93"
+      ]
+    },
+    {
+      "name": "CG_Registry_Status_Notifier",
+      "kind": "Event",
+      "what": "Tells a citizen when their submission's status changes",
+      "requiredBy": [
+        {
+          "file": "docs/reference/identification/IDENTIFICATION_SYSTEM.md",
+          "line": 117
+        },
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase3/README.md",
+          "line": 45
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "deployed export",
+          "name": "CG_Registry_Status_Notifier",
+          "guid": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Registry_Status_Notifier__8ebf6001-89cd-49c9-a9b6-4dedb9a5768b__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:8ebf6001-89cd-49c9-a9b6-4dedb9a5768b"
+      ],
+      "states": [],
+      "status": "Deployed export only",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "kind": "File",
+      "what": "Turns scans saved to /E-DOCUMENT STATION into records (replaced DGSO INCOMING AI PROCESSING, turned off 2026-10-16)",
+      "requiredBy": [
+        {
+          "file": "config/notification-matrix.config.js",
+          "line": 941
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+          "guid": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8-e76c-4f7d-81b8-3cb5c88b1c6c.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+          "guid": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8-e76c-4f7d-81b8-3cb5c88b1c6c__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:197527c8-e76c-4f7d-81b8-3cb5c88b1c6c"
+      ],
+      "states": [],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "Notification processor",
+      "kind": "Scheduled",
+      "what": "Sends queued notifications with retries",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/deployment/notification-instrument/notification-processor/processor-spec.json",
+          "line": 2
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "DGO_USERDIRECTORY_SYNC",
+      "kind": "Scheduled",
+      "what": "Keeps the staff directory current",
+      "requiredBy": [
+        {
+          "file": "scripts/build-estate-apply.mjs",
+          "line": 75
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "DGO_FLOW_TRUTH_PERSISTENCE",
+      "kind": "Called by flows",
+      "what": "Saves each flow run's record",
+      "requiredBy": [
+        {
+          "file": "scripts/build-estate-apply.mjs",
+          "line": 85
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "01 - GOV - Provision HTTP Flow Registry",
+      "kind": "Governance",
+      "what": "Creates the flow registry lists",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/registers/http-flow-registry-spec.json",
+          "line": 17
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "01 - GOV - Provision_HTTP_Flow_Registry",
+          "guid": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/01_-_GOV_-_Provision_HTTP_Flow_Registry__17a85efb-1ed2-45c9-a602-2ad6f8bb7ead.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "01 - GOV - Provision HTTP Flow Registry",
+          "guid": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "01 - GOV - Provision HTTP Flow Registry",
+          "guid": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/01 - GOV - Provision HTTP Flow Registry__17a85efb-1ed2-45c9-a602-2ad6f8bb7ead__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:17a85efb-1ed2-45c9-a602-2ad6f8bb7ead"
+      ],
+      "states": [
+        "01 - GOV - Provision HTTP Flow Registry: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "02 - GOV - Register HTTP Flow Truth",
+      "kind": "Governance",
+      "what": "Registers a flow and its contract",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 22
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "02 - GOV - Register_HTTP_Flow_Truth",
+          "guid": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/02_-_GOV_-_Register_HTTP_Flow_Truth__651ae389-eeed-4bf0-9799-67bd964ebe71.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "02 - GOV - Register HTTP Flow Truth",
+          "guid": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "02 - GOV - Register HTTP Flow Truth",
+          "guid": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/02 - GOV - Register HTTP Flow Truth__651ae389-eeed-4bf0-9799-67bd964ebe71__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:651ae389-eeed-4bf0-9799-67bd964ebe71"
+      ],
+      "states": [
+        "02 - GOV - Register HTTP Flow Truth: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "03 - GOV - Record HTTP Flow Execution",
+      "kind": "Governance",
+      "what": "Records each run",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 28
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "03 - GOV - Record_HTTP_Flow_Execution",
+          "guid": "0545e19a-c34a-45db-bd11-27b87a34973e",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/03_-_GOV_-_Record_HTTP_Flow_Execution__0545e19a-c34a-45db-bd11-27b87a34973e.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "03 - GOV - Record HTTP Flow Execution",
+          "guid": "0545e19a-c34a-45db-bd11-27b87a34973e",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "03 - GOV - Record HTTP Flow Execution",
+          "guid": "0545e19a-c34a-45db-bd11-27b87a34973e",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/03 - GOV - Record HTTP Flow Execution__0545e19a-c34a-45db-bd11-27b87a34973e__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:0545e19a-c34a-45db-bd11-27b87a34973e"
+      ],
+      "states": [
+        "03 - GOV - Record HTTP Flow Execution: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "04 - GOV - Audit HTTP Flow Registry",
+      "kind": "Governance",
+      "what": "Audits the registry for stale and failing flows",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 109
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "04 - GOV - Audit_HTTP_Flow_Registry",
+          "guid": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/04_-_GOV_-_Audit_HTTP_Flow_Registry__3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "04 - GOV - Audit HTTP Flow Registry",
+          "guid": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "04 - GOV - Audit HTTP Flow Registry",
+          "guid": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/04 - GOV - Audit HTTP Flow Registry__3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b"
+      ],
+      "states": [
+        "04 - GOV - Audit HTTP Flow Registry: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "05 - GOV - Retire HTTP Flow",
+      "kind": "Governance",
+      "what": "Retires a flow and its relationships",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 34
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "05 - GOV - Retire_HTTP_Flow",
+          "guid": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/05_-_GOV_-_Retire_HTTP_Flow__493b4ab7-8f63-4fab-8121-746c2cac7f98.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "05 - GOV - Retire HTTP Flow",
+          "guid": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "05 - GOV - Retire HTTP Flow",
+          "guid": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/05 - GOV - Retire HTTP Flow__493b4ab7-8f63-4fab-8121-746c2cac7f98__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:493b4ab7-8f63-4fab-8121-746c2cac7f98"
+      ],
+      "states": [
+        "05 - GOV - Retire HTTP Flow: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "06 - GOV - Registry Exception Notification",
+      "kind": "Governance",
+      "what": "Mails open registry exceptions to their owner",
+      "requiredBy": [
+        {
+          "file": "config/notification-matrix.config.js",
+          "line": 1271
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "06 - GOV - Registry_Exception_Notification",
+          "guid": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/06_-_GOV_-_Registry_Exception_Notification__87a74d7e-7435-4e34-baa1-7e759ebf5565.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "06 - GOV - Registry Exception Notification",
+          "guid": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "06 - GOV - Registry Exception Notification",
+          "guid": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/06 - GOV - Registry Exception Notification__87a74d7e-7435-4e34-baa1-7e759ebf5565__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:87a74d7e-7435-4e34-baa1-7e759ebf5565"
+      ],
+      "states": [
+        "06 - GOV - Registry Exception Notification: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+      "kind": "Governance",
+      "what": "Lets a consumer register itself",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 40
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "07 - GOV - Consumer_HTTP_Self-Registration_Template",
+          "guid": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/07_-_GOV_-_Consumer_HTTP_Self-Registration_Template__c6a011c5-7b11-4241-82ae-a45b88ebf276.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+          "guid": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+          "guid": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/07 - GOV - Consumer HTTP Self-Registration Template__c6a011c5-7b11-4241-82ae-a45b88ebf276__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:c6a011c5-7b11-4241-82ae-a45b88ebf276"
+      ],
+      "states": [
+        "07 - GOV - Consumer HTTP Self-Registration Template: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "08 - GOV - Discover and Register HTTP Consumers",
+      "kind": "Governance",
+      "what": "Discovers consumers and registers them",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/reference/governance-estate-position.json",
+          "line": 109
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "tenant capture",
+          "date": "2026-10-01",
+          "name": "08 - GOV - Discover_and_Register_HTTP_Consumers",
+          "guid": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+          "file": "docs/folio-Master-Flows-and-Endpoints/captures/08_-_GOV_-_Discover_and_Register_HTTP_Consumers__f5e7679f-ca1b-4216-8a6e-bb6c044ed06f.json"
+        },
+        {
+          "source": "flow-owner list",
+          "date": "2026-09-26",
+          "name": "08 - GOV - Discover and Register HTTP Consumers",
+          "guid": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+          "state": "Started",
+          "file": "docs/folio-Master-Flows-and-Endpoints/audits/flow-usage-analysis-2026-09-26.json"
+        },
+        {
+          "source": "deployed export",
+          "name": "08 - GOV - Discover and Register HTTP Consumers",
+          "guid": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+          "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/08 - GOV - Discover and Register HTTP Consumers__f5e7679f-ca1b-4216-8a6e-bb6c044ed06f__full_definition.json"
+        }
+      ],
+      "registryKeys": [
+        "DGO:f5e7679f-ca1b-4216-8a6e-bb6c044ed06f"
+      ],
+      "states": [
+        "08 - GOV - Discover and Register HTTP Consumers: Started"
+      ],
+      "status": "Captured from the tenant",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "DGO_ENDPOINT_INVENTORY",
+      "kind": "Set-up",
+      "what": "Asks the tenant which flow answers each endpoint",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/deployment/internal/ENDPOINT_INVENTORY_FLOW.md",
+          "line": 1
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "ID_Phase1_List_Check",
+      "kind": "Set-up",
+      "what": "Checks lists before the identity columns go in",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/README.md",
+          "line": 28
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "run record",
+          "date": "2026-10-03",
+          "name": "p1-1-list-check-2026-10-03.json",
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/evidence/p1-1-list-check-2026-10-03.json"
+        },
+        {
+          "source": "run record",
+          "date": "2026-10-03",
+          "name": "p1-1-list-check-2026-10-03-after-p1-2.json",
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/evidence/p1-1-list-check-2026-10-03-after-p1-2.json"
+        }
+      ],
+      "registryKeys": [],
+      "states": [],
+      "status": "Run recorded",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "ID_Phase1_Add_Columns",
+      "kind": "Set-up",
+      "what": "Adds the identity columns",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/README.md",
+          "line": 103
+        }
+      ],
+      "note": null,
+      "evidence": [
+        {
+          "source": "run record",
+          "date": "2026-10-03",
+          "name": "p1-1-list-check-2026-10-03-after-p1-2.json",
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/evidence/p1-1-list-check-2026-10-03-after-p1-2.json"
+        }
+      ],
+      "registryKeys": [],
+      "states": [],
+      "status": "Run recorded",
+      "nameFollowsRule": false,
+      "openItems": []
+    },
+    {
+      "name": "ID_Phase1_Complete",
+      "kind": "Set-up",
+      "what": "Completes Phase 1: 8 new lists, every specified column, free-slot indexes and the configuration rows",
+      "requiredBy": [
+        {
+          "file": "docs/folio-Master-Flows-and-Endpoints/packages/identification-phase1/README.md",
+          "line": 175
+        }
+      ],
+      "note": null,
+      "evidence": [],
+      "registryKeys": [],
+      "states": [],
+      "status": "No tenant evidence",
+      "nameFollowsRule": false,
+      "openItems": []
+    }
+  ],
+  "platformsWithoutFlows": [
+    "capsule"
+  ],
+  "notificationsWithNoCarrier": []
+}

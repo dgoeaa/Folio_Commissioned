@@ -1,0 +1,21 @@
+{
+  "readUtc": "2026-10-14",
+  "readBy": "Flow API, signed in as dgsregistry@nitda.gov.ng",
+  "ownerDecision": "2026-10-14 (owner): Option A. Scans are saved to /Scans/Incoming on the dgsregistry@nitda.gov.ng OneDrive; the new flow is not repointed to dgs@nitda.gov.ng's /E-DOCUMENT STATION. Confirms the 2026-10-07 decision.",
+  "flows": {
+    "Folio_Incoming_Correspondence_Scan_Processing_Flow": {
+      "id": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "state": "Started",
+      "trigger": "OneDrive for Business, when a file is created, polling every minute, registry OneDrive drive b!8kLh..., folder /Scans/Incoming, subfolders excluded, up to 10 files per poll",
+      "runs": 0
+    },
+    "DGSO INCOMING AI PROCESSING": {
+      "id": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+      "state": "Started",
+      "trigger": "OneDrive for Business, when a file is created, polling every minute, dgs@nitda.gov.ng OneDrive drive b!KHjX..., folder /E-DOCUMENT STATION",
+      "lastRun": "2026-10-09T14:43:02Z Succeeded"
+    }
+  },
+  "finding": "The new flow is ready and waiting; no file has reached /Scans/Incoming yet. The legacy flow stays on until the first scan is processed by the new flow, so no scan goes unprocessed in between.",
+  "remainingStep": "Owner or IT sets the scanner (or the staff who file scans) to save to /Scans/Incoming on the dgsregistry@nitda.gov.ng OneDrive. The first run of 197527c8 is then verified and b6d92bae is turned off, which closes ITEM-80 and ITEM-67."
+}

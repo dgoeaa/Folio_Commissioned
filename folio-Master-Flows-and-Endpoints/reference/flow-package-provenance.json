@@ -1,0 +1,908 @@
+{
+  "schema": "dgo-flow-package-provenance/v1",
+  "generatedBy": "scripts/build-flow-package-provenance.mjs",
+  "readFrom": [
+    "docs/folio-Master-Flows-and-Endpoints/artifacts/matched-flow-packages/2026-09-24/Matched_Flow_ZIP_Packages_Available.zip",
+    "docs/folio-Master-Flows-and-Endpoints/deployment/internal/evidence/2026-09-18-tenant-flow-inventory.json",
+    "docs/folio-Master-Flows-and-Endpoints/contracts/deployed",
+    "docs/folio-Master-Flows-and-Endpoints/registers/endpoint-register.json"
+  ],
+  "whatThisIs": "Each supplied export package, joined by its own flow id to the live tenant reading of 2026-09-18 and to this repository’s recorded exports. It answers one question per package — is this an export of a flow a wired endpoint actually resolves to — and records the three postures side by side where it is. It asserts no interpretation beyond that.",
+  "howTheJoinWorks": "On the dashed Power Automate flow id, the only identifier all three readings carry. No package carries a workflow id that any wired endpoint addresses — they do contain 32-hex tokens, but those are environment and connection ids, and fullResourceId restates the dashed flow id rather than resolving it — so the wired estate reaches them only through the tenant reading’s registry, which carries both identifiers. A package whose flow id is in no wired workflow is reported as not deployed; that is a statement about this join, not an accusation about the package.",
+  "counts": {
+    "packages": 20,
+    "exportsOfADeployedFlow": 14,
+    "notExportsOfAnyDeployedFlow": 6,
+    "presentInTheTenantReading": 13,
+    "agreeingWithTheTenantWherePresent": 13,
+    "disagreeingWithTheTenantWherePresent": 0,
+    "answeringEveryVerbAndNotDeployed": 3,
+    "unreadable": 0,
+    "carryingAWiredWorkflowId": 0
+  },
+  "tenantPosture": {
+    "readUtc": "2026-09-18T16:58:02.3204224Z",
+    "flowsRead": 20,
+    "triggerAuthenticationTypeCounts": {
+      "All": 20
+    },
+    "reads": "20 flow(s) read live in the tenant on 2026-09-18: 20 All."
+  },
+  "postureDrift": [],
+  "importHazards": [
+    {
+      "package": "IP_Dynamic_Global_Actions_EndpointFlow_20260917230439.zip",
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "displayName": "IP_Dynamic_Global_Actions_Endpoint",
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "why": "not an export of any wired flow, and it answers every HTTP verb. Importing it in place of the flow its name suggests would replace a method-constrained trigger with an unconstrained one."
+    },
+    {
+      "package": "IP_Get_Docs_Endpoint_20260917225825.zip",
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "displayName": "IP_Get_Docs_Endpoint",
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "why": "not an export of any wired flow, and it answers every HTTP verb. Importing it in place of the flow its name suggests would replace a method-constrained trigger with an unconstrained one."
+    },
+    {
+      "package": "IP_Bulk_Assignment_Endpoint_20260901023331.zip",
+      "flowId": "f96399c6-31d9-493a-a304-3fa8efda6ef8",
+      "displayName": "IP_Bulk_Assignment_Endpoint",
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "why": "not an export of any wired flow, and it answers every HTTP verb. Importing it in place of the flow its name suggests would replace a method-constrained trigger with an unconstrained one."
+    }
+  ],
+  "contractKeyMapping": {
+    "whatThisIs": "The operator’s own mapping, read out of manifests/contract_to_package_mapping.csv inside the archive rather than restated. Its availability column is the archive’s own declaration of what it does not contain.",
+    "rows": 26,
+    "keysMapped": 25,
+    "keysWithNoPackage": [
+      "AI_CHAT",
+      "AI_DOC_ANALYSIS",
+      "AI_EMAIL_ANALYSIS",
+      "BULK_ASSIGNMENT",
+      "BULK_ASSIGNMENT_DIRECT"
+    ],
+    "entries": [
+      {
+        "contractKey": "AI_CHAT",
+        "selectedPackage": "AI_Document_Processing_20260911185206 (5).zip",
+        "availability": "SOURCE_COLLECTION_NOT_ATTACHED",
+        "sourceCollection": "Expected from OTH__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "NOT_AVAILABLE"
+      },
+      {
+        "contractKey": "AI_DOC_ANALYSIS",
+        "selectedPackage": "AI_Document_Processing_20260911185206 (5).zip",
+        "availability": "SOURCE_COLLECTION_NOT_ATTACHED",
+        "sourceCollection": "Expected from OTH__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "NOT_AVAILABLE"
+      },
+      {
+        "contractKey": "AI_EMAIL_ANALYSIS",
+        "selectedPackage": "AI_Document_Processing_20260911185206 (5).zip",
+        "availability": "SOURCE_COLLECTION_NOT_ATTACHED",
+        "sourceCollection": "Expected from OTH__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "NOT_AVAILABLE"
+      },
+      {
+        "contractKey": "BULK_ASSIGNMENT",
+        "selectedPackage": "BULKOPSDATARETRIEVALHTTP_20260911185143 (5).zip",
+        "availability": "SOURCE_COLLECTION_NOT_ATTACHED",
+        "sourceCollection": "Expected from OTH__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "NOT_AVAILABLE"
+      },
+      {
+        "contractKey": "BULK_ASSIGNMENT",
+        "selectedPackage": "IP_Bulk_Assignment_Endpoint_20260901023331.zip",
+        "availability": "INCLUDED_RELATED_ALTERNATIVE",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "636b493b11ab1d34f99d231ee7423a965643e5be1bce681260345e2a8759d8ff"
+      },
+      {
+        "contractKey": "BULK_ASSIGNMENT_DIRECT",
+        "selectedPackage": "DeployedBulkTaskAssignment_CreateTask_20260903231828.zip",
+        "availability": "SOURCE_COLLECTION_NOT_ATTACHED",
+        "sourceCollection": "Expected from OTH__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "NOT_AVAILABLE"
+      },
+      {
+        "contractKey": "DYNAMIC_ACTIONS",
+        "selectedPackage": "IP_Dynamic_Global_Actions_EndpointFlow_20260917230439.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "2428f0d12b762b1f9b8387bb16431387ec58b42fa8f8b0a34961ba6dbfc33368"
+      },
+      {
+        "contractKey": "EMAIL",
+        "selectedPackage": "IP_SEND_EMAIL_20260905184716.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "048f82ee4d2ef56974e6c68cf3f2c3f4a63035b900165902e7a668af0eee67c9"
+      },
+      {
+        "contractKey": "EMAIL_RELATED_TASK",
+        "selectedPackage": "IP_Create_Email_Assignment_Endpoint_20260906043757.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "3c4838233d43269889b1ecbebf546878b80e12c545adeee7e3a2533ff69d60bd"
+      },
+      {
+        "contractKey": "FETCH_ACTIVITIES",
+        "selectedPackage": "IP_Get_Docs_Endpoint_20260917225825.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "7e373a73f4c9e5d5570d5c6305ed64eb5bf8292e821814b412cf000103f8caae"
+      },
+      {
+        "contractKey": "FETCH_ALL",
+        "selectedPackage": "IP_FETCH_ALL__EXTENDED_ENDPOINTFlow_20260911003936.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "1654a114f654a62d8e4f6676773c9754c46e2efed75d03c0ca9ca5aae30f2d66"
+      },
+      {
+        "contractKey": "FETCH_EMAIL_ATTACHMENTS",
+        "selectedPackage": "IP_Retrieve_Email_Attachment_Endpoint_20260906045907 (1).zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "3892d5063ae46ab6668a5a2ed35739e7e72f0699bd07ca03c496aea0ea77b765"
+      },
+      {
+        "contractKey": "GET_DOCS",
+        "selectedPackage": "IP_Get_Docs_Endpoint_20260917225825.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "7e373a73f4c9e5d5570d5c6305ed64eb5bf8292e821814b412cf000103f8caae"
+      },
+      {
+        "contractKey": "OTP_GENERATE",
+        "selectedPackage": "IP_OTP_Endpoint_20260905062238.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "d1dbbc2e3d4b69b01cda461765e8635828f38e9c4424303651a667fda4427a22"
+      },
+      {
+        "contractKey": "OTP_VERIFY",
+        "selectedPackage": "IP_OTP_VERIFY_20260905184729.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "c3b7c46db36f53e5b0d2f58785193946874fd84d527f3d546a66ba2235195ec4"
+      },
+      {
+        "contractKey": "REFERENCE_DATA",
+        "selectedPackage": "IP_Reference_Data_Endpoint_20260918173247.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "ab687c5e9effda5b7fdd1484ef16fe57164fee6ed2d890f8bfcae42bbb2dc541"
+      },
+      {
+        "contractKey": "SCAN_INTAKE",
+        "selectedPackage": "IP_SCAN_INTAKE_Endpoint_v2.1_NOTIFICATIONS_REPORTS_20260913.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "a24406d40ba946c9cd382b617aaffeb75e434b387abb65852f303c4e849b1801"
+      },
+      {
+        "contractKey": "SINGLE_ASSIGNMENT",
+        "selectedPackage": "IP_Single_Assignment_Endpoint.READY.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "632eb3b1c9a3a18c563323b7417e0d372ff938b984bd0228950ee0f13421fbcc"
+      },
+      {
+        "contractKey": "STATUS",
+        "selectedPackage": "CG_Portal_Status_Check_Endpoint_20260906045148.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "924fd82947e190eab8706661a1a0bf7dbe564c19d6a5dedac0d1a2e57e29394a"
+      },
+      {
+        "contractKey": "SUBMISSION",
+        "selectedPackage": "CG_Submission_Endpoint_20260903050323.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "159dd2be73b7ec42322fa0b88d88208ac29b30f8d225a1dae203d2b6fddf65f1"
+      },
+      {
+        "contractKey": "SUBSIDIARY_ACTIONS",
+        "selectedPackage": "IP_Subsidiary_Actions_Endpoint_20260905193834.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "Pckgs__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "c881b9a4d066ab81c06630c894eee124e48437879424f2fd08fecce771629a19"
+      },
+      {
+        "contractKey": "SUPPORT",
+        "selectedPackage": "CG_Portal_Support_Endpoint_20260906044318.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "79180a28064028a8eeea19651ba4f106b262ec6d8f6df2b9395c03f55f2e0f63"
+      },
+      {
+        "contractKey": "UPLOAD",
+        "selectedPackage": "CG_Upload_Endpoint_20260904032403.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "63b69624274ac018a914d6773edae06b29b2152ecdc04f2f0749cb9f8a4ebab3"
+      },
+      {
+        "contractKey": "VERIFY",
+        "selectedPackage": "CG_Verification_Endpoint.READY.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "89a284f76f696a575f5b1ea1cb1eab70e3b06d9a8202a0f6463f976f8d4026df"
+      },
+      {
+        "contractKey": "VERIFY_CONFIRM",
+        "selectedPackage": "CG_Portal_Verification_Confirmation_Endpoint_20260906044511.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "101a0920fc0ae37741b566c1409d6e99e8b093c6b3e9a94aea8adfc378ac3077"
+      },
+      {
+        "contractKey": "WRITEBACK",
+        "selectedPackage": "CG_Portal_Writeback_Endpoint_20260906044535.zip",
+        "availability": "INCLUDED_PRIMARY",
+        "sourceCollection": "CG__FULL_EMBEDDED_CONTENTS.json",
+        "sha256": "b9c4c8830e2984bcf4d2dc6a72e3ec55b9cadd1ddf621804932aa2c5f4fda8f1"
+      }
+    ]
+  },
+  "packages": [
+    {
+      "package": "CG_Portal_Status_Check_Endpoint_20260906045148.zip",
+      "tier": "primary",
+      "sha256": "924fd82947e190eab8706661a1a0bf7dbe564c19d6a5dedac0d1a2e57e29394a",
+      "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "displayName": "CG_Portal_Status_Check_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "STATUS"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-06T04:50:14.2465635Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Portal_Status_Check_Endpoint__60042a2e-dadb-4ad8-a672-38b4132d299f__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Portal_Support_Endpoint_20260906044318.zip",
+      "tier": "primary",
+      "sha256": "79180a28064028a8eeea19651ba4f106b262ec6d8f6df2b9395c03f55f2e0f63",
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "displayName": "CG_Portal_Support_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/4873c936-a2be-4726-8e69-426edb8f70e6",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 6,
+          "required": 0,
+          "additionalProperties": "(absent — JSON Schema allows unknown fields)"
+        }
+      },
+      "contractKeys": [
+        "SUPPORT"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-14T09:01:54.8886033Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Portal_Support_Endpoint__4873c936-a2be-4726-8e69-426edb8f70e6__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Portal_Verification_Confirmation_Endpoint_20260906044511.zip",
+      "tier": "primary",
+      "sha256": "101a0920fc0ae37741b566c1409d6e99e8b093c6b3e9a94aea8adfc378ac3077",
+      "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+      "displayName": "CG_Portal_Verification_Confirmation_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/f96e3448-3c79-4d42-b224-825258a552ba",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 6,
+          "required": 0,
+          "additionalProperties": "(absent — JSON Schema allows unknown fields)"
+        }
+      },
+      "contractKeys": [
+        "VERIFY_CONFIRM"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-06T04:30:53.5184753Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Portal_Verification_Confirmation_Endpoint__f96e3448-3c79-4d42-b224-825258a552ba__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Portal_Writeback_Endpoint_20260906044535.zip",
+      "tier": "primary",
+      "sha256": "b9c4c8830e2984bcf4d2dc6a72e3ec55b9cadd1ddf621804932aa2c5f4fda8f1",
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "displayName": "CG_Portal_Writeback_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 6,
+          "required": 0,
+          "additionalProperties": "(absent — JSON Schema allows unknown fields)"
+        }
+      },
+      "contractKeys": [
+        "WRITEBACK"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-06T04:30:51.5515637Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Portal_Writeback_Endpoint__bde13d27-73b3-4e1a-9687-eb289b039c7a__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Submission_Endpoint_20260903050323.zip",
+      "tier": "primary",
+      "sha256": "159dd2be73b7ec42322fa0b88d88208ac29b30f8d225a1dae203d2b6fddf65f1",
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "displayName": "CG_Submission_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 6,
+          "required": 0,
+          "additionalProperties": "(absent — JSON Schema allows unknown fields)"
+        }
+      },
+      "contractKeys": [
+        "SUBMISSION"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-01T02:58:13.1240984Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-09-03T05:03:23.8941985Z",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Submission_Endpoint__de9ef13b-ae4c-42b0-9afa-20e71a180759__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Upload_Endpoint_20260904032403.zip",
+      "tier": "primary",
+      "sha256": "63b69624274ac018a914d6773edae06b29b2152ecdc04f2f0749cb9f8a4ebab3",
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "displayName": "CG_Upload_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "PUT",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "UPLOAD"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "PUT",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-04T03:22:43.6356745Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "PUT",
+        "exportedAtUtc": "2026-09-04T03:24:03.539428Z",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/CG_Upload_Endpoint__df82e331-b800-4a8d-996e-d2b2ca846c77__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "CG_Verification_Endpoint.READY.zip",
+      "tier": "primary",
+      "sha256": "89a284f76f696a575f5b1ea1cb1eab70e3b06d9a8202a0f6463f976f8d4026df",
+      "flowId": "86897b2f-9770-4efa-8486-2642f24bb947",
+      "displayName": "CG_Verification_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/86897b2f-9770-4efa-8486-2642f24bb947",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 9,
+          "required": 0,
+          "additionalProperties": true
+        }
+      },
+      "contractKeys": [
+        "VERIFY"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": null,
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_Create_Email_Assignment_Endpoint_20260906043757.zip",
+      "tier": "primary",
+      "sha256": "3c4838233d43269889b1ecbebf546878b80e12c545adeee7e3a2533ff69d60bd",
+      "flowId": "2fbb5485-6244-46eb-8a38-48e443a1d9fb",
+      "displayName": "IP_Create_Email_Assignment_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/2fbb5485-6244-46eb-8a38-48e443a1d9fb",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 13,
+          "required": 0,
+          "additionalProperties": true
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": null,
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_Dynamic_Global_Actions_EndpointFlow_20260917230439.zip",
+      "tier": "primary",
+      "sha256": "2428f0d12b762b1f9b8387bb16431387ec58b42fa8f8b0a34961ba6dbfc33368",
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "displayName": "IP_Dynamic_Global_Actions_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "exportedAtUtc": "2026-10-07T02:26:28.8637818Z",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_Dynamic_Global_Actions_Endpoint__31c0aaf0-ddbb-478c-9a98-bc013265c4c7__full_definition.json"
+      },
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_FETCH_ALL__EXTENDED_ENDPOINTFlow_20260911003936.zip",
+      "tier": "primary",
+      "sha256": "1654a114f654a62d8e4f6676773c9754c46e2efed75d03c0ca9ca5aae30f2d66",
+      "flowId": "ce2cbed8-d180-4160-a0c7-f552101bc412",
+      "displayName": "IP_FETCH_ALL__EXTENDED_ENDPOINT",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/ce2cbed8-d180-4160-a0c7-f552101bc412",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": true,
+          "properties": 5,
+          "required": 0,
+          "additionalProperties": "(absent — JSON Schema allows unknown fields)"
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": null,
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_Get_Docs_Endpoint_20260917225825.zip",
+      "tier": "primary",
+      "sha256": "7e373a73f4c9e5d5570d5c6305ed64eb5bf8292e821814b412cf000103f8caae",
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "displayName": "IP_Get_Docs_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_Get_Docs_Endpoint__28f6e62a-fea8-437c-a61a-47aec706c4e2__full_definition.json"
+      },
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_OTP_Endpoint_20260905062238.zip",
+      "tier": "primary",
+      "sha256": "d1dbbc2e3d4b69b01cda461765e8635828f38e9c4424303651a667fda4427a22",
+      "flowId": "913bd078-5411-404f-85ac-507c10fe1a09",
+      "displayName": "IP_OTP_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/913bd078-5411-404f-85ac-507c10fe1a09",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "OTP_GENERATE",
+        "OTP_VERIFY"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-04T06:06:11.0636907Z"
+      },
+      "asRecorded": null,
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_OTP_VERIFY_20260905184729.zip",
+      "tier": "primary",
+      "sha256": "c3b7c46db36f53e5b0d2f58785193946874fd84d527f3d546a66ba2235195ec4",
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "displayName": "IP_OTP_VERIFY",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "OTP_GENERATE",
+        "OTP_VERIFY"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-05T06:52:40.8261698Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_OTP_VERIFY__4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_Reference_Data_Endpoint_20260918173247.zip",
+      "tier": "primary",
+      "sha256": "ab687c5e9effda5b7fdd1484ef16fe57164fee6ed2d890f8bfcae42bbb2dc541",
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "displayName": "IP_Reference_Data_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "REFERENCE_DATA"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-04T06:13:24.2672893Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_Reference_Data_Endpoint__9a4dea8e-15f2-42b6-904d-3655056fa3c2__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_Retrieve_Email_Attachment_Endpoint_20260906045907 (1).zip",
+      "tier": "primary",
+      "sha256": "3892d5063ae46ab6668a5a2ed35739e7e72f0699bd07ca03c496aea0ea77b765",
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "displayName": "IP_Retrieve_Email_Attachment_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "FETCH_EMAIL_ATTACHMENTS"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-18T16:51:31.573012Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3-7a99-4259-b6a2-315fbc794d9b__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_SCAN_INTAKE_Endpoint_v2.1_NOTIFICATIONS_REPORTS_20260913.zip",
+      "tier": "primary",
+      "sha256": "a24406d40ba946c9cd382b617aaffeb75e434b387abb65852f303c4e849b1801",
+      "flowId": "12b6e690-a065-468d-b470-fcfba015f1f8",
+      "displayName": "IP_SCAN_INTAKE_Endpoint_v2.1",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/12b6e690-a065-468d-b470-fcfba015f1f8",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "Tenant",
+        "method": "PUT",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": null,
+      "agreesWithTenant": null
+    },
+    {
+      "package": "IP_SEND_EMAIL_20260905184716.zip",
+      "tier": "primary",
+      "sha256": "048f82ee4d2ef56974e6c68cf3f2c3f4a63035b900165902e7a668af0eee67c9",
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "displayName": "IP_SEND_EMAIL",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "EMAIL"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-02T05:35:58.5027998Z"
+      },
+      "asRecorded": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "exportedAtUtc": "2026-10-01",
+        "file": "docs/folio-Master-Flows-and-Endpoints/contracts/deployed/IP_SEND_EMAIL__df59a69f-92ca-4554-ae68-6b464aa73ef7__full_definition.json"
+      },
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_Single_Assignment_Endpoint.READY.zip",
+      "tier": "primary",
+      "sha256": "632eb3b1c9a3a18c563323b7417e0d372ff938b984bd0228950ee0f13421fbcc",
+      "flowId": "05825db0-c806-4974-807c-c062f386cc41",
+      "displayName": "IP_Single_Assignment_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/05825db0-c806-4974-807c-c062f386cc41",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "SINGLE_ASSIGNMENT"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-04T06:06:13.9466906Z"
+      },
+      "asRecorded": null,
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_Subsidiary_Actions_Endpoint_20260905193834.zip",
+      "tier": "primary",
+      "sha256": "c881b9a4d066ab81c06630c894eee124e48437879424f2fd08fecce771629a19",
+      "flowId": "08da1783-927f-4662-a429-45e1249a989f",
+      "displayName": "IP_Subsidiary_Actions_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/08da1783-927f-4662-a429-45e1249a989f",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [
+        "DYNAMIC_ACTIONS",
+        "SUBSIDIARY_ACTIONS"
+      ],
+      "isDeployedFlow": true,
+      "inTenantReading": true,
+      "asDeployed": {
+        "triggerAuthenticationType": "All",
+        "method": "POST",
+        "state": "Started",
+        "lastModifiedTimeUtc": "2026-09-05T19:36:57.0100116Z"
+      },
+      "asRecorded": null,
+      "agreesWithTenant": true
+    },
+    {
+      "package": "IP_Bulk_Assignment_Endpoint_20260901023331.zip",
+      "tier": "related_alternative",
+      "sha256": "636b493b11ab1d34f99d231ee7423a965643e5be1bce681260345e2a8759d8ff",
+      "flowId": "f96399c6-31d9-493a-a304-3fa8efda6ef8",
+      "displayName": "IP_Bulk_Assignment_Endpoint",
+      "createdTimeUtc": null,
+      "fullResourceId": "/providers/Microsoft.Flow/flows/f96399c6-31d9-493a-a304-3fa8efda6ef8",
+      "wiredWorkflowIdsCarried": [],
+      "asBuilt": {
+        "triggerAuthenticationType": "All",
+        "method": "(any verb — none declared)",
+        "requestSchema": {
+          "declared": false
+        }
+      },
+      "contractKeys": [],
+      "isDeployedFlow": false,
+      "inTenantReading": false,
+      "asDeployed": null,
+      "asRecorded": null,
+      "agreesWithTenant": null
+    }
+  ]
+}

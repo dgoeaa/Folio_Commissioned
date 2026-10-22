@@ -1,0 +1,40 @@
+{
+  "capturedUtc": "2026-08-31",
+  "purpose": "The single sanctioned crossing between the public portal estate and the internal platform is named in portal-wiring.json as ECM_DOCS_INTAKE, and tests/portal-wiring.test.mjs asserted that it 'is deployed and reads Portal Registry'. That assertion passed. It was reading a superseded export.",
+  "method": "Exports grouped by workflow_identity.internal_name rather than by display name, then compared on exportedAtUtc. Every one of the 60 files in docs/reference/flow-contracts/deployed/ carries exportedAtUtc, so the ordering is read from the captures themselves and not inferred.",
+  "finding": {
+    "workflowId": "df7ddff1-9275-4f23-acf6-e169525f4e2f",
+    "exports": [
+      {
+        "displayNameAtCapture": "ECM_DOCS_INTAKE",
+        "exportedAtUtc": "2026-08-19T06:08:28Z",
+        "rootActions": 2,
+        "portalRegistryOperations": ["GetItems"],
+        "status": "SUPERSEDED"
+      },
+      {
+        "displayNameAtCapture": "CG_Upload_Endpoint",
+        "exportedAtUtc": "2026-08-24T17:37:33Z",
+        "rootActions": 9,
+        "portalRegistryOperations": [],
+        "status": "LIVE — the later capture of the same workflow"
+      }
+    ],
+    "itIsOneFlow": "Not an inference. The 2026-08-31 paste-target resolution already established this id as one flow renamed and rebuilt in place, and used it as its decisive finding that the CG_* names are renames rather than new flows. What follows from it for the bridge was not drawn.",
+    "soTheState": "The workflow this repository calls ECM_DOCS_INTAKE is, as of its latest export, named CG_Upload_Endpoint, serves the portal's UPLOAD endpoint, and performs NO Portal Registry read."
+  },
+  "whyTheCheckPassedAnyway": "scripts/verify-portal-wiring.mjs resolved a flow by display name across every export in the directory. Both files carry the same workflow and different names, so findFlow('ECM_DOCS_INTAKE') matched the 2026-08-19 copy and reported the bridge healthy from it. The check was not wrong about the file it read; it was reading a file that had been superseded five days later.",
+  "whatIsNowTrue": {
+    "afterTheFix": "The sweep groups exports by workflow_identity.internal_name and keeps the latest by exportedAtUtc; the rest are reported as supersededExports rather than silently used. Definitions read moves 60 to 59.",
+    "measured": { "bridgePresent": false, "readsPortalRegistry": false }
+  },
+  "whatThisDoesNotEstablish": [
+    "Whether the Portal Registry read still exists in the tenant under some other flow. Only two deployed exports touch Portal Registry at all — this workflow's superseded copy, and CG_Writeback_Endpoint, which both reads and patches it. Nothing here says the agency intended the read to move there.",
+    "Whether the rebuild was deliberate. A 2-action feed becoming a 9-action upload endpoint under a new name is consistent with a deliberate repurposing and with an accidental overwrite, and the exports cannot separate the two.",
+    "What the flow contains today. The latest capture is 2026-08-24, a week old."
+  ],
+  "consequenceForThePaste": "EXECUTION_GUIDE section 5.2 directs Portal_UPLOAD_ECM_DOCS at this workflow id, which is correct for UPLOAD and is the same flow portal-wiring.json calls the bridge. Whatever the bridge is meant to be, the UPLOAD paste writes over it. This must be settled before the paste, not after.",
+  "howToSettleIt": "Export df7ddff1-9275-4f23-acf6-e169525f4e2f from the environment and read it. Then decide whether the intake feed still exists anywhere, and if it does not, whether D6's one-crossing argument still holds. Record ids only — a trigger URL is a bearer credential.",
+  "relatedOpenItems": [37],
+  "relatedDecisions": ["D1", "D6"]
+}

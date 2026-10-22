@@ -1,0 +1,71 @@
+{
+  "capturedUtc": "2026-08-30",
+  "purpose": "The EXECUTION_GUIDE names a target flow and flow id for each of the seven portal packages. portal-endpoint-workflow-ids.json names the flow actually serving each portal endpoint, read from the 2026-08-27 run records. For five of the seven they do not agree, and nothing in the repository reconciles them. An operator following the guide could paste a correct body into a flow nothing calls while the live flow keeps serving the old one.",
+  "method": "Flow ids compared directly: EXECUTION_GUIDE section 5.2 'Order, and why' against docs/reference/portal-endpoint-workflow-ids.json. Ids only — a trigger URL is a bearer credential and is not recorded.",
+  "comparison": [
+    {
+      "package": "Portal_VERIFY_ECM_DOCS",
+      "guideTarget": "Portal_Verify",
+      "guideFlowId": "86897b2f-9770-4efa-8486-2642f24bb947",
+      "liveFlow": "CG_Verification_Endpoint",
+      "liveInternalName": "86897b2f-9770-4efa-8486-2642f24bb947",
+      "verdict": "AGREE — one flow, renamed in place. portal-endpoint-workflow-ids.json states this explicitly: 'Reuses the Portal_Verify workflow — a rename in place.'"
+    },
+    {
+      "package": "Portal_SUPPORT_ECM_DOCS",
+      "guideTarget": "Portal_ECM_DOCS_SUPPORT",
+      "guideFlowId": "1b2c2e53-6c07-46a3-80b2-c43be1ef69db",
+      "liveFlow": "CG_Support_Endpoint",
+      "liveInternalName": "1b2c2e53-6c07-46a3-80b2-c43be1ef69db",
+      "verdict": "AGREE — one flow, renamed in place."
+    },
+    {
+      "package": "Portal_VERIFY_CONFIRM_ECM_DOCS",
+      "guideTarget": "Portal_Verify_Confirm",
+      "guideFlowId": "3b69aa71-ffed-4956-9d20-2aa3021a8da0",
+      "liveFlow": "CG_Verification_Confirmation_Endpoint",
+      "liveInternalName": "5e13db77-c1e1-4ed4-b109-cb5d9d247b49",
+      "verdict": "CONFLICT — two different flow ids for one endpoint."
+    },
+    {
+      "package": "Portal_SUBMISSION_ECM_DOCS",
+      "guideTarget": "Portal_UBMISSION_ECM_DOCS",
+      "guideFlowId": "270fb295-b1de-40e2-b36d-889a61a887a0",
+      "liveFlow": "CG_Submission_Endpoint",
+      "liveInternalName": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "verdict": "CONFLICT — two different flow ids for one endpoint."
+    },
+    {
+      "package": "Portal_UPLOAD_ECM_DOCS",
+      "guideTarget": "Portal_UPLOAD_ECM_DOCS",
+      "guideFlowId": "ae4b2a44-2388-42c7-baaf-86de3d6fa664",
+      "liveFlow": "CG_Upload_Endpoint",
+      "liveInternalName": "df7ddff1-9275-4f23-acf6-e169525f4e2f",
+      "verdict": "CONFLICT — two different flow ids for one endpoint."
+    },
+    {
+      "package": "Portal_STATUS_ECM_DOCS",
+      "guideTarget": "Portal_ECM_DOCS_STATUS",
+      "guideFlowId": "e21e7b9f-58c3-45be-bd47-6754ce6a895f",
+      "liveFlow": "CG_Status_Check_Endpoint",
+      "liveInternalName": "badb65d8-f472-407e-8975-c29d77b855d7",
+      "verdict": "CONFLICT — two different flow ids for one endpoint."
+    },
+    {
+      "package": "Portal_WRITEBACK_ECM_DOCS",
+      "guideTarget": "new flow — create it",
+      "guideFlowId": null,
+      "liveFlow": "CG_Writeback_Endpoint",
+      "liveInternalName": "21d4bfd3-f595-46fa-81bb-c29dabc12e7a",
+      "verdict": "CONFLICT — the guide says to create a flow that the run records show already exists and is serving the endpoint."
+    }
+  ],
+  "twoReadingsBothPossible": [
+    "The guide's ids are pre-rename and stale. The two that agree were renamed to CG_* names while keeping their ids, so the other five may have been renamed too — and the guide would then be naming the same flows by their older names but with ids captured before some later rebuild. This reading makes the CG_* flows the paste targets.",
+    "There are genuinely two flows per endpoint in the environment: an older Portal_* and a newer CG_*. The endpoint would then be served by whichever trigger URL the portal actually calls, and pasting into the other would change nothing a citizen sees."
+  ],
+  "whyItCannotBeSettledFromHere": "Both artefacts are internally consistent and neither is dated in a way that settles precedence. portal-endpoint-workflow-ids.json is the more recent (2026-08-27, read from run records rather than asserted), which favours the first reading — but a run record proves which flow ran, not which flow the guide meant. The environment's flow list is the only place this resolves.",
+  "consequenceIfGuessed": "Pasting a correct body into a flow nothing calls. Every repository check would pass, the paste would succeed, and the endpoint would keep serving the old body — a failure that looks like the package not working.",
+  "howToSettleIt": "List the flows in the environment and match on id. Every id above is recorded; whichever exist tells you directly whether there are seven flows or twelve. Then correct EXECUTION_GUIDE section 5.2 and Appendix A to name what is actually there.",
+  "relatedOpenItems": [35]
+}

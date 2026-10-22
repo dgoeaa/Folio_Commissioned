@@ -1,0 +1,57 @@
+{
+  "readUtc": "2026-10-18T13:45:00Z",
+  "by": "the live Portal SUPPORT endpoint called from the Portal origin; runs read through the Flow API; recipients masked; no body or URL recorded",
+  "cases": {
+    "A": {
+      "ref": "CASE-DBSJ39",
+      "item": 88,
+      "email": "registry mailbox"
+    },
+    "B": {
+      "ref": "CASE-9DG6YH",
+      "item": 89,
+      "email": "malformed (ztest-retry@example..invalid)"
+    },
+    "C": {
+      "ref": "CASE-V5GQ9W",
+      "item": 90,
+      "email": "malformed (ztest-fix@example..invalid)"
+    }
+  },
+  "rn007": {
+    "run": "08584092765682422849781733284CU08",
+    "acknowledgement": "Send_Support_Acknowledgement_Email Succeeded, receipt 1611 (support-acknowledgement, sent)",
+    "helpdeskAlert": "receipt 1612 (sent)"
+  },
+  "defect": {
+    "run": "08584092765524672908188781689CU23",
+    "found": "Send_Helpdesk_Alert_Email used the citizen address as Reply-To; Outlook refused it (\"A participant without an email address is not allowed for ReplyTo property\"), so the registry was not told of case B (receipt 1613 failed)",
+    "fix": "release 35: support and writeback registry alerts use the citizen address as Reply-To only when well formed",
+    "proof": {
+      "run": "08584092762618831900558302099CU07",
+      "case": "C",
+      "helpdeskAlert": "receipt 1616 sent",
+      "citizenAcknowledgement": "receipt 1617 failed (registered)"
+    }
+  },
+  "rn008": {
+    "how": "cases A and B set Closed (temporary flow, deleted); sweep run with NOTIFY_WORKING_HOURS_ONLY=false for the run, restored true",
+    "run": "08584092761745266551995657235CU24",
+    "sends": "Send_Case_Email x2 Succeeded (both held at the registry mailbox before commissioning)",
+    "receipts": "1618, 1621 (case, sent); 1619, 1620 (support-reply state, sent, attempts 1)"
+  },
+  "rn027": "Not exercisable live before commissioning: every sweep send, the support closure included, goes to the registry mailbox while NOTIFY_SWEEP_RECIPIENTS is not staff, so a malformed citizen address does not make the closure fail. The retry (once per sweep run, up to 3 attempts, then the undeliverable alert) is proven by the package simulation (npm run test:idphase4) and is exercised by the first real closure failure after commissioning.",
+  "watchOnRealFailures": {
+    "run": "08584092761043501351971593668CU23",
+    "read": 3,
+    "reported": [
+      "citizen: case B acknowledgement",
+      "citizen: case C acknowledgement"
+    ],
+    "countedOnly": [
+      "ops: case B helpdesk alert"
+    ],
+    "report": "receipt 1622 (sent to the registry)"
+  },
+  "cleanup": "failed receipts 1613, 1614, 1617 set resolved-superseded; support cases A-C remain for MANUAL-2"
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061a13"><meta name="description" content="An immersive visual journey through the DGO Digital Operations platform folio.">
+<title>DGO Digital Operations | Platform Folio</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to folio</a>
+<div class="cursor-glow" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="DGO Digital Operations home"><img src="assets/nitda-lockup-white.png" alt="NITDA"><span>DGO <b>Digital Operations</b></span></a>
+  <nav aria-label="Folio sections"><a href="#estate">Estate</a><a href="#journey">Journey</a><a href="#workspace">Workspace</a><a href="#views">Views</a><a href="#architecture">Architecture</a></nav>
+  <button class="sound" type="button" aria-label="Toggle ambient motion" aria-pressed="true"><span></span>Motion</button>
+</header>
+<main id="main">
+<section class="hero" id="top">
+  <canvas id="constellation" aria-hidden="true"></canvas>
+  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+  <div class="hero-copy reveal">
+    <div class="eyebrow"><i></i> One connected operating system</div>
+    <h1>From document<br><em>to decision.</em></h1>
+    <p>A visual journey through the platforms, applications and operational intelligence that move Agency work forward.</p>
+    <div class="hero-actions"><a class="btn primary" href="#journey">Begin the journey <span>↓</span></a><a class="btn ghost" href="#estate">Explore 8 platforms</a></div>
+  </div>
+  <div class="hero-kpis reveal" aria-label="Folio highlights">
+    <div><strong data-count="8">0</strong><span>Platforms</span></div><div><strong data-count="31">0</strong><span>Workspaces</span></div><div><strong data-count="5">0</strong><span>Navigation groups</span></div><div><strong>24/7</strong><span>Operational visibility</span></div>
+  </div>
+  <div class="scroll-cue"><span></span>Scroll to travel</div>
+</section>
+<section class="estate section" id="estate">
+  <div class="section-head reveal"><span>01 / THE ESTATE</span><h2>Eight surfaces.<br>One operational pulse.</h2><p>Each surface has a precise role. Together they form a controlled, observable and human-centred service estate.</p></div>
+  <div class="estate-stage reveal">
+    <div class="estate-core"><div class="core-rings"></div><img src="assets/nitda-lockup-white.png" alt=""><small>FOLIO CORE</small><b>DGO</b></div>
+    <div class="platform-nodes" id="platformNodes"></div>
+  </div>
+  <div class="platform-drawer" id="platformDrawer" aria-live="polite"><button aria-label="Close platform detail">×</button><div class="drawer-index">01</div><div><span class="drawer-category"></span><h3></h3><p></p><div class="drawer-meta"></div></div></div>
+</section>
+<section class="journey section" id="journey">
+  <div class="section-head light reveal"><span>02 / DOCUMENT JOURNEY</span><h2>A living chain of custody.</h2><p>Every hand-off is visible. Every decision leaves evidence.</p></div>
+  <div class="journey-rail" id="journeyRail">
+    <div class="rail-line"><i></i></div>
+    <article class="journey-step reveal"><div class="step-no">01</div><div class="step-visual intake-visual"><span class="paper p1"></span><span class="paper p2"></span><span class="scan"></span></div><div><small>ARRIVE</small><h3>Multichannel intake</h3><p>Portal · Email · Scan · Correspondence</p></div></article>
+    <article class="journey-step reveal"><div class="step-no">02</div><div class="step-visual intelligence-visual"><i></i><i></i><i></i><b>AI</b></div><div><small>UNDERSTAND</small><h3>Extract & classify</h3><p>Identity · Metadata · Priority · Summary</p></div></article>
+    <article class="journey-step reveal"><div class="step-no">03</div><div class="step-visual route-visual"><span></span><span></span><span></span><span></span></div><div><small>ORCHESTRATE</small><h3>Route with purpose</h3><p>Assignment · SLA · Escalation · Handoffs</p></div></article>
+    <article class="journey-step reveal"><div class="step-no">04</div><div class="step-visual decision-visual"><b>✓</b><i></i><i></i></div><div><small>DECIDE</small><h3>Review & approve</h3><p>Action · Approval · Direction · Evidence</p></div></article>
+    <article class="journey-step reveal"><div class="step-no">05</div><div class="step-visual dispatch-visual"><span>↗</span><i></i><i></i><i></i></div><div><small>DELIVER</small><h3>Dispatch & close</h3><p>Mailer · Notification · Record · Report</p></div></article>
+  </div>
+</section>
+<section class="workspace section" id="workspace">
+  <div class="section-head reveal"><span>03 / FOLIO WORKSPACE</span><h2>Work, translated<br>into visual rhythm.</h2><p>Thirty-one role-governed workspaces focus attention on what requires action now.</p></div>
+  <div class="workspace-shell reveal">
+    <aside><div class="mini-brand">DGO<span>OPS</span></div><div id="navGroups"></div></aside>
+    <div class="workspace-main">
+      <div class="command"><span>⌘</span><input aria-label="Search workspace preview" placeholder="Find anything in the folio…"><kbd>⌘ K</kbd></div>
+      <div class="workspace-top"><div><small>OPERATIONAL PULSE</small><h3>Good evening, Registry.</h3></div><div class="pulse"><i></i>All systems connected</div></div>
+      <div class="metric-grid"><article><span>Open assignments</span><b>24</b><i style="--p:68%"></i></article><article><span>Approvals due</span><b>08</b><i style="--p:41%"></i></article><article><span>Within SLA</span><b>94%</b><i style="--p:94%"></i></article><article><span>Flow health</span><b>99.8%</b><i style="--p:99.8%"></i></article></div>
+      <div class="activity-map"><div class="map-head"><b>Live workflow movement</b><span>Last 24 hours</span></div><svg viewBox="0 0 900 230" role="img" aria-label="Stylised workflow movement chart"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#18c681" stop-opacity=".45"/><stop offset="1" stop-color="#18c681" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 185 C80 160 100 188 165 132 S270 168 345 92 S465 150 535 85 S665 122 724 56 S820 95 900 35 V230 H0Z"/><path class="line" d="M0 185 C80 160 100 188 165 132 S270 168 345 92 S465 150 535 85 S665 122 724 56 S820 95 900 35"/><g class="dots"><circle cx="165" cy="132" r="6"/><circle cx="345" cy="92" r="6"/><circle cx="535" cy="85" r="6"/><circle cx="724" cy="56" r="6"/><circle cx="900" cy="35" r="6"/></g></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="views section" id="views">
+  <div class="section-head reveal"><span>04 / PLATFORM VIEWS</span><h2>Step inside<br>the folio.</h2><p>Selected operational views reveal how each platform turns complex work into clear action.</p></div>
+  <div class="view-selector reveal" role="tablist" aria-label="Platform application views" id="viewTabs"></div>
+  <div class="view-stage reveal">
+    <div class="device-bar"><i></i><i></i><i></i><span id="viewAddress">folio.workspace / correspondence</span><b>LIVE VIEW</b></div>
+    <div class="view-screen" id="viewScreen" role="tabpanel" aria-live="polite"></div>
+  </div>
+  <div class="view-caption reveal"><div><span id="viewNumber">01</span><small>SELECTED SURFACE</small></div><h3 id="viewTitle">Correspondence Command</h3><p id="viewDescription">A triage-first command surface for incoming, active and completed correspondence.</p><div class="view-dots" id="viewDots"></div></div>
+</section>
+<section class="architecture section" id="architecture">
+  <div class="section-head light reveal"><span>05 / ARCHITECTURE</span><h2>Designed as layers.<br>Experienced as one.</h2></div>
+  <div class="arch-stack reveal">
+    <div class="arch-layer l1"><span>EXPERIENCE</span><div>Workspace</div><div>Portal</div><div>Mailer</div><div>Administration</div></div>
+    <div class="arch-flow"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="arch-layer l2"><span>ORCHESTRATION</span><div>Power Automate</div><div>Flow Registry</div><div>Workbench</div><div>Deep Links</div></div>
+    <div class="arch-flow"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="arch-layer l3"><span>TRUST & DATA</span><div>SharePoint</div><div>Identity & RBAC</div><div>Audit Evidence</div><div>Endpoint Vault</div></div>
+  </div>
+  <div class="principles reveal"><article><b>01</b><h3>Independent</h3><p>Static, portable surfaces with no runtime build dependency.</p></article><article><b>02</b><h3>Governed</h3><p>Role, ownership and contract boundaries are explicit.</p></article><article><b>03</b><h3>Observable</h3><p>Health, change and evidence remain visible end to end.</p></article><article><b>04</b><h3>Secure</h3><p>Signed endpoints stay behind controlled aliases.</p></article></div>
+</section>
+<section class="design section" id="design">
+  <div class="section-head reveal"><span>06 / DESIGN LANGUAGE</span><h2>Authority without friction.</h2><p>A coherent interaction language built for clarity, confidence and operational pace.</p></div>
+  <div class="design-grid reveal">
+    <div class="colour-world"><div class="swatch s1"><b>Verdant</b><span>#18C681</span></div><div class="swatch s2"><b>Canopy</b><span>#093D2E</span></div><div class="swatch s3"><b>Signal</b><span>#F5B942</span></div><div class="swatch s4"><b>Cloud</b><span>#F3F6F4</span></div></div>
+    <div class="type-world"><small>TYPOGRAPHY</small><div>Aa</div><h3>Clarity in every state.</h3><p>Purposeful hierarchy. Calm density. Accessible contrast.</p></div>
+    <div class="motion-world"><small>MOTION</small><div class="motion-rings"><i></i><i></i><i></i></div><p>Movement signals change, never decoration alone.</p></div>
+    <div class="component-world"><small>COMPONENTS</small><button>Primary action <span>→</span></button><div class="mini-card"><i></i><div><b>Document received</b><span>Just now</span></div><em>New</em></div></div>
+  </div>
+</section>
+<section class="governance section">
+  <div class="governance-copy reveal"><span>07 / OPERATIONAL TRUST</span><h2>Every action.<br>Accountable.</h2><p>Identity, access, audit and quality gates surround the operational core without interrupting the journey.</p></div>
+  <div class="trust-orbit reveal"><div class="trust-core"><b>TRUST</b><span>by design</span></div><div class="trust-node n1">RBAC</div><div class="trust-node n2">Audit</div><div class="trust-node n3">CI Gates</div><div class="trust-node n4">Identity</div><div class="trust-node n5">Evidence</div><div class="trust-node n6">Secrets</div></div>
+</section>
+<section class="finale section">
+  <canvas id="finalCanvas" aria-hidden="true"></canvas><div class="finale-copy reveal"><img src="assets/nitda-lockup-white.png" alt="NITDA"><span>DGO DIGITAL OPERATIONS</span><h2>One folio.<br><em>Infinite operational clarity.</em></h2><a href="#top" class="btn primary">Replay the journey ↑</a></div>
+</section>
+</main>
+<footer><span>DGO Digital Operations Platform Folio</span><span>Built from the verified repository inventory</span></footer>
+</body></html>

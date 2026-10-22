@@ -1,0 +1,281 @@
+{
+  "recordedUtc": "2026-10-20T00:09:59Z",
+  "what": "The commissioned live set, read and built at the end of commissioning",
+  "flows": {
+    "readUtc": "2026-10-20T00:09:09.442Z",
+    "count": 43,
+    "started": 42,
+    "stoppedByDesign": [
+      " DGSO INCOMING AI PROCESSING (b6d92bae): the library intake the New Scan flow replaced, turned off 2026-10-16 (ITEM-80)"
+    ],
+    "list": [
+      {
+        "name": "CG_Submission_Endpoint",
+        "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+        "state": "Started",
+        "lastRun": "2026-10-18T22:48 Succeeded"
+      },
+      {
+        "name": "CG_Upload_Endpoint",
+        "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+        "state": "Started",
+        "lastRun": "2026-10-19T01:37 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Status_Check_Endpoint",
+        "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+        "state": "Started",
+        "lastRun": "2026-10-19T03:25 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Support_Endpoint",
+        "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+        "state": "Started",
+        "lastRun": "2026-10-18T22:50 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Writeback_Endpoint",
+        "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+        "state": "Started",
+        "lastRun": "2026-10-19T01:38 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Verification_Endpoint",
+        "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+        "state": "Started",
+        "lastRun": "2026-10-17T03:17 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Verification_Confirmation_Endpoint",
+        "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+        "state": "Started",
+        "lastRun": "2026-10-17T03:18 Succeeded"
+      },
+      {
+        "name": "CG_Registry_Status_Notifier",
+        "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+        "state": "Started",
+        "lastRun": "2026-10-19T16:32 Succeeded"
+      },
+      {
+        "name": "CG_Portal_Daily_Sweep",
+        "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+        "state": "Started",
+        "lastRun": "2026-10-19T07:59 Succeeded"
+      },
+      {
+        "name": "AUTO_SCHEDULED_SWEEP",
+        "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+        "state": "Started",
+        "lastRun": "2026-10-19T20:06 Succeeded"
+      },
+      {
+        "name": "IP_FETCH_ALL_BOOTSTRAP",
+        "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+        "state": "Started",
+        "lastRun": "2026-10-19T19:41 Succeeded"
+      },
+      {
+        "name": "IP_Get_Docs_Endpoint",
+        "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+        "state": "Started",
+        "lastRun": "2026-10-19T18:09 Succeeded"
+      },
+      {
+        "name": "IP_Reference_Data_Endpoint",
+        "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+        "state": "Started",
+        "lastRun": "2026-10-19T04:33 Succeeded"
+      },
+      {
+        "name": "IP_Retrieve_Email_Attachment_Endpoint",
+        "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+        "state": "Started",
+        "lastRun": "2026-10-09T23:07 Succeeded"
+      },
+      {
+        "name": "IP_Dynamic_Global_Actions_Endpoint",
+        "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+        "state": "Started",
+        "lastRun": "2026-10-19T19:49 Succeeded"
+      },
+      {
+        "name": "Single_Task_Assignment",
+        "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+        "state": "Started",
+        "lastRun": "2026-10-10T01:30 Failed"
+      },
+      {
+        "name": "BULK OPS DATA RETRIEVAL HTTP",
+        "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+        "state": "Started",
+        "lastRun": "2026-10-16T21:36 Succeeded"
+      },
+      {
+        "name": "IP_Create__Task__for_received_Email_Endpoint",
+        "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+        "state": "Started",
+        "lastRun": "2026-10-12T19:49 Succeeded"
+      },
+      {
+        "name": "AI_Document_Processing",
+        "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+        "state": "Started",
+        "lastRun": "2026-10-08T17:31 Cancelled"
+      },
+      {
+        "name": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+        "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+        "state": "Started",
+        "lastRun": "2026-10-19T16:31 Succeeded"
+      },
+      {
+        "name": "Folio_Failure_Watch",
+        "flowId": "c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+        "state": "Started",
+        "lastRun": "2026-10-19T17:05 Succeeded"
+      },
+      {
+        "name": "IP_OTP_VERIFY",
+        "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+        "state": "Started",
+        "lastRun": "2026-10-19T19:41 Succeeded"
+      },
+      {
+        "name": "IP_OTP_GENERATE",
+        "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+        "state": "Started",
+        "lastRun": "2026-10-19T19:40 Succeeded"
+      },
+      {
+        "name": "IP_User_Admin_Endpoint",
+        "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+        "state": "Started",
+        "lastRun": "2026-10-08T20:28 Succeeded"
+      },
+      {
+        "name": "IP_Activity_Lifecycle_Endpoint",
+        "flowId": "b4db02d8-02a0-4bc9-b9d3-06e2aae2448c",
+        "state": "Started",
+        "lastRun": "2026-10-12T19:43 Succeeded"
+      },
+      {
+        "name": "IP_SCAN_INTAKE",
+        "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+        "state": "Started",
+        "lastRun": "2026-10-18T19:12 Succeeded"
+      },
+      {
+        "name": "IP_SEND_EMAIL",
+        "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+        "state": "Started",
+        "lastRun": "2026-10-19T19:15 Succeeded"
+      },
+      {
+        "name": " DGSO INCOMING AI PROCESSING",
+        "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+        "state": "Stopped",
+        "lastRun": "2026-10-09T14:43 Succeeded"
+      },
+      {
+        "name": "01 - GOV - Provision HTTP Flow Registry",
+        "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+        "state": "Started",
+        "lastRun": "2026-10-19T20:49 Succeeded"
+      },
+      {
+        "name": "02 - GOV - Register HTTP Flow Truth",
+        "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+        "state": "Started",
+        "lastRun": "2026-10-02T05:02 Succeeded"
+      },
+      {
+        "name": "03 - GOV - Record HTTP Flow Execution",
+        "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+        "state": "Started",
+        "lastRun": "no run in history"
+      },
+      {
+        "name": "04 - GOV - Audit HTTP Flow Registry",
+        "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+        "state": "Started",
+        "lastRun": "2026-10-19T01:19 Succeeded"
+      },
+      {
+        "name": "05 - GOV - Retire HTTP Flow",
+        "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+        "state": "Started",
+        "lastRun": "no run in history"
+      },
+      {
+        "name": "06 - GOV - Registry Exception Notification",
+        "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+        "state": "Started",
+        "lastRun": "2026-10-19T23:57 Succeeded"
+      },
+      {
+        "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+        "flowId": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+        "state": "Started",
+        "lastRun": "no run in history"
+      },
+      {
+        "name": "08 - GOV - Discover and Register HTTP Consumers",
+        "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+        "state": "Started",
+        "lastRun": "2026-10-19T03:19 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_AUTH",
+        "flowId": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+        "state": "Started",
+        "lastRun": "2026-10-19T23:42 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_DATA",
+        "flowId": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_DIRECTORY",
+        "flowId": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_LOG",
+        "flowId": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_PROVISION",
+        "flowId": "c5a0f936-40a5-4044-a383-2530468f8413",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_SEND",
+        "flowId": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      },
+      {
+        "name": "DGO_MAIL_TEMPLATES",
+        "flowId": "176f7af5-7ffc-41d0-910b-e17b5587ebbd",
+        "state": "Started",
+        "lastRun": "2026-10-19T22:51 Succeeded"
+      }
+    ]
+  },
+  "packages": "all 27 packages of identification release 41 are in the tenant at their released fingerprint (registers/identification-paste-ledger.json against registers/identification-release.json)",
+  "builds": "npm run config:rebuild --portal-no-service-worker, 2026-10-20T00:04Z (registers/config-build-ledger.json): Workspace 16 addresses, sign-in enforced, staff notices held (recipients registry); Portal 7; Mailer 7; no address changed. mailer.html 2.1.5 added to the Workspace upload so one upload publishes both. Handed to the owner privately.",
+  "deployedSite": {
+    "workspace": "folio-platform.page.gd runs the build of 2026-10-19; the new build differs in config/platforms.data.js, config/flow-shapes.data.js and config/notification-matrix.config.js, and adds mailer.html",
+    "mailer": "https://folio-platform.page.gd/mailer.html answered 404 at 2026-10-20T00:01Z: not yet uploaded",
+    "portal": "folio-portal.page.gd matches the build; only the service worker build stamp differs"
+  },
+  "fetchAllRecovery": "FETCH_ALL run of 2026-10-19T19:41:19Z Succeeded in 34 s: recovered from the second throttling episode",
+  "committedSignedUrls": "179 signed URLs in 27 tracked files (docs/reference/foundational and two others) compared, by SHA-256 digest and by workflow id, with the 28 live addresses in the build ledger: none is a live address and none points at a live Folio workflow (consistent with ITEM-22)"
+}

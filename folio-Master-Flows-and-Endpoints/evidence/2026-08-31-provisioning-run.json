@@ -1,0 +1,103 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The run that provisioned the two columns declared after 2026-08-19 and set the filtered-column indexes, with the verify pass that confirmed both against the live tenant. Read against the specification, the estate's column set is complete in the tenant: 99 of 99, and all five index targets indexed.",
+  "againstSpec": {
+    "file": "docs/deployment/sharepoint/portal-field-spec.json",
+    "specVersion": "2.0.0"
+  },
+  "runner": "scripts/provision-sharepoint-fields.browser.js (browser devtools console, operator session)",
+  "source": {
+    "capture": "Browser console export, saved twice by the operator as a .log and a .txt. The two files are byte-identical once CRLF is normalised, so this is one run, not two.",
+    "startedUtc": "2026-08-31T16:08:08Z",
+    "startedUtcDerivedFrom": "the epoch-milliseconds stamp in the console export's filename (1788192488164). The provisioner prints no timestamp of its own, so this is when the log was saved, not when the first request went out. Nothing here depends on the difference."
+  },
+  "runs": [
+    {
+      "phase": "apply",
+      "created": 2,
+      "present": 97,
+      "failed": 0,
+      "consoleSays": "Created: 2   Already present: 97   Failed: 0 / Estate complete: 99/99 columns present."
+    },
+    {
+      "phase": "verify",
+      "mode": "DRY_RUN",
+      "created": 0,
+      "present": 99,
+      "failed": 0,
+      "consoleSays": "Indexes: 0 to set, 5 already indexed, 0 unreadable. / DRY RUN: 0 to create, 99 already present, 0 unreachable.",
+      "meaning": "The second pass ran with DRY_RUN left at its default true, so it wrote nothing. That is not a weaker verification than an apply-mode second run — it is a stricter one. Verification is a read: the pass queried every column and every index target against the live tenant and reported 99 already present, 5 already indexed, 0 unreachable and 0 unreadable. An apply-mode run would have read exactly the same state and then had nothing to write. Because it cannot write, it also cannot mask an incomplete estate by quietly finishing the job while reporting on it."
+    }
+  ],
+  "noVerifyRun": {
+    "state": "CLOSED",
+    "closedBy": "the verify pass recorded above, run in the same operator session",
+    "wasOutstandingBecause": "The apply pass's 99/99 rested on its own arithmetic — it counted what it had just done. A second pass that finds everything already there is the independent reading.",
+    "alsoClosed": "OPEN_ITEMS item 23's index criterion, which is literally 'the index pass reports 5 already indexed'. It reported exactly that: 'Indexes: 0 to set, 5 already indexed, 0 unreadable.'"
+  },
+  "ledger": [
+    {
+      "site": "Global_Digital_Documents_Centre",
+      "list": "Portal Flow Telemetry",
+      "field": "RunRecordJson",
+      "type": "Note",
+      "result": "created"
+    },
+    {
+      "site": "NITDADGO-EAAACTIVITYTRACKING",
+      "list": "Flow Configuration",
+      "field": "ConfigValue",
+      "type": "Note",
+      "result": "created"
+    }
+  ],
+  "indexRun": {
+    "consoleSays": "Indexing 5 filtered column(s) / Indexes set: 3   Already indexed: 2   Failed: 0",
+    "against": "docs/deployment/sharepoint/index-targets.json",
+    "addressing": "Each target is addressed by list GUID, not title. That matters here: 'Global Tracking Queue' and 'DGO DIGITAL OPS' each exist on two sites in this tenant, and only the NITDADGO-EAAACTIVITYTRACKING pair (ee82725a-c408-45e2-a8e8-facf7a092047 and 1f1cb303-3fd2-43c8-8f24-c409b6c2fde3) are the declared targets.",
+    "ledger": [
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Rate Limits",
+        "field": "Title",
+        "result": "indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Verification Proofs",
+        "field": "Title",
+        "result": "indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Support Cases",
+        "field": "Title",
+        "result": "indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "RefIDD",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "DGO DIGITAL OPS",
+        "field": "RefIDD",
+        "result": "already indexed"
+      }
+    ],
+    "verified": "The verify pass re-read all five targets and reported every one already indexed, including the three set minutes earlier in the apply pass. The three Title indexes are therefore confirmed against the tenant and not merely reported as set."
+  },
+  "correctsTheRepository": {
+    "finding": "OPEN_ITEMS items 31 and 33 assert that Global Tracking Queue.RefIDD and DGO DIGITAL OPS.RefIDD 'was not indexed', and item 31 draws a production consequence from it — 'the filter fails rather than slows and a known reference answers 404'. The provisioner reads each field's Indexed property before acting, and reported both as already indexed.",
+    "whatTheRepositoryActuallyHeld": "Nothing. sharepoint-list-index.json (captured 2026-08-18) records lists, not fields — it carries no Indexed property for any column, so no file in this repository was ever a source for the claim that these two were unindexed. index-targets.json states the requirement, not a measurement.",
+    "resolution": "The tenant reading is direct evidence and the assertion was unsourced, so the assertion is withdrawn. The requirement stands and is met. Items 31 and 33 are corrected rather than closed: their stated completion criteria are live-traffic checks (an assignment and a flag write returning 200), and this run is not that.",
+    "notEstablished": "Whether these columns were indexed all along or were indexed by someone between the 2026-08-18 capture and this run. Nothing available here distinguishes the two, and nothing depends on which it is."
+  },
+  "whatThisDoesNotClose": [
+    "Item 8 — Flow Configuration.ConfigValue now exists and D15 ratifies the list it sits on; no ALLOWED_ORIGIN row has been added, so the portal still cannot read a response.",
+    "Item 30 — Portal Flow Telemetry.RunRecordJson now exists; the packages still strip the write because the specification marks it PENDING, and no telemetry row carries a run record yet.",
+    "Items 23, 31 and 33 — the index requirement is met and verified. Their remaining criteria are live-traffic observations: one assignment and one flag write against a known reference returning 200. Neither has been exercised."
+  ]
+}

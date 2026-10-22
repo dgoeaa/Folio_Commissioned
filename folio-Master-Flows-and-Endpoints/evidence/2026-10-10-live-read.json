@@ -1,0 +1,53 @@
+{
+  "readUtc": "2026-10-10T06:09:01.757Z",
+  "by": "Flow API as dgsregistry@nitda.gov.ng (read only)",
+  "reads": {
+    "AI_Document_Processing": {
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "state": "Started",
+      "keyTextInDefinition": false,
+      "httpAuthorization": [
+        {
+          "action": "HTTP",
+          "authorization": "@{outputs('Compose_OpenRouter_Authorization')}"
+        }
+      ],
+      "gateScopePresent": true
+    },
+    "legacy_DGSO_INCOMING_AI_PROCESSING": {
+      "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+      "state": "Started",
+      "trigger": "OnNewFileV2",
+      "folder": "/E-DOCUMENT STATION",
+      "drive": "b!KHjXUlrp7k…",
+      "runsInLast50": 50,
+      "newestRun": "2026-10-09T14:43:02.6842759Z",
+      "oldestOfThese": "2026-10-08T10:09:16.6572536Z",
+      "statuses": {
+        "Succeeded": 50
+      }
+    },
+    "Folio_Incoming_Correspondence_Scan_Processing_Flow": {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "state": "Started",
+      "trigger": "OnNewFilesV2",
+      "folder": "/Scans/Incoming",
+      "drive": "b!8kLhzz4nN0…",
+      "runsInLast50": 0,
+      "newestRun": null,
+      "oldestOfThese": null,
+      "statuses": {}
+    },
+    "AUTO_SCHEDULED_SWEEP": {
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "state": "Stopped",
+      "trigger": "Recurrence",
+      "runsInLast50": 6,
+      "newestRun": "2026-10-02T09:55:53.4899149Z",
+      "oldestOfThese": "2026-10-02T04:55:51.7329402Z",
+      "statuses": {
+        "Succeeded": 6
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+Subject: [{{SEVERITY}}] DGO Registry Exception | {{exceptionType}} | {{exceptionKey}}
+Preview: A {{severity}} registry exception is assigned to you.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ Severity · {{severity}}
+
+DGO Registry Exception
+======================
+
+{{exceptionType}} · {{exceptionKey}}
+
+Exception
+
+Severity: {{severity}}
+
+Exception type: {{exceptionType}}
+
+Exception key: {{exceptionKey}}
+
+Registry key: {{registryKey}}
+
+Flow ID: {{flowId}}
+
+Source run ID: {{runId}}
+
+Detected UTC: {{detectedUtc}}
+
+Details
+
+{{details}}
+
+Open the exception record: {{registryRecordUrl}}
+
+This exception was acknowledged only after successful delivery of this notification. Internal operational notice. Do not forward outside the Agency.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

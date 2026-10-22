@@ -1,0 +1,22 @@
+{
+  "recordedUtc": "2026-10-19T23:00:00Z",
+  "decision": "owner, 2026-10-19: the DGO Correspondence Mailer uses the same domain as the Workspace (the internal platform)",
+  "before": "https://internal-platform.rf.gd/mailer.html; that host has not been reachable since the rf.gd hosts were suspended on 2026-10-18. The seven Mailer flows were last run on 2026-09-28.",
+  "after": "https://folio-platform.page.gd/mailer.html, one file beside the Workspace's index.html, as the Mailer package was designed to be published",
+  "flows": {
+    "change": "Compose_Config.inputs.allowedOrigin from https://internal-platform.rf.gd to https://folio-platform.page.gd, nothing else; each flow saved first, written by the Flow API, read back with the rest of its definition equal to the saved one and state Started (2026-10-19T22:44Z to 22:45Z)",
+    "DGO_MAIL_AUTH": "7d90f8f0-fa91-4aed-899c-b2bce5b70694",
+    "DGO_MAIL_DATA": "d44a67e3-c55a-415a-afe9-ef50a4702117",
+    "DGO_MAIL_DIRECTORY": "0cb4c4a8-578a-4017-90dc-b8f2ffb21cb8",
+    "DGO_MAIL_LOG": "98ce8b40-d386-4ec5-a277-1a35688fef4f",
+    "DGO_MAIL_PROVISION": "c5a0f936-40a5-4044-a383-2530468f8413",
+    "DGO_MAIL_SEND": "0fb53e16-fa57-41a9-9880-752c3a4d4749",
+    "DGO_MAIL_TEMPLATES": "176f7af5-7ffc-41d0-910b-e17b5587ebbd"
+  },
+  "health": "after the change, each of the seven flows answered the package's healthCheck (validationOnly) from Origin https://folio-platform.page.gd with 200 and its own endpoint key (2026-10-19T22:5xZ)",
+  "corsNote": "the flows set Access-Control-Allow-Origin to the configured origin, but the Power Automate gateway answers '*' for HTTP flows whatever the flow sets; who may act is decided by the Mailer's own operator sign-in (codes mailed to listed operators, 12-hour session), not by origin",
+  "addresses": "unchanged: npm run config:drift reports every address equal to the build of 2026-10-19T04:01:30Z",
+  "storage": "the Mailer keeps drafts and attachments in IndexedDB 'dgo-mailer'; the Workspace uses no IndexedDB, so sharing the origin shares no stored data",
+  "repository": "scripts/build-mailer-flows.mjs allowedOrigin, mailer/flows (regenerated), releases/dgo-correspondence-mailer-2.1.5.zip (version 2.1.5), setup defaults, GO-LIVE.html, READMEs, scripts/platforms.config.mjs prodUrl; npm run test:mailer passes (392 and 78)",
+  "publish": "mailer.html (version 2.1.5, the seven addresses, no key) handed to the owner privately on 2026-10-19 to upload into the folder that holds the Workspace's index.html on folio-platform.page.gd"
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "f0e2fe779e4b52b79b8a783a77492c96d4fa0c84",
+  "finishedUtc": "2026-10-08T01:01:36.861Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "d82bc9d317f94adca8cad0caf7e32ceb74e733408323610ffe9870e9c9911b42",
+          "liveHash": "d82bc9d317f94adca8cad0caf7e32ceb74e733408323610ffe9870e9c9911b42",
+          "fingerprint": "15b532049a7d0707",
+          "liveFingerprint": "15b532049a7d0707",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash d82bc9d317f9…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "state": "Stopped",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8",
+          "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+          "scope": "Scope_Scan_Processing",
+          "status": "UP_TO_DATE",
+          "packageHash": "46967c71217bc39a8c231215741925234a320f4b0bbd7c0654e30d5ccd72922b",
+          "liveHash": "46967c71217bc39a8c231215741925234a320f4b0bbd7c0654e30d5ccd72922b",
+          "fingerprint": "174e604f428f511d",
+          "liveFingerprint": "174e604f428f511d",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

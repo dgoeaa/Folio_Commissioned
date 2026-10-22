@@ -1,0 +1,38 @@
+{
+  "capturedUtc": "2026-08-30T11:43:32Z",
+  "purpose": "What the tenant says about the Flow Configuration list, read directly rather than inferred. The estate-wide list index (sharepoint-list-index.json, captured 2026-08-18) records eleven fields per list and a creation date is not one of them, so nothing in this repository could say how old this list was or who made it. Seven internal and seven portal packages now read it for the allowed CORS origins, which made that gap worth closing before the first paste rather than after.",
+  "method": "GET /_api/web/lists(guid'...')?$select=Title,Description,Created,ItemCount — read from a mobile browser by the operator and returned as Atom XML. Values below are transcribed from that response verbatim.",
+  "list": {
+    "guid": "9bc168c3-06e5-4d58-982b-0df06205fd35",
+    "title": "Flow Configuration",
+    "site": "NITDADGO-EAAACTIVITYTRACKING",
+    "siteUrl": "https://nitdanigeria.sharepoint.com/sites/NITDADGO-EAAACTIVITYTRACKING",
+    "created": "2025-10-30T21:52:53Z",
+    "description": "",
+    "itemCount": 1,
+    "etag": "8"
+  },
+  "whatThisEstablishes": [
+    "The list was created on 30 October 2025 — roughly ten months before the 2026-08-18 estate capture, and well before any work in this repository. It is not ours and was not made for this.",
+    "It carries no description. Whoever created it left no statement of what it is for.",
+    "It held one item at the 2026-08-18 capture and holds one item now. It has not grown in over nine months.",
+    "None of the 58 exported flow definitions in docs/reference/flow-contracts/deployed/ names it, reads it or writes it. Nothing in the automation estate depends on it.",
+    "The etag of 8 indicates the list definition has been updated several times since creation, which is consistent with columns having been added at some point — but the count alone does not say which, or when."
+  ],
+  "stillUnknown": [
+    "The column set. The estate capture records no columns for any list, and the settings page has not been read yet. Title is asserted only because every SharePoint list has it.",
+    "What the single existing row contains, and therefore what the list was made to hold.",
+    "Who created it. The $select above did not request Author; a follow-up read can."
+  ],
+  "bearingOnTheDecision": "Dormant and unreferenced cuts both ways. Nothing will break by adding a column and rows to it, and nobody will miss it — but equally, nobody can vouch for it, and a list with no description and no reader is a poor place to put a control that every one of fourteen flows depends on. The alternatives remain DGO_EndpointRegistry, which is adopted and specified, or a new DGO_PlatformConfig provisioned from portal-field-spec.json. This file exists so that decision is made against what the tenant actually says.",
+  "relatedOpenItems": [
+    8,
+    34
+  ],
+  "supersededInPartBy": {
+    "record": "docs/deployment/sharepoint/evidence/2026-08-31-portal-paste-target-resolution.json and the 2026-08-31 export of CG_Writeback_Endpoint",
+    "correction": "This record states that none of the 58 exported flows names Flow Configuration. That was true of the 58 exports held on 2026-08-30. It is not true of the 60 held now: CG_Writeback_Endpoint, exported from the tenant on 2026-08-31 and previously absent from this repository, reads the list by GUID 9bc168c3-06e5-4d58-982b-0df06205fd35 for its allowed CORS origins.",
+    "whatThatChanges": "The list is not dormant. A deployed portal endpoint reads it in production, exactly as the design intends. The rest of this record stands as read: created 2025-10-30, no description, one item unchanged in over nine months, and no owner identified.",
+    "whatItRaised": "The same read is a crossing of the portal trust boundary — an anonymously invokable endpoint reaching into the internal operations estate, which portal-wiring.json's principle forbids without exception. Open item 36; declared in portal-wiring.json under declaredCrossings."
+  }
+}

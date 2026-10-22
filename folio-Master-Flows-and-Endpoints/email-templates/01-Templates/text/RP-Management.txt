@@ -1,0 +1,43 @@
+Subject: {{reportName}} — {{start}} to {{end}}
+Preview: The management report you generated in Folio.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+Report · {{reportName}}
+
+NITDA Management Report
+=======================
+
+From {{profileName}} · Department: {{persona}}
+
+Dear {{profileName}},
+
+Here is the report you generated in Folio for {{start}} to {{end}}.
+
+Management insight
+
+Total {{total}} | Completed {{completed}} | Pending {{pending}} | Overdue {{overdue}}
+
+Immediate attention is required for overdue items.
+
+Task list
+
+Title | Due | Status | Ack | Link
+
+{{row.title}} {{row.assignedTo}} · {{row.category}} | {{row.due}} | {{row.status}} | {{row.ack}} | View: {{row.url}}
+
+{{row.title}} {{row.assignedTo}} · {{row.category}} | {{row.due}} | {{row.status}} | {{row.ack}} | View: {{row.url}}
+
+{{row.title}} {{row.assignedTo}} · {{row.category}} | {{row.due}} | {{row.status}} | {{row.ack}} | View: {{row.url}}
+
+{{row.title}} {{row.assignedTo}} · {{row.category}} | {{row.due}} | {{row.status}} | {{row.ack}} | View: {{row.url}}
+
+Open Reports in Folio: {{reportsUrl}}
+
+You received this because you generated the report in Folio. Internal: for NITDA staff only.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

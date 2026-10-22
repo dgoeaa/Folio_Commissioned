@@ -1,0 +1,30 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "d4b7004b21fb8d41f69ca7f751473e0664320a3b",
+  "finishedUtc": "2026-10-12T19:48:16.368Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "fc4e855cbcbf614b02e58d15dd214d761d62cda7058cc1945570ba06459cc0fe",
+          "liveHash": "fc4e855cbcbf614b02e58d15dd214d761d62cda7058cc1945570ba06459cc0fe",
+          "fingerprint": "1d6e363e1b01fe08",
+          "liveFingerprint": "1d6e363e1b01fe08",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash fc4e855cbcbf…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

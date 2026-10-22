@@ -1,0 +1,37 @@
+{
+  "recordVersion": "1.0",
+  "what": "The tenant cannot run a Power Automate inline-code action. This is the constraint that decides ITEM-18, and it is the only fact in this estate's record that did not come from the repository or from a command run against it.",
+  "classification": "EXTERNAL DEPENDENCY — supplied by the operator, not derived from this repository.",
+  "statedBy": "the repository owner, in session, 2026-09-03, answering the direct question 'can your tenant run a JavaScriptCode action?'",
+  "answer": "No.",
+  "whyItWasAsked": "Workflow Definition Language has no hash function and no bitwise operators, so SHA-256 cannot be computed in a flow expression. The only route inside Power Automate is an inline-code action, whose availability depends on the plan and the region. Nothing in this repository can establish whether a given tenant has it — the 58 exported definitions contain no inline-code action of any spelling, which shows it is unused here but not that it is unavailable.",
+  "howItIsRecorded": "As a stated external fact, attributed and dated, not as a measurement. It is not reproducible from this repository and is not presented as though it were. If the tenant's plan changes, this record is what must be revisited.",
+  "consequence": "INT-002's digest requirement cannot be met inside the upload flow, by any implementation, on this tenant. It is not a defect to be fixed, an unwritten action, or a porting job — it is a platform constraint. ITEM-18 moves from EVIDENCE_INCOMPLETE to ACCEPTED on that basis.",
+  "whatWasVerifiedInTheRepositoryAlongsideIt": [
+    {
+      "claim": "The client computes a real SHA-256 and declares it per attachment.",
+      "evidence": "document-portal/js/submit.js:354 digestOf() uses crypto.subtle.digest('SHA-256', …) over the file's ArrayBuffer and hex-encodes it; :447 declares one per attachment as sha256.",
+      "caveat": "crypto.subtle exists only in a secure context. digestOf returns the empty string when it is absent, and the declaration carries '' rather than failing, so an empty digest is possible and is not refused."
+    },
+    {
+      "claim": "The declared digest is persisted.",
+      "evidence": "docs/deployment/sharepoint/portal-field-spec.json declares DeclaredSha256 on Portal Attachments and on Portal Upload Tickets; the 2026-09-02 dry run reported both present in the tenant."
+    },
+    {
+      "claim": "The size check is real and works.",
+      "evidence": "Portal_UPLOAD_ECM_DOCS compares DeclaredSizeBytes to Content-Length and answers 422 checksum-mismatch on a difference. That half of INT-002 is met."
+    },
+    {
+      "claim": "The design's checksum action never ran and must not be ported.",
+      "evidence": "Verify_Upload_Checksum in docs/deployment/power-automate-flows/02-portal-upload.flow.json is typed 'Javascript', which is not a Power Automate action type; its comparison target is an uninterpolated string literal, so a correct digest would be refused; and no inline-code action of any spelling appears in the 58 exported definitions."
+    }
+  ],
+  "compensatingControl": {
+    "what": "The digest is RECORDED, not ENFORCED.",
+    "detail": "A client-computed SHA-256 arrives with every attachment that has bytes and is stored as DeclaredSha256. It supports out-of-band verification later — an operator or a scheduled job outside Power Automate can re-hash the stored file and compare — but nothing verifies it at intake.",
+    "whatItIsWorth": "Against accidental corruption in transit it is useful, provided someone actually performs the later comparison. Against a caller who controls the client it is worth nothing, because that caller declares the digest as well as the bytes.",
+    "whatItIsNot": "It is not an integrity control at the boundary, and no document may describe it as one."
+  },
+  "residualRisk": "A file of the correct declared length whose contents differ from what the submitter intended is stored without objection. The size check still applies and still catches a length mismatch.",
+  "whatWouldReopenThis": "A change to the tenant's Power Automate plan or region that makes an inline-code action available. At that point the action must be written from scratch — the design example is broken three ways and has never run — and demonstrated with two live uploads, one correct and one corrupted."
+}

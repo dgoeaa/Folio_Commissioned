@@ -1,0 +1,150 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "7c6db3481886bec2a3fa4b4014b471ed920a859a",
+  "finishedUtc": "2026-10-07T02:25:14.995Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "a8fabef295ea3dedf490204f89897bd4a60c08ad86ce9b1c127340399fbfcdb1",
+          "liveHash": "a8fabef295ea3dedf490204f89897bd4a60c08ad86ce9b1c127340399fbfcdb1",
+          "fingerprint": "0e09806165d73007",
+          "liveFingerprint": "0e09806165d73007",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash a8fabef295ea…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "flow": "IP_OTP_VERIFY",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde",
+          "file": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde.paste.json",
+          "scope": "Scope_Global",
+          "status": "FAILED",
+          "packageHash": "d54c26b161e00db3e8e872fbf06feed609fdc02700472d525e876d1a746cb91f",
+          "liveHash": "5b3f5806a32755b37a1cf56c4ec8c58e41c2985126dedb0b202ef1e8f5215aeb",
+          "fingerprint": "148fb58b53c3af1a",
+          "liveFingerprint": "0b15d7fc4432e50c",
+          "emptySetVariables": [],
+          "detail": "the service refused the write (400): InvalidOpenApiFlow Flow save failed with code 'WorkflowOperationParametersExtraParameter' and message 'The API operation does not contain a definition for parameter 'item/Email'.'.",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "flow": "IP_Reference_Data_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e",
+          "file": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "dd7a90d9dea4499a3965b5519d69f63a72a5335ab822ee452740fd37ee38d487",
+          "liveHash": "807e1c122fa5bc270b6aab90094cfb7315c7d9c4ca7f21a32f04f30723d5f3cc",
+          "fingerprint": "03607b54430d6f0a",
+          "liveFingerprint": "197d3e26ad734e10",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_OTP_VERIFY",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "flow": "IP_Get_Docs_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a",
+          "file": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "77297ada888eae1b0059b2b8a6b78dc4ae5fa973a561cd5d4584a7161417a34e",
+          "liveHash": "90076d9107f9e26d7ed76c65907166215b3b842d7a3d4d8467870749fcb644b0",
+          "fingerprint": "048cc8dfa25af601",
+          "liveFingerprint": "0844093df2fe3900",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_OTP_VERIFY",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3",
+          "file": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3.paste.json",
+          "scope": "Scope_Email_Attachment_Endpoint_REBUILT",
+          "status": "NOT_RUN",
+          "packageHash": "24e06290404f9f29684ef60cd14bae877568992f75e7d27996af3c7ed3b8e972",
+          "liveHash": "8ee2e874516e4d1a7190adb4ffaa02ddddaa88d1e466d2fc89a19a50fc851835",
+          "fingerprint": "0f692e9044999d14",
+          "liveFingerprint": "0a67e029da339901",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_OTP_VERIFY",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "flow": "IP_SEND_EMAIL",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL__IP_SEND_EMAIL__df59a69f",
+          "file": "EMAIL__IP_SEND_EMAIL__df59a69f.paste.json",
+          "scope": "Scope_Send_Email_Flow",
+          "status": "NOT_RUN",
+          "packageHash": "424421add41045d2e057cb57f52dcd617ce89217b13fcaadd02276459a2f0f2b",
+          "liveHash": "94516e0e88090bf5122c278418c757a01ecf2be3e40a39d7768be4d4f0053531",
+          "fingerprint": "03441c8c47e60c0f",
+          "liveFingerprint": "0e8889840ad3a91f",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_OTP_VERIFY",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "flow": "AI_Document_Processing",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6",
+          "file": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6.paste.json",
+          "scope": "Scope_AI_Caller_Gate",
+          "status": "NOT_RUN",
+          "packageHash": "ff117d07d87719a6a8399b1972c81d27f05273e54fd5de0de9ce25744d5cf3c3",
+          "liveHash": "05d96e3979fdcfea8eef803f482b3dd10e9705331dd3206c4d6d0ee6d5d4b8aa",
+          "fingerprint": "18c152db7c2d491f",
+          "liveFingerprint": "1caa381ebcc66213",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_OTP_VERIFY",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

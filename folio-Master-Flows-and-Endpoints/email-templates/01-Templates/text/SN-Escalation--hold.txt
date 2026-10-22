@@ -1,0 +1,45 @@
+Subject: Escalated (level {{level}}): {{referenceId}} — {{title}}
+Preview: A record you own has been escalated.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+⚠ Escalated · level {{level}}
+
+A record you own has been escalated
+===================================
+
+Open Folio to act on it.
+
+Commissioning: this notice is for {{intendedName}} <{{intendedEmail}}>. It comes to the registry until StaffNoticeDelivery.recipients is staff.
+
+Dear {{recipientName}},
+
+{{actorName}} has escalated the record below.
+
+Reason
+
+{{reason}}
+
+Record
+
+Reference: {{referenceId}}
+
+Task: {{title}}
+
+Escalation level: L{{level}}
+
+Due: {{dueDate}}
+
+Raised by: {{actorName}}
+
+Open Folio to act on it.
+
+Open the record in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

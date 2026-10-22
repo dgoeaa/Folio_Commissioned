@@ -1,0 +1,470 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "7c6db3481886bec2a3fa4b4014b471ed920a859a",
+  "finishedUtc": "2026-10-07T02:24:22.644Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "flow": "CG_Submission_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUBMISSION__CG_Submission_Endpoint__de9ef13b",
+          "file": "SUBMISSION__CG_Submission_Endpoint__de9ef13b.paste.json",
+          "scope": "Scope_Submission_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "46a732c8e5d34b3cc659106993db19245369461fe44f3a9be85f0df7b7586e62",
+          "liveHash": "46a732c8e5d34b3cc659106993db19245369461fe44f3a9be85f0df7b7586e62",
+          "fingerprint": "06cef019525eec0b",
+          "liveFingerprint": "06cef019525eec0b",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "flow": "CG_Portal_Support_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUPPORT__CG_Portal_Support_Endpoint__4873c936",
+          "file": "SUPPORT__CG_Portal_Support_Endpoint__4873c936.paste.json",
+          "scope": "Scope_Support_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "6c9806abe291f622d6cd11813f1544db40eb9fad080547bb9db0c71e80d0996a",
+          "liveHash": "6c9806abe291f622d6cd11813f1544db40eb9fad080547bb9db0c71e80d0996a",
+          "fingerprint": "0b105681da9ccd09",
+          "liveFingerprint": "0b105681da9ccd09",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "flow": "CG_Portal_Status_Check_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e",
+          "file": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e.paste.json",
+          "scope": "Scope_Status_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "84c21b65a04b25bf5e0378e60761b76182c02359c6abf5becc1d4433fb13f3be",
+          "liveHash": "84c21b65a04b25bf5e0378e60761b76182c02359c6abf5becc1d4433fb13f3be",
+          "fingerprint": "1be1f488d78ef211",
+          "liveFingerprint": "1be1f488d78ef211",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "flow": "CG_Portal_Writeback_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27",
+          "file": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json",
+          "scope": "Scope_Writeback_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "440e6f67ff7f9992754483194a7d16e65ba99f501a85a4bd66edc3db403793e7",
+          "liveHash": "440e6f67ff7f9992754483194a7d16e65ba99f501a85a4bd66edc3db403793e7",
+          "fingerprint": "082a826732346609",
+          "liveFingerprint": "082a826732346609",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "flow": "CG_Upload_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "UPLOAD__CG_Upload_Endpoint__df82e331",
+          "file": "UPLOAD__CG_Upload_Endpoint__df82e331.paste.json",
+          "scope": "Scope_Upload_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "8fc3c29f3914cae577121569f9ed58eddc06ce7fa499fb7756fbaa77c2173931",
+          "liveHash": "8fc3c29f3914cae577121569f9ed58eddc06ce7fa499fb7756fbaa77c2173931",
+          "fingerprint": "06bc45ff32b2481c",
+          "liveFingerprint": "06bc45ff32b2481c",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+      "flow": "CG_Registry_Status_Notifier",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Registry_Status_Notifier__8ebf6001",
+          "file": "NOKEY__CG_Registry_Status_Notifier__8ebf6001.paste.json",
+          "scope": "Scope_StatusNotify_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "45716f7d0f05f9e84a1c777936a84fdd65f0158d6c1e1a13d8a9c404e3621418",
+          "liveHash": "45716f7d0f05f9e84a1c777936a84fdd65f0158d6c1e1a13d8a9c404e3621418",
+          "fingerprint": "00fd5b5ea5d33000",
+          "liveFingerprint": "00fd5b5ea5d33000",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+      "flow": "CG_Portal_Daily_Sweep",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d",
+          "file": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d.paste.json",
+          "scope": "Scope_Sweep_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "cd17dc0764b3dd999bacf23ff67a343c04b6abdd62072a60d2c26bb9b43a1a76",
+          "liveHash": "cd17dc0764b3dd999bacf23ff67a343c04b6abdd62072a60d2c26bb9b43a1a76",
+          "fingerprint": "03010ea674716e1c",
+          "liveFingerprint": "03010ea674716e1c",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+      "flow": "CG_Portal_Verification_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b",
+          "file": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b.paste.json",
+          "scope": "Scope_Verify_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "1d12e1cdb5521902e535e233313c3d4eb43a99e0e2c0a55913dc75b792379860",
+          "liveHash": "1d12e1cdb5521902e535e233313c3d4eb43a99e0e2c0a55913dc75b792379860",
+          "fingerprint": "1180c0064d2e1c1e",
+          "liveFingerprint": "1180c0064d2e1c1e",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+      "flow": "CG_Portal_Verification_Confirmation_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448",
+          "file": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448.paste.json",
+          "scope": "Scope_VerifyConfirm_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "1998ee3789ced185022e23fabae1a1d0f84b4e0cd67668ad515c083ef3ddf77a",
+          "liveHash": "1998ee3789ced185022e23fabae1a1d0f84b4e0cd67668ad515c083ef3ddf77a",
+          "fingerprint": "0804a1308d94c10f",
+          "liveFingerprint": "0804a1308d94c10f",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+      "flow": "IP_SCAN_INTAKE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9",
+          "file": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json",
+          "scope": "Scope_Scan_Flow",
+          "status": "UP_TO_DATE",
+          "packageHash": "56fd1783365eedcb8363ff88a7d74d788cfe9cb2a462561c15e3e7329295cb8e",
+          "liveHash": "56fd1783365eedcb8363ff88a7d74d788cfe9cb2a462561c15e3e7329295cb8e",
+          "fingerprint": "14322d99e5aafb12",
+          "liveFingerprint": "14322d99e5aafb12",
+          "emptySetVariables": [],
+          "detail": null,
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+      "flow": "Single_Task_Assignment",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458",
+          "file": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "cb8873b96e1aa2bf52d119a95e1e6836bb73989fe5dd87a4ae20b58f999c1aaf",
+          "liveHash": "cb8873b96e1aa2bf52d119a95e1e6836bb73989fe5dd87a4ae20b58f999c1aaf",
+          "fingerprint": "110b043035a0cf13",
+          "liveFingerprint": "110b043035a0cf13",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash cb8873b96e1a…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "flow": "BULK OPS DATA RETRIEVAL HTTP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61",
+          "file": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "b819e537a366ab1f26683f14a7ab1db9283d2f04d889df56f5e7da0011f8ce87",
+          "liveHash": "b819e537a366ab1f26683f14a7ab1db9283d2f04d889df56f5e7da0011f8ce87",
+          "fingerprint": "1c7e2ed76577cf0f",
+          "liveFingerprint": "1c7e2ed76577cf0f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash b819e537a366…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "475d768c1f295e39e0466174204364488e0fd2db3f34ef25f568b3ec8ea9cb3c",
+          "liveHash": "475d768c1f295e39e0466174204364488e0fd2db3f34ef25f568b3ec8ea9cb3c",
+          "fingerprint": "0b5439cec805af11",
+          "liveFingerprint": "0b5439cec805af11",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 475d768c1f29…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "FAILED",
+          "packageHash": "93f9807605d1d4ab52ce5506056fa9698e3c6d79615c7b7a9251c1b77c5bede4",
+          "liveHash": "dca5e332acd7347ee793ed4011a9c5b449ca3f9fbe53d317d22ef415c557b5f2",
+          "fingerprint": "1f79aeb76f6ce013",
+          "liveFingerprint": "1b4034359a06cf0c",
+          "emptySetVariables": [],
+          "detail": "the service refused the write (400): TemplateValidationError The power flow's logic app flow template was invalid.  The template language expression limit exceeded: maximum '8192' and actual '9540'.",
+          "rebinds": [
+            {
+              "reference": "shared_office365",
+              "from": null,
+              "to": "c0b9e7a5b0854c39a435fd8ce92f48ad",
+              "alsoUsedOutside": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "a8fabef295ea3dedf490204f89897bd4a60c08ad86ce9b1c127340399fbfcdb1",
+          "liveHash": "802e9d496487cdce5bd6b71a188785525d860fa569fc07d119b1c345d36cef69",
+          "fingerprint": "0e09806165d73007",
+          "liveFingerprint": "03efc4e940589816",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4dbe6dde-37d5-47b4-ba32-d4ae5c9f8b61",
+      "flow": "IP_OTP_VERIFY",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde",
+          "file": "OTP_VERIFY__IP_OTP_VERIFY__4dbe6dde.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "d54c26b161e00db3e8e872fbf06feed609fdc02700472d525e876d1a746cb91f",
+          "liveHash": "5b3f5806a32755b37a1cf56c4ec8c58e41c2985126dedb0b202ef1e8f5215aeb",
+          "fingerprint": "148fb58b53c3af1a",
+          "liveFingerprint": "0b15d7fc4432e50c",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "9a4dea8e-15f2-42b6-904d-3655056fa3c2",
+      "flow": "IP_Reference_Data_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e",
+          "file": "REFERENCE_DATA__IP_Reference_Data_Endpoint__9a4dea8e.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "dd7a90d9dea4499a3965b5519d69f63a72a5335ab822ee452740fd37ee38d487",
+          "liveHash": "807e1c122fa5bc270b6aab90094cfb7315c7d9c4ca7f21a32f04f30723d5f3cc",
+          "fingerprint": "03607b54430d6f0a",
+          "liveFingerprint": "197d3e26ad734e10",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "28f6e62a-fea8-437c-a61a-47aec706c4e2",
+      "flow": "IP_Get_Docs_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a",
+          "file": "GET_DOCS__IP_Get_Docs_Endpoint__28f6e62a.paste.json",
+          "scope": "Scope_Global",
+          "status": "NOT_RUN",
+          "packageHash": "77297ada888eae1b0059b2b8a6b78dc4ae5fa973a561cd5d4584a7161417a34e",
+          "liveHash": "90076d9107f9e26d7ed76c65907166215b3b842d7a3d4d8467870749fcb644b0",
+          "fingerprint": "048cc8dfa25af601",
+          "liveFingerprint": "0844093df2fe3900",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5bc87cf3-7a99-4259-b6a2-315fbc794d9b",
+      "flow": "IP_Retrieve_Email_Attachment_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3",
+          "file": "FETCH_EMAIL_ATTACHMENTS__IP_Retrieve_Email_Attachment_Endpoint__5bc87cf3.paste.json",
+          "scope": "Scope_Email_Attachment_Endpoint_REBUILT",
+          "status": "NOT_RUN",
+          "packageHash": "24e06290404f9f29684ef60cd14bae877568992f75e7d27996af3c7ed3b8e972",
+          "liveHash": "8ee2e874516e4d1a7190adb4ffaa02ddddaa88d1e466d2fc89a19a50fc851835",
+          "fingerprint": "0f692e9044999d14",
+          "liveFingerprint": "0a67e029da339901",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "flow": "IP_SEND_EMAIL",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL__IP_SEND_EMAIL__df59a69f",
+          "file": "EMAIL__IP_SEND_EMAIL__df59a69f.paste.json",
+          "scope": "Scope_Send_Email_Flow",
+          "status": "NOT_RUN",
+          "packageHash": "424421add41045d2e057cb57f52dcd617ce89217b13fcaadd02276459a2f0f2b",
+          "liveHash": "94516e0e88090bf5122c278418c757a01ecf2be3e40a39d7768be4d4f0053531",
+          "fingerprint": "03441c8c47e60c0f",
+          "liveFingerprint": "0e8889840ad3a91f",
+          "emptySetVariables": [],
+          "detail": "not written: the run stopped at IP_Dynamic_Global_Actions_Endpoint",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "fefa43c6-fb9d-4337-8b65-7fd19fa09b6d",
+      "flow": "AI_Document_Processing",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6",
+          "file": "AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6.paste.json",
+          "scope": "Scope_AI_Caller_Gate",
+          "status": "HELD",
+          "packageHash": "ff117d07d87719a6a8399b1972c81d27f05273e54fd5de0de9ce25744d5cf3c3",
+          "liveHash": "05d96e3979fdcfea8eef803f482b3dd10e9705331dd3206c4d6d0ee6d5d4b8aa",
+          "fingerprint": "18c152db7c2d491f",
+          "liveFingerprint": "1caa381ebcc66213",
+          "emptySetVariables": [],
+          "detail": "differs at actions.Get_AI_Gate_Proof.inputs.parameters.dataset. First: Flow Configuration holds a row OPENROUTER_API_KEY with a new OpenRouter key (ITEM-75). After the write, set the HTTP action's Authorization header to @{outputs('Compose_OpenRouter_Authorization')} and revoke the old key. Then name it: --only AI_DOC_ANALYSIS__AI_Document_Processing__fefa43c6",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b6d92bae-591e-fa1e-52eb-b350cad988a7",
+      "flow": " DGSO INCOMING AI PROCESSING",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References",
+          "file": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References.paste.json",
+          "scope": "Scope_References",
+          "status": "HELD",
+          "packageHash": "5e7437b6973a39df5fad6e7712f60fbecf2836b0b8696eed0042a5ef85aa2197",
+          "liveHash": "f9e6d90544346384dd2d4898ef96f4e77b48865c0338cd70ab1cc37b42cf24ad",
+          "fingerprint": "1f993178ad64350d",
+          "liveFingerprint": "10654f1b64bf661f",
+          "emptySetVariables": [],
+          "detail": "differs at actions.Categories_List.runAfter (only in the package). First: Flow Configuration holds rows GEMINI_API_KEY (and GEMINI_API_KEY_2, if the text extraction keeps its own key) with new keys created in Google Cloud. After the write, revoke the three old keys. Then name it: --only NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_References",
+          "rebinds": []
+        },
+        {
+          "id": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_Library_Identity",
+          "file": "NOKEY__DGSO_INCOMING_AI_PROCESSING__b6d92bae__Scope_Library_Identity.paste.json",
+          "scope": "Scope_Library_Identity",
+          "status": "BLOCKED",
+          "packageHash": null,
+          "liveHash": null,
+          "fingerprint": "0086a3ec67a7b801",
+          "liveFingerprint": null,
+          "emptySetVariables": [],
+          "detail": "the flow has no top-level step Scope_Library_Identity. It is added, not replaced: paste it once in the designer as docs/folio-Master-Flows-and-Endpoints/packages/identification-phase4/README.md says; from then on this command keeps it current",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

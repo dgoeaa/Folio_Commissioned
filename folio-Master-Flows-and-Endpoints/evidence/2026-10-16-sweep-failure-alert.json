@@ -1,0 +1,31 @@
+{
+  "readUtc": "2026-10-16",
+  "by": "Flow API, signed in as dgsRegistry@nitda.gov.ng; owner approval 2026-10-16 (Office of the Director-General/CEO) for one deliberately failed sweep run",
+  "item": "ITEM-70",
+  "flow": "AUTO_SCHEDULED_SWEEP (8c19b45c-4174-4d2f-9429-ffd08dd1a5ae)",
+  "method": [
+    "The flow was Stopped. Its definition was saved, then one step was added at the start of Scope_Global_ScheduledSweep: Compose_ITEM70_Forced_Failure, inputs @int('ITEM-70 deliberate failure test 2026-10-16'), which always fails; Get_Notification_Config was made to run after it, so the sweep read nothing and sent no digest.",
+    "The flow was started and its Recurrence trigger fired once by hand (21:03:42Z).",
+    "Immediately after the run the flow was stopped and the saved definition written back (21:04:17Z); the read-back has no forced step and is Stopped."
+  ],
+  "run": {
+    "id": "08584094222628692446850317154CU23",
+    "startedUtc": "2026-10-16T21:03:42Z",
+    "Compose_ITEM70_Forced_Failure": "Failed (BadRequest: int() of text), as intended",
+    "Scope_Global_ScheduledSweep": "Failed",
+    "Scope_Catch_ScheduledSweep": "Succeeded: Compose_Result_ScheduledSweep_500 set the server_error event",
+    "Switch_Notification_Event": "Case_Server_Error",
+    "Send_Server_Error_Alert_Email": "Succeeded, HTTP 200",
+    "alert": {
+      "to": "dgsRegistry@nitda.gov.ng (Flow Configuration NOTIFY_OPS_TO, the named operational owner's mailbox)",
+      "subject": "Action required: scheduled sweep run failed (run 08584094222628692446850317154CU23)"
+    },
+    "Create_Send_Server_Error_Alert_Email_Receipt": "Portal Outbox Receipts item 1392: MessageType server-error-alert, RecipientEmail dgsRegistry@nitda.gov.ng, Status sent, SentAtUtc 2026-10-16T21:03:58Z",
+    "digests": "none sent: the task reads never ran"
+  },
+  "afterRestore": {
+    "state": "Stopped",
+    "flowsUpdateCheck": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c UP_TO_DATE (npm run flows:update, 2026-10-16)"
+  },
+  "observation": "With the task reads skipped, Select_Digest_Ack also failed on its empty input. That is downstream of the forced failure and does not affect the alert, which runs from the catch path."
+}

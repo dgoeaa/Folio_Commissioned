@@ -1,0 +1,18 @@
+{
+  "readUtc": "2026-10-18",
+  "flow": "AUTO_SCHEDULED_SWEEP (8c19b45c-4174-4d2f-9429-ffd08dd1a5ae)",
+  "run": "08584093115454153780858604181CU30",
+  "runUtc": "2026-10-18T03:49Z",
+  "context": "an out-of-hours test run approved by the owner; Flow Configuration NOTIFY_WORKING_HOURS_ONLY was set to false for it (temporary, restored by the operator)",
+  "errors": [
+    { "step": "Select_Digest_Ack", "message": "convertFromUtc refused item()?['Acknowledgement_x0020_Due_x0020_'] = '2026-09-22T00:00:00.0000000': a date-only SharePoint column comes back with no zone (no trailing Z)" },
+    { "step": "Compose_Sweep_Sections", "message": "length() of Null: outputs('Compose_Digest_Recipients') was not produced, because the steps after Select_Digest_Ack were skipped" }
+  ],
+  "fix": {
+    "dates": "scripts/lib/identification-flow-edit.mjs guardUtcInputs/utcGuard, applied by the phase 3 and phase 4 builders to every convertFromUtc whose value is read from a list row, a trigger body or a connector reply: an empty value reads as the epoch, a value with no Z gets one. E-mail bodies are the catalogue's and are not changed (ITEM-68 on hold).",
+    "nulls": "AUTO_SCHEDULED_SWEEP: Compose_Digest_Items unions its two selections through coalesce(...,json('[]')); Foreach_Digest_Recipient and Compose_Sweep_Sections read Compose_Digest_Recipients through coalesce(...,json('[]')).",
+    "packagesChanged": ["NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c", "NOKEY__CG_Portal_Daily_Sweep__f12aec6d", "NOKEY__CG_Registry_Status_Notifier__8ebf6001"],
+    "test": "npm run test:utcguard: no released package converts such a date unguarded; the guard, simulated on '2026-09-22T00:00:00.0000000', a UTC value and an empty one, converts each without error",
+    "release": "identification release 31 (2026-10-18)"
+  }
+}

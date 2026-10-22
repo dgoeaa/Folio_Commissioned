@@ -1,0 +1,85 @@
+{
+  "capturedUtc": "2026-08-31",
+  "supersedes": "2026-08-30-portal-paste-target-conflict.json",
+  "purpose": "The 2026-08-30 evidence file recorded that the EXECUTION_GUIDE and the run records disagree on the paste target for five of the seven portal packages, and said an operator had to list the flows in the environment to settle whether the estate holds seven flows or twelve. That listing is not needed for five of the seven: docs/reference/flow-contracts/deployed/ already answers it. Every export carries the flow's internal id in its filename and its display name in workflow_identity.tags.flowDisplayName, so the guide's id and the run record's id can each be looked up directly.",
+  "method": "Both ids from each row of the conflict file were resolved against the 58 exported definitions, matching on the internal id rather than on the display name. Export timestamps and action counts were read from each file's exportedAtUtc and definition.actions. Ids only - a trigger URL is a bearer credential and is not recorded.",
+
+  "decisiveFinding": {
+    "claim": "The CG_* names in the run records are RENAMES of flows that already existed, not new flows.",
+    "proof": "One internal id, df7ddff1-9275-4f23-acf6-e169525f4e2f, is exported twice under two different display names: as ECM_DOCS_INTAKE on 2026-08-19 with 2 actions, and as CG_Upload_Endpoint on 2026-08-24 with 9 actions. Same flow, renamed and rebuilt in place, captured five days apart.",
+    "consequence": "A CG_* name in a run record cannot be read as evidence of a second flow. Where the guide's id and the run record's id DIFFER, however, they are two genuinely distinct flows - and both are in the export set for SUBMISSION, UPLOAD and STATUS. So the estate does hold more than one flow for those endpoints, and the guide names the wrong one of the pair."
+  },
+
+  "authority": "Where the two sources disagree the run records win. They were read from actual executions of the live endpoint on 2026-08-27; the guide's ids were written from the 2026-08-19 estate capture, before the renames. An export proves a flow exists, never that it is the one the portal calls.",
+
+  "resolution": [
+    {
+      "package": "Portal_VERIFY_ECM_DOCS",
+      "status": "RESOLVED - guide was correct",
+      "targetFlowId": "86897b2f-9770-4efa-8486-2642f24bb947",
+      "targetDisplayNameNow": "CG_Verification_Endpoint",
+      "exportedAs": "Portal_Verify",
+      "note": "One flow, renamed in place. The guide's id is the live id."
+    },
+    {
+      "package": "Portal_SUPPORT_ECM_DOCS",
+      "status": "RESOLVED - guide was correct",
+      "targetFlowId": "1b2c2e53-6c07-46a3-80b2-c43be1ef69db",
+      "targetDisplayNameNow": "CG_Support_Endpoint",
+      "exportedAs": "Portal_ECM_DOCS_SUPPORT",
+      "note": "One flow, renamed in place. The guide's id is the live id."
+    },
+    {
+      "package": "Portal_SUBMISSION_ECM_DOCS",
+      "status": "RESOLVED - guide named the wrong flow of two",
+      "targetFlowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "targetDisplayNameNow": "CG_Submission_Endpoint",
+      "exportedAs": "SUBMISSION_ECM_DOCS_PORTAL",
+      "guideNamed": "270fb295-b1de-40e2-b36d-889a61a887a0 (Portal_UBMISSION_ECM_DOCS)",
+      "note": "Both flows exist and both were exported on 2026-08-19 with 13 actions each. The run records show de9ef13b serving SUBMISSION. 270fb295 is a second, still-present flow that the portal does not call."
+    },
+    {
+      "package": "Portal_UPLOAD_ECM_DOCS",
+      "status": "RESOLVED - guide named the wrong flow of four",
+      "targetFlowId": "df7ddff1-9275-4f23-acf6-e169525f4e2f",
+      "targetDisplayNameNow": "CG_Upload_Endpoint",
+      "exportedAs": "ECM_DOCS_INTAKE (2026-08-19), then CG_Upload_Endpoint (2026-08-24)",
+      "guideNamed": "ae4b2a44-2388-42c7-baaf-86de3d6fa664 (Portal_UPLOAD_ECM_DOCS)",
+      "note": "Four upload-shaped flows are exported: ae4b2a44, 9bd6724c (UPLOAD_ECM_DOCS_PORTAL), 39d65c5b (Portal_Upload_HTTP) and df7ddff1. The run records show df7ddff1 serving UPLOAD, and it is the same flow the 2026-08-19 capture called ECM_DOCS_INTAKE. This is also why UPLOAD is the one endpoint npm run wiring reads as fully wired at 7/7 - it is the one whose live flow was re-exported after the rebuild."
+    },
+    {
+      "package": "Portal_STATUS_ECM_DOCS",
+      "status": "RESOLVED - guide named the wrong flow of two",
+      "targetFlowId": "badb65d8-f472-407e-8975-c29d77b855d7",
+      "targetDisplayNameNow": "CG_Status_Check_Endpoint",
+      "exportedAs": "Portal_Status_Enquiry",
+      "guideNamed": "e21e7b9f-58c3-45be-bd47-6754ce6a895f (Portal_ECM_DOCS_STATUS)",
+      "note": "Both flows exist. badb65d8 was exported with 3 actions and e21e7b9f with 13, so the guide named the larger, better-built flow - and the portal calls the smaller one. Pasting on the guide would have left the live endpoint untouched."
+    },
+    {
+      "package": "Portal_VERIFY_CONFIRM_ECM_DOCS",
+      "status": "OPEN - needs the tenant",
+      "targetFlowId": "5e13db77-c1e1-4ed4-b109-cb5d9d247b49",
+      "targetDisplayNameNow": "CG_Verification_Confirmation_Endpoint",
+      "exportedAs": null,
+      "guideNamed": "3b69aa71-ffed-4956-9d20-2aa3021a8da0 (Portal_Verify_Confirm)",
+      "note": "The live id has NO export in this repository, so nothing here can say whether 5e13db77 is a rename of 3b69aa71 or a separate flow. Both ids must be looked up in the environment. This is the one place where the original blocker still stands."
+    },
+    {
+      "package": "Portal_WRITEBACK_ECM_DOCS",
+      "status": "OPEN - needs the tenant",
+      "targetFlowId": "21d4bfd3-f595-46fa-81bb-c29dabc12e7a",
+      "targetDisplayNameNow": "CG_Writeback_Endpoint",
+      "exportedAs": null,
+      "guideNamed": "new flow - create it",
+      "note": "The live id has no export. The run records show a flow already serving WRITEBACK, so the guide's instruction to create one is wrong, but this repository cannot say what 21d4bfd3 currently contains. Confirm it exists and export it before pasting; do not create a second flow."
+    }
+  ],
+
+  "outcome": {
+    "resolvedFromRepositoryEvidence": 5,
+    "stillNeedingTheTenant": 2,
+    "whatTheOperatorMustStillDo": "Look up two ids in the environment - 5e13db77-c1e1-4ed4-b109-cb5d9d247b49 and 21d4bfd3-f595-46fa-81bb-c29dabc12e7a - and export both before pasting. Every other package now names a target id that is present in docs/reference/flow-contracts/deployed/.",
+    "whatChangedInTheGuide": "EXECUTION_GUIDE section 5.2 now carries the run-record id for SUBMISSION, UPLOAD and STATUS, with the id it previously named recorded beside it as a flow that exists and is not the one the portal calls."
+  }
+}

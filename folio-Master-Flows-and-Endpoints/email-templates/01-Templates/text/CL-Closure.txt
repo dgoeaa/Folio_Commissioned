@@ -1,0 +1,35 @@
+Subject: Final Response — {{referenceId}}
+Preview: The Agency's final response on the referenced matter.
+
+NITDA — National Information Technology Development Agency
+------------------------------------------------------------
+✓ Final response · {{classification}}
+
+{{subject}}
+===========
+
+Office of the Director-General/CEO · priority {{priority}}
+
+Reference {{referenceId}}: Date {{date}}
+
+Dear {{recipientName}},
+
+The Agency hereby conveys its final response on the referenced matter as follows:
+
+{{body}}
+
+This correspondence closes the matter from the Agency’s current action point unless otherwise communicated.
+
+Yours faithfully,
+
+{{signatoryName}}
+
+{{signatoryTitle}}
+
+Confidentiality Notice: This correspondence and any attachment(s) are intended solely for the addressed recipient(s). If received in error, please notify the sender and delete the message.
+
+National Information Technology Development Agency
+
+Office of the Director-General/CEO · No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA

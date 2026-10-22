@@ -1,0 +1,104 @@
+{
+  "recordVersion": "1.0.0",
+  "what": "The index pass that closed ITEM-47. Four targets were declared on 2026-09-02 after the live sweep hit the list view threshold; the 2026-09-03 apply run did not reach them. This run indexes DueDate and Acknowledgement_x0020_Due_x0020_ on Global Tracking Queue and finds Modified already indexed on both lists. No column was created: all 103 specified columns read back present.",
+  "againstSpec": {
+    "file": "docs/deployment/sharepoint/portal-field-spec.json",
+    "specVersion": "2.0.0",
+    "lists": 15,
+    "columns": 103
+  },
+  "runner": "scripts/provision-sharepoint-fields.browser.js (generated from the specification)",
+  "source": {
+    "capture": "window.spLedger, exported with copy(JSON.stringify(spLedger, null, 2)) and uploaded by the operator.",
+    "startedUtc": null,
+    "startedUtcWhyNull": "The provisioner prints no timestamp of its own. The date is the operator's session, 2026-09-05."
+  },
+  "runs": [
+    {
+      "phase": "apply",
+      "mode": "APPLY",
+      "created": 0,
+      "present": 103,
+      "failed": 0,
+      "meaning": "The column estate was already complete. This run existed for the index pass, not to create columns, which is why its ledger is empty rather than absent."
+    }
+  ],
+  "ledger": [],
+  "ledgerWhyEmpty": "No column was created. The gate requires a later run's ledger to name only columns the specification marks PENDING and attributes to that run; a run that created nothing correctly names none.",
+  "indexRun": {
+    "consoleSays": "Indexes set: 2   Already indexed: 7   Failed: 0",
+    "against": "docs/deployment/sharepoint/index-targets.json",
+    "addressing": "Each target is addressed by list GUID, not title — the provisioner reads fieldState(siteUrl, listGuid, internalName) before deciding, and skips one already indexed.",
+    "ledgerDerivation": "Taken from the operator's spLedger export, filtered to type === 'index'. The row values are translated to the console vocabulary this directory's records use: the provisioner writes row.result 'created' where it prints 'indexed', and 'present' where it prints 'already indexed'. All nine declared targets appear.",
+    "ledger": [
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Rate Limits",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Verification Proofs",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "Global_Digital_Documents_Centre",
+        "list": "Portal Support Cases",
+        "field": "Title",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "RefIDD",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "DGO DIGITAL OPS",
+        "field": "RefIDD",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "DueDate",
+        "result": "indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "Acknowledgement_x0020_Due_x0020_",
+        "result": "indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "Global Tracking Queue",
+        "field": "Modified",
+        "result": "already indexed"
+      },
+      {
+        "site": "NITDADGO-EAAACTIVITYTRACKING",
+        "list": "DGO DIGITAL OPS",
+        "field": "Modified",
+        "result": "already indexed"
+      }
+    ],
+    "closes": "ITEM-47. All four targets declared 2026-09-02 now carry an outcome: DueDate and Acknowledgement_x0020_Due_x0020_ created, Modified present on both lists.",
+    "modifiedWasAlreadyIndexed": "Global Tracking Queue.Modified and DGO DIGITAL OPS.Modified read back Indexed before this run. That is an observed outcome, not an assumption — the provisioner reads each field's state first and reported 'present' rather than setting it.",
+    "verified": "Nine targets read, nine outcomes recorded, none FAILED. SharePoint refused nothing, which is not guaranteed on a list over the view threshold and is worth recording as an observation rather than an expectation."
+  },
+  "whatThisDoesNotClose": [
+    "That the scheduled sweep now completes. Indexing is necessary and not sufficient: the sweep's query also had to be bounded to a 30-day window, and one clean hourly run is what proves it (ITEM-45's remaining half).",
+    "ITEM-56. The OTP allow-list is a row in Flow Configuration, not an index, and no gate here can read it."
+  ],
+  "noVerifyRun": {
+    "state": "OUTSTANDING",
+    "why": "The operator ran the apply pass only. No second reading was taken after it, so nothing here re-reads the two indexes this run set.",
+    "whatIsAlreadyEstablishedWithoutIt": "That SharePoint accepted both index requests: setIndexed returned ok for DueDate and Acknowledgement_x0020_Due_x0020_, and the provisioner reports a refusal rather than swallowing it — indexing a list already over the view threshold can be refused, and neither was.",
+    "howItCloses": "A DRY_RUN pass of the same script, which would report 9 already indexed and 0 to set. It is one paste and needs no write.",
+    "doesNotBlock": "ITEM-47, whose resolution criterion is that every declared target carries a recorded outcome. Nine do."
+  }
+}

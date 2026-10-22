@@ -1,0 +1,41 @@
+Subject: Reminder: please acknowledge {{referenceId}} — {{title}}
+Preview: An assignment is waiting for you to confirm receipt.
+
+NITDA — National Information Technology Development Agency · DGO Digital Ops
+------------------------------------------------------------
+↻ Reminder
+
+Please acknowledge this assignment
+==================================
+
+An assignment is waiting for you to confirm receipt.
+
+Dear {{recipientName}},
+
+{{actorName}} is reminding you to confirm that you have received the assignment below.
+
+Reference
+
+{{referenceId}}
+
+Assignment
+
+Task: {{title}}
+
+Instruction: {{instruction}}
+
+Acknowledge by: {{ackDate}}
+
+Due: {{dueDate}}
+
+Open Folio and confirm receipt from the Acknowledgment Queue.
+
+Confirm receipt in Folio: {{recordUrl}}
+
+Sent by Folio for {{actorName}}. Please do not reply to this e-mail; act on the record in Folio.
+
+National Information Technology Development Agency
+
+No. 28, Port Harcourt Crescent, Off Gimbiya Street, Area 11, Garki, Abuja
+
+nitda.gov.ng: https://nitda.gov.ng · © {{year}} NITDA · Automated message

@@ -1,0 +1,650 @@
+[
+  {
+    "id": "F-001",
+    "title": "31 Power Automate SAS signatures across 25 development/pilot workflows require decommissioning at cutover; 9 exist only inside the ratchet-invisible archive",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "document-portal/js/data.js",
+        "lines": "25-27"
+      },
+      {
+        "path": "newack/config.js",
+        "lines": "4"
+      },
+      {
+        "path": "ECM_DOCS_DEV.zip",
+        "lines": "n/a — 31 signatures across 18 of 837 members"
+      }
+    ],
+    "impact": "Any holder of a signature can invoke the corresponding Power Automate workflow with no authentication step to fail. OWNER DECISION, RECORDED: these are development and pilot endpoints that will be REPLACED ENTIRELY once the build is complete, not rotated in place, and will not carry production traffic. Severity is medium rather than high on that basis -- the exposure is bounded to non-production infrastructure for a bounded period. It is not nil: until the old triggers are removed or re-signed they answer to anyone holding the URL, and 18 were deleted from the tree while remaining reachable from origin/main history. The step-5 change means the document portal now holds none of them.",
+    "remediation": "At cutover, account for all 25 workflows in docs/architecture/ROTATION_REGISTER.md: each must be DELETED or have its HTTP trigger REGENERATED. Standing up replacement flows beside still-enabled pilot flows revokes nothing -- the old trigger keeps answering. Provision the replacements behind the proxy's egress only, and supply their URLs to the proxy's server-side environment, never to a file any client loads.",
+    "note": "Reframed from 'rotate urgently' after the owner confirmed the endpoints are development and pilot infrastructure slated for wholesale replacement. The register is retained and is now MORE load-bearing, not less: it is the only enumeration of the full set, and nine signatures appear nowhere but the archive, so anyone working from the source tree would miss those workflows entirely."
+  },
+  {
+    "id": "F-012",
+    "title": "The authenticating proxy is not in the request path; every browser-side control is bypassable",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "core/data-client.js",
+        "lines": "21-27"
+      },
+      {
+        "path": "config/auth.config.js",
+        "lines": "28"
+      },
+      {
+        "path": "config/auth.config.js",
+        "lines": "76-77"
+      },
+      {
+        "path": "ECM_ActivityHub_Portal/js/api/client.js",
+        "lines": "6-10"
+      }
+    ],
+    "impact": "Route guards, ownership assertions and active-user checks all execute in the browser while requests go directly to signed Power Automate URLs, so the implemented server-side RBAC protects nothing as configured.",
+    "remediation": "Set auth.enabled and proxyBaseUrl at deploy time and restrict the flows to the proxy's egress address."
+  },
+  {
+    "id": "F-013",
+    "title": "document-portal and newack contain no proxy code path at all",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/js/core.js",
+        "lines": "277-298"
+      },
+      {
+        "path": "newack/config.js",
+        "lines": "4"
+      }
+    ],
+    "impact": "Unlike F-012 this is not a configuration state: activating authentication cannot route these two trees through the proxy because no code path exists, leaving the two trees that hold live credentials permanently outside enforcement. newack has since been retired, leaving document-portal as the sole tree with no proxy path. CLOSED at step 5: newack retired, and document-portal now routes through the proxy intake route holding no credential of its own.",
+    "remediation": "Add proxy-aware endpoint resolution to both trees, or retire them.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-017",
+    "title": "check-secrets.mjs skips binary files, so the 16.4 MB archive has never been scanned",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "tests/check-secrets.mjs",
+        "lines": "50"
+      },
+      {
+        "path": "scripts/setup-local.mjs",
+        "lines": "52"
+      }
+    ],
+    "impact": "The repository's principal credential control has an unstated blind spot covering 87% of its bytes; a new signature added inside the archive passes CI silently.",
+    "remediation": "Extend the scanner to archive members, or remove the archive from the tree."
+  },
+  {
+    "id": "F-018",
+    "title": "No build step and no exclusion list: npm start serves the entire repository",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "package.json",
+        "lines": "15"
+      },
+      {
+        "path": ".devcontainer/devcontainer.json",
+        "lines": "10"
+      }
+    ],
+    "impact": "The archive, both credential-bearing config files, all application source and every audit document are directly fetchable from any host running the project's own start command.",
+    "remediation": "Define a deployment artefact and serve only that path."
+  },
+  {
+    "id": "F-023",
+    "title": "ECM Activity Hub defaults its backend API_URL to a personal Cloudflare Workers subdomain under ENV PROD",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "ECM_ActivityHub_Portal/js/core/config.js",
+        "lines": "6-13"
+      }
+    ],
+    "impact": "On a fresh clone or any deployment lacking the git-ignored config.local.js, every API request carrying correspondence payloads is sent to a third-party-controlled origin that is not a NITDA domain.",
+    "remediation": "Default API_URL to an empty string so the SPA falls back to its documented DEMO mode instead of a live third-party host.",
+    "outcome": "fixed",
+    "note": "CLOSED BY DELETION at decision D6(b). This was fixed in place first, then the whole ECM_ActivityHub_Portal tree was retired -- 15 of its 19 pages duplicated root routes, it shared no backend, state, identity or code with the platform, and it had no backend at all. There is no module left to regress. tests/hardening.test.mjs now asserts the deletion holds and that the three capabilities the Hub uniquely had were ported, not dropped."
+  },
+  {
+    "id": "F-024",
+    "title": "Two remote scripts loaded with no Subresource Integrity, one pinned to a mutable @latest tag",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "ECM_ActivityHub_Portal/index.html",
+        "lines": "11,43"
+      }
+    ],
+    "impact": "Whoever controls the lucide package, unpkg, or cdn.tailwindcss.com can execute arbitrary JavaScript in the portal's origin with access to its localStorage and session.",
+    "remediation": "Pin exact versions with integrity hashes, or vendor both locally as the root platform already does.",
+    "outcome": "fixed",
+    "note": "CLOSED BY DELETION at decision D6(b). This was fixed in place first, then the whole ECM_ActivityHub_Portal tree was retired -- 15 of its 19 pages duplicated root routes, it shared no backend, state, identity or code with the platform, and it had no backend at all. There is no module left to regress. tests/hardening.test.mjs now asserts the deletion holds and that the three capabilities the Hub uniquely had were ported, not dropped."
+  },
+  {
+    "id": "F-028",
+    "title": "Document portal silently discards attachments: only the first file is transmitted, and only if under 4 MB",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/js/submit.js",
+        "lines": "4"
+      },
+      {
+        "path": "document-portal/js/submit.js",
+        "lines": "331-347"
+      }
+    ],
+    "impact": "The upload UI accepts 5 files at 10 MB each and 50 MB total, but dispatchToWorkflow sends only files[0] and substitutes an empty FileContentBase64 when that file exceeds 4 MB, so a submitter is told their documents were received when 4 of 5 were discarded or all content was dropped.",
+    "remediation": "Send every attachment via brokered SharePoint uploads rather than base64 inside a JSON workflow payload.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-002",
+    "title": "CI is green while four live-shaped credentials sit in tracked files",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "tests/check-secrets.mjs",
+        "lines": "5-16"
+      },
+      {
+        "path": "tests/secrets-baseline.txt",
+        "lines": "1-2"
+      }
+    ],
+    "impact": "The baseline suppression is documented and defensible, but it removes any forcing function on rotation.",
+    "remediation": "Time-box the baseline so the build fails after a rotation deadline."
+  },
+  {
+    "id": "F-003",
+    "title": "Audit prose reproduced three live SAS signatures into a third tracked file (contained in dd2e909)",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "FORENSIC_ROOT_PLATFORM_AUDIT.md",
+        "lines": "172-174"
+      }
+    ],
+    "impact": "Quoting a live credential to evidence its exposure spreads it; the ratchet detected and failed the build correctly.",
+    "remediation": "Never quote a credential verbatim in documentation; redact to [REDACTED]."
+  },
+  {
+    "id": "F-004",
+    "title": "Design system forked: 10 of 12 shared filenames diverged, with no establishable source of truth",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "styles/dgo-design-system/",
+        "lines": "16 files"
+      },
+      {
+        "path": "document-portal/ds/",
+        "lines": "19 files"
+      }
+    ],
+    "impact": "Token changes must be made twice and nothing detects divergence; both trees are single-import snapshots so neither has authority from this repository's history.",
+    "remediation": "Nominate one tree authoritative and add a CI drift check over the shared token files."
+  },
+  {
+    "id": "F-009",
+    "title": "newack is orphaned; its sole repository reference is a credential-suppression entry",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "newack",
+    "files": [
+      {
+        "path": "tests/secrets-baseline.txt",
+        "lines": "2"
+      }
+    ],
+    "impact": "791 lines across three HTML pages holding a live-shaped credential, with no owner, no tests and no consumer. RETIRED at 9deda9e+: the tree is deleted; its workflow GUID 02a3a70f is row 24 of ROTATION_REGISTER.md and still requires rotation.",
+    "remediation": "Retire the tree, or give it an owner, tests and a proxy-aware endpoint path.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-010",
+    "title": "document-portal has deployment artefacts but no behavioural test or build reference",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/sw.js",
+        "lines": "1-49"
+      },
+      {
+        "path": "document-portal/manifest.webmanifest",
+        "lines": "n/a"
+      }
+    ],
+    "impact": "A tree shaped for hosting, with a service worker and PWA manifest, that nothing in the repository loads or verifies. CLOSED: tests/portal.spec.js covers every page plus the correspondence model, the status read-back resolutions and the console retirement.",
+    "remediation": "Add the five pages to the smoke suite.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-014",
+    "title": "EmailPreviewFrame renders srcdoc with no sandbox attribute (latent; zero callers)",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "root",
+    "files": [
+      {
+        "path": "shared/components.js",
+        "lines": "42"
+      }
+    ],
+    "impact": "Escaping protects the srcdoc attribute boundary but not the content, so any future caller passing email HTML would get same-origin script execution.",
+    "remediation": "Add sandbox=\"\" to match the sibling iframes, or delete the unused export."
+  },
+  {
+    "id": "F-015",
+    "title": "No Content-Security-Policy, framing protection or Permissions-Policy in any entry point",
+    "severity": "medium",
+    "confidence": "confirmed-absent",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "index.html",
+        "lines": "1-61"
+      }
+    ],
+    "impact": "No defence in depth against injection or clickjacking in the repository; deploy-time headers are indeterminate.",
+    "remediation": "Adopt default-src 'self'; only one inline script exists, at index.html:26-59."
+  },
+  {
+    "id": "F-019",
+    "title": "The devcontainer automates setup, serves the whole repository, auto-forwards the port and opens a browser",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": ".devcontainer/devcontainer.json",
+        "lines": "7-16"
+      }
+    ],
+    "impact": "One click from clone to serving 31 credentials over HTTP, with no step that warns or excludes.",
+    "remediation": "Serve a restricted path in the container and remove onAutoForward openBrowser."
+  },
+  {
+    "id": "F-020",
+    "title": "Service worker precaches js/data.js and admin.html; cache-first strategy defeats credential rotation",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/sw.js",
+        "lines": "5-19"
+      },
+      {
+        "path": "document-portal/sw.js",
+        "lines": "31-49"
+      }
+    ],
+    "impact": "Credentials persist durably in Cache Storage after the tab closes, the operations console works offline, and rotating the signatures will strand returning visitors on dead endpoints until the CACHE constant is bumped. CLOSED at step 6: admin.html no longer exists to precache, and the console files were removed from SHELL -- a deleted entry would have failed addAll and taken the whole offline shell down.",
+    "remediation": "Remove js/data.js and admin.html from SHELL, and bump CACHE as part of any rotation.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-021",
+    "title": "document-portal and newack have zero behavioural test coverage of any kind",
+    "severity": "medium",
+    "confidence": "confirmed-absent",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "tests/smoke.spec.js",
+        "lines": "52-172"
+      },
+      {
+        "path": "scripts/check-links.mjs",
+        "lines": "44-45"
+      },
+      {
+        "path": "tests/check-imports.mjs",
+        "lines": "28"
+      }
+    ],
+    "impact": "The two highest-risk trees are the two least verified; no test loads any of their eight HTML pages. PARTIALLY CLOSED: tests/portal.spec.js now covers all six document-portal pages plus the correspondence model; newack was retired.",
+    "remediation": "Add page-load and output-encoding tests for both trees.",
+    "outcome": "fixed"
+  },
+  {
+    "id": "F-005",
+    "title": "Portal dark and high-contrast theme tokens are 27% and 18% smaller than the root platform's",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/ds/tokens/tokens.theme-dark.css",
+        "lines": "n/a — 3,096 vs 4,237 bytes"
+      }
+    ],
+    "impact": "The portal's dark and high-contrast themes are materially less complete than the root platform's.",
+    "remediation": "Reconcile against whichever design system tree is nominated authoritative."
+  },
+  {
+    "id": "F-006",
+    "title": "check-imports.mjs cannot see document-portal or newack",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "tests/check-imports.mjs",
+        "lines": "28"
+      }
+    ],
+    "impact": "Two of five application trees are structurally invisible to the module-graph check, and nothing else covers them.",
+    "remediation": "Add a classic-script reachability check for both trees."
+  },
+  {
+    "id": "F-007",
+    "title": "Five source files exceed 4,000 characters on a single line",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "root",
+    "files": [
+      {
+        "path": "modules/settings.js",
+        "lines": "7,056 chars on one line"
+      },
+      {
+        "path": "modules/diagnostics.js",
+        "lines": "5,181"
+      },
+      {
+        "path": "modules/registry.js",
+        "lines": "4,995"
+      },
+      {
+        "path": "modules/correspondence.js",
+        "lines": "4,379"
+      },
+      {
+        "path": "core/welcome-experience.js",
+        "lines": "4,337"
+      }
+    ],
+    "impact": "Line-range citation loses precision, git blame and diffs are unusable at statement level, and review is impractical.",
+    "remediation": "Reformat to conventional line lengths."
+  },
+  {
+    "id": "F-011",
+    "title": "reports and statistics invoke the EMAIL write contract without executeOwnedAction",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "root",
+    "files": [
+      {
+        "path": "modules/reports.js",
+        "lines": "n/a"
+      },
+      {
+        "path": "modules/statistics.js",
+        "lines": "n/a"
+      }
+    ],
+    "impact": "Downgraded from the Phase 1 provisional rating: with the proxy out of the request path the ownership guard is a UX and audit control, not a security boundary.",
+    "remediation": "Wrap both call sites in executeOwnedAction for audit consistency."
+  },
+  {
+    "id": "F-016",
+    "title": "lookup.js grants allow-same-origin to an iframe rendering backend email HTML",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "root",
+    "files": [
+      {
+        "path": "modules/lookup.js",
+        "lines": "26"
+      }
+    ],
+    "impact": "allow-scripts is absent so scripts cannot execute, but the same-origin grant is unnecessary for rendering an email body.",
+    "remediation": "Use sandbox=\"\" as the sibling correspondence-email iframes do."
+  },
+  {
+    "id": "F-022",
+    "title": "No deployment automation exists; artefact selection has never been made",
+    "severity": "low",
+    "confidence": "confirmed-absent",
+    "scope": "cross",
+    "files": [
+      {
+        "path": ".github/workflows/ci.yml",
+        "lines": "1-95"
+      }
+    ],
+    "impact": "CI runs four test-only jobs with contents:read permission and no deploy step, so nothing ships by automation and which trees are deployed is indeterminate.",
+    "remediation": "Define a deployment workflow with an explicit artefact allow-list."
+  },
+  {
+    "id": "DOC-DRIFT-001",
+    "title": "Root audit prose discusses CSP and SRI as controls under review; both are absent from code",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "FORENSIC_ROOT_PLATFORM_AUDIT.md",
+        "lines": "n/a"
+      }
+    ],
+    "impact": "The only occurrence of Content-Security-Policy anywhere in the repository is inside a document discussing it, which invites readers to believe the control exists.",
+    "remediation": "Mark absent controls explicitly as absent in the prose."
+  },
+  {
+    "id": "DOC-DRIFT-002",
+    "title": "Root audit prose lists insertAdjacentHTML and document.write, which occur zero times in code",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "FORENSIC_ROOT_PLATFORM_AUDIT.md",
+        "lines": "n/a"
+      }
+    ],
+    "impact": "The engagement brief's own export counted this prose as source and pre-seeded an incorrect sink baseline of one occurrence each.",
+    "remediation": "Exclude documentation from any automated source inventory."
+  },
+  {
+    "id": "F-025",
+    "title": "ECM Activity Hub and the proxy authorize in disjoint role vocabularies; activation requires two hand-maintained claim mappings with no test asserting agreement",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "ECM_ActivityHub_Portal/js/core/router.js",
+        "lines": "12-16"
+      },
+      {
+        "path": "ECM_ActivityHub_Portal/js/core/auth.js",
+        "lines": "21,32,102"
+      },
+      {
+        "path": "config/rbac.config.js",
+        "lines": "n/a — systemAdmin/userAdmin/executive/director/operator/viewer"
+      },
+      {
+        "path": "proxy/src/authorize.js",
+        "lines": "10"
+      }
+    ],
+    "impact": "The portal guards on SystemAdmin/DGCEO/COS while the proxy authorizes against config/rbac.config.js, which contains none of those names; configuring the portal to the server vocabulary makes /admin, /audit and /directory unreachable for every principal. HALF CLOSED at D6(b): the disjoint vocabulary lived in ECM_ActivityHub_Portal/js/core/router.js, which is deleted. One role model remains -- config/rbac.config.js -- so step 8 reconciles one vocabulary against the identity provider rather than two.",
+    "remediation": "Derive ROUTE_ROLES from config/rbac.config.js so both sides share one vocabulary, and add a test asserting the two claim mappings agree.",
+    "note": "Remaining scope is the root platform's own role model against Entra ID app roles. The second, conflicting vocabulary is gone with the tree that held it."
+  },
+  {
+    "id": "F-026",
+    "title": "Only 3 of 18 ECM Activity Hub routes carry any role restriction",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "ECM_ActivityHub_Portal/js/core/router.js",
+        "lines": "12-16,27-31"
+      }
+    ],
+    "impact": "Approvals, decisions, minutes and 12 other routes are open to any authenticated principal, and no document states an intended route-privilege model.",
+    "remediation": "Declare the intended per-route privilege model and extend ROUTE_ROLES to cover it."
+  },
+  {
+    "id": "F-027",
+    "title": "Generated devIdentity.role is 'Officer', a value present in neither role vocabulary",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "scripts/setup-local.mjs",
+        "lines": "127"
+      },
+      {
+        "path": "ECM_ActivityHub_Portal/js/core/store.js",
+        "lines": "15,17"
+      }
+    ],
+    "impact": "The shipped development identity carries a role name no guard in either application recognises; inert-only, so the effect is cosmetic.",
+    "remediation": "Emit a role drawn from the vocabulary the portal actually guards on."
+  },
+  {
+    "id": "F-029",
+    "title": "The external portal shipped a staff console gated by three hardcoded credentials in a public JavaScript file",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "docportal",
+    "files": [
+      {
+        "path": "document-portal/js/data.js",
+        "lines": "113-117 (pre-step-6)"
+      },
+      {
+        "path": "document-portal/js/admin.js",
+        "lines": "53 (pre-step-6)"
+      },
+      {
+        "path": "document-portal/admin.html",
+        "lines": "n/a (pre-step-6)"
+      }
+    ],
+    "impact": "PF.STAFF held admin/password, reviewer/reviewer and compliance/compliance in an asset served by an unauthenticated static site, and admin.js compared the typed password against it in the browser. Anyone who opened the page source obtained a working sign-in to a console offering triage, assignment, decisions, a support-case inbox and the audit trail over every record in the store. robots.txt disallowed the page, which is a crawler hint and not an access control.",
+    "remediation": "Retire the console rather than strengthen the gate: an external submission channel must not carry staff triage, and the internal platform already implements it with server-side identity.",
+    "outcome": "fixed",
+    "note": "NOT RECORDED IN THE ORIGINAL 29. The audit found the service-worker consequence of the console (F-020) but never recorded the credentials themselves. Added at step 6 when the console was deleted. Closed by commit on branch claude/quirky-babbage-1nomt5: admin.html, js/admin.js, js/admin-panels.js deleted; PF.STAFF and PF.store.admin removed; nav links, command-palette entry, robots.txt disallow and precache entries removed; a session left in sessionStorage by the retired console is cleared on load. Asserted in tests/hardening.test.mjs and tests/portal.spec.js."
+  },
+  {
+    "id": "F-030",
+    "title": "Status read-back is guarded by a guessable reference plus an email that submitters routinely publish",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "proxy",
+    "files": [
+      {
+        "path": "proxy/src/intake.js",
+        "lines": "createReferenceMinter / validateStatusQuery"
+      },
+      {
+        "path": "docs/architecture/TARGET_ARCHITECTURE.md",
+        "lines": "3.8"
+      }
+    ],
+    "impact": "References are minted as NITDA-<year>-<zero-padded sequence> and are therefore guessable. The lookup pair for POST /intake/status is that reference plus the sender's email, so the email is the only unpredictable half — and it is a value organisations publish. An attacker who knows a correspondent's address can iterate the sequence. Three controls bound the damage rather than remove it: denials are byte-identical so the route is not an existence oracle, the response is an allow-listed projection carrying no description, attachment, officer or unit, and status reads have a dedicated 10/min per-source budget that makes online iteration impractical.",
+    "remediation": "Mint a high-entropy lookup token at submission, return it in the acknowledgement email, and accept it in place of or alongside the reference. Rate limiting is what currently makes guessing impractical; it is not a substitute for an unguessable credential.",
+    "outcome": "skipped",
+    "note": "Introduced by step 6, recorded at step 6 rather than discovered later. Deliberately not fixed in the same change: the token must be issued at submission and delivered by the acknowledgement email, which is owner-side work on the Power Automate side. Tracked as roadmap step 10."
+  },
+  {
+    "id": "F-031",
+    "title": "modules/correspondence.js mints registry references in the browser from Date.now()",
+    "severity": "medium",
+    "confidence": "confirmed-present",
+    "scope": "root",
+    "files": [
+      {
+        "path": "modules/correspondence.js",
+        "lines": "createRecord()"
+      }
+    ],
+    "impact": "`const id = `NITDA-${Date.now().toString().slice(-6)}`` is client-generated and takes the last six digits of a millisecond timestamp, so it repeats every 1000 seconds and two clerks logging correspondence in the same millisecond collide outright. It is also chosen by the caller, which means it is not a registry reference in any meaningful sense -- the same objection recorded against client-chosen identifiers on the intake path.",
+    "remediation": "Fixed. core/reference-minter.js is the single implementation; modules/correspondence.js uses it and produces NITDA-YYYY-NNNNNN, identical to proxy/src/intake.js createReferenceMinter. Client-minted references are flagged referenceProvisional:true, because a browser sees only the records it has loaded and cannot issue an authoritative registry reference.",
+    "outcome": "fixed",
+    "note": "Found at step 7 while matching the scan-intake record shape to the existing one. NOT fixed in the same change: changing how the manual path mints references touches every record already keyed on that format, and the durable fix is the same shared minter step 7 introduced. Scoped separately rather than bundled into a channel-C change."
+  },
+  {
+    "id": "F-032",
+    "title": "Document kind and routing domain shared one `category` field, so every intake category fell through to the executive queue at urgent priority",
+    "severity": "high",
+    "confidence": "confirmed-present",
+    "scope": "cross",
+    "files": [
+      {
+        "path": "modules/correspondence.js",
+        "lines": "categoryList -- 5 values"
+      },
+      {
+        "path": "document-portal/js/data.js",
+        "lines": "PF.CORRESPONDENCE_TYPES -- 7 category values"
+      },
+      {
+        "path": "config/assignment-cascade.config.js",
+        "lines": "category -- 12 values"
+      }
+    ],
+    "impact": "CORRECTED FRAMING. The original entry said 'three vocabularies exist' and treated that as the defect. Two of the three are legitimately different axes: DOCUMENT KIND (what sort of document this is) written by the intake forms, and ROUTING DOMAIN (which directorate handles it) read by core/assignment-cascade.js. Both are worth having. The defect was that they shared one field, so bestRule() matched document kinds against routing rules, found nothing, and fell through to `rows[0]` -- whatever sorts first in the matrix. In the shipped fallback that is 'Executive Correspondence -> ODG -> dgs@nitda.gov.ng, urgent, 2 days'. MEASURED, NOT INFERRED: all five kinds the manual form offered and all seven the portal maps to routed to the Director-General's office at urgent priority. The executive queue was the default destination for substantially all correspondence, which makes the priority signal meaningless. A fourth list, INTAKE_CATEGORIES in the proxy, had also drifted: it carried 'Invitation' where the platform used 'Event Invitation', so every portal invitation arrived with a category no routing rule and no report would ever match.",
+    "remediation": "Fixed in two parts, deliberately unequal. (1) The fallthrough is a bug regardless of any mapping decision and is fixed outright: an unmatched category now lands on a NAMED default (General Administration -> Registry, normal priority) rather than on whatever sorts first. (2) Which document kind belongs to which directorate is an operating-model decision, so DocumentKindRouting in config/correspondence-categories.config.js is marked PROVISIONAL and is for the owner to confirm against registry reference data. Runtime reference data always wins -- the mapping is consulted only when the raw value matches no rule. The proxy now imports PUBLIC_DOCUMENT_KINDS instead of restating its allow-list, and the portal aligned to 'Event Invitation'.",
+    "outcome": "fixed",
+    "note": "Reframed after measuring the actual routing rather than reasoning from the lists. My original entry conflated two legitimate axes and missed the consequence entirely. Remaining owner-side: confirm the provisional kind->domain mapping, and decide whether 'Proposal'/'Project Proposal' and 'Official Correspondence'/'General Correspondence' are genuinely distinct kinds -- they are left unresolved because collapsing them would change what existing records mean."
+  },
+  {
+    "id": "F-033",
+    "title": "A git-ignored local config for the retired ECM Activity Hub held a live SAS signature on disk",
+    "severity": "low",
+    "confidence": "confirmed-present",
+    "scope": "activityhub",
+    "files": [
+      {
+        "path": "ECM_ActivityHub_Portal/config.local.js",
+        "lines": "untracked, now deleted"
+      }
+    ],
+    "impact": "Found while deleting the tree at D6(b). The file was git-ignored, so it never entered version control and this is not a repository exposure -- but it sat on the working copy holding a live signature for workflow 6b3bad3005b44bf6bced0f8074d3f2ed (SINGLE_ASSIGNMENT, row 14 of the register). It shows that git-ignoring a config file protects the repository, not the machine, and that `git rm -r` on a tree leaves untracked files behind.",
+    "remediation": "The file is deleted. The workflow it named was already row 14 of docs/architecture/ROTATION_REGISTER.md and is covered by the cutover decommission -- deleting the file revokes nothing, as always.",
+    "outcome": "fixed",
+    "note": "Recorded because it is a repeatable trap rather than a one-off: any future tree deletion should check for untracked config alongside the tracked files."
+  }
+]

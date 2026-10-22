@@ -1,0 +1,57 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "f0b7179396f5fee9c4c9dcbf02828434aff2dda6",
+  "finishedUtc": "2026-10-10T16:35:31.478Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "b79e6707-df4d-4ae7-8a65-738aa45e9a73",
+      "flow": "IP_FETCH_ALL_BOOTSTRAP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707",
+          "file": "FETCH_ALL__IP_FETCH_ALL_BOOTSTRAP__b79e6707.paste.json",
+          "scope": "Scope",
+          "status": "APPLIED",
+          "packageHash": "be1c8c53d339092ca2116656bdacb1ae1a7b318c8c56547e91b3eb254f2c230c",
+          "liveHash": "be1c8c53d339092ca2116656bdacb1ae1a7b318c8c56547e91b3eb254f2c230c",
+          "fingerprint": "1c19c9342167a419",
+          "liveFingerprint": "1c19c9342167a419",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash be1c8c53d339…; 1 connection(s) rebound",
+          "rebinds": [
+            {
+              "reference": "shared_office365-1",
+              "from": null,
+              "to": "c0b9e7a5b0854c39a435fd8ce92f48ad",
+              "alsoUsedOutside": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "state": "Stopped",
+      "packages": [
+        {
+          "id": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c",
+          "file": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c.paste.json",
+          "scope": "Scope_ScheduledSweep_Flow",
+          "status": "APPLIED",
+          "packageHash": "e5983b1219eaacd5480d0eb44d721f6f3b5acdb87d992ac40e7210a1645984cb",
+          "liveHash": "e5983b1219eaacd5480d0eb44d721f6f3b5acdb87d992ac40e7210a1645984cb",
+          "fingerprint": "1fca884e7a6c241f",
+          "liveFingerprint": "1fca884e7a6c241f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash e5983b1219ea…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "schema": "dgo-flow-truth-coverage/v1",
+  "purpose": "Which of the flow-truth review's 29 findings the rebuilt package's test suite actually asserts, and which it does not. The review is a record and is never edited; this declares, from outside it, what a tracked source has since established about each finding. As of 2026-09-15 all 29 are covered.",
+  "whyThisExists": "docs/deployment/OUTSTANDING_SOURCES.json has said since 2026-09-14 that all 29 findings stay counted open because 'tests/flow-truth-persistence.test.mjs names this review — but that suite asserts no finding by id, so nothing establishes which.' The suite has 51 assertions and cites zero finding ids, so the estate could not tell which findings the rebuild answered and which it left. That is the single largest tractable piece of the 56 open items with no stated closure criterion.",
+  "whatCoveredMeans": "An assertion in the suite fails if the defect the finding names is present in the rebuilt package. It does NOT mean the finding was wrong, and it does not resolve anything about the tenant: B1's three lists still do not exist, and the suite asserts that the package says so rather than pretending otherwise. Covered means the PACKAGE defect the finding raises is now held closed by a gate. Closing the last seven found one finding still live: C11, which the rebuild had not fixed and which no assertion would have caught.",
+  "review": "docs/folio-Master-Flows-and-Endpoints/audits/FLOW_TRUTH_PERSISTENCE_REVIEW.md",
+  "suite": "tests/flow-truth-persistence.test.mjs",
+  "findings": [
+    {
+      "id": "B1",
+      "title": "The three target lists exist nowhere in the estate",
+      "covered": true,
+      "via": [
+        "the companion states the provisioning state the capture supports",
+        "no GUID is claimed for a resource nobody has built"
+      ],
+      "note": "The package no longer writes to lists it cannot address: it declares BLOCKED-ON-PROVISIONING and claims no GUID. The lists themselves are still unbuilt — that is Step 5 of the governance runbook, tracked separately, and this finding does not track it."
+    },
+    {
+      "id": "B2",
+      "title": "Lists are targeted by display title, not by GUID",
+      "covered": true,
+      "via": [
+        "no GUID is claimed for a resource nobody has built"
+      ],
+      "note": "Targets resolve through docs/folio-Master-Flows-and-Endpoints/deployment/governance/list-bindings.json, which maps title to GUID and holds null until the list is built. The assertion fails if a GUID is invented for an unbuilt resource."
+    },
+    {
+      "id": "B3",
+      "title": "Every connector binding is internally inconsistent",
+      "covered": true,
+      "via": [
+        "every connector action is bound, on the right api, to a matching connection"
+      ],
+      "note": "The submitted package failed both halves of this thirteen times — the suite's own comment records it."
+    },
+    {
+      "id": "B4",
+      "title": "The file is a designer copy, not a package",
+      "covered": true,
+      "via": [
+        "isScopeNode and mslaNode are both true",
+        "serializedValue is a Scope"
+      ]
+    },
+    {
+      "id": "B5",
+      "title": "Six variables that no flow in this estate declares",
+      "covered": true,
+      "via": [
+        "the companion declares every variable the package reads",
+        "the companion declares nothing the package does not read",
+        "every variable follows the estate var* convention"
+      ],
+      "note": "The suite's comment names the exact six the submitted scope read."
+    },
+    {
+      "id": "B6",
+      "title": "CreateFile never names the library",
+      "covered": true,
+      "via": [
+        "the artefact folder path names the Flow Truth Artefacts library"
+      ],
+      "viaPattern": "the artefact folder path names the"
+    },
+    {
+      "id": "B7",
+      "title": "The folders created and the files written are two different paths",
+      "covered": true,
+      "via": [
+        "every file and folder action builds its path from the one identity field"
+      ]
+    },
+    {
+      "id": "S1",
+      "title": "The record carries the flow's own trigger URL and signature token",
+      "covered": true,
+      "via": [
+        "no gateway header that carries the inbound URL is named as a value to capture",
+        "the package carries no signature"
+      ],
+      "note": "Four separate assertions also refuse triggerBody(), triggerOutputs(), triggerFormDataValue and triggerMultipartBody by name."
+    },
+    {
+      "id": "S2",
+      "title": "It reverses a ratified governance position, silently",
+      "covered": true,
+      "via": [
+        "the capture policy states both seeds as false, in the record"
+      ],
+      "note": "CaptureRequestBody and CaptureHeaders are configuration seeds of the registry design; tests/http-flow-registry.test.mjs holds them false there, and this holds the package to them."
+    },
+    {
+      "id": "S3",
+      "title": "Two unbounded result() expansions are persisted",
+      "covered": true,
+      "via": [
+        "result() is used once, on the persist scope, inside the catch",
+        "the record written to SharePoint contains no result() expansion"
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "IntegrityVerified: true, beside a manifest that verifies nothing",
+      "covered": true,
+      "via": [
+        "nothing claims integrity was verified",
+        "the manifest states that no content digest is computed",
+        "every manifest entry records the ETag and byte size SharePoint returned"
+      ]
+    },
+    {
+      "id": "C1",
+      "title": "The idempotency guard does not guard anything",
+      "covered": true,
+      "via": [
+        "no connector action runs after the gate on Succeeded — that is the bypass",
+        "the true branch composes a replay result",
+        "mutation control: a persist scope hung off the gate on Succeeded is detectable"
+      ],
+      "note": "The suite carries its own mutation control for this one — the shape that was submitted must stay detectable."
+    },
+    {
+      "id": "C2",
+      "title": "RunStatus is the literal \"Succeeded\"",
+      "covered": true,
+      "via": [
+        "item/Outcome is derived, never a literal"
+      ],
+      "viaPattern": "is derived, never a literal"
+    },
+    {
+      "id": "C3",
+      "title": "DurationMilliseconds is the literal 0",
+      "covered": true,
+      "via": [
+        "item/DurationMs is derived, never a literal",
+        "ticks() is only ever applied to utcNow(); duration comes from the integer varStartTicks"
+      ],
+      "viaPattern": "is derived, never a literal"
+    },
+    {
+      "id": "C4",
+      "title": "Three more values are guesses recorded as facts",
+      "covered": true,
+      "via": [
+        "item/HttpStatusCode is derived, never a literal",
+        "item/IsCompliant is derived, never a literal"
+      ],
+      "viaPattern": "is derived, never a literal"
+    },
+    {
+      "id": "C5",
+      "title": "The registry patch discards the registry's history",
+      "covered": true,
+      "via": [
+        "item/TotalExecutions is derived, never a literal",
+        "item/ConsecutiveFailures is derived, never a literal",
+        "item/RecordVersion is derived, never a literal"
+      ],
+      "viaPattern": "is derived, never a literal",
+      "note": "The review's fix is 'read the row back and increment'. A derived value is what incrementing produces; a literal is what discards the history. All six counter columns are held."
+    },
+    {
+      "id": "C6",
+      "title": "Two concurrent runs create two registry rows",
+      "covered": true,
+      "indirect": true,
+      "via": [
+        "every $filter leads on a unique, indexed key"
+      ],
+      "note": "Indirect, and recorded as such. The suite holds the lookup to the unique key; what actually refuses the second concurrent row is EnforceUniqueValues on that column, which tests/http-flow-registry.test.mjs holds in the design rather than this suite holding it in the package."
+    },
+    {
+      "id": "C7",
+      "title": "Three unguarded length() calls",
+      "covered": true,
+      "via": [
+        "every length() over a nullable value is wrapped in coalesce()"
+      ]
+    },
+    {
+      "id": "C8",
+      "title": "greater(variables('FlowsNotFoundCount'), 0) on an undeclared variable",
+      "covered": true,
+      "via": [
+        "the companion declares every variable the package reads",
+        "every variable follows the estate var* convention"
+      ],
+      "note": "The review says 'See B5', and so does the coverage: the same two assertions answer both."
+    },
+    {
+      "id": "C9",
+      "title": "Every stored URL is broken by the first space",
+      "covered": true,
+      "via": [
+        "C9 · no item column stores a URL, so none can be broken by the first space in one"
+      ],
+      "note": "Answered by absence, which is the stronger answer: the rebuild stores no URL at all. The assertion keeps it that way, because a URL column added later would reintroduce the escaping problem the finding names."
+    },
+    {
+      "id": "C10",
+      "title": "ComplianceIssuesJson stores notification delivery",
+      "covered": true,
+      "via": [
+        "C10 · every Compliance column reads the governance input, not notification delivery"
+      ],
+      "note": "The rebuild already read the governance input; nothing asserted it, so a later edit could have put anything in a declared column."
+    },
+    {
+      "id": "C11",
+      "title": "Three columns carry the wrong identity",
+      "covered": true,
+      "via": [
+        "C11 · EnvironmentName is written by nothing — a flow cannot read a display name, and the identifier is not one"
+      ],
+      "note": "THE ONE THE REBUILD HAD NOT FIXED. It wrote EnvironmentName from the same expression as EnvironmentId, so the column the design calls a human-readable name held an identifier — C11 verbatim, still live on 2026-09-15. A flow has one environment designator and it is not a display name, so the column is now written by nothing. Optional in the design, so leaving it empty is what the spec permits."
+    },
+    {
+      "id": "C12",
+      "title": "Three columns carry the wrong identity",
+      "covered": true,
+      "via": [
+        "C12 · FlowName reads the display name, never"
+      ],
+      "note": "Already correct in the rebuild; now gated.",
+      "viaPattern": "C12 · FlowName reads the display name, never"
+    },
+    {
+      "id": "C13",
+      "title": "lossless: true, truncated: false, captureMode: \"Complete\" — all unconditional",
+      "covered": true,
+      "via": [
+        "nothing claims to be lossless",
+        "truncation is measured, not declared"
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "contentSizeBytes is a character count",
+      "covered": true,
+      "via": [
+        "every manifest entry records the ETag and byte size SharePoint returned"
+      ],
+      "note": "The size now comes from body/Size — what SharePoint returned — rather than from length() over a string."
+    },
+    {
+      "id": "C15",
+      "title": "An append-only list with no index strategy",
+      "covered": true,
+      "via": [
+        "every $filter leads on a unique, indexed key"
+      ],
+      "note": "The suite's own comment states the reason: this is the only shape that survives a list past the 5,000-item view threshold, which an append-only ledger reaches by definition."
+    },
+    {
+      "id": "C16",
+      "title": "A null HTML report aborts the chain after two files are written",
+      "covered": true,
+      "via": [
+        "C16 · no file creation runs after another"
+      ],
+      "note": "The rebuild replaced the series with a fan-out from the run folder, so a null report cannot strand the others half-written. The citation is the invariant half of the label: the assertion interpolates the count of file actions, so quoting the rendered text would break the moment a file is added.",
+      "viaPattern": "C16 · no file creation runs after another"
+    },
+    {
+      "id": "C17",
+      "title": "Four timestamps from four separate utcNow() calls",
+      "covered": true,
+      "via": [
+        "C17 · the persisted record calls utcNow() nowhere — its times read one captured value"
+      ],
+      "note": "The seven utcNow() calls that remain are in seven different actions at seven different moments, which is legitimate. What C17 names is one RECORD disagreeing with itself, and the record now reads capturedUtc from Compose_Persistence_Identity alone."
+    },
+    {
+      "id": "C18",
+      "title": "Scope_Persistence_Failure does not cover Skipped",
+      "covered": true,
+      "note": "The review said these status sets had to be re-derived together with C1's structural fix. They were; nothing asserted it.",
+      "via": [
+        "C18 · the final Compose accepts Skipped from the failure scope, so a clean run still reports"
+      ]
+    }
+  ]
+}

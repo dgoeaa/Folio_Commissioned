@@ -1,0 +1,587 @@
+{
+  "name": "DGO Correspondence Mailer",
+  "package": "dgo-correspondence-mailer",
+  "version": "2.1.5",
+  "contractVersion": "dgo-mail/2.0",
+  "requires": "Node.js 18+ only to run tools/ locally; the web/ folder is static and needs no runtime.",
+  "flows": [
+    {
+      "name": "DGO_MAIL_SEND",
+      "endpointKey": "MAIL_SEND",
+      "package": "flows/packages/DGO_MAIL_SEND.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "send",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_LOG",
+      "endpointKey": "MAIL_LOG",
+      "package": "flows/packages/DGO_MAIL_LOG.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "list",
+        "get",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_DIRECTORY",
+      "endpointKey": "MAIL_DIRECTORY",
+      "package": "flows/packages/DGO_MAIL_DIRECTORY.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "list",
+        "upsert",
+        "delete",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_TEMPLATES",
+      "endpointKey": "MAIL_TEMPLATES",
+      "package": "flows/packages/DGO_MAIL_TEMPLATES.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "list",
+        "upsert",
+        "delete",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_PROVISION",
+      "endpointKey": "MAIL_PROVISION",
+      "package": "flows/packages/DGO_MAIL_PROVISION.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "provision",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_AUTH",
+      "endpointKey": "MAIL_AUTH",
+      "package": "flows/packages/DGO_MAIL_AUTH.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "requestCode",
+        "verifyCode",
+        "signOut",
+        "whoAmI",
+        "listOperators",
+        "upsertOperator",
+        "healthCheck",
+        "verify"
+      ]
+    },
+    {
+      "name": "DGO_MAIL_DATA",
+      "endpointKey": "MAIL_DATA",
+      "package": "flows/packages/DGO_MAIL_DATA.zip",
+      "trigger": "HTTP request",
+      "operations": [
+        "listMailings",
+        "saveMailing",
+        "deleteMailing",
+        "listReports",
+        "saveReport",
+        "deleteReport",
+        "uploadFile",
+        "downloadFile",
+        "listFiles",
+        "deleteFile",
+        "healthCheck",
+        "verify"
+      ]
+    }
+  ],
+  "sharePointLists": [
+    "DGOMailLog",
+    "DGOMailDirectory",
+    "DGOMailTemplates",
+    "DGOMailOperators",
+    "DGOMailSessions",
+    "DGOMailCampaigns",
+    "DGOMailReports",
+    "DGOMailFiles"
+  ],
+  "files": [
+    {
+      "path": "GO-LIVE.html",
+      "bytes": 258936,
+      "sha256": "9351589a1392f8e9db38da74e1f7b70c687cad8d123bc4915e0e657c2eb5003d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5906,
+      "sha256": "370ae855e57cefd5e3861dff0950c2d6d3c8b5a104b93f6ca59ee857266b4dfb"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e533f272c7ca6274814c1d5858bef6186bd7b6ac3e8e0f676ba1a087e5d08a0f"
+    },
+    {
+      "path": "data/directory.csv",
+      "bytes": 5208,
+      "sha256": "6daafac6c71ff95f36ebca8ae78085af5c39e23dccb8b129b21ccf69c627a0fc"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_AUTH.definition.json",
+      "bytes": 94974,
+      "sha256": "97c41e1c44ee4a5bee73742fdcb374462c0731185d364cdc36fa09f160fe20ef"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_DATA.definition.json",
+      "bytes": 107291,
+      "sha256": "ffbd0eb4d19b7e98ea835946a3f6891995c8ec689a5732e0406e459ffa31bc3c"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_DIRECTORY.definition.json",
+      "bytes": 56917,
+      "sha256": "0272f7d7b254a5fad21d07a6efbb1ea05f8bcc895306294eea2d5f5e9d2cf980"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_LOG.definition.json",
+      "bytes": 40327,
+      "sha256": "433f690afd6cb85c806a8ad9cbdefa08920e2e1bbe33207b5656a7988abb2536"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_PROVISION.definition.json",
+      "bytes": 68139,
+      "sha256": "bb5266d2b1f07d0692a212d6a20514f69f22f8e768faec009a532780eb2974cc"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_SEND.definition.json",
+      "bytes": 67589,
+      "sha256": "98da9f3c1f22089c3f4eed9bdea4a44947293829526b2d27e6da47d487c18b7c"
+    },
+    {
+      "path": "flows/definitions/DGO_MAIL_TEMPLATES.definition.json",
+      "bytes": 55414,
+      "sha256": "bc658f388c8edec3dc3fa3dc2849be1adfe2656fd66a4ac8d3235b2e946013eb"
+    },
+    {
+      "path": "flows/flows.catalogue.json",
+      "bytes": 5251,
+      "sha256": "51e552ac4707eeeb8643d14a1103554886b38c80754837b0f43cc3e68ef7c098"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_AUTH.zip",
+      "bytes": 8428,
+      "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_DATA.zip",
+      "bytes": 7731,
+      "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_DIRECTORY.zip",
+      "bytes": 6302,
+      "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_LOG.zip",
+      "bytes": 5891,
+      "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_PROVISION.zip",
+      "bytes": 7983,
+      "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_SEND.zip",
+      "bytes": 7808,
+      "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
+    },
+    {
+      "path": "flows/packages/DGO_MAIL_TEMPLATES.zip",
+      "bytes": 6097,
+      "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "setup.cmd",
+      "bytes": 630,
+      "sha256": "28d6f911c4abaf93497bae9f46da5a8df4eaa8e9880f855386314f50ccd837f7"
+    },
+    {
+      "path": "setup.sh",
+      "bytes": 570,
+      "sha256": "f9a5cb1f405746c217d6343365cf027a2a2ad2cf77e91887b98b08f850737b4b"
+    },
+    {
+      "path": "start-demo.cmd",
+      "bytes": 169,
+      "sha256": "1a5f5398e6bfaa77dda3517d56f3e832f8765112430c60d92fe23f90cf122c75"
+    },
+    {
+      "path": "start-demo.sh",
+      "bytes": 280,
+      "sha256": "1461d0febc4e7f673dcc56e536fcc5e1c23d508a2ce803932f95ca97ad4f2007"
+    },
+    {
+      "path": "start.cmd",
+      "bytes": 162,
+      "sha256": "5bc5d37eca6d70df6f94942e7e3dce300bb67c408ee07dd11a4841dfaae07391"
+    },
+    {
+      "path": "start.sh",
+      "bytes": 235,
+      "sha256": "2ba265944f3bc498a4095849c18e3fe3fdf670c4036907f1d6c691c2e11eb73f"
+    },
+    {
+      "path": "tools/bundle.mjs",
+      "bytes": 6420,
+      "sha256": "5443cd0a870abb75606bc73acab44e844325c9129daec780450dbc8b3e293aa9"
+    },
+    {
+      "path": "tools/flow-package.mjs",
+      "bytes": 3811,
+      "sha256": "81fe09c8d427c4316a08169052b13dc3967c570f09cef9364909cd34786ef119"
+    },
+    {
+      "path": "tools/mock-flows.mjs",
+      "bytes": 25476,
+      "sha256": "8bdf0157926e7b165d5e13ce509afab45ebf5dc6f064d04e4194d273585550b0"
+    },
+    {
+      "path": "tools/serve.mjs",
+      "bytes": 8780,
+      "sha256": "0832d031aa38411002a28a8bc1f9f165a052d8fd2b8435fd1817cb071f2e1130"
+    },
+    {
+      "path": "tools/setup.mjs",
+      "bytes": 59654,
+      "sha256": "14d7a8d42ab094e8481dd6fe83b49a774a3e11c2797d126dd9e9f4484632094a"
+    },
+    {
+      "path": "tools/verify-package.mjs",
+      "bytes": 1290,
+      "sha256": "5d9f6344258ff340a48d64983bef62345ed226baad8c535130712c706d9b1d39"
+    },
+    {
+      "path": "tools/zip-writer.mjs",
+      "bytes": 3819,
+      "sha256": "37ab4efc98ab682ba5aaf4dbe4ee6f8d9238ec7c187e966d8a238d4e2835da26"
+    },
+    {
+      "path": "web/README.md",
+      "bytes": 15324,
+      "sha256": "0f316119bb41940cac65829d79c4702578a9b8f0c9c86e299974abec23f1765a"
+    },
+    {
+      "path": "web/VERSION",
+      "bytes": 6,
+      "sha256": "e533f272c7ca6274814c1d5858bef6186bd7b6ac3e8e0f676ba1a087e5d08a0f"
+    },
+    {
+      "path": "web/brand/brand.css",
+      "bytes": 64860,
+      "sha256": "cee4621e57970280a70e026ccb37541d4ca05cc7a3b6def0dc5592bd82f88a1c"
+    },
+    {
+      "path": "web/brand/brand.js",
+      "bytes": 17057,
+      "sha256": "da0ba68de65cee91d6fe203dcc0a68d781d13b7a47707d52edc345666f5b371f"
+    },
+    {
+      "path": "web/brand/dgo-mark.svg",
+      "bytes": 326,
+      "sha256": "7463a71666c867e811dc70a8083a65a26e7548d683c91c14dca8fcb74a56514b"
+    },
+    {
+      "path": "web/brand/nitda-lockup-digital-colour.png",
+      "bytes": 100791,
+      "sha256": "e3c3bdd4d3072cd6f5b5c188386acc34f6b97fdddf66e23dfdd673f79fd2df8a"
+    },
+    {
+      "path": "web/brand/nitda-lockup-digital-white.png",
+      "bytes": 5273,
+      "sha256": "50aa8481180414087183597bd5530fae91fc8495ae9c9bcc476434b87d7c49d3"
+    },
+    {
+      "path": "web/brand/nitda-symbol-infoweb.png",
+      "bytes": 8960,
+      "sha256": "e2fb40590c2939508915d023be1c4d6f48d6626d675f26e4ebfd5a34f5324375"
+    },
+    {
+      "path": "web/config.js",
+      "bytes": 1571,
+      "sha256": "e8a3518181f9e3c0c25219c0bc660ccd33908e5663b536b621d5b00ac5e7467a"
+    },
+    {
+      "path": "web/config.local.example.js",
+      "bytes": 1068,
+      "sha256": "076ad3ab9cd51f18888ddbaf136496b2d5c28d9f18e204e2b750873cbf1b50fe"
+    },
+    {
+      "path": "web/css/mailer.css",
+      "bytes": 40549,
+      "sha256": "fa812df8d0ba6f6410dbe5193508daecaf2bc79005804ae2e7cbca65ee48020f"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_AUTH.definition.json",
+      "bytes": 94974,
+      "sha256": "97c41e1c44ee4a5bee73742fdcb374462c0731185d364cdc36fa09f160fe20ef"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_DATA.definition.json",
+      "bytes": 107291,
+      "sha256": "ffbd0eb4d19b7e98ea835946a3f6891995c8ec689a5732e0406e459ffa31bc3c"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_DIRECTORY.definition.json",
+      "bytes": 56917,
+      "sha256": "0272f7d7b254a5fad21d07a6efbb1ea05f8bcc895306294eea2d5f5e9d2cf980"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_LOG.definition.json",
+      "bytes": 40327,
+      "sha256": "433f690afd6cb85c806a8ad9cbdefa08920e2e1bbe33207b5656a7988abb2536"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_PROVISION.definition.json",
+      "bytes": 68139,
+      "sha256": "bb5266d2b1f07d0692a212d6a20514f69f22f8e768faec009a532780eb2974cc"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_SEND.definition.json",
+      "bytes": 67589,
+      "sha256": "98da9f3c1f22089c3f4eed9bdea4a44947293829526b2d27e6da47d487c18b7c"
+    },
+    {
+      "path": "web/flows/definitions/DGO_MAIL_TEMPLATES.definition.json",
+      "bytes": 55414,
+      "sha256": "bc658f388c8edec3dc3fa3dc2849be1adfe2656fd66a4ac8d3235b2e946013eb"
+    },
+    {
+      "path": "web/flows/flows.catalogue.json",
+      "bytes": 5251,
+      "sha256": "51e552ac4707eeeb8643d14a1103554886b38c80754837b0f43cc3e68ef7c098"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_AUTH.zip",
+      "bytes": 8428,
+      "sha256": "68f85b89d14a16a9596982c8726baccd6da85919056d8597a0a06ca77092403e"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_DATA.zip",
+      "bytes": 7731,
+      "sha256": "55350896f628a71edff35ecb2eb14f764d957f1f6bd778608be787703662f4b2"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_DIRECTORY.zip",
+      "bytes": 6302,
+      "sha256": "9237bd3b4e27e5a47ffb0ecb621182f2008e674139cf18a646965b2127f8c823"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_LOG.zip",
+      "bytes": 5891,
+      "sha256": "d9f953d7302c43352a21ebfc75dd2707dcd676d8ab966466d3730c59b4214619"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_PROVISION.zip",
+      "bytes": 7983,
+      "sha256": "992ea3f847b2b6dccef88f021b26ce4eb3b0dd6067eea8c0be89f3929dd9f93c"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_SEND.zip",
+      "bytes": 7808,
+      "sha256": "e90cb4ca67723a7396c8d80fd8503effceda100a098cb2e8385ef9377e2d9ba1"
+    },
+    {
+      "path": "web/flows/packages/DGO_MAIL_TEMPLATES.zip",
+      "bytes": 6097,
+      "sha256": "fd4e2121e4cc829f3d390387bb254d849739f91607a55f1dce08295cf8f8638c"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 2480,
+      "sha256": "c5e58eb3bf473c5051b1082fa8eccd9bc86676f042baa4347cf5bc5f5ed85108"
+    },
+    {
+      "path": "web/js/api.js",
+      "bytes": 5892,
+      "sha256": "31e188cd12e95949698346fb96172633b2b2741ef228bef0c2a71c7210b2f47a"
+    },
+    {
+      "path": "web/js/app.js",
+      "bytes": 19106,
+      "sha256": "bd846569e15a45923de98d82abe7207c0d3f29caa06f588c81190f46a5663074"
+    },
+    {
+      "path": "web/js/campaign.js",
+      "bytes": 14158,
+      "sha256": "a63b6f8c0a0a332bece1497cfa973734124bd3ecfbb09a9a53edd14dfe455987"
+    },
+    {
+      "path": "web/js/editor.js",
+      "bytes": 5000,
+      "sha256": "5414cc5f8009ab0d84d29f2b26b7cdff90aa748d65311cbb57021ea072290e80"
+    },
+    {
+      "path": "web/js/export.js",
+      "bytes": 20430,
+      "sha256": "248d8a498eee3562a6288a3461a0ad45d5f4a88289a8536a44ec94abe47413d2"
+    },
+    {
+      "path": "web/js/letterhead.generated.js",
+      "bytes": 6271,
+      "sha256": "a26581057557db4793dbd2874239f79ad7b63dff83ebf1981a9745965d668b58"
+    },
+    {
+      "path": "web/js/letterhead.js",
+      "bytes": 5378,
+      "sha256": "457c6f4d7f1f6c1ca6e207d0fb165a91a7c7152563f6e21a211991124dfe54a2"
+    },
+    {
+      "path": "web/js/letters.js",
+      "bytes": 5959,
+      "sha256": "24182b9952b193147e9a37753e6e356a593ae71a2516386c903862fcb434f8da"
+    },
+    {
+      "path": "web/js/logcheck.js",
+      "bytes": 1431,
+      "sha256": "d0993621fb1a1762edca2a89fb10e6da7a78a09ef56c5a592909da7cb1370952"
+    },
+    {
+      "path": "web/js/merge.js",
+      "bytes": 2734,
+      "sha256": "de5683a5e0c7936b04454cad321e2a31b0da7cd22f3d01f2d65803da9ef253ca"
+    },
+    {
+      "path": "web/js/reports.js",
+      "bytes": 8206,
+      "sha256": "54ffda722695492597ee3fbcc1df8063884e220362f82961bff9bc372eef34e3"
+    },
+    {
+      "path": "web/js/sanitize.js",
+      "bytes": 4602,
+      "sha256": "660844dfb0aabb9e8d54f4f113bf917fb2acd802831f9d2e509a11119fd01572"
+    },
+    {
+      "path": "web/js/seed-directory.js",
+      "bytes": 7047,
+      "sha256": "ec5004ca942e85b663f3b98e2a022d4f769e27d511b3f6350643984322a3c61e"
+    },
+    {
+      "path": "web/js/seed-templates.js",
+      "bytes": 4024,
+      "sha256": "cb6563138205a045844c7efe529bffac105c02c179f339673fdce43751a6cb46"
+    },
+    {
+      "path": "web/js/sender.js",
+      "bytes": 21379,
+      "sha256": "5417d37b74c52512267bcd6b3d366417c8139b81107614fa192299b42004b3f7"
+    },
+    {
+      "path": "web/js/session.js",
+      "bytes": 3027,
+      "sha256": "dde4add9baa3b332e7907d36d6131ec09d807bbff02edcb3501a8313a1fd089c"
+    },
+    {
+      "path": "web/js/settings.js",
+      "bytes": 6079,
+      "sha256": "b03d6cb9a9eac8044819ea2ae6eca4bb2c867e1fed4eec6da28131c933fea0e8"
+    },
+    {
+      "path": "web/js/store.js",
+      "bytes": 5234,
+      "sha256": "ba96f782b1a4544d86371aed8426615de11e0241e14e723aa78802f30fd429a0"
+    },
+    {
+      "path": "web/js/sync.js",
+      "bytes": 23694,
+      "sha256": "33cc65a66130a3a9caabfd9a4c50a14586927dad9a7d3e6bcaac0087e0f11092"
+    },
+    {
+      "path": "web/js/ui.js",
+      "bytes": 5810,
+      "sha256": "9563e82d0b59e4931b372ea3555d63a898bf0964ee97899618676ecf5351b21e"
+    },
+    {
+      "path": "web/js/util.js",
+      "bytes": 6767,
+      "sha256": "1977707232926181c8d05695600479ac1794c42641baa56217941159ece102f9"
+    },
+    {
+      "path": "web/js/views/activity.js",
+      "bytes": 4282,
+      "sha256": "51b8af513a16922d0b02b485cac3e9999a92687279cae04b439c0987fc10fe01"
+    },
+    {
+      "path": "web/js/views/compose.js",
+      "bytes": 41202,
+      "sha256": "c75731659a77f5f9ba19e4bd9e44f0bb232fa0fa4af39b1b5ef004a00da7eae6"
+    },
+    {
+      "path": "web/js/views/dashboard.js",
+      "bytes": 5180,
+      "sha256": "715a62f7e0be5ee0ee2963202a3b04a2ff5a0b2f33f555e9ceefcbb63478a3f0"
+    },
+    {
+      "path": "web/js/views/directory.js",
+      "bytes": 16944,
+      "sha256": "655ef75827947ed39bf2dafe434a333adb07f38aaf1e04fdfebc020fa088c61c"
+    },
+    {
+      "path": "web/js/views/flows.js",
+      "bytes": 12786,
+      "sha256": "d4fc17050dab0b61dd8385d513214525d6b30576e18f7db2849789d70330efd9"
+    },
+    {
+      "path": "web/js/views/home.js",
+      "bytes": 7945,
+      "sha256": "b57d7132a2fac4a41417e4de049a8ae6957d5bd76657791bba86b4658dbfd099"
+    },
+    {
+      "path": "web/js/views/hub.js",
+      "bytes": 1395,
+      "sha256": "d71c548aef577745fea7ee6768fba131084f1efa16f6af0d54006305a12f4ae6"
+    },
+    {
+      "path": "web/js/views/letter.js",
+      "bytes": 61991,
+      "sha256": "0eb374eed1248526d3b9abe19a609c9343d2591f675e94e7ac2a7eff16a020dc"
+    },
+    {
+      "path": "web/js/views/outbox.js",
+      "bytes": 10498,
+      "sha256": "c39670a2a608ec7b8eb68ff864aafead7ab90a38e0d5bbe3fcf2834d303ca58e"
+    },
+    {
+      "path": "web/js/views/sent.js",
+      "bytes": 14063,
+      "sha256": "333493eb3801afc6737db655864f6e6453a73e9a68038afa30860452aec3e473"
+    },
+    {
+      "path": "web/js/views/settings.js",
+      "bytes": 18421,
+      "sha256": "4772fbbfc4434b30e440324cb36306c10906e804ff907ba4fde57bad2a5a4912"
+    },
+    {
+      "path": "web/js/views/signin.js",
+      "bytes": 3901,
+      "sha256": "122f4e86435783c72c5d96a0b4b0ff8883550dcc57aea7ad29cff9bf146af919"
+    },
+    {
+      "path": "web/js/views/templates.js",
+      "bytes": 13740,
+      "sha256": "b1e45d50b8ea11be29ea689a2624ce5cb42533330f61ceca1722f65141bb8b4e"
+    },
+    {
+      "path": "web/js/zip.js",
+      "bytes": 5878,
+      "sha256": "25898b5e653bfb6dc1722b9743d0bcb2c78dc8c6f567741c7389011d1c47585b"
+    }
+  ]
+}

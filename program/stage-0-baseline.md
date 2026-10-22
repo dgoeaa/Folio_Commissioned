@@ -2,7 +2,76 @@
 
 As of 2026-10-22. **Stage 0 remains blocked, not passed.** Read-only ZIP inspection establishes packaged evidence, not authoritative full-source ownership or tenant deployment knowledge. No endpoints were called, flows imported, mail sent, data removed or UI decommissioned.
 
-## Provenance and source candidates
+### Owner-confirmed review update
+
+The owner has confirmed private workflow approval, containment, and that the disclosed
+signatures are stale and already rotated. These are **owner-confirmed**, not independently
+tenant-verified; no further tenant calls or private evidence collection are required for
+this repository review. Historical exposure records below are not current live-secret
+findings. The owner is the sole administrator, user and developer; separate role assignments
+are not required. These confirmations do not supply the missing application source or
+release inputs and do not close the remaining Stage-0 gates.
+
+### Uploaded-source reconciliation
+
+The current branch includes uploaded source commit `462a6c8` while preserving the earlier
+repository fixes. The unpacked suite is at
+[`Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/`](../Folio_Platform_Packs_Supplementary/folio-platform-suite-1.0.2/README.md).
+Workspace, Portal, Mailer and administration entry points are present there.
+
+- All 14 Mailer ZIPs were recovered byte-for-byte from the previously committed
+  supplementary archive. All 70 expanded members match those ZIPs; both forms are
+  retained and indexed in the reconciled manifest.
+- Four version files were recovered with their original manifest hashes. The POSIX
+  `folio` wrapper was reconstructed to call the existing Node launcher; it is not
+  claimed to match the missing original wrapper.
+- The PR #1 transport overlay is integrated into this suite. Its runtime and suite
+  integrity records are regenerated from the reconciled files, with provenance in
+  `RELEASE_MANIFEST.json`. The other uploaded Workspace package is unchanged.
+- The original `runtime/LICENSE` could not be recovered from the available uploads.
+  Its original manifest entry remains: verification must still fail for that missing
+  file. This is not a fully verified distributable release, and no licensing terms
+  are inferred from repository ownership.
+
+The archive results below describe the earlier packaged baseline, not a fresh failure
+to locate the now-uploaded source. Tenant and release acceptance remain outside this
+repository-only reconciliation.
+
+Checks run on the reconciled source:
+
+| Existing check | Result |
+| --- | --- |
+| Root control-pack and transport tests | 4 + 37 passed; integrated suite transport is byte-identical to the tested overlay |
+| Capsule tests | 12 passed |
+| Administration Centre tests | 53 passed, 7 failed; the same seven failures reproduce on uploaded commit `462a6c8` before reconciliation (catalogue/register and hosted-resource expectations) |
+| Suite release verifier | 514 indexed entries; only `runtime/LICENSE` missing; no altered or unlisted entries |
+| Launcher registry and POSIX launcher help | Passed; all eight declared entry-point files exist; no services or tenant calls started |
+
+The seven inherited administration failures are not waived or represented as passes.
+These checks do not establish full browser acceptance or a working deployed tenant.
+
+### Subsequent repository-local repairs
+
+The preceding reconciliation results are retained as the record of that check.
+A subsequent full-tree recheck found the missing Centre resources already in this
+repository: the flow catalogue, adoption register and complete provisioning console.
+They are now included in the suite at the paths its server expects. The server's
+existing module allowlist also supports the suite's `runtime/` layout without opening
+access to other modules or configuration files. All 60 existing administration tests
+now pass against loopback stand-ins; none were removed or weakened.
+
+No copy of the original upstream license was found. At the owner's request to move
+forward with replacements where necessary, `runtime/LICENSE` is now a clearly marked
+replacement notice granting no rights, not an inferred upstream license. Both manifests
+record the replacement provenance and new file integrity. A passing consistency check
+does not resolve licensing clearance or constitute release/tenant acceptance.
+
+Latest existing checks: 4 control-pack tests, 37 transport tests, 12 Capsule tests
+and all 60 Centre tests passed (113 total). The strict suite verifier reports all
+610 indexed files intact, and runtime file hashes, byte counts and aggregate digest
+match. No tests were removed or weakened, and no tenant calls were made.
+
+## Historical provenance and source candidates
 
 Archive paths below are relative to `/home/runner/work/Folio_Commissioned/Folio_Commissioned/`. Hashes and entry counts were rechecked against the unchanged [PR #1 inventory](../runtime-remediation-inventory.json).
 
@@ -52,7 +121,9 @@ The suite also includes `docs/folio-Master-Flows-and-Endpoints/audits/flow-usage
 
 ## Blockers and needed evidence
 
-Owners below are **roles needing assignment**, not invented signatories. All blockers remain open.
+The owner covers the roles below; no additional approvers are required. The remaining
+source, release and acceptance gaps are unchanged. Tenant behavior not established by
+the repository remains unverified; it will not be probed as part of this review.
 
 | ID | Blocker | Evidence needed / role to assign |
 | --- | --- | --- |

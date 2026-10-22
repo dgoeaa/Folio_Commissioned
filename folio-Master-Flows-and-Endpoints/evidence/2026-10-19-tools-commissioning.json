@@ -1,0 +1,15 @@
+{
+  "recordedUtc": "2026-10-19T23:50:00Z",
+  "what": "The supporting applications and tools commissioned the way an administrator runs them: every platform started with npm run start:all (loopback only), each opened in Chromium and driven, its errors recorded",
+  "started": "npm run start:all, 2026-10-19T23:36Z: all eight platforms answered their health probes (the Portal after a leftover http-server from an earlier link check freed port 8081)",
+  "results": {
+    "Platform Hub": "opens with no error; lists all eight platforms, their purpose, owner and running state; it reported the Vault 'Not running' when the Vault was stopped, so its detection works both ways; links the Mailer's published address https://folio-platform.page.gd/mailer.html",
+    "Folio Estate Console": "opens from the local server with no error (26 contract keys); its file:// browser spec passed 7 of 7 earlier the same day",
+    "Folio Central Administration Centre": "opens with no error; unlocked with its bootstrap token; all 14 screens open with no error (overview, portfolio, health, flows, alerts, incidents, changes, estate, configuration, audit, vault, access, operations, help); verify.py against the running instance: PASS, 24 checks including SQLite integrity, the audit chain recomputed from GENESIS, and no credential in any record",
+    "Folio Flow Workbench": "DEFECT FOUND AND FIXED: the launcher and the Hub opened it at http://localhost:8765, but its relay accepts only its own origin http://127.0.0.1:8765, so every relay call was refused as cross-origin. scripts/platforms.config.mjs now declares openHost 127.0.0.1 for it; the launcher and the Hub give http://127.0.0.1:8765/. Re-run there: no error; the relay forwarded a GET to https://folio-platform.page.gd (200)",
+    "Folio Vault": "DEFECT FOUND AND FIXED: it refused to register any Mailer flow, because its metadata rule did not allow '/' and the Mailer's flows report contractVersion 'dgo-mail/2.0' (HEALTH_CONTRACT.md says a flow implementing the handshake works with both). tools/flow-capsule/app/flowcapsule.py now allows '/' in contractVersion only, with a test (8 tests pass). Re-run end to end against the tenant: DGO_MAIL_AUTH registered (live identity handshake verified, version 1), the alias list returns fingerprints and never the URL, invoking through the Vault reached the flow (healthCheck answered by MAIL_AUTH), and the invoke token is refused on admin routes (403). The Vault's local data, which held the signed address, was deleted afterwards",
+    "Provisioning console": "opens from file:// with no error; lists 102 packages; search finds FETCH_ALL",
+    "Folio Workspace, Portal, Mailer (local copies)": "open with no error other than the expected missing config.local.js: locally they run in demonstration or practice mode; their deployed copies are commissioned in evidence/2026-10-19-live-browser-suite-pagegd.json and evidence/2026-10-19-mailer-origin-move.json"
+  },
+  "cleanup": "every tool stopped; the Centre's temporary state (its access token) and the Vault's data deleted"
+}

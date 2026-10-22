@@ -1,0 +1,5 @@
+#!/bin/sh
+# Administer the suite using the packaged Node launcher.
+cd "$(dirname "$0")" || exit 1
+command -v node >/dev/null 2>&1 || { echo "Node.js 22+ is required"; exit 1; }
+exec node scripts/folio.mjs "$@"

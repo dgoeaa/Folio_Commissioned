@@ -1,0 +1,13 @@
+folio:
+  repository: dgoeaa/ECM-Platform-Folio
+  baseline_date: 2026-09-30
+  baseline_status: authoritative
+source:
+  repository: ECM_DOCS_DEV
+  disposition: superseded-and-retained-for-historical-reference
+  history_imported: false
+migration:
+  method: curated-clean-baseline
+  cleanup_report: 05-governance/cleanup-report.json
+  evidence_register: 05-governance/evidence-register.yaml
+  validation_command: python 07-tools/validation/validate_folio.py

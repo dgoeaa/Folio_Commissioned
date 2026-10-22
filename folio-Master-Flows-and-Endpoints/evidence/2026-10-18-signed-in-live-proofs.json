@@ -1,0 +1,41 @@
+{
+  "readUtc": "2026-10-18T02:20:00Z",
+  "signIn": "one real sign-in as dgsregistry@nitda.gov.ng with a one-time code the owner requested and supplied (2026-10-18 02:04Z); the proof was used only in this session and is not recorded",
+  "by": "the live Workspace at https://folio-gateway.rf.gd (browser) and the live SCAN_INTAKE endpoint as the signed-in officer; runs and receipts read through the Flow API. Recipients masked; no body, code or URL recorded.",
+  "staffNotice": {
+    "item": "ITEM-51",
+    "notice": "RN-012",
+    "how": "Acknowledgment Queue → task 16168 (ZTEST ITEM-25 activity lifecycle proof, a commissioning test record) → Remind → confirm. The confirmation said: \"Until commissioning, staff notices go to the registry mailbox, marked with the officer they are for.\"",
+    "flow": "IP_SEND_EMAIL (df59a69f-92ca-4554-ae68-6b464aa73ef7)",
+    "run": "08584093172473643302916789987CU29",
+    "sentUtc": "2026-10-18T02:14:00Z",
+    "sendStep": "Send_Email Succeeded",
+    "receipt": "Portal Outbox Receipts item 1566 (Create_SendEmail_Receipt_Plain)",
+    "recipientMasked": "d*********y@nitda.gov.ng",
+    "subject": "[For DG Office] Reminder: please acknowledge 22720 — ZTEST ITEM-25 activity lifecycle proof 2026-10-12"
+  },
+  "decisionNotices": {
+    "reference": "NITDA-2026-00020 (commissioning test record)",
+    "how": "PUT to SCAN_INTAKE with X-DGO-Action: writeback and the officer proof, as core/portal-status-service.js sends it; IP_SCAN_INTAKE (5504d7f9-cc96-470c-be79-217582faf415) ran Update_Scan_Writeback_Registry and Create_Scan_Writeback_Timeline; CG_Registry_Status_Notifier (8ebf6001-89cd-49c9-a9b6-4dedb9a5768b) fired on the row change",
+    "approved": {
+      "notice": "RN-003",
+      "writebackRun": "08584093171690254064690487934CU11",
+      "notifierRun": "08584093171354850109328121526CU21",
+      "sentUtc": "2026-10-18T02:15:54Z",
+      "step": "Send_Status_Approved_Email",
+      "receipt": "Portal Outbox Receipts item 1568 (status-approved, sent)",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "subject": "Decision: your submission NITDA-2026-00020 has been approved"
+    },
+    "declined": {
+      "notice": "RN-004",
+      "writebackRun": "08584093170653435930875839590CU23",
+      "notifierRun": "08584093170314893321838675519CU09",
+      "sentUtc": "2026-10-18T02:17:38Z",
+      "step": "Send_Status_Declined_Email",
+      "receipt": "Portal Outbox Receipts item 1570 (status-declined, sent)",
+      "recipientMasked": "d*********y@nitda.gov.ng",
+      "subject": "Decision on your submission NITDA-2026-00020"
+    }
+  }
+}

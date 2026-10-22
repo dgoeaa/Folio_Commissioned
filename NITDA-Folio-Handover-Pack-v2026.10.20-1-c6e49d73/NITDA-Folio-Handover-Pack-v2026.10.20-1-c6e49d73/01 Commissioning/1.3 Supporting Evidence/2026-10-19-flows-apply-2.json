@@ -1,0 +1,430 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "c33ed520e30a931e1ae271ac6b50a60690087f6d",
+  "finishedUtc": "2026-10-19T03:09:36.242Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "de9ef13b-ae4c-42b0-9afa-20e71a180759",
+      "flow": "CG_Submission_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUBMISSION__CG_Submission_Endpoint__de9ef13b",
+          "file": "SUBMISSION__CG_Submission_Endpoint__de9ef13b.paste.json",
+          "scope": "Scope_Submission_Flow",
+          "status": "APPLIED",
+          "packageHash": "218013b6fd5f76bf97a8572998760578e48aaa550948130ef199e105dd751d92",
+          "liveHash": "218013b6fd5f76bf97a8572998760578e48aaa550948130ef199e105dd751d92",
+          "fingerprint": "1201c25e762f5c0b",
+          "liveFingerprint": "1201c25e762f5c0b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 218013b6fd5f…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "4873c936-a2be-4726-8e69-426edb8f70e6",
+      "flow": "CG_Portal_Support_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SUPPORT__CG_Portal_Support_Endpoint__4873c936",
+          "file": "SUPPORT__CG_Portal_Support_Endpoint__4873c936.paste.json",
+          "scope": "Scope_Support_Flow",
+          "status": "APPLIED",
+          "packageHash": "f757257041b38352c87c8ea2c25e774ab5fa3c1d375ff750d4fd349636232736",
+          "liveHash": "f757257041b38352c87c8ea2c25e774ab5fa3c1d375ff750d4fd349636232736",
+          "fingerprint": "131612c75aa0f204",
+          "liveFingerprint": "131612c75aa0f204",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash f757257041b3…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "60042a2e-dadb-4ad8-a672-38b4132d299f",
+      "flow": "CG_Portal_Status_Check_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e",
+          "file": "STATUS__CG_Portal_Status_Check_Endpoint__60042a2e.paste.json",
+          "scope": "Scope_Status_Flow",
+          "status": "APPLIED",
+          "packageHash": "7c4dc72d242c78e8a81e4a30c958626136f5632f0ae102524060e25c3c16bb30",
+          "liveHash": "7c4dc72d242c78e8a81e4a30c958626136f5632f0ae102524060e25c3c16bb30",
+          "fingerprint": "0ba3769c4e1c0e0e",
+          "liveFingerprint": "0ba3769c4e1c0e0e",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 7c4dc72d242c…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "bde13d27-73b3-4e1a-9687-eb289b039c7a",
+      "flow": "CG_Portal_Writeback_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27",
+          "file": "WRITEBACK__CG_Portal_Writeback_Endpoint__bde13d27.paste.json",
+          "scope": "Scope_Writeback_Flow",
+          "status": "APPLIED",
+          "packageHash": "f296e46f0d490e64a7e037cdebcacb97a6e83a9934cf9e2a43e60812a7586cc3",
+          "liveHash": "f296e46f0d490e64a7e037cdebcacb97a6e83a9934cf9e2a43e60812a7586cc3",
+          "fingerprint": "0912abac4b0d4b1b",
+          "liveFingerprint": "0912abac4b0d4b1b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash f296e46f0d49…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df82e331-b800-4a8d-996e-d2b2ca846c77",
+      "flow": "CG_Upload_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "UPLOAD__CG_Upload_Endpoint__df82e331",
+          "file": "UPLOAD__CG_Upload_Endpoint__df82e331.paste.json",
+          "scope": "Scope_Upload_Flow",
+          "status": "APPLIED",
+          "packageHash": "f9ac2146df3d24a794ddebf304c0edef852f6c6ae848ca53cc75835b8db8eb3f",
+          "liveHash": "f9ac2146df3d24a794ddebf304c0edef852f6c6ae848ca53cc75835b8db8eb3f",
+          "fingerprint": "03185bfbd7c73e1b",
+          "liveFingerprint": "03185bfbd7c73e1b",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash f9ac2146df3d…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8ebf6001-89cd-49c9-a9b6-4dedb9a5768b",
+      "flow": "CG_Registry_Status_Notifier",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Registry_Status_Notifier__8ebf6001",
+          "file": "NOKEY__CG_Registry_Status_Notifier__8ebf6001.paste.json",
+          "scope": "Scope_StatusNotify_Flow",
+          "status": "APPLIED",
+          "packageHash": "49d100d0008866a19afd2161074e5ab004fa3359fa9bfe43ba10192a66bf840e",
+          "liveHash": "49d100d0008866a19afd2161074e5ab004fa3359fa9bfe43ba10192a66bf840e",
+          "fingerprint": "01c3862f3e093d0f",
+          "liveFingerprint": "01c3862f3e093d0f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 49d100d00088…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f12aec6d-1554-483d-a525-a96ddb60d06f",
+      "flow": "CG_Portal_Daily_Sweep",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d",
+          "file": "NOKEY__CG_Portal_Daily_Sweep__f12aec6d.paste.json",
+          "scope": "Scope_Sweep_Flow",
+          "status": "APPLIED",
+          "packageHash": "794805bc2a1fe1c408c52843d8dd15807be591efa304b150674dcfc14a4ef7b5",
+          "liveHash": "794805bc2a1fe1c408c52843d8dd15807be591efa304b150674dcfc14a4ef7b5",
+          "fingerprint": "1856a501c435330d",
+          "liveFingerprint": "1856a501c435330d",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 794805bc2a1f…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ba47f79b-a831-49e8-b00b-3f8937c331df",
+      "flow": "CG_Portal_Verification_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b",
+          "file": "VERIFY__CG_Portal_Verification_Endpoint__ba47f79b.paste.json",
+          "scope": "Scope_Verify_Flow",
+          "status": "APPLIED",
+          "packageHash": "821931ed08814a86a83740de5bf0c95c4665d7f2e2ff7d2181f37228715bd1fa",
+          "liveHash": "821931ed08814a86a83740de5bf0c95c4665d7f2e2ff7d2181f37228715bd1fa",
+          "fingerprint": "17563b6f606b9309",
+          "liveFingerprint": "17563b6f606b9309",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 821931ed0881…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "f96e3448-3c79-4d42-b224-825258a552ba",
+      "flow": "CG_Portal_Verification_Confirmation_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448",
+          "file": "VERIFY_CONFIRM__CG_Portal_Verification_Confirmation_Endpoint__f96e3448.paste.json",
+          "scope": "Scope_VerifyConfirm_Flow",
+          "status": "APPLIED",
+          "packageHash": "3725ca3b7fded44ded62ac5e6e2554133d32712513c4a95378385b478b2660ce",
+          "liveHash": "3725ca3b7fded44ded62ac5e6e2554133d32712513c4a95378385b478b2660ce",
+          "fingerprint": "04fbe6443076bb11",
+          "liveFingerprint": "04fbe6443076bb11",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 3725ca3b7fde…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5504d7f9-cc96-470c-be79-217582faf415",
+      "flow": "IP_SCAN_INTAKE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9",
+          "file": "SCAN_INTAKE__IP_SCAN_INTAKE__5504d7f9.paste.json",
+          "scope": "Scope_Scan_Flow",
+          "status": "APPLIED",
+          "packageHash": "5c5798476a1ad1c871568050bc12a829eeebef5272cf09db4e6bbc81cc54a8ea",
+          "liveHash": "5c5798476a1ad1c871568050bc12a829eeebef5272cf09db4e6bbc81cc54a8ea",
+          "fingerprint": "18a45281eccc8809",
+          "liveFingerprint": "18a45281eccc8809",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 5c5798476a1a…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "3caf9458-8d95-4740-a01b-6803dad97d34",
+      "flow": "Single_Task_Assignment",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458",
+          "file": "SINGLE_ASSIGNMENT__Single_Task_Assignment__3caf9458.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "8f6431464498b7d581c1007b3c6553ed0e5e028fd6016ced0a9265a370367c3a",
+          "liveHash": "8f6431464498b7d581c1007b3c6553ed0e5e028fd6016ced0a9265a370367c3a",
+          "fingerprint": "08250b313d5af407",
+          "liveFingerprint": "08250b313d5af407",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 8f6431464498…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "5aab9e61-ab9f-4af1-9f2b-eaba23a1bf06",
+      "flow": "BULK OPS DATA RETRIEVAL HTTP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61",
+          "file": "BULK_ASSIGNMENT__BULK_OPS_DATA_RETRIEVAL_HTTP__5aab9e61.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "b7a18dd56db720a87850df743bafc3f02dda899311a23639e094ec914bc2f219",
+          "liveHash": "b7a18dd56db720a87850df743bafc3f02dda899311a23639e094ec914bc2f219",
+          "fingerprint": "040af3112ca5f51d",
+          "liveFingerprint": "040af3112ca5f51d",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash b7a18dd56db7…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "fbd159842fbd2e7f87b93d789cbea699246d31b08e7ac8496e1d854389543091",
+          "liveHash": "fbd159842fbd2e7f87b93d789cbea699246d31b08e7ac8496e1d854389543091",
+          "fingerprint": "12b4e01076a45306",
+          "liveFingerprint": "12b4e01076a45306",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash fbd159842fbd…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e3e5c825-55ba-447e-88c1-96b7e89fd013",
+      "flow": "IP_User_Admin_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825",
+          "file": "USER_ADMIN__IP_User_Admin_Endpoint__e3e5c825.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "d628c04a15259bc4de99483d58ffbb108d1c3956b4885efaaae195202e85adc6",
+          "liveHash": "d628c04a15259bc4de99483d58ffbb108d1c3956b4885efaaae195202e85adc6",
+          "fingerprint": "1e9cbb576cfeb11f",
+          "liveFingerprint": "1e9cbb576cfeb11f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash d628c04a1525…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "b4db02d8-02a0-4bc9-b9d3-06e2aae2448c",
+      "flow": "IP_Activity_Lifecycle_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "ACTIVITY_LIFECYCLE__IP_Activity_Lifecycle_Endpoint__b4db02d8",
+          "file": "ACTIVITY_LIFECYCLE__IP_Activity_Lifecycle_Endpoint__b4db02d8.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "APPLIED",
+          "packageHash": "226206324a0fb5d64e13aef12a0fb0684f7c741ffa8ca225524872898a50dcd3",
+          "liveHash": "226206324a0fb5d64e13aef12a0fb0684f7c741ffa8ca225524872898a50dcd3",
+          "fingerprint": "0d2de979ee3e0b15",
+          "liveFingerprint": "0d2de979ee3e0b15",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 226206324a0f…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "ab1a3555-7fce-4bfe-a193-b8b84654b0a4",
+      "flow": "IP_Create__Task__for_received_Email_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555",
+          "file": "EMAIL_RELATED_TASK__IP_Create_Task_for_received_Email_Endpoint__ab1a3555.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "1421f91e29c044d4a03cd12a2533c11b57a8d9324a50e851e56974a8eec48ef9",
+          "liveHash": "1421f91e29c044d4a03cd12a2533c11b57a8d9324a50e851e56974a8eec48ef9",
+          "fingerprint": "12f2a35aac49e400",
+          "liveFingerprint": "12f2a35aac49e400",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 1421f91e29c0…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "e5632336-641f-4b9b-bd93-99185b5eb975",
+      "flow": "IP_OTP_GENERATE",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "OTP_GENERATE__IP_OTP_GENERATE__e5632336",
+          "file": "OTP_GENERATE__IP_OTP_GENERATE__e5632336.paste.json",
+          "scope": "Scope_Global",
+          "status": "APPLIED",
+          "packageHash": "5dda49ce41ee42573b743ce1b323d22f945d37fde1f1037b3fde2fc1c744e062",
+          "liveHash": "5dda49ce41ee42573b743ce1b323d22f945d37fde1f1037b3fde2fc1c744e062",
+          "fingerprint": "084639338fbcba0f",
+          "liveFingerprint": "084639338fbcba0f",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 5dda49ce41ee…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "df59a69f-92ca-4554-ae68-6b464aa73ef7",
+      "flow": "IP_SEND_EMAIL",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "EMAIL__IP_SEND_EMAIL__df59a69f",
+          "file": "EMAIL__IP_SEND_EMAIL__df59a69f.paste.json",
+          "scope": "Scope_Send_Email_Flow",
+          "status": "APPLIED",
+          "packageHash": "a1497d9a018b20fc965b090a30a0d64faf6724b8d9e98d657eeaea08fedf9425",
+          "liveHash": "a1497d9a018b20fc965b090a30a0d64faf6724b8d9e98d657eeaea08fedf9425",
+          "fingerprint": "10cbf77eec0fb118",
+          "liveFingerprint": "10cbf77eec0fb118",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash a1497d9a018b…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "197527c8-e76c-4f7d-81b8-3cb5c88b1c6c",
+      "flow": "Folio_Incoming_Correspondence_Scan_Processing_Flow",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8",
+          "file": "NOKEY__Folio_Incoming_Correspondence_Scan_Processing_Flow__197527c8.paste.json",
+          "scope": "Scope_Scan_Processing",
+          "status": "APPLIED",
+          "packageHash": "295e42f86653936e0d5b13d83f8d31963003d171d1091ce9f8fb0588b86c7b17",
+          "liveHash": "295e42f86653936e0d5b13d83f8d31963003d171d1091ce9f8fb0588b86c7b17",
+          "fingerprint": "0ea27ede1874791c",
+          "liveFingerprint": "0ea27ede1874791c",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 295e42f86653…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "8c19b45c-4174-4d2f-9429-ffd08dd1a5ae",
+      "flow": "AUTO_SCHEDULED_SWEEP",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c",
+          "file": "NOKEY__AUTO_SCHEDULED_SWEEP__8c19b45c.paste.json",
+          "scope": "Scope_ScheduledSweep_Flow",
+          "status": "APPLIED",
+          "packageHash": "b106f44d377a76229f879f29eac3e6326cc076934a38ff544663c8c64a4fbefa",
+          "liveHash": "b106f44d377a76229f879f29eac3e6326cc076934a38ff544663c8c64a4fbefa",
+          "fingerprint": "1f62ae3dbf8d0e01",
+          "liveFingerprint": "1f62ae3dbf8d0e01",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash b106f44d377a…",
+          "rebinds": []
+        }
+      ]
+    },
+    {
+      "flowId": "c38bfeaa-4c88-47a5-a9e2-f5d0e610efb6",
+      "flow": "Folio_Failure_Watch",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "NOKEY__Folio_Failure_Watch__c38bfeaa",
+          "file": "NOKEY__Folio_Failure_Watch__c38bfeaa.paste.json",
+          "scope": "Scope_Failure_Watch",
+          "status": "APPLIED",
+          "packageHash": "927a9eecb43b1b8a01177b6740e37c8f1ed0bb96ab9980faa955ce113e5f13ba",
+          "liveHash": "927a9eecb43b1b8a01177b6740e37c8f1ed0bb96ab9980faa955ce113e5f13ba",
+          "fingerprint": "020035b509bc3d04",
+          "liveFingerprint": "020035b509bc3d04",
+          "emptySetVariables": [],
+          "detail": "written and read back: hash 927a9eecb43b…",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

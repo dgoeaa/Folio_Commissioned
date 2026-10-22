@@ -1,0 +1,22 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-22",
+  "change": "ITEM-93 T3: the DGO Correspondence Mailer's DGO_MAIL_AUTH brought up to the rebuilt release 2.1.5 (releases/dgo-correspondence-mailer-2.1.5.zip at a23ee71f), whose sign-in code e-mail is ML-Sign-In-Code of the template package revision of 2026-10-21.",
+  "report": "The owner pasted the terminal output of node tools/setup.mjs --plan --update-flows (DGO_MAIL_AUTH 'would change — definition brought up to this package; its own settings kept'; the other six 'nothing to change') and node tools/setup.mjs --update-flows, run from the unpacked release, signed in as dgsRegistry@nitda.gov.ng, environment Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1.",
+  "result": {
+    "DGO_MAIL_AUTH": "definition brought up to this package; its own settings kept; trigger URL read",
+    "DGO_MAIL_SEND": "nothing to change",
+    "DGO_MAIL_LOG": "nothing to change",
+    "DGO_MAIL_DIRECTORY": "nothing to change",
+    "DGO_MAIL_TEMPLATES": "nothing to change",
+    "DGO_MAIL_PROVISION": "nothing to change",
+    "DGO_MAIL_DATA": "nothing to change",
+    "adminKey": "the flows already share a key (7 of 7); it is kept",
+    "connections": "sharepointonline and office365 as dgsRegistry@nitda.gov.ng",
+    "health": "all seven 'healthy, verified' over HTTP after the update",
+    "lists": "every list and the library exist with every column; the directory (24 entries) and templates (3) left as they were",
+    "app": "mailer.html written (1139 KB) for https://folio-platform.page.gd/mailer.html; it goes up inside the Workspace upload of build v2026.10.22-1 (registers/config-build-ledger.json)"
+  },
+  "basis": "The setup tool's own checks in the owner's session. The setup report (dgo-mailer-setup-report.txt, no secrets) stays on the owner's device; this record is transcribed from the pasted output and holds no URL or key."
+}

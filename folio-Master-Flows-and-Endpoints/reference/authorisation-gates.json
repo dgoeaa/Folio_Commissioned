@@ -1,0 +1,17 @@
+{
+  "schema": "dgo-authorisation-gates/v1",
+  "generatedBy": "scripts/audit-authorisation-gates.mjs",
+  "whatThisIs": "Every place in this estate where a Condition branches on a Compose whose input is a constant — an authorisation decision that cannot go both ways. Beside each, any expression in the same flow that computes a real answer nothing reads, which is where the displaced check usually is.",
+  "whatItDoesNotClaim": "That a flow with no finding authorises correctly. This asks only whether a decision CAN return false, not whether it returns false often enough. A check that is real but far too permissive looks exactly like a good one from here. Nor does it say anything about WHO the caller is: every endpoint in this estate still takes its caller from the request body, which is G-04 and is not what this file measures.",
+  "theTest": "A Compose whose input is a constant boolean, read by a Condition that compares it against nothing that can vary between requests. Comparing a constant against a real expression — equals(true, <check>) — is a live decision and is not reported; that is the shape the ITEM-61 fix took.",
+  "known": {
+    "where": "docs/folio-Master-Flows-and-Endpoints/exports/IP_FETCH_ALL_BOOTSTRAP_20260917225904.zip",
+    "decision": "Compose_FetchAll_Permitted",
+    "item": "ITEM-61",
+    "why": "The superseded build, retained deliberately. ITEM-61 closed on 2026-09-24 when the flow was fixed in the tenant and re-exported as IP_FETCH_ALL_BOOTSTRAP_20260924035751.zip, which is in this directory beside it and is clean. This package is kept because it is the artefact of the defect and because ITEM-60 establishes that packages get imported on the strength of their file name: anyone who imports THIS one re-opens the bypass. It stays flagged for exactly that reason. Retired 2026-10-05 with every other superseded copy of an adopted flow (registers/flow-adoption.json): the package is no longer in the repository, so it can no longer be imported from here. registers/flow-retirement.json records its hash and the last commit that holds it."
+  },
+  "counts": {
+    "decisionsPinnedToAConstant": 0
+  },
+  "findings": []
+}

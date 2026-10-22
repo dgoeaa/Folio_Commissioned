@@ -1,0 +1,30 @@
+{
+  "schema": "folio-flows-update-report/v1",
+  "kind": "apply",
+  "environment": "Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1",
+  "commit": "d9dbce88e0ad4ec5333a598effe0734f7a899218",
+  "finishedUtc": "2026-10-08T19:11:37.952Z",
+  "rule": "A package is current when the SHA-256 of the flow's scope (key order, designer metadata, empty runAfter and the inputs.authentication the service adds set aside) equals the package's, and every connection reference it uses names the package's connection.",
+  "flows": [
+    {
+      "flowId": "31c0aaf0-ddbb-478c-9a98-bc013265c4c7",
+      "flow": "IP_Dynamic_Global_Actions_Endpoint",
+      "state": "Started",
+      "packages": [
+        {
+          "id": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0",
+          "file": "DYNAMIC_ACTIONS__IP_Dynamic_Global_Actions_Endpoint__31c0aaf0.paste.json",
+          "scope": "Scope_Dynamic_Flow",
+          "status": "FAILED",
+          "packageHash": "2a4d9e20efccac61b8ae8ec243b08a996d234a2d41fcf04be7f62c9480369bd3",
+          "liveHash": "76163083fbe8093004f37c4fdc38030472efd2b0c17b32c5a6e00c3ea51836fe",
+          "fingerprint": "1ee3d766a9b2ce0d",
+          "liveFingerprint": "08146280d212541d",
+          "emptySetVariables": [],
+          "detail": "the service refused the write (400): TemplateValidationError The power flow's logic app flow template was invalid.  The number of template actions limit exceeded: maximum '500' and actual '524'.",
+          "rebinds": []
+        }
+      ]
+    }
+  ]
+}

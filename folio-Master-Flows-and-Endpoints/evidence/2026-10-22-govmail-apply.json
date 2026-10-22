@@ -1,0 +1,67 @@
+{
+  "schema": "folio-owner-report/v1",
+  "kind": "owner-report",
+  "recordedUtc": "2026-10-22",
+  "change": "ITEM-93 T2: npm run govmail:update -- apply refreshed the GV-* design Composes of GOV-01 to GOV-08 to the e-mail template package revision of 2026-10-21 (scripts/lib/govmail-fix.mjs, refresh of a converted flow, b1920d88). Only the design Composes changed; picks, recipients and subjects stayed.",
+  "report": "The owner pasted the terminal output of npm run govmail:update (check, report govmail-check-2026-10-22T03-54-06-273Z.json: eight WILL_UPDATE, every change a design refresh) and npm run govmail:update -- apply (report govmail-apply-2026-10-22T04-12-23-424Z.json), signed in as dgsRegistry@nitda.gov.ng, repository at b1920d88. Each flow was confirmed, backed up, written, and read back by the tool, which printed \"APPLIED — written and read back.\" for all eight.",
+  "basis": "The tool's own read-back in the owner's session (storedDiff, as flows:update compares). The report files stay in the owner's git-ignored flows-update-output/; this record is transcribed from the pasted output. Running npm run govmail:update again reports each flow UP_TO_DATE when the current designs are there.",
+  "flows": [
+    {
+      "flowId": "17a85efb-1ed2-45c9-a602-2ad6f8bb7ead",
+      "name": "01 - GOV - Provision HTTP Flow Registry",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--gov01-provisioning", "GV-Run-Report--timed-out", "GV-Run-Report--failed"],
+      "backup": "govmail-backup-17a85efb-1ed2-45c9-a602-2ad6f8bb7ead-2026-10-22T04-04-01-739Z.json"
+    },
+    {
+      "flowId": "651ae389-eeed-4bf0-9799-67bd964ebe71",
+      "name": "02 - GOV - Register HTTP Flow Truth",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report"],
+      "backup": "govmail-backup-651ae389-eeed-4bf0-9799-67bd964ebe71-2026-10-22T04-04-19-324Z.json"
+    },
+    {
+      "flowId": "0545e19a-c34a-45db-bd11-27b87a34973e",
+      "name": "03 - GOV - Record HTTP Flow Execution",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report"],
+      "backup": "govmail-backup-0545e19a-c34a-45db-bd11-27b87a34973e-2026-10-22T04-09-44-965Z.json"
+    },
+    {
+      "flowId": "3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b",
+      "name": "04 - GOV - Audit HTTP Flow Registry",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report", "GV-Stale-Alert", "GV-Stale-Escalation--escalated", "GV-Stale-Escalation", "GV-Failing-Alert", "GV-Failing-Escalation--escalated", "GV-Failing-Escalation", "GV-Recovered"],
+      "backup": "govmail-backup-3e9e1342-5027-4c0f-bdd3-1e06aa7f2a3b-2026-10-22T04-11-05-082Z.json"
+    },
+    {
+      "flowId": "493b4ab7-8f63-4fab-8121-746c2cac7f98",
+      "name": "05 - GOV - Retire HTTP Flow",
+      "status": "APPLIED",
+      "refreshed": ["GV-Execution-Report", "GV-Execution-Report--failed", "GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report"],
+      "backup": "govmail-backup-493b4ab7-8f63-4fab-8121-746c2cac7f98-2026-10-22T04-11-21-690Z.json"
+    },
+    {
+      "flowId": "87a74d7e-7435-4e34-baa1-7e759ebf5565",
+      "name": "06 - GOV - Registry Exception Notification",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report", "GV-Registry-Exception", "GV-Registry-Exception--medium-low"],
+      "backup": "govmail-backup-87a74d7e-7435-4e34-baa1-7e759ebf5565-2026-10-22T04-11-44-989Z.json"
+    },
+    {
+      "flowId": "c6a011c5-7b11-4241-82ae-a45b88ebf276",
+      "name": "07 - GOV - Consumer HTTP Self-Registration Template",
+      "status": "APPLIED",
+      "refreshed": ["GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report"],
+      "backup": "govmail-backup-c6a011c5-7b11-4241-82ae-a45b88ebf276-2026-10-22T04-12-02-786Z.json"
+    },
+    {
+      "flowId": "f5e7679f-ca1b-4216-8a6e-bb6c044ed06f",
+      "name": "08 - GOV - Discover and Register HTTP Consumers",
+      "status": "APPLIED",
+      "refreshed": ["GV-Execution-Report", "GV-Execution-Report--failed", "GV-Run-Report--failed", "GV-Run-Report--timed-out", "GV-Run-Report"],
+      "backup": "govmail-backup-f5e7679f-ca1b-4216-8a6e-bb6c044ed06f-2026-10-22T04-12-15-061Z.json"
+    }
+  ],
+  "supersedes": "The first T2 run of 2026-10-22 (reports govmail-check-2026-10-22T03-27-31-999Z.json and govmail-apply-2026-10-22T03-28-09-925Z.json) read all eight as UP_TO_DATE and wrote nothing: fixGovMail returned early for a flow it had converted before, without comparing the designs. Fixed in b1920d88."
+}

@@ -1,0 +1,11 @@
+{
+  "readUtc": "2026-10-18T19:25:00Z",
+  "signIn": "one sign-in as dgsregistry@nitda.gov.ng with a one-time code the owner requested and supplied (2026-10-18 18:58Z); the proof is not recorded",
+  "rn021": {
+    "how": "the live EMAIL endpoint called as the signed-in officer with the payload core/correspondence-email-service.js sends (operation sendCorrespondenceEmail, mode single)",
+    "flow": "IP_SEND_EMAIL (df59a69f-92ca-4554-ae68-6b464aa73ef7)",
+    "run": "08584092554244030936103936507CU00",
+    "send": "Send_Email Succeeded 2026-10-18T19:24:24Z to d*********y@nitda.gov.ng, subject \"ZTEST RN-021 outward correspondence 2026-10-18\"",
+    "receipt": "Portal Outbox Receipts item 1638 (outward-correspondence, sent)"
+  }
+}
